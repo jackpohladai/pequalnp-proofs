@@ -1,0 +1,122 @@
+def impliesBit (a b : Bool) : Prop := a = true → b = true
+
+lemma rel_wire {n : ℕ} (A B : Circuit) (x y : Fin n → Bool) (R : Bool → Bool → Prop)
+    (hf : R false false) (hmono : OpMono R)
+    (hxy : ∀ i, R (x i) (y i)) (hAO : AndOrOnly A)
+    (hlen : A.gates.length = B.gates.length) (bound : ℕ)
+    (hstep : ∀ k < A.gates.length, n + k < bound →
+      gateAt A k = gateAt B k ∨ R (gateVal n A k x) (gateVal n B k y)) :
+    ∀ w < bound, R (val A (List.ofFn x) w) (val B (List.ofFn y) w) := by
+  intro w
+  induction w using Nat.strong_induction_on with
+  | _ w ih =>
+    intro hw
+    by_cases hi : w < n
+    · exact (val_ofFn A x ⟨w,hi⟩ ▸ val_ofFn B y ⟨w,hi⟩ ▸ hxy ⟨w,hi⟩)
+    by_cases he : n + A.gates.length ≤ w
+    · rw [val_ge (n := n) (by simp) he, val_ge (n := n) (by simp) (hlen ▸ he)]
+      exact hf
+    obtain ⟨k,rfl⟩ : ∃ k, w = n + k := ⟨w-n,by omega⟩
+    have hk : k < A.gates.length := by omega
+    rcases hstep k hk hw with hg | hh
+    · rw [val_gate (n := n) (by simp) hk, val_gate (n := n) (by simp) (hlen ▸ hk), ←hg]
+      apply hmono _ (hAO _ (gateAt_mem hk))
+      intro i _
+      split_ifs with h
+      · exact ih i h (h.trans hw)
+      · exact hf
+    · exact hh
+
+lemma input_mono {n : ℕ} (A : Circuit) (hAO : AndOrOnly A)
+    (x y : Fin n → Bool) (hxy : ∀ i, x i = true → y i = true) (w : ℕ) :
+    val A (List.ofFn x) w = true → val A (List.ofFn y) w = true :=
+  rel_wire A A x y impliesBit (fun h => h) opMono_imp hxy hAO rfl (w+1)
+    (fun _ _ _ => Or.inl rfl) w (by omega)
+
+def edgeList : List (Fin 9 × Fin 9) :=
+  [(0,1),(1,2),(2,3),(3,4),(4,0),(0,5),(1,6),(2,7),(3,8),(5,7),(6,8),(8,5)]
+
+def edge (x : Fin 9 → Bool) : Bool :=
+  edgeList.any fun e => x e.1 && x e.2
+
+def exactPair (e : Fin 9 × Fin 9) (j : Fin 9) : Bool := decide (j = e.1 ∨ j = e.2)
+
+theorem opMono_revImp : OpMono (fun a b => b = true → a = true) := by
+  intro op ho l f g h
+  exact opMono_imp op ho l g f h
+
+theorem critical_or_partner (C : Circuit) (minimal : IsMinimalCircuit 9 C)
+    (correct : circuitFun 9 C = edge) (hAO : IsAO2 9 C)
+    (v : Fin 9) {r u : ℕ} (hr : r < C.gates.length) (op : (gateAt C r).op = .or)
+    (pins : (gateAt C r).inputs = [v.val,u] ∨ (gateAt C r).inputs = [u,v.val]) :
+    ∃ e ∈ edgeList, v ≠ e.1 ∧ v ≠ e.2 ∧
+      val C (List.ofFn (exactPair e)) u = true ∧
+      circuitFun 9 (bypass 9 C r v.val) (exactPair e) = false := by
+  let D := bypass 9 C r v.val
+  have hv : v.val < 9 + r := by have := v.isLt; omega
+  have hu : u < 9 + r := hAO.2.1 r hr u (by rcases pins with h|h <;> simp [h])
+  have hD : IsAO2 9 D := byp_ao2 hAO hv
+  have hop k (hk : k < C.gates.length) := hAO.1 _ (gateAt_mem hk)
+  have value (x : Fin 9 → Bool) :
+      val C (List.ofFn x) (9+r) = (x v || val C (List.ofFn x) u) := by
+    rw [val_gate (n := 9) (by simp) hr,op]
+    rcases pins with h | h <;> rw [h] <;>
+      simp only [List.map_cons,List.map_nil,ite_eq_left hv,ite_eq_left hu,GateOp.eval,
+        List.any_cons, List.any_nil, id_eq, Bool.or_false,val_ofFn]
+    exact Bool.or_comm _ _
+  have shrink : circuitFun 9 D ≠ edge := by
+    intro he
+    have hfan : FanInTwo D := by
+      intro g hg
+      obtain ⟨g',hg',ho,hl⟩ := bypass_mem g hg
+      rw [ho,hl]
+      exact minimal.1 g' hg'
+    have bound := minimal.2 D hfan (he.trans correct.symm)
+    change C.gates.length ≤ (bypass 9 C r v.val).gates.length at bound
+    rw [bypass_length] at bound
+    omega
+  have below (x : Fin 9 → Bool) : circuitFun 9 D x = true → edge x = true := by
+    rw [←correct]
+    apply bypass_eval_rel (R := fun a b => b = true → a = true) (fun _ h => h)
+      opMono_revImp (x := List.ofFn x) (by simp) hop hr (Or.inl hv)
+    rw [value,val_ofFn]
+    intro hx
+    simp [hx]
+  obtain ⟨e,hm,lost⟩ : ∃ e ∈ edgeList, circuitFun 9 D (exactPair e) = false := by
+    by_contra! hn
+    apply shrink
+    funext x
+    cases hd : circuitFun 9 D x with
+    | true => exact (below x hd).symm
+    | false =>
+      cases hf : edge x with
+      | false => rfl
+      | true =>
+        obtain ⟨e,hm,he⟩ := List.any_eq_true.mp hf
+        obtain ⟨ha,hb⟩ := Bool.and_eq_true_iff.mp he
+        have byPair : circuitFun 9 D (exactPair e) = true := by
+          have h := hn e hm
+          simpa using h
+        have hy : ∀ k, exactPair e k = true → x k = true := by
+          intro k hk
+          simp only [exactPair,decide_eq_true_eq] at hk
+          rcases hk with rfl | rfl <;> assumption
+        have good := input_mono D hD.1 _ x hy D.output byPair
+        exact False.elim (Bool.noConfusion (good.symm.trans hd))
+  have edgeOn : edge (exactPair e) = true := List.any_eq_true.mpr
+    ⟨e,hm,by simp [exactPair]⟩
+  have different : val C (List.ofFn (exactPair e)) (9+r) ≠ exactPair e v := by
+    intro same
+    rw [← val_ofFn C (exactPair e) v] at same
+    have same' : circuitFun 9 D (exactPair e) = circuitFun 9 C (exactPair e) :=
+      bypass_eval_eq (by simp) hop hr (Or.inl hv) same
+    rw [correct,edgeOn,lost] at same'
+    contradiction
+  rw [value] at different
+  have vOff : exactPair e v = false := by cases h : exactPair e v <;> simp_all
+  have high : val C (List.ofFn (exactPair e)) u = true := by
+    cases h : val C (List.ofFn (exactPair e)) u <;> simp_all
+  have separate : v ≠ e.1 ∧ v ≠ e.2 := by simpa [exactPair] using vOff
+  exact ⟨e,hm,separate.1,separate.2,high,lost⟩
+
+end PetersenPositivePartner
