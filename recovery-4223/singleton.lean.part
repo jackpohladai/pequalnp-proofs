@@ -1,0 +1,76 @@
+theorem singletonForces (gs : List Gate) (mono : ∀ g ∈ gs, g.op = .and ∨ g.op = .or)
+    (u : Fin 9) (k : ℕ)
+    (one : (gs.foldl step (List.ofFn fun t : Fin 9 => decide (t = u))).getD k false = true)
+    (z : Fin 9 → Bool) (hz : z u = true) : (gs.foldl step (List.ofFn z)).getD k false = true := by
+  let D : Circuit := ⟨gs,k⟩
+  have order (i : Fin 9) : decide (i = u) = true → z i = true := by
+    intro hi
+    rw [decide_eq_true_eq] at hi
+    simpa [hi] using hz
+  exact PetersenPositivePartner.input_mono D mono _ z order k one
+
+theorem uniqueReaderPartnerSilent (C : Circuit) (hm : Monotone2 C) (correct : circuitFun 9 C = edge)
+    (v : Fin 9) (hv : v ∈ [4,6,7]) (pre : List Gate) (g : Gate) (post : List Gate)
+    (hs : C.gates = pre ++ g :: post) (hop : g.op = .or)
+    (single : ∀ (p : List Gate) (a : Gate) (s : List Gate), C.gates = p ++ a :: s →
+      v.val ∈ a.inputs → p.length = pre.length)
+    (k : ℕ) (hk : k ∈ g.inputs) (u : Fin 9) (hu : v ≠ u) :
+    (pre.foldl step (List.ofFn fun t : Fin 9 => decide (t = u))).getD k false = false := by
+  by_contra! high
+  apply noDominatingReader C v u hv hu _ correct
+  intro p a s' e rv
+  have len := single p a s' e rv
+  have before1 : C.gates.take p.length = p := by rw [e]; simp
+  have before2 : C.gates.take pre.length = pre := by rw [hs]; simp
+  have eqp : p = pre := by rw [←before1,len,before2]
+  subst p
+  have head1 : (C.gates.drop pre.length).head? = some a := by rw [e]; simp
+  have head2 : (C.gates.drop pre.length).head? = some g := by rw [hs]; simp
+  have eqg := Option.some.inj (head1.symm.trans head2)
+  subst a
+  refine ⟨hop,k,hk,singletonForces pre ?_ u k (by simpa using high)⟩
+  intro b hb
+  simpa using (hm b (by rw [hs]; simp [hb])).1
+
+theorem allSingletonsSilent (C : Circuit) (hm : Monotone2 C) (correct : circuitFun 9 C = edge)
+    (v : Fin 9) (hv : v ∈ [4,6,7]) (pre : List Gate) (g : Gate) (post : List Gate)
+    (hs : C.gates = pre ++ g :: post) (hop : g.op = .or)
+    (single : ∀ (p : List Gate) (a : Gate) (s : List Gate), C.gates = p ++ a :: s →
+      v.val ∈ a.inputs → p.length = pre.length)
+    (k : ℕ) (hk : k ∈ g.inputs) (diff : k ≠ v.val) (u : Fin 9) :
+    (pre.foldl step (List.ofFn fun t : Fin 9 => decide (t = u))).getD k false = false := by
+  by_cases h : v = u
+  · subst u
+    have v0 : v ≠ 0 := by
+      intro e; subst v; exact (by decide : (0 : Fin 9) ∉ [4,6,7]) hv
+    let z (j : Fin 9) := decide (j = 0)
+    let y (j : Fin 9) := decide (j = v ∨ j = 0)
+    have silent0 := uniqueReaderPartnerSilent C hm correct v hv pre g post hs hop single k hk 0 v0
+    by_contra! high
+    have highY : (pre.foldl step (List.ofFn y)).getD k false = true := by
+      apply singletonForces pre _ v k (by simpa using high) y (by simp [y])
+      intro b hb
+      simpa using (hm b (by rw [hs]; simp [hb])).1
+    have unread (b : Gate) (hb : b ∈ pre) : v.val ∉ b.inputs := by
+      intro hbv
+      obtain ⟨p,s,es⟩ := List.append_of_mem hb
+      have split : C.gates = p ++ b :: (s ++ g :: post) := by simp [hs,es,List.append_assoc]
+      have len := single p b (s ++ g :: post) split hbv
+      simp [es] at len
+    let D : Circuit := ⟨pre,0⟩
+    have same (j : Fin 9) (ne : j ≠ v) : z j = y j := by simp [z,y,ne]
+    have force (p : List Gate) (a : Gate) (s : List Gate) (e : D.gates = p ++ a :: s)
+        (rv : v.val ∈ a.inputs) :
+        a.op.eval (a.inputs.map fun k => (p.foldl step (List.ofFn z)).getD k false) =
+        a.op.eval (a.inputs.map fun k => (p.foldl step (List.ofFn y)).getD k false) := by
+      have hpre : pre = p ++ a :: s := e
+      exact False.elim (unread a (by simp [hpre]) rv)
+    obtain ⟨s,sz,sy⟩ := maskedPrefix D same force pre [] (by simp [D])
+    have eq : (pre.foldl step (List.ofFn z)).getD k false = (pre.foldl step (List.ofFn y)).getD k false := by
+      rw [sz,sy]
+      exact agreeRaw same s k diff
+    change (pre.foldl step (List.ofFn z)).getD k false = false at silent0
+    rw [silent0,highY] at eq
+    contradiction
+  · exact uniqueReaderPartnerSilent C hm correct v hv pre g post hs hop single k hk u h
+end PetersenSpecialPins
