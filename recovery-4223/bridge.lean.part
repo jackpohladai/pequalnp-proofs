@@ -1,0 +1,108 @@
+namespace PetersenPositivePartner
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.MetaComplexity.NestedCover
+  PEqualNP.EdgeOwnership PEqualNP.TopForm
+
+theorem full_silent (C : Circuit) (hAO : IsAO2 9 C) (hF : circuitFun 9 C = edge)
+    (v : Fin 9) (hv : v ∈ [4,6,7]) (r : Fin C.size) (op : (C.gates.get r).op = .or)
+    (unique : ∀ j : Fin C.size, v.val ∈ (C.gates.get j).inputs → j = r)
+    (u : ℕ) (hu : u ∈ (C.gates.get r).inputs) (ne : u ≠ v.val) (t : Fin 9) :
+    (C.wires (List.ofFn fun k : Fin 9 => decide (k=t))).getD u false = false := by
+  let pre := C.gates.take r.val
+  let g := C.gates.get r
+  let post := C.gates.drop (r.val+1)
+  have splitG : C.gates = pre ++ g :: post := by
+    change _ = C.gates.take r.val ++ C.gates[r.val] :: C.gates.drop (r.val+1)
+    rw [List.getElem_cons_drop, List.take_append_drop]
+  have prelen : pre.length = r.val := by
+    dsimp [pre]
+    rw [List.length_take]
+    exact Nat.min_eq_left r.isLt.le
+  have mono : Monotone2 C := by
+    intro g hg
+    exact ⟨(hAO.1 g hg : _), (hAO.2.2 g hg).le⟩
+  have HH := PetersenSpecialPins.allSingletonsSilent C mono hF v hv pre g post splitG op
+  have one (p : List Gate) (a : Gate) (s : List Gate) (eq : C.gates = p ++ a :: s)
+      (ha : v.val ∈ a.inputs) : p.length = pre.length := by
+    have len : p.length < C.gates.length := by rw [eq]; simp
+    have hg : C.gates.get ⟨p.length,len⟩ = a := by
+      change C.gates[p.length] = a
+      simp [eq]
+    have e := unique ⟨p.length,len⟩ (hg ▸ ha)
+    exact (congrArg Fin.val e).trans prelen.symm
+  have hs := HH one u hu ne t
+  let z : Fin 9 → Bool := fun k => decide (k=t)
+  change (C.gates.foldl PetersenSpecialPins.step (List.ofFn z)).getD u false = false
+  rw [splitG,List.foldl_append,PetersenSpecialPins.earlier]
+  · exact hs
+  · rw [PetersenSpecialPins.foldLength,prelen,List.length_ofFn]
+    apply hAO.2.1 r r.isLt u
+    rwa [gateAt_eq r.isLt]
+
+theorem replace_equiv (C : Circuit) (r : Fin C.size) (v : Fin 9) (hAO : IsAO2 9 C)
+    (x : Fin 9 → Bool) :
+    let D : Circuit := { C with gates := C.gates.set r.val ⟨.or,[v.val]⟩ }
+    D.eval (List.ofFn x) = (bypass 9 C r v.val).eval (List.ofFn x) := by
+  let D : Circuit := { C with gates := C.gates.set r.val ⟨.or,[v.val]⟩ }
+  change D.eval _ = _
+  have len : D.gates.length = C.gates.length := by simp [D]
+  have hr : r.val < D.gates.length := len ▸ r.isLt
+  have sameGate {k : ℕ} (hk : k < C.gates.length) (ne : r.val ≠ k) : gateAt D k = gateAt C k := by
+    rw [gateAt_eq (len ▸ hk),gateAt_eq hk]
+    simp [D,ne]
+  have atR : gateAt D r = ⟨.or,[v.val]⟩ := by rw [gateAt_eq hr]; simp [D]
+  have allOp k (hk : k < D.gates.length) : (gateAt D k).op = .and ∨ (gateAt D k).op = .or := by
+    by_cases eq : r.val = k
+    · subst k; rw [atR]; exact Or.inr rfl
+    · rw [sameGate (len ▸ hk) eq]; exact hAO.1 _ (gateAt_mem (len ▸ hk))
+  have hv : v.val < 9 + r.val := by have := v.isLt; omega
+  have sameVal : val D (List.ofFn x) (9+r.val) = val D (List.ofFn x) v.val := by
+    rw [val_gate (n := 9) (by simp) hr,atR]
+    simp only [List.map_cons,List.map_nil,ite_eq_left hv,GateOp.eval,List.any_cons,List.any_nil,id_eq,Bool.or_false]
+  have ceq : bypass 9 D r v.val = bypass 9 C r v.val := by
+    unfold bypass
+    rw [len]
+    congr 1
+    apply List.map_congr_left
+    intro k hk
+    have hk' := List.mem_range.mp hk
+    by_cases h : k < r.val
+    · simp only [ite_eq_left h,sameGate (by omega : k < C.gates.length) (by omega : r.val ≠ k)]
+    · simp only [ite_eq_right h,sameGate (by omega : k+1 < C.gates.length) (by omega : r.val ≠ k+1)]
+  exact (bypass_eval_eq (by simp) allOp hr (Or.inl hv) sameVal).symm.trans
+    (congrArg (fun B : Circuit => B.eval (List.ofFn x)) ceq)
+
+end PetersenPositivePartner
+
+open PEqualNP.CircuitLowerBounds PEqualNP.MetaComplexity PEqualNP.TopForm PEqualNP.MetaComplexity.NestedCover
+open PetersenPositivePartner
+theorem PetersenPositivePartner.provedChild : ∀ (C : Circuit),
+      let E : List (Fin 9 × Fin 9) := ([1,12,23,34,40,5,16,27,38,57,68,85] : List ℕ).map
+        (fun d => (Fin.ofNat 9 (d/10), Fin.ofNat 9 (d%10)))
+      let I (j : Fin C.size) := (C.gates.get j).inputs
+      let W (x : Fin 9 → Bool) (u : ℕ) := (C.wires (List.ofFn x)).getD u false
+      IsMinimalCircuit 9 C → IsAO2 9 C →
+      (circuitFun 9 C = fun x => E.any fun e => x e.1 && x e.2) →
+      ∀ v ∈ ([4,6,7] : List (Fin 9)), ∀ (r : Fin C.size) (u : ℕ),
+        (∀ j, v.val ∈ I j ↔ j=r) → (C.gates.get r).op = .or →
+        u ∈ I r → u ≠ v.val →
+        (∀ t : Fin 9, W (fun k => decide (k=t)) u = false) ∧
+        ∃ e ∈ E, v ≠ e.1 ∧ v ≠ e.2 ∧
+          let x (k : Fin 9) := decide (k=e.1 ∨ k=e.2)
+          W x u = true ∧
+          ({ C with gates := C.gates.set r.val ⟨.or,[v.val]⟩ } : Circuit).eval (List.ofFn x) = false := by
+  intro C
+  dsimp only
+  intro minimal hAO correct v hv r u unique op hu ne
+  have hF : circuitFun 9 C = edge := correct
+  constructor
+  · exact full_silent C hAO hF v hv r op (fun j h => (unique j).1 h) u hu ne
+  · have hvr := (unique r).2 rfl
+    obtain ⟨a,b,hp⟩ := List.length_eq_two.mp (hAO.2.2 _ (List.get_mem C.gates r))
+    have pins : (C.gates.get r).inputs = [v.val,u] ∨ (C.gates.get r).inputs = [u,v.val] := by
+      rw [hp] at hu hvr ⊢
+      simp only [List.mem_cons,List.not_mem_nil,or_false] at hu hvr
+      rcases hvr with ha | hb <;> rcases hu with hc | hd <;> simp_all
+    have hat : gateAt C r = C.gates.get r := gateAt_eq r.isLt
+    obtain ⟨e,hm,ha,hb,high,lost⟩ := critical_or_partner C minimal hF hAO v r.isLt
+      (hat ▸ op) (hat ▸ pins)
+    exact ⟨e,hm,ha,hb,high,(replace_equiv C r v hAO (exactPair e)).trans lost⟩
