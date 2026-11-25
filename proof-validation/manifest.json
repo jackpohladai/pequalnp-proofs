@@ -1,0 +1,14 @@
+{
+  "id": "L-smoke-and6",
+  "module": "PEqualNP.Outside.L_smoke_and6",
+  "file": "lean/PEqualNP/Outside/L_smoke_and6.lean",
+  "path": "lean/PEqualNP/Outside/L_smoke_and6.lean",
+  "statement": "∀ s : ℕ, PEqualNP.MetaComplexity.HasCircuitSize 6 (fun x : Fin 6 → Bool => Nat.testBit (2147483648 * 2 ^ 32 + 0) (∑ i : Fin 6, if x i then 2 ^ (i : ℕ) else 0)) s → ∃ C : PEqualNP.CircuitLowerBounds.Circuit, PEqualNP.MetaComplexity.Monotone2 C ∧ C.size ≤ s ∧ ∀ x : Fin 6 → Bool, C.eval (List.ofFn x) = Nat.testBit (2147483648 * 2 ^ 32 + 0) (∑ i : Fin 6, if x i then 2 ^ (i : ℕ) else 0)",
+  "imports": [
+    "PEqualNP.Defs"
+  ],
+  "kind": "check",
+  "mode": "check",
+  "desk_submission": false,
+  "proof": "lean/PEqualNP/Outside/L_smoke_and6.lean"
+}
