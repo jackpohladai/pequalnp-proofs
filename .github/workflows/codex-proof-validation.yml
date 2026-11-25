@@ -1,0 +1,61 @@
+name: Codex proof validation
+
+on:
+  push:
+    branches: [codex/proof-validation-20261125]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codex-proof-validation
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      ELAN_VERSION: v4.4.0
+      ELAN_SHA256: 0e8250aa2be86c7af929ade68db617af9edc8b9ccf6eaf5ece228250d0d032e2
+    steps:
+      - name: Fetch this validation commit
+        run: |
+          set -eu
+          git init -q .
+          git fetch -q --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" "$GITHUB_SHA"
+          git checkout -q --detach FETCH_HEAD
+
+      - name: Install the pinned Lean toolchain
+        run: |
+          set -eu
+          sh .github/scripts/install-elan.sh "$ELAN_VERSION" "$ELAN_SHA256" "$RUNNER_TEMP/elan" "$(cat lean/lean-toolchain)"
+          echo "$RUNNER_TEMP/elan/bin" >> "$GITHUB_PATH"
+
+      - name: Fetch the pinned Mathlib cache
+        working-directory: lean
+        run: lake exe cache get
+
+      - name: Build the definitions and verifier
+        working-directory: lean
+        run: lake build PEqualNP.Defs checklemma
+
+      - name: Verify a prepared proof, when present
+        run: |
+          set -eu
+          if [ -f proof-validation/manifest.json ]; then
+            python3 - <<'PY'
+          import json, re, subprocess
+          from pathlib import Path
+          config = json.loads(Path('proof-validation/manifest.json').read_text())
+          proof = config['proof']
+          mode = config.get('mode', 'check')
+          assert re.fullmatch(r'lean/PEqualNP/Outside/[LRV]_[A-Za-z0-9_]+\.lean', proof)
+          assert mode in ('check', 'refute', 'reduce')
+          statement = Path('proof-validation/statement.txt')
+          statement.write_text(config['statement'] + '\n')
+          subprocess.run(['node', 'tools/check-lean.mjs', proof, str(statement), mode], check=True)
+          PY
+          else
+            echo 'Pinned definitions and verifier compiled; no proof has been supplied for this preparation run.'
+          fi
