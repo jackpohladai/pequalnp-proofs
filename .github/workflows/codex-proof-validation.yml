@@ -47,14 +47,21 @@ jobs:
             python3 - <<'PY'
           import json, re, subprocess
           from pathlib import Path
-          config = json.loads(Path('proof-validation/manifest.json').read_text())
-          proof = config['proof']
-          mode = config.get('mode', 'check')
-          assert re.fullmatch(r'lean/PEqualNP/Outside/[LRV]_[A-Za-z0-9_]+\.lean', proof)
-          assert mode in ('check', 'refute', 'reduce')
-          statement = Path('proof-validation/statement.txt')
-          statement.write_text(config['statement'] + '\n')
-          subprocess.run(['node', 'tools/check-lean.mjs', proof, str(statement), mode], check=True)
+          configs = json.loads(Path('proof-validation/manifest.json').read_text())
+          if isinstance(configs, dict):
+              configs = [configs]
+          failed = False
+          for i, config in enumerate(configs):
+              proof = config['proof']
+              mode = config.get('mode', 'check')
+              assert re.fullmatch(r'lean/PEqualNP/Outside/[LRV]_[A-Za-z0-9_]+\.lean', proof)
+              assert mode in ('check', 'refute', 'reduce')
+              statement = Path(f'proof-validation/statement-{i}.txt')
+              statement.write_text(config['statement'] + '\n')
+              print(f'Checking {proof}', flush=True)
+              result = subprocess.run(['node', 'tools/check-lean.mjs', proof, str(statement), mode])
+              failed = failed or result.returncode != 0
+          raise SystemExit(1 if failed else 0)
           PY
           else
             echo 'Pinned definitions and verifier compiled; no proof has been supplied for this preparation run.'

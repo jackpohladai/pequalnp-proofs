@@ -1622,9 +1622,9 @@ theorem c_0_24 : span (stateCheck 0) 7 24 = true := by decide +kernel
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
 theorem all_0 : span (stateCheck 0) 31 0 = true := by
-  apply span_join c_0_0
-  apply span_join c_0_8
-  apply span_join c_0_16
+  apply span_join (b := 23) c_0_0
+  apply span_join (b := 15) c_0_8
+  apply span_join (b := 7) c_0_16
   exact c_0_24
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
@@ -1665,17 +1665,17 @@ theorem c_1_88 : span (stateCheck 1) 2 88 = true := by decide +kernel
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
 theorem all_1 : span (stateCheck 1) 90 0 = true := by
-  apply span_join c_1_0
-  apply span_join c_1_8
-  apply span_join c_1_16
-  apply span_join c_1_24
-  apply span_join c_1_32
-  apply span_join c_1_40
-  apply span_join c_1_48
-  apply span_join c_1_56
-  apply span_join c_1_64
-  apply span_join c_1_72
-  apply span_join c_1_80
+  apply span_join (b := 82) c_1_0
+  apply span_join (b := 74) c_1_8
+  apply span_join (b := 66) c_1_16
+  apply span_join (b := 58) c_1_24
+  apply span_join (b := 50) c_1_32
+  apply span_join (b := 42) c_1_40
+  apply span_join (b := 34) c_1_48
+  apply span_join (b := 26) c_1_56
+  apply span_join (b := 18) c_1_64
+  apply span_join (b := 10) c_1_72
+  apply span_join (b := 2) c_1_80
   exact c_1_88
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
@@ -1707,14 +1707,14 @@ theorem c_2_64 : span (stateCheck 2) 1 64 = true := by decide +kernel
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
 theorem all_2 : span (stateCheck 2) 65 0 = true := by
-  apply span_join c_2_0
-  apply span_join c_2_8
-  apply span_join c_2_16
-  apply span_join c_2_24
-  apply span_join c_2_32
-  apply span_join c_2_40
-  apply span_join c_2_48
-  apply span_join c_2_56
+  apply span_join (b := 57) c_2_0
+  apply span_join (b := 49) c_2_8
+  apply span_join (b := 41) c_2_16
+  apply span_join (b := 33) c_2_24
+  apply span_join (b := 25) c_2_32
+  apply span_join (b := 17) c_2_40
+  apply span_join (b := 9) c_2_48
+  apply span_join (b := 1) c_2_56
   exact c_2_64
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
@@ -1725,7 +1725,7 @@ theorem c_3_8 : span (stateCheck 3) 7 8 = true := by decide +kernel
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
 theorem all_3 : span (stateCheck 3) 15 0 = true := by
-  apply span_join c_3_0
+  apply span_join (b := 7) c_3_0
   exact c_3_8
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
