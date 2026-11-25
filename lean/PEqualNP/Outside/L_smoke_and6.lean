@@ -1619,6 +1619,8 @@ theorem c_0_16 : span (stateCheck 0) 8 16 = true := by decide +kernel
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
 theorem c_0_24 : span (stateCheck 0) 7 24 = true := by decide +kernel
+set_option maxRecDepth 20000 in
+set_option maxHeartbeats 8000000 in
 theorem all_0 : span (stateCheck 0) 31 0 = true := by
   apply span_join c_0_0
   apply span_join c_0_8
@@ -1660,6 +1662,8 @@ theorem c_1_80 : span (stateCheck 1) 8 80 = true := by decide +kernel
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
 theorem c_1_88 : span (stateCheck 1) 2 88 = true := by decide +kernel
+set_option maxRecDepth 20000 in
+set_option maxHeartbeats 8000000 in
 theorem all_1 : span (stateCheck 1) 90 0 = true := by
   apply span_join c_1_0
   apply span_join c_1_8
@@ -1700,6 +1704,8 @@ theorem c_2_56 : span (stateCheck 2) 8 56 = true := by decide +kernel
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
 theorem c_2_64 : span (stateCheck 2) 1 64 = true := by decide +kernel
+set_option maxRecDepth 20000 in
+set_option maxHeartbeats 8000000 in
 theorem all_2 : span (stateCheck 2) 65 0 = true := by
   apply span_join c_2_0
   apply span_join c_2_8
@@ -1716,12 +1722,16 @@ theorem c_3_0 : span (stateCheck 3) 8 0 = true := by decide +kernel
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
 theorem c_3_8 : span (stateCheck 3) 7 8 = true := by decide +kernel
+set_option maxRecDepth 20000 in
+set_option maxHeartbeats 8000000 in
 theorem all_3 : span (stateCheck 3) 15 0 = true := by
   apply span_join c_3_0
   exact c_3_8
 set_option maxRecDepth 20000 in
 set_option maxHeartbeats 8000000 in
 theorem c_4_0 : span (stateCheck 4) 1 0 = true := by decide +kernel
+set_option maxRecDepth 20000 in
+set_option maxHeartbeats 8000000 in
 theorem all_4 : span (stateCheck 4) 1 0 = true := by
   exact c_4_0
 
