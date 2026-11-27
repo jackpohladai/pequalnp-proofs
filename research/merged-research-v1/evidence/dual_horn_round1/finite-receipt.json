@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "source_sha256": "31740e90dc9eb2dc4173f8059f69fabbfbcf956f7b78d74036c6971409d99ba1",
+  "dual_horn_formulas": 6462,
+  "satisfiable_formulas": 4339,
+  "model_pair_join_checks": 29479,
+  "positive_guard_order_checks": 216,
+  "all_cnf_subsets_through_variables": 2,
+  "three_variable_cnf_max_clauses": 4,
+  "two_negative_counterexample_checked": true,
+  "candidate_executed": false,
+  "runtime_proof": false,
+  "general_sat_claim": false
+}

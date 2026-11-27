@@ -1,0 +1,139 @@
+{
+  "checked_at_utc": "2026-11-26T09:22:33.001674+00:00",
+  "lean_version": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "compile_working_directory": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-executable-edge-lift-xfd1rzg9/source",
+  "compile_lean_path": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-executable-edge-lift-xfd1rzg9/lib:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean",
+  "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/executable_edge_lift_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean",
+  "modules": {
+    "ExecutableEdgeLift": {
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-R",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-executable-edge-lift-xfd1rzg9/source",
+        "-o",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-executable-edge-lift-xfd1rzg9/lib/ExecutableEdgeLift.olean",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-executable-edge-lift-xfd1rzg9/source/ExecutableEdgeLift.lean"
+      ],
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/executable_edge_lift_round1/ExecutableEdgeLift.lean",
+      "source_sha256": "6b60c34da711e9f0f394b45fc98db8db13f9d754275a5e5e79a515b79f23d38c",
+      "exit_code": 0,
+      "elapsed_seconds": 22.033,
+      "output": "'PEqualNP.Outside.GuardedCNFEncoding.decodeFreshEdge' does not depend on any axioms\n'PEqualNP.Outside.GuardedCNFEncoding.liftAssignment' does not depend on any axioms\n'PEqualNP.Outside.GuardedCNFEncoding.decodeFreshEdge_at_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.decodeFreshEdge_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.liftAssignment_at_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.liftAssignment_below' depends on axioms: [propext]\n'PEqualNP.Outside.GuardedCNFEncoding.liftAssignment_outside' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.liftClause_eval' depends on axioms: [propext]\n'PEqualNP.Outside.GuardedCNFEncoding.liftCNF_eval' depends on axioms: [propext]\n'PEqualNP.Outside.GuardedCNFEncoding.liftEncoding_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.lift_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "axioms": {
+        "PEqualNP.Outside.GuardedCNFEncoding.decodeFreshEdge": [],
+        "PEqualNP.Outside.GuardedCNFEncoding.liftAssignment": [],
+        "PEqualNP.Outside.GuardedCNFEncoding.decodeFreshEdge_at_edge": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.GuardedCNFEncoding.decodeFreshEdge_sound": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.GuardedCNFEncoding.liftAssignment_at_edge": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.GuardedCNFEncoding.liftAssignment_below": [
+          "propext"
+        ],
+        "PEqualNP.Outside.GuardedCNFEncoding.liftAssignment_outside": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.GuardedCNFEncoding.liftClause_eval": [
+          "propext"
+        ],
+        "PEqualNP.Outside.GuardedCNFEncoding.liftCNF_eval": [
+          "propext"
+        ],
+        "PEqualNP.Outside.GuardedCNFEncoding.liftEncoding_eval": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.GuardedCNFEncoding.lift_witness": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "artifact_sha256": "d58d244614087d088502f0407d55ff5b42029d52aa4e3fdb7969bf059dfe8f0b",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/executable_edge_lift_round1/build/lib/lean/ExecutableEdgeLift.olean"
+    },
+    "EdgeLiftExamples": {
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-R",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-executable-edge-lift-xfd1rzg9/source",
+        "-o",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-executable-edge-lift-xfd1rzg9/lib/EdgeLiftExamples.olean",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-executable-edge-lift-xfd1rzg9/source/EdgeLiftExamples.lean"
+      ],
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/executable_edge_lift_round1/EdgeLiftExamples.lean",
+      "source_sha256": "4f520b0e70c69fbf42930d3abf2c5ec831a8cccf56835b7d2f12f343afb6381f",
+      "exit_code": 0,
+      "elapsed_seconds": 12.604,
+      "output": "[true, false, false, true, true, false, true, false, true]\ntrue\n[true, true, false, true]\n(true, false)\n",
+      "axioms": {},
+      "artifact_sha256": "0493884befbe368c8c2e61b6758c57a4ba8cee4b363e1ce91d69a2d43a803f6c",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/executable_edge_lift_round1/build/lib/lean/EdgeLiftExamples.olean"
+    }
+  },
+  "dependencies": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/hall_projection_round1/GuardedHall.lean",
+      "source_sha256": "97827e26e1f4b7554920bc04e69dc4073769ba476c66fc76ccfd1bcfb360fa0b",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/GuardedHall.olean",
+      "artifact_sha256": "aa5c82d9dd9955a3131767b174cb56dc9efacedb3ffcee1e3e72e168afe2b510",
+      "verified_copy_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/GuardedHall.olean",
+      "durable_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/executable_edge_lift_round1/build/lib/lean/GuardedHall.olean"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/GuardedCNFEncoding.lean",
+      "source_sha256": "2e935291f7d7ba714e7298853cbe29b91485bd08decfce5da9f368e9b36102f1",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-guarded-encoding-gdwu96c4/GuardedCNFEncoding.olean",
+      "artifact_sha256": "a5d4c2ad3cf48b71aa934872520541448100ade129b7513c7723e37bdc892790",
+      "verified_copy_source": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-guarded-encoding-gdwu96c4/GuardedCNFEncoding.olean",
+      "durable_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/executable_edge_lift_round1/build/lib/lean/GuardedCNFEncoding.olean"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/FreshGuardedCNF.lean",
+      "source_sha256": "7115ba63b757a9f37561ae1f480bbd1a37fde66f50741e05d8ec62dddd84231b",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-guarded-encoding-gdwu96c4/FreshGuardedCNF.olean",
+      "artifact_sha256": "5d3c6284c55bb2b1c4242435b16045deaff1f85d34c30d9f5545271b62cca1ff",
+      "verified_copy_source": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-guarded-encoding-gdwu96c4/FreshGuardedCNF.olean",
+      "durable_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/executable_edge_lift_round1/build/lib/lean/FreshGuardedCNF.olean"
+    }
+  ],
+  "dependency_receipt_sha256": {
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/compile-receipt.json": "878160022fb1d78078e3b35c3eb8911dffec313511d404a8cd6baa9aa92981d7",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/hall_projection_round1/compile-receipt.json": "7bfe6add701efe5c1eea9389ce86c5ffeb3b1b44bb9d928b42468fdcfbb12443"
+  },
+  "project": {
+    "lake_manifest_sha256": "d0af863cde532caaef1b1bee0d63ec47100208e33e488309cb80abc88b8f1509",
+    "project_search_source_sha256": "2df0484c0554e95c92bcedd7af3c3db95aa944d894dfe7c59bf6589d7c1368e5",
+    "project_search_olean_sha256": "e5facf75eb45e76c93fb5f5b620065451d91439be8f372c4ec1997f9cd387a48"
+  },
+  "computational_axioms_free": true,
+  "execution_examples_verified": true,
+  "expected_execution_output": [
+    "[true, false, false, true, true, false, true, false, true]",
+    "true",
+    "[true, true, false, true]",
+    "(true, false)"
+  ],
+  "verified": true,
+  "formal_encoded_bit_runtime_bound": false,
+  "upstream_checker": false
+}

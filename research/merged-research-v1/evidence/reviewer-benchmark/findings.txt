@@ -1,0 +1,40 @@
+Four-call blinded reviewer pilot
+
+The identical task contained two compact real bug patterns (faulty affine
+orthogonal-complement reduction and order-dependent parity connectivity) and one
+sound restricted threshold-DP control. Source provenance and answers were omitted.
+All three source files and task text were identical across configurations.
+
+Results, independently replayed against the documented contracts:
+
+- Neon low: 14/14; both bugs with valid witnesses, correct control, no false positive.
+  Clean process exit at 147.445 seconds.
+- Neon medium: 14/14; both bugs with valid witnesses, correct control, no false positive.
+  Clean process exit at 131.780 seconds.
+- Carbon low: 14/14 for its saved review; both bugs and control correct. Its process
+  was terminated by the watchdog despite having written a usable review.
+  Minor reporting error: claimed 896 control tests; executed output says 889.
+- Carbon medium: no review artifact before termination; review quality unassessed.
+
+All observed tool calls stayed within their variant directories and the case files
+were unchanged. Models were identified by CLI init metadata. Low/medium effort
+was passed explicitly on the CLI, but effective effort was not echoed in metadata.
+Dollar costs were not reported; no prices or inferred costs were substituted.
+Token metadata exists for the two cleanly completed Neon runs only.
+
+Provisional operational policy: Neon medium for 3/4 reviewer slots, Carbon low for
+1/4 independent crosschecks. This follows clean completion plus validated artifact
+quality, not a claim that medium is universally better or faster. Neon low tied in
+review quality; this sample cannot establish an effort ranking. Carbon low's useful
+review should not be conflated with its incomplete process shutdown.
+
+Budget caveat: --run-budget 120 was supplied to all four runs. The watchdog sent
+TERM at 180 seconds and allowed 5 seconds for cleanup before KILL, so two observed
+wall times were about 185 seconds. This overran the requested hard cap by 5 seconds.
+The exact runner is preserved as run-used.py; run.py now kills immediately at 180s.
+No extra model calls were made.
+
+This is one small shared task per configuration, not a controlled broad model
+ranking. Three helper cases do not test whole SAT solvers, universal correctness,
+proof discovery, or polynomial-time bounds. Benchmark.json contains exact hashes,
+counterexample-validation references, metadata, observed timings, and policy.

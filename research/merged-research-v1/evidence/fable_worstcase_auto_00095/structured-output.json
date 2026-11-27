@@ -1,0 +1,92 @@
+{
+  "proposal": "STATUS: nothing executed; every count is a hand derivation from the supplied code; literature is cited from memory. No polynomial-SAT claim.\n\nA. AUDIT (v5 text)\n1. _verify_certificate rebuilds blocks from every dense original clause, checks each used form lies inside its block mask, and compares local tables. With the support check, local equality gives F(x)=Q(Px) globally; the entrywise P*L=I check gives surjectivity. Reading found no soundness defect; that is not a proof.\n2. Discovery cost sits outside max_verification_work: the greedy loop recomputes basis(chosen+[v]) per candidate, O(S*r^2) word operations (S<=16384, r<=64, about 6.7e7 worst case), and candidate ranking does S*B set lookups (about 1.7e7). The verifier uses module LIMITS, so larger caller limits pay discovery and then reject (sound, wasteful).\n3. Incompatible spaces can be intrinsic. In Fano NAE (fixture) each block needs two of its three pair-forms, and the 21 pair-forms are block-disjoint, so 14 independent forms would be needed in rank 6. No adapted basis exists; ATOM-REFINE should report nonexistence.\n\nB. RESTRICTED SOUND MECHANISM: CIMS-FK\nClass CIMS: after a sign renaming (parity union-find, linear), every clause is all-positive (family P) or all-negative (family N), and every P-set meets every N-set. Then g_N <= f_P as monotone functions, so the CNF is UNSAT iff the two hypergraphs are dual. This is monotone duality testing (Fredman-Khachiyan 1996). The exact Neon58 quotient is in CIMS (each side-transversal meets each pair-union). The 20-variable original is not, so the exact linear quotient must run first.\nRule FK-DPLL (FK Algorithm A read as DPLL):\n(i) If the sum of 2^-|C| is below 1, return SAT with a witness by conditional expectations (valid for any CNF; v5 lacks this exit).\n(ii) Otherwise some clause has width <= log2 M, and by cross-intersection one of its variables x lies in at least a 1/log2 M fraction of the opposite family. Branch on x, apply UP and subsumption, recurse.\nRestriction preserves CIMS, so recognition (|P||N|w comparisons) is paid once. With v=|P||N|, one child has volume <= v-1 and the other <= (1-1/log2 M)v. That gives at most M^O(log^2 M) calls, each O(M^2 w log n) bit operations. The call tree is a tree-like resolution refutation, checkable by a generic checker. The bound is quasi-polynomial, not polynomial. No twins, kernels or orbits are used.\nNeon58 hand count: plain DPLL with UP+subsumption, no memo, static order [1,9,3,11,5,13,7,15,2,10,4,12,6,14,8,16], counting every call. T(j)=2T(j-1)+2^k+1 with T(1)=2^k-1, so T(k)=4^k-2^k-1. That is 239 for k=4 and below M^2/4 for the k-pair family. A canonical-key memo leaves about 3k distinct states.\n\nC. EXTRAS: WEAKENING LEMMA AND MEASURE\nIf negative set e misses positive sets c1..cd, replace e by all sets e+{t1..td}, ti in ci. These are weakenings, and P with N' has exactly the models of P with N: a model of P hits each ci, so containing e would mean containing some e+t. With all miss-degrees <= d, |N'| <= |N|w^d and CIMS-FK applies. Dual-railing mixed variables puts any CNF in monotone-split form with rail pairs as N. Fully weakened, N' must be the minimal literal-transversals of a core; let tau(F) be the minimum of that count over unsatisfiable subformulas. Given the core, FK incremental dualization decides in (M+tau)^polylog work. The obstruction is therefore exact: core choice plus tau. Pigeonhole has miss-degree h-1, and its tau is superpolynomial by Haken's bound, since these certificates are resolution.\n\nD. INDEPENDENT-TEST PREDICTIONS (unimplemented extension)\n1. The Neon58 quotient passes the CIMS test; 239 calls under the stated convention.\n2. Cover product CP(G,H): P = {e+e'} over edge pairs, N = negated minimal vertex covers of G and of H. It is UNSAT, CIMS, and twin-free for cycles of length >= 5. CP(C5,C5): 10 variables, 35 clauses. CP(C8,C8): 16 variables, 64+20 clauses, width <= 5. Conjecture: FK-DPLL needs at most M^2 calls. I cannot hand-trace IALH there, so the v5 peak is unpredicted.\n3. PG(2,3) NAE, 13 variables, 26 clauses: CIMS and SAT (a blocking set containing no line; from memory).\n\nE. FIXTURE (control, not a growth claim)\nFano NAE: 7 variables, 14 clauses, twin-free, self-dual. Predicted v5: compression skipped with incompatible_greedy_basis (greedy picks x1 xor xj for j=2..7; line 246 gets none); core no_clauses_removed; root IALH finds no rows on seven line windows, then window [1,2,3,4,5] has an empty UP table (nine x1=1 cases checked by hand, the rest by complement symmetry). UNSAT, peak 0, one IALH call, 8 windows, 88 tuples.",
+  "missing_theorem": "MT-A (Lean-ready, restricted; a literature result restated for SAT). For CIMS input with M clauses, FK-DPLL makes at most M^O(log^2 M) calls. It needs four elementary lemmas:\n(a) restriction + UP + subsumption preserves CIMS and never increases |P| or |N|;\n(b) sum of 2^-|C| < 1 implies SAT, with a constructive witness;\n(c) the frequency lemma: a clause of width <= log2 M that meets every opposite clause contains a variable in a 1/log2 M fraction of them;\n(d) the recurrence A(v) <= 1 + A(v-1) + A((1-eps)v).\nNone is machine-checked, and my transcription of Algorithm A is from memory.\n\nMT-B (Lean-ready). Model-set equality for the miss-weakening N' of section C.\n\nMT-C (the real gap; open, do not assume). CORE-TAU: a branching rule that is not given the core and still makes at most (M+tau(F))^polylog(M) calls on arbitrary CNF F, where tau is the minimum number of minimal literal-transversals over unsatisfiable subformulas. Any version with tau replaced by a polynomial in M for all CNF gives quasi-polynomial SAT and contradicts ETH, so the target must keep tau or another honest parameter. This sharpens round 94's WORK-MONOTONE: it holds for class-preserving extras and for extras of bounded miss-degree (bound (M*w^d)^O(log^2)), and is open otherwise.\n\nSeparately open in the literature since 1996: whether MT-A's exponent can be made constant (monotone duality in P). Nothing here addresses it.",
+  "self_attack": "1. FK is quasi-polynomial. Whether monotone duality is polynomial has been open since 1996, so even the restricted class gives no polynomial bound. The 4^k-2^k-1 count is for one family under one order.\n2. The class is fragile. One mixed-sign clause or one disjoint positive/negative pair leaves it. Weakening costs w^d. Under dual-rail, tau counts minimal literal-transversals, which is exponential even for trivial inputs unless the right core is chosen, and core choice is exactly what v5 does heuristically under caps.\n3. It cannot touch the measured pigeonhole cost. The certificates are tree-like resolution, where pigeonhole is exponentially hard. Counting (IALH) remains necessary and its per-call cost is unchanged.\n4. Neon58 enters the class only after exact compression. When compression skips (Neon57, Fano), nothing guarantees a monotone-split form; XOR substitutions are not sign renamings.\n5. Capability is not new. FK-DPLL is DPLL with a specific heuristic, and the independent DPLL oracle already refutes these inputs. The contribution is a bound and an invariant. My SAT-form transcription of Algorithm A, the incremental-dualization claim, the Haken transfer through weakening and the PG(2,3) fact are all from memory.\n6. The M^2 conjecture for cover products is a guess with no derivation. The 239 count depends on conventions (every call counted, absent variables skipped, UP on negative units).\n7. The fixture is a peak-0 control. Its prediction rests on a hand UP trace of nine cases, on sympy returning a unimodular HNF for the six-point line tables, and on my reading of the greedy tie-break. A mismatch would falsify my code reading, not the mathematics.\n8. The watcher's L-lib-373/374 items are unchecked and unused.",
+  "mechanism_signature": "CIMS-FK: recognise renamable monotone-split CNF with cross-intersecting positive and negative families (once, closed under restriction); run Fredman-Khachiyan Algorithm A as DPLL (counting SAT exit, short-clause frequency branching, UP + subsumption). Invariant: volume v=|P||N|, calls <= M^O(log^2 M), tree-resolution certificate. Miss-weakening lemma for extras. Obstruction measure tau = minimum core literal-transversal count.",
+  "delta_from_prior": "Round 94 chose orders greedily with no bound. This round gives a branching rule with a quasi-polynomial bound from the literature on a syntactic class that contains the Neon58 quotient. It needs no twins (Fable73), no new variables (BVA, round 89), no bound sets (round 90) and no derived product clauses (round 93). New: the reduction of Neon58 to monotone duality; the counting SAT exit; the model-preserving miss-weakening lemma; the measure tau and its ETH limit; the twin-free cover-product family; Fano NAE as an intrinsic incompatible-space example; the uncapped discovery-cost audit. Not repeated: cache-key defect, component split, unit feedback. WORK-MONOTONE is not renamed; it is answered only for class-preserving and bounded-miss extras.",
+  "fixture": {
+    "formula": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        4,
+        5
+      ],
+      [
+        1,
+        6,
+        7
+      ],
+      [
+        2,
+        4,
+        6
+      ],
+      [
+        2,
+        5,
+        7
+      ],
+      [
+        3,
+        4,
+        7
+      ],
+      [
+        3,
+        5,
+        6
+      ],
+      [
+        -1,
+        -2,
+        -3
+      ],
+      [
+        -1,
+        -4,
+        -5
+      ],
+      [
+        -1,
+        -6,
+        -7
+      ],
+      [
+        -2,
+        -4,
+        -6
+      ],
+      [
+        -2,
+        -5,
+        -7
+      ],
+      [
+        -3,
+        -4,
+        -7
+      ],
+      [
+        -3,
+        -5,
+        -6
+      ]
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "predicted_sat": false,
+    "predicted_peak": 0
+  }
+}

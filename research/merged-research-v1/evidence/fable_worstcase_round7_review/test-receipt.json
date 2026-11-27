@@ -1,0 +1,11 @@
+{
+  "cases": 150,
+  "checked_cuts": 1015,
+  "residual_key_groups": 1830,
+  "projection_mismatches": 0,
+  "state_key_mismatches": 0,
+  "counting_mismatches": 0,
+  "seconds": 0.13193702697753906,
+  "general_polynomial_sat_proof": false,
+  "scope": "Finite small-system projection, equal-key residual truth tables, connectivity bound and inclusion-exclusion checks. Does not implement or formally prove the complete proposed algorithm, efficient order discovery or a universal width bound."
+}

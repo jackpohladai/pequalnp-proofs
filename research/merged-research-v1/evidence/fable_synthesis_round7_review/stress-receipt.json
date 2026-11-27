@@ -1,0 +1,12 @@
+{
+  "seed": 20261126,
+  "formulas": 500,
+  "variables": "4 through 6",
+  "sat_formulas": 285,
+  "unsat_formulas": 215,
+  "solver_runs": 1500,
+  "wrong_answers": 0,
+  "counterexamples": [],
+  "elapsed_seconds": 0.7907209396362305,
+  "scope": "Finite seeded stress test against exhaustive truth-table oracle, not a universal proof."
+}

@@ -1,0 +1,158 @@
+{
+  "id": "lazy_unit_decision_round1",
+  "checked_at_utc": "2026-11-26T11:46:00.781052+00:00",
+  "status": "locally_lean_compiled",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitPreparedDecision.lean",
+  "source_sha256": "161dcabd2cdac615e291302e08b527ac04e8b787b31bf9de769729a4da214d20",
+  "extends_component_family": "constructor_boundary_round1",
+  "count_as_new_component_family": false,
+  "scope": "Checked general finite-CNF decision refinement: lazy short-circuit conditioning, bounded unit propagation and early empty-clause rejection; worst-case exponential search remains.",
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-validation.json",
+      "sha256": "408cd732dfff35945d3d12d66b7c89d526e0013b6afdb01b24ebb700e48098c7"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-independent-audit.json",
+      "sha256": "2db53e19778552c91b056eda45f8255c10af3f8f25083931a4b2d3826ecf7725"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-cnf-oracle-validation.json",
+      "sha256": "f3b3b1ad0986e5970615508a59f0c214915df59c0be9f253ab1760b65f8c5947"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-cnf-small-comparison.json",
+      "sha256": "8ef32dff021f29fe3db470b81f15a8735a8191be20a41235f2ad5a5143db739f"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-cnf-large-first-branch.json",
+      "sha256": "bf3ddf67dead859c866a30d5624b81375f085bcb27c76b51e903b5d3117c9075"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-validation.json",
+      "sha256": "e53696cdd232192c9c39b1164e3c1bfa78e3cd58d7bb68daf8f737a512da3bd5"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-examples-validation.json",
+      "sha256": "5deddd738a57dbdca3b3f9ffd1724a0eb06c42286d6ca0e27155acd6caa74ff9"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-decision-validation.json",
+      "sha256": "809d33cf2aaa3082b9e6efbe82992f83295761fde66c7cd3da53ee785becff91"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-independent-tests.json",
+      "sha256": "1d179357e7e7fdb20ba2a7e44208085b3fdedfac7dd25b2658293eb9712e08e1"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/total-edge-validation.json",
+      "sha256": "8cc19942f24587476015d65199e409f214888841a3ffd134b9723933fe60f945"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/total-edge-independent-audit.json",
+      "sha256": "22453e03d1e394eda3ec45dbe0d315071802d3b0bb16c67868d225510854edcf"
+    }
+  ],
+  "verified_unique_pins": 61,
+  "verified_pins": {
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/LazyBranchSearch.lean": "21eee4963a04e068acaadb7ad202040401ef8e6ff74bc710b02af3399f3b29ca",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean/LazyBranchSearch.olean": "383f41fe857a1da17e7e9bd0285c676bb1161a4d70393f658dd3f1799290ae6c",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean/MixedGuardBranches.olean": "56db9768949b2ce6442314ada2edaa163e08e0e94d6a52d95ccecb1f46cf836c",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/LazyBranchSearch.c": "ad205e86f7e9ab7b09e29b660b1e36f9322bdf3a1d54cc41f1eb9b318f01917e",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/LazyMixedGuardSolver.lean": "455ab97f5b06173d712857313b565defd5d7ab6a91f0bb45378c6c00ce6840c3",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean/LazyMixedGuardSolver.olean": "458660ee25298751f7af0b2a1cb6f834c19da27f56bab806f92153902a4d903f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean/GeneralCNFDecision.olean": "8c94adced8223cc1e6b69fb09e54059d3885fd05f4b48e679f88cca362dd5f20",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean/BoundedGuardVectorConstructor.olean": "f2f9492002d7fae25cdb8372193827e5febf812135ae036ac9821b3f18791404",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/LazyMixedGuardSolver.c": "cdf8a3e966082fffab3e518a98a31aab529ab0686e261f54a0d48a2430588468",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/LazyBranchExamples.lean": "19aeea0be933da46e37b7c9f566257f9fe3fc4ab06756bb09201af34c73bb796",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean/LazyBranchExamples.olean": "d1099b15258765a63f2ec55b4a34dd29d2c2b1938e19206c7c1a3dadeb27c658",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/constructor-boundary-validation.json": "9f7bbfdd5754a060dc5f27805765a196e4ae69a75565d0ae0c3fd2df2f4c0551",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/general-cnf-validation.json": "60b6510a17c4465821b6b6e02fb6928aa3be3443d688ef5092837bbbd6f7bd67",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-validation.json": "6986291b8d4f7cb21e9f309bbc50f687b942faa396a0743d69abd9d30ed022fe",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/MixedGuardBranches.lean": "699fae50e78c3ba947fec8000ae77d6264304df92fdadb19243d386a82b0e8ad",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/GeneralCNFDecision.lean": "0cf01b66b04e9768de2869879a9260db94cc1246db721c00b88823de802fee70",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/BoundedGuardVectorConstructor.lean": "3a3a0871118b543d9a9e21359b1819a10f7bce5011b3756a1f9f559a9668700f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-validation.json": "408cd732dfff35945d3d12d66b7c89d526e0013b6afdb01b24ebb700e48098c7",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-cnf-oracle-validation.json": "f3b3b1ad0986e5970615508a59f0c214915df59c0be9f253ab1760b65f8c5947",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-cnf-small-comparison.json": "8ef32dff021f29fe3db470b81f15a8735a8191be20a41235f2ad5a5143db739f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-cnf-large-first-branch.json": "bf3ddf67dead859c866a30d5624b81375f085bcb27c76b51e903b5d3117c9075",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/LazyCNFOracle.lean": "94d48976018d80aab5baab05cc88f2b14ea459efbf1945fb7ce42dd3d3c0c5e9",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/independent-oracle-build/LazyCNFOracle.olean": "1534af327853c60f3ad3de64e5cf90ee63d837a0198eb57458574bf0cb418093",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/independent-oracle-build/LazyCNFOracle.c": "9c50109d86e888a53f865cce86c2cca950c86bd8633825bd7e9211ff5cad4e3a",
+    "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-lazy-branch-wevz3rly/run.json": "be466f58ec57d10774f23d5993c02ae52a6cc809f82e4a06362af8099c7a10bc",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/LazyCNFComparison.lean": "1b210e54f6daffc0b86ddafa512aae8a6c03f2be39139800daa3bebe102ce411",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/independent-oracle-build/LazyCNFComparison.olean": "4a6dc9689e355052d011a8abb54aa09b86fd55c49c3d68c777796f617fa9f95d",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/independent-oracle-build/LazyCNFComparison.c": "b3c0bfe6c37192703ca6d750bdc96f1cd159bc4dbcc011be5795b47419414361",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/LazyCNFLargeFirstBranch.lean": "1d7483921b528453aa6f2281752ba4e7c16ff8e6bebc593a700286841c111ebd",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/independent-oracle-build/LazyCNFLargeFirstBranch.olean": "21670db6cb690aae7f9b814daabae2d3a7bac922d8029ad0d80e2f49541ec039",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/independent-oracle-build/LazyCNFLargeFirstBranch.c": "dab316e6fe207eca3ba9cb8c1a12db9141891a30e13a90efc047f7174d2f12b3",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitPropagation.lean": "951566986ddc62b4e6ab81f98d51ab6781eb34d838adde0185333114010d9efd",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitPropagation.olean": "d158981179b295fe1a1a10d7404d297011c02b0af659723b60dca596a5d74d2d",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitExamples.lean": "6ef49f6e04939285086a212563f5a09d4e8be6c6f1d60f73dd759009555b6605",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitExamples.olean": "133adc20224b105bb83fd169afc43f6787e1fa23ca1434fbc747b0ecd03629f7",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-validation.json": "e53696cdd232192c9c39b1164e3c1bfa78e3cd58d7bb68daf8f737a512da3bd5",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitPreparedDecision.lean": "161dcabd2cdac615e291302e08b527ac04e8b787b31bf9de769729a4da214d20",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitPreparedDecision.olean": "ae07b83e6bf4f4c64667b6322d68f3f5538f0974713a75130142206e3dd2b9b1",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitPreparedDecision.c": "98dd7e42cd1ebd942fa308c0e4171deba8640fa8ebbc538d17c291e7f9d060c6",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-examples-validation.json": "5deddd738a57dbdca3b3f9ffd1724a0eb06c42286d6ca0e27155acd6caa74ff9",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-decision-validation.json": "809d33cf2aaa3082b9e6efbe82992f83295761fde66c7cd3da53ee785becff91",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitCNFOracle.lean": "0f0da6dc13c719290ce85908326b8842e22e476b39a921f07756d943644931dd",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/independent-unit-build/UnitCNFOracle.olean": "613fe1ad6af3296192e72f247f01a47b384476b12492fdd640b65b26bffa33ad",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/independent-unit-build/UnitCNFOracle.c": "46f8785f6b0146093f9f9d37aa14254d2a14fe731c70a9a2bb659c850bf9ca7f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitCNFComparison.lean": "9ae9c7072629abef54567410221590f6a4868db15bfeab17801db5e4525d56b6",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/independent-unit-build/UnitCNFComparison.olean": "b195cc84235c2a915c17b0874ee0d69c0b28c8ea7b3eecf4cab5792fa87c9166",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/independent-unit-build/UnitCNFComparison.c": "faf577603bd02667119484529ee2ef3330bc7975ba2c21727026799f2f2e247d",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitCNFPaddedContradiction.lean": "19c1e9e9132b278f19edf5e1e128012604547af969af7c34074fb548fa8d654c",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/independent-unit-build/UnitCNFPaddedContradiction.olean": "570b0f084f8ed7c3d5eeb77445a1eaa9579c0c29996cbb29c4261b7ce229ff16",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/independent-unit-build/UnitCNFPaddedContradiction.c": "577c4a4f3f2ebaa6f2af130cdb5e8a246f66fdf28f1fe9b278192627fc1b38d4",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/TotalEdgeCost.lean": "cef89dead0820533c52b164c19829c3ee9fd93710f7410e39e74b538960265c4",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/lib/lean/TotalEdgeCost.olean": "cfa6f9eb622993141fc201160c2b9812360710902901f9996b7e7ef6861cf927",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/scan-build/lib/lean/BoundedSearchCost.olean": "f89ae434272ba96543b6b93e24f48ec00e57c5aa96197fac28fb3dbe3ab52655",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset/Basic.olean": "45c667640bb1af0da8e7ec1268706315a8d6006dcedbe985f05a313d94fdb35f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/TotalEdgeExamples.lean": "92c41fb65c962bcc4feb05e125b2dd7f4a3101c99bdb28a113e6372f072ff6fa",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/lib/lean/TotalEdgeExamples.olean": "6dbdded1e72ed44741d9042a103b9854c843b13a981e28429dccc47c4beb31bc",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/search-validation.json": "7ab5c3b7b35b7d09204b33df6576049eefa70bcf3942c31b200fe082823dd341",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/scan-validation.json": "4a86710018d558598459ac81f21636cf3e5c1d7c03bdc0669e3ced80f90414d3",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/total-edge-validation.json": "8cc19942f24587476015d65199e409f214888841a3ffd134b9723933fe60f945",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/source/TotalEdgeCost.lean": "cef89dead0820533c52b164c19829c3ee9fd93710f7410e39e74b538960265c4",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/source/TotalEdgeExamples.lean": "92c41fb65c962bcc4feb05e125b2dd7f4a3101c99bdb28a113e6372f072ff6fa"
+  },
+  "formalized": [
+    "Lazy continuation search exactly matches eager assignment-list traversal and branch order, including repeated variable lists; production search does not construct the exponential list.",
+    "The lazy mixed/general-CNF decision is equivalent to eager decisions, never unsupported on general finite CNF, with at most 2^k counted leaf calls.",
+    "Clause restriction evaluates exactly as fixing a bit; restricting a variable forced by a unit preserves satisfiability. Any fuel-bounded sequence of these unit steps preserves SAT.",
+    "The unit-prepared general-CNF decision returns some true iff SAT, some false iff UNSAT, never none; empty clause returns false before lazy search.",
+    "Selected events in existing metered raw matching BFS are bounded by r+E*(3r+4), for every fuel; E counts explicit occurrences including duplicates. Distinct processing is proved from actual queue invariants."
+  ],
+  "tests": {
+    "lazy_general_cnf_oracle_cases": 5272,
+    "unit_prepared_cnf_oracle_cases": 5272,
+    "sat": 4027,
+    "unsat": 1245,
+    "unknown_or_disagreements": 0,
+    "lazy_first_branch_negative_vars": [
+      64,
+      100
+    ],
+    "lazy_first_branch_leaves": [
+      1,
+      1
+    ],
+    "unit_padded_contradiction_negative_vars": 100,
+    "unit_padded_contradiction_leaf_calls": 0,
+    "unit_kernel_fixtures": 12,
+    "raw_total_edge_kernel_fixtures": 12
+  },
+  "execution_limits": [
+    "Never ran old eager algorithm on large k.",
+    "Large first-branch SAT and unit contradiction are specially chosen easy cases, not evidence of general polynomial behavior.",
+    "Leaf counts exclude unit work and branch-internal solver cost.",
+    "No fixed-point theorem for chosen unit budget, formal memory bound, full-bit cost, binary parser refinement, concrete original-ID witness output or upstream acceptance."
+  ],
+  "general_finite_cnf_decider_verified": true,
+  "general_sat_proof": false,
+  "general_polynomial_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false
+}

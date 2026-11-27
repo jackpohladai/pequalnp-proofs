@@ -1,0 +1,9 @@
+{
+  "verdict": "growth_prediction_refuted_by_independent_test",
+  "receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_antigravity_round5/test-receipt.json",
+  "trace": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_antigravity_round5_review/failure-trace.json",
+  "correction": "After x1=False, DP variable5 reduces63clauses to60, then variable6 to51, variable4 yieldscontradiction. After x1=True:65to65to57toUNSAT. Raw resolvent counts do not determine acceptance after Canon.",
+  "unverified": "The separate proposed mod3hypergraph family remains untested.",
+  "at": "2026-11-26T18:20:50.037411+00:00",
+  "general_polynomial_sat_proof": false
+}

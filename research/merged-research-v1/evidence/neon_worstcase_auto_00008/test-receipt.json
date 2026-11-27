@@ -1,0 +1,99 @@
+{
+  "status": "confirmed_finite_growth_fixture",
+  "summary": "New counting solver still reaches at least four simultaneous states on this finite UNSAT fixture. This is a finite test, not a general complexity result.",
+  "oracle_sat": false,
+  "observed": {
+    "sat": false,
+    "peak": 16,
+    "layers": [
+      {
+        "variable": 3,
+        "retained": 2
+      },
+      {
+        "variable": 6,
+        "retained": 4
+      },
+      {
+        "variable": 9,
+        "retained": 8
+      },
+      {
+        "variable": 1,
+        "retained": 16
+      },
+      {
+        "variable": 4,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 0,
+    "counting": {
+      "calls": 49,
+      "refutations": 18,
+      "windows": 373,
+      "tuples": 5928,
+      "seconds": 0.3010823750000004,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 3,
+      "tuples": 96,
+      "constraints": 0,
+      "truncated": false,
+      "seconds": 0.008679292000000005,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "scc-emra-ialh5-v1",
+    "source_sha256": "62e6419f5ab94ae46dc77f5f43ceae0f0c4e0a75d701e66e756dc5ec2f29a2f6",
+    "general_polynomial_sat_proof": false
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 16,
+    "layers": [
+      {
+        "variable": 3,
+        "retained": 2
+      },
+      {
+        "variable": 6,
+        "retained": 4
+      },
+      {
+        "variable": 9,
+        "retained": 8
+      },
+      {
+        "variable": 1,
+        "retained": 16
+      },
+      {
+        "variable": 4,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 160
+  },
+  "baseline_seconds": 0.10377399999999998,
+  "updated_seconds": 0.40154983299999997,
+  "seconds": 0.5252812499999999,
+  "solver": "scc-emra-ialh5-v1",
+  "source_sha256": "62e6419f5ab94ae46dc77f5f43ceae0f0c4e0a75d701e66e756dc5ec2f29a2f6",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

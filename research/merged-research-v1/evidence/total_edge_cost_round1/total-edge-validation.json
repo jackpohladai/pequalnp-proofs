@@ -1,0 +1,207 @@
+{
+  "checked_at_utc": "2026-11-26T11:40:22.673362+00:00",
+  "status": "compiled_and_executed",
+  "compiler": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "modules": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/TotalEdgeCost.lean",
+      "source_sha256": "cef89dead0820533c52b164c19829c3ee9fd93710f7410e39e74b538960265c4",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/lib/lean/TotalEdgeCost.olean",
+      "artifact_sha256": "cfa6f9eb622993141fc201160c2b9812360710902901f9996b7e7ef6861cf927",
+      "compiled_source_snapshot": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-total-edge-gept6wif/TotalEdgeCost.lean",
+      "durable_source_snapshot": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/source/TotalEdgeCost.lean",
+      "compile": {
+        "command": [
+          "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+          "-j",
+          "1",
+          "-DElab.async=false",
+          "-o",
+          "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-total-edge-gept6wif/TotalEdgeCost.olean",
+          "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-total-edge-gept6wif/TotalEdgeCost.lean"
+        ],
+        "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/scan-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+        "exit_code": 0,
+        "output": "'PEqualNP.Outside.TotalEdgeCost.search_result_and_total_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.discover_safe' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.pop_safe' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.scan_safe' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.explore_total_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.search_total_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "elapsed_seconds": 4.547611951828003,
+        "tmp": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-total-edge-gept6wif"
+      },
+      "resolved_imports": [
+        {
+          "module": "BoundedSearchCost",
+          "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/scan-build/lib/lean/BoundedSearchCost.olean",
+          "artifact_sha256": "f89ae434272ba96543b6b93e24f48ec00e57c5aa96197fac28fb3dbe3ab52655"
+        },
+        {
+          "module": "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+          "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset/Basic.olean",
+          "artifact_sha256": "45c667640bb1af0da8e7ec1268706315a8d6006dcedbe985f05a313d94fdb35f"
+        }
+      ],
+      "axioms": {
+        "PEqualNP.Outside.TotalEdgeCost.search_result_and_total_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.discover_safe": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.pop_safe": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.scan_safe": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.explore_total_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.search_total_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/TotalEdgeExamples.lean",
+      "source_sha256": "92c41fb65c962bcc4feb05e125b2dd7f4a3101c99bdb28a113e6372f072ff6fa",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/lib/lean/TotalEdgeExamples.olean",
+      "artifact_sha256": "6dbdded1e72ed44741d9042a103b9854c843b13a981e28429dccc47c4beb31bc",
+      "compiled_source_snapshot": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-total-edge-bze523t5/TotalEdgeExamples.lean",
+      "durable_source_snapshot": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/source/TotalEdgeExamples.lean",
+      "compile": {
+        "command": [
+          "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+          "-j",
+          "1",
+          "-DElab.async=false",
+          "-o",
+          "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-total-edge-bze523t5/TotalEdgeExamples.olean",
+          "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-total-edge-bze523t5/TotalEdgeExamples.lean"
+        ],
+        "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/scan-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+        "exit_code": 0,
+        "output": "[176, 554, 197, 9]\n[21, 56, 64, 8]\n'PEqualNP.Outside.TotalEdgeCost.Examples.chain_no_repeated_processing' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.Examples.dense_drained' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.Examples.duplicates_drained' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.Examples.early_free' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.Examples.chain_checked_total_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.TotalEdgeCost.Examples.wide_event_count' depends on axioms: [propext, Quot.sound]\n",
+        "elapsed_seconds": 4.464837312698364,
+        "tmp": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-total-edge-bze523t5"
+      },
+      "resolved_imports": [
+        {
+          "module": "TotalEdgeCost",
+          "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/lib/lean/TotalEdgeCost.olean",
+          "artifact_sha256": "cfa6f9eb622993141fc201160c2b9812360710902901f9996b7e7ef6861cf927"
+        }
+      ],
+      "axioms": {
+        "PEqualNP.Outside.TotalEdgeCost.Examples.chain_no_repeated_processing": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.Examples.dense_drained": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.Examples.duplicates_drained": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.Examples.early_free": [
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.Examples.chain_checked_total_bound": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "PEqualNP.Outside.TotalEdgeCost.Examples.wide_event_count": [
+          "Quot.sound",
+          "propext"
+        ]
+      }
+    }
+  ],
+  "dependency_receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/search-validation.json",
+      "sha256": "7ab5c3b7b35b7d09204b33df6576049eefa70bcf3942c31b200fe082823dd341"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/scan-validation.json",
+      "sha256": "4a86710018d558598459ac81f21636cf3e5c1d7c03bdc0669e3ced80f90414d3"
+    }
+  ],
+  "reusable_lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/scan-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+  "exact_public_theorem": "For every typed finite adjacency function, well-formed bounded matching table, root and fuel, search returns the exact rawSearchPath result and its selected-event count is at most r + E*(3*r+4), where E=sum of lengths of all explicit adjacency lists, duplicates counted.",
+  "proof_mechanism": [
+    "A remaining-row finset excludes processed rows. Every excluded row is already seen.",
+    "Queued paths are nonempty, have pairwise distinct heads, and each head is both seen and remaining.",
+    "Discovery only queues unseen owners; therefore new heads are remaining and distinct.",
+    "Pop removes exactly its head from remaining. Queue head uniqueness and the retained seen list prevent any repeated processing.",
+    "Each full adjacency scan costs at most its list length times (3*r+4); Finset card and adjacency mass subtraction pay for each scan exactly once.",
+    "Early free-hole termination charges only its executed prefix and does not require exhausting fuel."
+  ],
+  "event_scope": [
+    "one queue pop",
+    "one explicit edge inspection",
+    "each owner-table key comparison",
+    "each seen-row list key comparison",
+    "each copied/appended queue list cell",
+    "two discovery cons cells"
+  ],
+  "excluded_costs": [
+    "Nat/Fin key comparison bit cost",
+    "fixed instruction overhead and counter instrumentation",
+    "old plain cut BFS phase",
+    "matching augmentation/replay and table updates",
+    "certificate validation",
+    "retained solver and guard construction",
+    "input parsing and CNF/witness encoding",
+    "whole-solver runtime"
+  ],
+  "fixtures": {
+    "kernel_theorems": 12,
+    "eight_row_chain": {
+      "count": 176,
+      "edge_occurrences": 21,
+      "fuel": 100,
+      "same_as_fuel_8": true
+    },
+    "eight_row_dense": {
+      "count": 554,
+      "edge_occurrences": 56,
+      "fuel": 100
+    },
+    "duplicate_heavy": {
+      "count": 197,
+      "edge_occurrences": 64
+    },
+    "early_free": {
+      "count": 9,
+      "edge_occurrences": 8
+    },
+    "zero_edges": {
+      "count": 1
+    },
+    "wide_81_bit_identifiers": {
+      "count": 13,
+      "edge_occurrences": 3,
+      "bit_cost_not_counted": true
+    }
+  },
+  "claims": {
+    "full_runtime_bound": false,
+    "encoded_bit_bound": false,
+    "general_polynomial_SAT": false,
+    "new_search_algorithm": false
+  }
+}

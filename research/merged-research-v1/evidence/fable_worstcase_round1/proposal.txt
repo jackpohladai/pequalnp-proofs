@@ -1,0 +1,90 @@
+# Result: an every-order obstruction for MRA, conditional on one cited lemma
+
+I do not have a polynomial bound. What I can derive is a reduction showing that MRA as specified (without the bounded-elimination repair) is trapped in a known weak proof model under every branching rule, static or dynamic. Nothing here was machine-checked.
+
+`★ Insight ─────────────────────────────────────`
+- MRA memoises *syntactic* residuals. On parity constraints a residual is determined by (remaining edges, boundary parities), so the cache is forced to enumerate boundary parity vectors.
+- Your F_n adversary dies under core-first because its hardness sits in the order. Expander parity formulas have no good order.
+`─────────────────────────────────────────────────`
+
+## Family
+
+Let G be a simple connected graph with all degrees between 4 and d, with one variable per edge. Let c be a 0/1 charge on vertices with odd total. Tseitin(G,c) has, for each vertex v, the 2^(deg v − 1) full-width clauses forcing the edges at v to sum to c_v mod 2. It is unsatisfiable, connected, and of encoded size O(2^d · n log n).
+
+## Lemma 1 (state shape) — proved
+
+Every conflict-free normalised MRA state is exactly Tseitin(G′,c′), where G′ = (V, E_rem) has no degree-1 vertex and c′_v = c_v + (parity of assigned edges at v).
+
+*Proof.* Restricting an edge updates two charges. A degree-1 vertex is a unit clause, and propagating it is another restriction. In a simple graph two vertices share at most one edge, so subsumption between different vertices needs a unit clause. Clauses of one vertex have equal width and never subsume each other. A degree-0 vertex with charge 1 is the empty clause. ∎
+
+## Lemma 2 (dominance collapses) — proved
+
+Let G, H be conflict-free normalised states. "Every clause of H contains a clause of G" holds iff H ⊆ G as clause sets, and then H is a union of connected components of G's residual graph with identical charges.
+
+*Proof.* Take an H-clause on E_v^H containing a G-clause on E_u^G, where |E_u^G| ≥ 2. Two distinct edges at both u and v force u = v in a simple graph. If E_v^G were a proper subset of E_v^H, the H-clauses restricted to E_v^G would show both sign parities, while G has only one. So the edge sets and charges agree at v, and this propagates along edges. ∎
+
+## Theorem A (simulation, every order) — proof sketch
+
+Suppose an UNSAT MRA run on Tseitin(G,c) stores S states, under any branching rule. Then there is a deterministic read-once branching program of size O(S·|E|) solving SearchVertex(G,c): given a total assignment α, output a vertex whose parity α violates.
+
+*Sketch.* The nodes are the states.
+- **Branching:** a branch is a query.
+- **Propagation:** a propagated unit is a query whose wrong branch is a leaf labelled with the unit's vertex.
+- **Dominance:** a hit G→H redirects G's node to H's. By Lemma 2 a vertex violated in H is violated in G, and H has fewer variables, so the graph stays acyclic and read-once.
+- **2SAT terminal:** the residual is a set of disjoint cycles, one with odd charge. A width-4 walk of O(|E|) nodes around it finds a violated vertex.
+
+The invariant is that from node N, every assignment to N's variables reaches a leaf violated in N. Memoisation makes the branch variable a function of the state. ∎
+
+## Potential
+
+All assignments through a node agree on the parity of assigned edges at each boundary vertex (a vertex touching both assigned and remaining edges). So a node with b boundary vertices carries at most a 2^(−(b/2−1)) fraction of assignments on 2-connected G. States sharing E_rem number at most 2^b.
+
+## Weakest missing lemma (M)
+
+**Lemma M.** Every read-once branching program for SearchVertex(G,c) has size 2^(Ω(tw(G)/log n)), where tw is treewidth.
+
+I believe this is the route of Itsykson–Riazanov–Sagunov–Smirnov (computational complexity, 2021):
+1. A program of size S for SearchVertex gives a read-once program of size S^(O(log n)) for a satisfiable Tseitin function.
+2. Any such program has size 2^(Ω(tw)).
+
+I am recalling this from memory and it must be checked. Their headline theorem is for regular resolution. Since leaves here name vertices rather than clauses, the standard equivalence between regular resolution and read-once programs does not transfer automatically. The exact thing to verify is that their step 1 takes a SearchVertex program as input.
+
+**Corollary (conditional on M).** On constant-degree expanders, tw = Ω(n), so MRA stores 2^(Ω(n/log n)) states for every order. That is superpolynomial in the encoded length.
+
+## The bounded-elimination repair
+
+**Proved: stuck at the root on these graphs.** Eliminating edge uv creates 2^(deg u + deg v − 3) resolvents and deletes 2^(deg u − 1) + 2^(deg v − 1) clauses. The resolvents are full-width on distinct variables, so none is tautological. No other vertex clause subsumes them, because a third vertex shares at most 2 edges with u and v. For degree 4 this is 32 new against 16 deleted.
+
+**Elimination is not disabled deeper in.** Once branching lowers degrees, it fires exactly when an endpoint has degree 2, or both have degree 3 (8 against 8). It is then edge contraction, and states become Tseitin formulas on minors.
+
+**Conjecture B.** MRA with the repair still needs 2^(n^Ω(1)) states on these expanders for every order.
+
+Theorem A does not extend to it as written. A leaf then names a contracted super-vertex, and the program has forgotten the per-vertex parities inside it. Contraction also creates multi-edges, which breaks Lemma 2.
+
+## Falsification test, 6 variables
+
+Use K4 with edge variables 12, 13, 14, 23, 24, 34 and charge (1,0,0,0).
+- Vertex 1 gets the 4 clauses on {12,13,14} with an even number of negations.
+- Vertices 2, 3, 4 get the 4 clauses on their edges with an odd number of negations.
+
+That is 16 clauses, unsatisfiable. For all 720 static orders (and all dynamic rules if feasible) check:
+
+- **(a)** Every stored state equals Tseitin(E_rem, c′) clause for clause, with no degree-1 vertex.
+- **(b)** Every dominance hit (G,H) has H ⊆ G.
+- **(c)** The extracted program reads no variable twice on any path and returns a violated vertex on all 64 assignments.
+- **(d)** States sharing E_rem number at most 2^b.
+
+Any failure refutes Lemma 1, Lemma 2 or Theorem A for your implementation, or shows it applies an inference I did not model. K4 is cubic, so the repair may refute it with zero branches. It tests the lemmas, not Conjecture B.
+
+## Scalable tests
+
+- **Smallest stuck-at-root instance:** K5 with odd charge (10 variables, 40 clauses). This is over your 6-variable limit.
+- **Scaling family:** random simple 4-regular graphs on n = 8, 10, …, 30 vertices with one odd charge. Record the minimum stored-state count over many orders, including greedy min-boundary and core-first.
+- **Prediction:** log2(states) grows linearly in n for every order, unlike F_n.
+- **What would refute it:** polynomial growth would refute Conjecture B or expose a mechanism outside Theorem A.
+
+## What this means for the algorithm
+
+- **Not evidence about P vs NP.** Tseitin formulas are solved in polynomial time by Gaussian elimination. The obstruction is to residual-CNF memoisation.
+- **Order discovery cannot be the missing universal ingredient.** Given M, no order is good on this family.
+- **A repair must leave the read-once search model.** For example, states could be canonicalised modulo their affine hull. Parity-free families such as pigeonhole or random 3-CNF would be the next adversaries to try against such a repair; I have not derived that they defeat it.

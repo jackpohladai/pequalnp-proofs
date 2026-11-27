@@ -1,0 +1,18 @@
+{
+  "status": "confirmed_finite_counterexample",
+  "variables": 12,
+  "clauses": 33,
+  "oracle_sat": false,
+  "emra": {
+    "sat": false,
+    "max_states": 2,
+    "branches": 8
+  },
+  "mra_peak": 1,
+  "mra_sat": false,
+  "summary": "Independent finite testing confirms the proposed frontier counterexample.",
+  "elapsed_seconds": 0.04037594795227051,
+  "general_polynomial_sat_proof": false,
+  "scope": "Finite candidate check with exhaustive SAT oracle; both solvers discharge an initially binary root directly. Not a proof of P=NP.",
+  "source_sha256": "252c0296d971466e837fcedb4dc43727446bff34b2263df7537fced6d2578882"
+}

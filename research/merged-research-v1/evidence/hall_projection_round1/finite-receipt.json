@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "source_sha256": "eff2fa2d62b54da67afe3a9e1969ea9db022c20bfe95fef11e438616950c355c",
+  "guarded_graph_assignments": 5054,
+  "maximum_rows": 3,
+  "maximum_holes": 3,
+  "tiny_edge_assignments_examined": 16,
+  "tiny_truth_table": [
+    {
+      "x": false,
+      "y": false,
+      "projected": true,
+      "witnesses": [
+        [
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "x": false,
+      "y": true,
+      "projected": false,
+      "witnesses": []
+    },
+    {
+      "x": true,
+      "y": false,
+      "projected": true,
+      "witnesses": [
+        [
+          false,
+          false
+        ],
+        [
+          false,
+          true
+        ],
+        [
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "x": true,
+      "y": true,
+      "projected": true,
+      "witnesses": [
+        [
+          false,
+          true
+        ]
+      ]
+    }
+  ],
+  "candidate_executed": false,
+  "general_sat_claim": false
+}

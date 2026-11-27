@@ -1,0 +1,94 @@
+{
+  "status": "confirmed_finite_growth_fixture",
+  "summary": "The deployed solver still reaches at least four simultaneous states on this finite UNSAT fixture. This is a finite test, not a general complexity result. Observed peak: 4; compression: skipped. Skip reason: no_dimension_reduction.",
+  "oracle_sat": false,
+  "observed": {
+    "sat": false,
+    "peak": 4,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 4
+      },
+      {
+        "variable": 3,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 0,
+    "counting": {
+      "calls": 15,
+      "refutations": 8,
+      "windows": 103,
+      "tuples": 2400,
+      "seconds": 0.6431057930000006,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 3,
+      "tuples": 64,
+      "constraints": 0,
+      "truncated": false,
+      "seconds": 0.022547791999999678,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-root-scc-emra-ialh5-v2",
+    "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "skipped",
+      "reason": "no_dimension_reduction",
+      "original_variables": 12,
+      "original_clauses": 140,
+      "seconds": 0.004059708000000217
+    }
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 8,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 4
+      },
+      {
+        "variable": 3,
+        "retained": 8
+      },
+      {
+        "variable": 4,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 112
+  },
+  "baseline_seconds": 1.142314875,
+  "updated_seconds": 1.3701673750000003,
+  "seconds": 2.6918383329999997,
+  "solver": "blq-root-scc-emra-ialh5-v2",
+  "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

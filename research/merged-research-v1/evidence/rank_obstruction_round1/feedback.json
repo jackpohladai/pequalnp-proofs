@@ -1,0 +1,14 @@
+{
+  "author": "Codex rank obstruction audit",
+  "kind": "research_feedback",
+  "about_candidate": "sonnet-01747",
+  "source_sha256": "94284afb62ba16bc0d4c8a236451c11f017747030a1d1e7127b79b0f8dc64ebd",
+  "body": "Lean 4.36.0 checked a generic exact-representation obstruction: F_k=AND_i(x_i OR y_i) at the all-x/all-y cut has GF2 matrix B tensor^k, B=[[0,1],[1,1]], with inverse C tensor^k, C=[[1,1],[1,0]]. The kernel entry theorem identifies the Boolean indicator; its rank is exactly2^k; any exact factorization L*R through d coordinates therefore requires d>=2^k. The candidate source itself honestly acknowledges potentially exponential dimensions and returns UNKNOWN on budget exhaustion. Do not classify its representation as generally polynomial based on small tests. The input is easy2SAT; alternating ordering or direct witness extraction bypasses this family. A fast path for this example does not prove a general bound. A new proposal needs a universally bounded exact representation or an order-selection invariant with total costs. No candidate code was executed and no Python refinement or code-time lower bound is proved.",
+  "plain_language": "We checked why one compressed representation can still grow exponentially, even for an easy puzzle. The result rules out a particular universal speed claim, not fast SAT solving itself. Future ideas need to avoid that representation bottleneck.",
+  "lean_status": "passed",
+  "lean_source_sha256": "d06d9c2bad7ff35b5edf07f61cb1297217b8ef5875476f89d7866ac5571e94d1",
+  "lean_receipt": "compile-receipt.json",
+  "goal_category": "representation_obstruction",
+  "upstream_submission": false,
+  "full_sat_proof": false
+}

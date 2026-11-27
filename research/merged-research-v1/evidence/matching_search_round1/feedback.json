@@ -1,0 +1,59 @@
+{
+  "status": "tested_augmenting_path_producer_with_checked_failed_search_implication",
+  "python_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_search_round1/matching_search.py",
+  "python_source_sha256": "b2228cd0b580d9a4896ed00006f1eaa765114e43c6712a100ff56b181f28864d",
+  "lean_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_search_round1/ExhaustedSearchCut.lean",
+  "lean_source_sha256": "38177bfc1846b89e75fe3a1b930b9fc6cc14a0f7b8c080cea1f394ef49233871",
+  "algorithm": "Alternating-path BFS; one attempt per active unmatched root, visited rows/holes per attempt, reverse augmenting path on free hole, exhausted reached-row Hall cut on failure. No matching/subset/SAT assignment enumeration.",
+  "mandatory_validation": "Every returned certificate passes an explicit if-not validator check that raises RuntimeError on failure, including under Python -O. Invalid graph input raises TypeError/ValueError; it is never returned as a failure certificate.",
+  "checked_theorem": [
+    "Inverse-consistent row/owner tables and unmatched root with full-neighborhood owner closure imply strict Hall deficiency",
+    "If all reached rows are active, existing failureCheck accepts the derived cut",
+    "Such an exhausted search state excludes matching"
+  ],
+  "precise_theorem_premises": [
+    "root belongs to reached S",
+    "root row remains unmatched",
+    "owner(k)=some i implies rowMatch(i)=some k",
+    "every hole in the FULL neighbor union of S has an owner inside S",
+    "every row in S is active for validator acceptance"
+  ],
+  "missing_inductions": [
+    "Initial partial matching, neighbor validity, active domain and inverse-table consistency",
+    "BFS parent-chain and discovery invariants, active reached rows, and no repeated enqueues",
+    "Augmenting path reconstruction preserves neighbor validity/injection/both matching tables and increases matched-row count by one",
+    "Queue exhaustion yields full-neighborhood owner closure with no free hole and unmatched root",
+    "Completion of outer active-root loop yields accepted success certificate"
+  ],
+  "other_gaps": [
+    "Formal Python-to-Lean state/input/output refinement",
+    "External serialized-input parsing proof",
+    "Encoded-bit operation/runtime bound",
+    "Arbitrary-CNF decomposition or recognition",
+    "General SAT completeness"
+  ],
+  "operation_counts": "Instrumented graph operations satisfy at most a attempts, a*a row expansions, a*m active-edge scans, and a*a path updates on completed runs (a active rows, m active edges). This is not a formal encoded-bit bound.",
+  "validation": {
+    "independent_tests_normal": 7,
+    "independent_tests_optimized": 7,
+    "exhaustive_graph_guard_instances_per_run": 5054,
+    "long_alternating_ladder_rows": 1100,
+    "sparse_hole_id_bits": 81,
+    "actual_python_output_cases_checked_in_lean": 12,
+    "validator_controls_checked_in_lean": 4,
+    "receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_search_round1/python-producer-validation.json",
+    "receipt_sha256": "c3d93495ef547eb79e587e1ccf8490befece92ec021f7896f1258b5da11a9f4c"
+  },
+  "next_research_target": "Formalize augmentation and BFS invariant preservation for a typed executable search, then apply the checked exhausted-cut implication at failure and accepted-success theorem at completion. Keep the existing certifying constructor boundary for outputs.",
+  "counting_scope": "Do not count this as a fully verified matching-search component. The kernel-checked addition is the failed-search implication under explicit invariants; implementation tests and finite cross-language certificates are separate evidence.",
+  "complete_matching_search_verified": false,
+  "python_refinement_proved": false,
+  "formal_bit_runtime_proved": false,
+  "general_sat_solved": false,
+  "upstream_published": false,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}

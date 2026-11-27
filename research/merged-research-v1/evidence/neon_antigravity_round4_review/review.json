@@ -1,0 +1,12 @@
+{
+  "verdict": "finite_prefix_growth_verified",
+  "verified": "Family k2,k3,k4 has12,17,22variables and72,104,136clauses. Retained prefix frontiers4,8,16. No SCC merge or accepted DP step through the tested prefix. XOR-cancellation UNSAT certificates checked; k2 also exhaustive.",
+  "limits": [
+    "Only specified branching order and finite sizes tested; not an all-order/asymptotic theorem.",
+    "These are explicit inconsistent XOR systems and are easy for a parity recognizer.",
+    "Automatic no-candidate receipt was not a test of the symbolic family; the earlier generic wording that H2 remains unproved was misleading because unrepaired H2 was already refuted."
+  ],
+  "at": "2026-11-26T18:12:07.873177+00:00",
+  "independent_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_antigravity_round4_review/test-receipt.json",
+  "general_polynomial_sat_proof": false
+}

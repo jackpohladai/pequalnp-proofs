@@ -1,0 +1,93 @@
+Executable greatest-model construction for actual dual-Horn CNF
+
+All four Lean sources in this folder compiled successfully under pinned
+Lean 4.36.0. They import the unchanged prior DualHorn component, which
+uses the project's actual Search CNF, literal, assignment and evaluation
+definitions. All printed theorem axioms are limited to propext,
+Classical.choice, and Quot.sound. No candidate program is executed.
+
+Algorithm and invariant
+
+Start every variable true. Find the first violated clause. If it has no
+negative literal, return UNSAT. Otherwise turn its unique negative
+variable false and continue. If no clause is violated, return the current
+assignment. The executable program uses structural recursion with fuel.
+
+The proof maintains that every actual satisfying assignment is pointwise
+below the current assignment. For a violated dual-Horn clause, all its
+positive literals are already false, so every remaining possible model
+must satisfy its unique negative literal. That variable is currently true
+and is forced false in every model. Erasure preserves the invariant and
+decreases true-set cardinality by exactly one. A violated clause without
+a negative literal excludes all models. At zero fuel the cardinality
+invariant justifies the final decision; exhaustion is not assumed UNSAT.
+
+run_correct proves that sufficient cardinality fuel yields correct UNSAT
+or a satisfying assignment dominating all models. solve_correct starts
+all variables true. This replaces finite-maximality existence with an
+executable construction and its correctness proof.
+
+Sparse variables and runtime syntax checking
+
+DualHornAlgorithm.lean uses identifiers below n and fuel n. Its theorem
+requires the caller to enforce BOTH dual-Horn syntax and this range bound;
+the raw function itself does not enforce its theorem hypotheses.
+
+SparseDualHornAlgorithm.lean uses only the identifiers occurring in F.
+support_covers proves coverage and support_card_le_literal_occurrences
+bounds support cardinality by literal occurrence count. solveSparse_correct
+requires dual-Horn syntax but no external range or satisfiability premise.
+Its budget is distinct occurring variables, not the largest identifier.
+The raw sparse function still requires the dual-Horn class premise.
+
+Returned T represents true variables in T, false variables elsewhere in
+the support, and true variables outside the support. This makes the result
+greatest among all original Nat-indexed models. A billion-sized identifier
+with only two occurring variables is checked by actual Lean reduction,
+producing the greatest model after one flip without a billion-item range.
+
+CheckedDualHorn.lean supplies the executable exact class test, with a proved
+iff to IsDualHorn. checkedSolve distinguishes three outcomes:
+outer none = unsupported syntax; some none = correct UNSAT;
+some (some T) = a satisfying greatest model. checkedSolve_result_correct
+binds every supported result to syntax and semantic correctness. Arbitrary
+CNF must not be passed to the raw solver and interpreted as generally
+correct UNSAT. (NOT x OR NOT y) AND x is satisfiable but breaks that use;
+the checked wrapper correctly returns unsupported instead.
+
+The predicate counts negative literal occurrences. A repeated negative
+literal can be conservatively rejected even when deduplication would make
+the clause dual-Horn. Positive repetitions, tautologies and empty input
+follow the actual project list-based semantics.
+
+Validation
+
+Range solver: exit 0, 18.152 seconds. Six equality examples passed kernel
+reduction; executable outputs were some 0, none, some 2 for true-set sizes.
+Sparse solver: exit 0, 20.679 seconds. Checked wrapper: exit 0, 2.670 seconds,
+including unsupported, UNSAT, and billion-identifier SAT examples.
+Source-bound receipts contain final hashes and complete printed axioms.
+
+Independent Python mirrors agreed with exhaustive SAT enumeration on 6,462
+dual-Horn formulas, including 4,339 satisfiable formulas. Checks covered
+3,910 flips, 14,098 domination relations along traces, seven extra edge
+cases, and agreement between range and sparse solvers on every formula.
+A separate billion-ID sparse test passed. These finite checks supplement
+the general Lean proof and do not replace it.
+
+Remaining obligations
+
+No operational encoded-bit runtime is formalized for support construction,
+clause scans, membership, comparisons or erasure. A finite flip bound alone
+is not a complete runtime theorem. This is a correct solver for a standard
+restricted SAT class, not a general SAT or P=NP result.
+
+This construction can supply the greatest retained model for the previously
+checked positive-guard/private-edge Hall composition. Still unproved are
+the decomposition of a raw CNF into retained/guard/row/hole variables,
+private-edge disjointness certificates, matching implementation, witness
+assembly, and refinement of actual generated Python candidate code.
+The dual-Horn class checker itself IS proved in this folder.
+
+These are local Lean checks, with no project checker replay, upstream
+publication, assignment acceptance, or website-credit claim.

@@ -1,0 +1,14 @@
+{
+  "source": "fable_worstcase_auto_00072",
+  "solver": "blq-composed-core-scc-emra-ialh5-v5",
+  "source_sha256": "ff1f4262060692f34f89f974a9ffe276231e639df5fac78dcd498b2704a14196",
+  "counting_calls": 12,
+  "distinct_counting_inputs": 8,
+  "duplicate_calls": 4,
+  "duplicate_fraction": 0.3333333333333333,
+  "repeated_counting_seconds": 0.6614051669999998,
+  "all_counting_seconds": 2.432520959,
+  "sat": false,
+  "peak": 2,
+  "scope": "Instrumentation only; unchanged counting function still called every time. No optimization deployed; no general runtime proof."
+}

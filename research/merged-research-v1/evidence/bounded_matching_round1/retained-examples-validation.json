@@ -1,0 +1,26 @@
+{
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/RetainedScanExamples.lean",
+  "source_sha256": "ed1dcacdfa3eefb678ad931060ce4b7d83ae889eb86f94a0167276f4a95a7af5",
+  "compiled_source": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-retained-examples-final-0wuci014/RetainedScanExamples.lean",
+  "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-cost-build/lib/lean/RetainedScanExamples.olean",
+  "artifact_sha256": "b8835cc3553cc643d80cf4507f14e5253694d72f578a58c53032c4ad1cd91664",
+  "exit_code": 0,
+  "stdout": "[(0, 0), (1, 2), (3, 12), (9, 38), (3, 346)]\nsome 0\nnone\nsome 1\n",
+  "stderr": "",
+  "command": [
+    "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+    "-j",
+    "1",
+    "-DElab.async=false",
+    "-o",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-retained-examples-final-0wuci014/RetainedScanExamples.olean",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-retained-examples-final-0wuci014/RetainedScanExamples.lean"
+  ],
+  "cwd": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-retained-examples-final-0wuci014",
+  "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-cost-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+  "elapsed_seconds": 6.443301291,
+  "parent_receipt": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-cost-validation.json",
+    "sha256": "e57877f981bb0724e12964de2c607a10074aa0da04f871b43e5be9bd4476c235"
+  }
+}

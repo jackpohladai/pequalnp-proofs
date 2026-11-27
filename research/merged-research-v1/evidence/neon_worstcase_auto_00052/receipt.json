@@ -1,0 +1,20 @@
+{
+  "finished_at": "2026-11-27T00:39:36.059679+00:00",
+  "success": false,
+  "exit_code": 3,
+  "seconds": 529.013586458,
+  "status": "ERROR",
+  "usage": {
+    "input_tokens": 19819,
+    "output_tokens": 65536,
+    "thinking_tokens": 65536,
+    "cache_read_tokens": 0,
+    "total_tokens": 85355
+  },
+  "model_requested": "gemini-4-neon-medium",
+  "model_reported": "gemini-4-neon-medium",
+  "conversation_id": "0c503215-56f9-4716-8655-b18632ec3742",
+  "route": "antigravity_account",
+  "local_timeout_seconds": null,
+  "error_summary": "Individual quota reached. Please upgrade your subscription to increase your limits. Resets in 1h31m29s."
+}

@@ -1,0 +1,8 @@
+{
+  "status": "no_candidate",
+  "summary": "Neon returned no counterexample. The frontier comparison remains unproved.",
+  "elapsed_seconds": 0.0001499652862548828,
+  "general_polynomial_sat_proof": false,
+  "scope": "Finite candidate check with exhaustive SAT oracle; both solvers discharge an initially binary root directly. Not a proof of P=NP.",
+  "source_sha256": "e783c86b58c8d17a633fb9e03d1ce3881c018c9b7dc1a341700fd776ebe18372"
+}

@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-11-26T17:08:34.321548+00:00",
+  "exit_code": 0,
+  "seconds": 3.459576083,
+  "lean_version": "4.36.0",
+  "source_sha256": "fd9a609dedd9edbefcaa9a7cbdec34bf0552533640dfe2966b0bca2bef742b81",
+  "stdout": "'MRAIndependent.clause_subset_sound' does not depend on any axioms\n'MRAIndependent.dominance_sound' does not depend on any axioms\n'MRAIndependent.drop_dominated_preserves_models' does not depend on any axioms\n'MRAIndependent.cover_pruning_preserves_models' does not depend on any axioms\n'MRAIndependent.core_unsat' does not depend on any axioms\n",
+  "stderr": "",
+  "scope": "Generic clause-subset dominance and cover-preserving pruning, plus three-variable UNSAT core. Not a formalization of the MRA implementation or a polynomial state-count bound."
+}

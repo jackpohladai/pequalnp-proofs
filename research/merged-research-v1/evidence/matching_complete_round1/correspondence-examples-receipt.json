@@ -1,0 +1,51 @@
+{
+  "status": "checked",
+  "compiler": "Lean 4.36.0",
+  "utc": "2026-11-26T10:39:07.947447+00:00",
+  "base_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-receipt.json",
+  "base_receipt_sha256": "ab0e825dcd66d6c0330efe68ecada194adfee22c2c08a7a0338776511fb789fb",
+  "modules": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/MatchingDecision.lean",
+      "source_sha256": "50efbbb02e58eada07eaeff1101d4cb8fc504ce53dcfb7f380b89f68c6e4196d",
+      "exit_code": 0,
+      "output": "'PEqualNP.Outside.MatchingDecision.decideMatching_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingDecision.matchingDecision' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-complete-_oudyo4m/MatchingDecision.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-complete-_oudyo4m/MatchingDecision.lean"
+      ],
+      "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-complete-_oudyo4m:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+      "elapsed_seconds": 9.618511916836724,
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/MatchingDecision.olean",
+      "artifact_sha256": "32a43772fdc7dede67680fef2fab93cc226344d7377a51ceb9f674156aaea54f",
+      "compiled_source_snapshot": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/source/MatchingDecision.lean"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/CorrespondenceExamples.lean",
+      "source_sha256": "25a536aa4c65c12005150b64cad6becf07a063c92a025367c2543a937d8a19d4",
+      "exit_code": 0,
+      "output": "some (1, [0, 1])\n(\"failure\", [some 1, some 2, some 3])\n(true, false)\n'PEqualNP.Outside.MatchingCorrespondence.Examples.duplicate_same_free_hole' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCorrespondence.Examples.proper_subset_cut' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCorrespondence.Examples.empty_rows' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-complete-_oudyo4m/CorrespondenceExamples.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-complete-_oudyo4m/CorrespondenceExamples.lean"
+      ],
+      "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-complete-_oudyo4m:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+      "elapsed_seconds": 5.974713542032987,
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/CorrespondenceExamples.olean",
+      "artifact_sha256": "66c4a2c08de91451e667cd566cdb2b1aa9e50527fc856e8739d400888480290c",
+      "compiled_source_snapshot": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/source/CorrespondenceExamples.lean"
+    }
+  ],
+  "kernel_checked_fixtures": 8,
+  "note": "Boolean packaging plus focused correspondence/exhaustion examples. No independent component-count increment."
+}

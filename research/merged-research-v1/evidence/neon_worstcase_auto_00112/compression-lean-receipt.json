@@ -1,0 +1,11 @@
+{
+  "source_sha256": "1b44972b7c5098a1cda11ba3e6000793b1f73c964f4a0dc5d888ace411959873",
+  "lean_version": "4.36.0",
+  "scope": "Exact candidate compression equivalence and constructive lifting; not a verification of Python or runtime.",
+  "general_polynomial_sat_proof": false,
+  "status": "checked",
+  "exit_code": 0,
+  "stdout": "'CompressionSoundness.equisat_of_projection' does not depend on any axioms\n'CompressionSoundness.certificateCheck_sound' depends on axioms: [propext, Quot.sound]\n'CompressionSoundness.equisat_of_two_maps' does not depend on any axioms\n'CompressionInstances.candidate_forward' depends on axioms: [propext]\n'CompressionInstances.candidate_backward' depends on axioms: [propext]\n'CompressionInstances.candidate_equisatisfiable' depends on axioms: [propext]\n",
+  "stderr": "",
+  "seconds": 5.147248333
+}

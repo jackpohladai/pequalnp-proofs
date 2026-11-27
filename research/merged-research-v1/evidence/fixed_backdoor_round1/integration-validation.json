@@ -1,0 +1,42 @@
+{
+  "registered_at_utc": "2026-11-26T14:15:05.207252+00:00",
+  "id": "fixed_backdoor_round1",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/FixedBackdoorSolver.lean",
+  "entrypoint": "PEqualNP.Outside.FixedBackdoor.solve",
+  "extends_component_family": "constructor_boundary_round1",
+  "scope": "Checked lazy branching on a supplied qualifying variable set for a guarded constructor. Exact branch coverage preserves original private IDs; decisions are correct when qualification passes; at most2^k leaf calls for k distinct supplied keys. Rejected sets return none.",
+  "deployment": "structured supplied-input method; no automatic decomposition or small-set guarantee",
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/fixed-backdoor-validation.json",
+      "sha256": "c6809cc69448cb7113fc6fb887d210c6c8fe755352861891dea25600ccdf0168"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/fixed-backdoor-independent-audit.json",
+      "sha256": "9c458da06865b4bba16fe9ae1797c3a7013456d849343af2e4ecbce7dd7db3bb"
+    }
+  ],
+  "tests": {
+    "independent_cases": 7056,
+    "qualified": 5336,
+    "qualified_sat": 3590,
+    "qualified_unsat": 1746,
+    "unsupported": 1720,
+    "disagreements": 0,
+    "count_violations": 0
+  },
+  "limits": [
+    "Qualification is sufficient, not necessary: a checked example has recognizable individual branches while common deletion qualification rejects.",
+    "Unsupported cases include both SAT and UNSAT formulas; rejection is not a refutation.",
+    "No efficient variable-set discovery or bound making k logarithmic for arbitrary SAT.",
+    "No full bit-runtime bound; each leaf currently repeats orientation recognition."
+  ],
+  "status": "locally_lean_compiled",
+  "source_sha256": "fb8ac19a522bd6a8f8f43ca66d7cda8af9e3fff84ca37ecbdadf388f8c9ae3f1",
+  "count_as_new_component_family": false,
+  "general_polynomial_sat_proof": false,
+  "general_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false
+}

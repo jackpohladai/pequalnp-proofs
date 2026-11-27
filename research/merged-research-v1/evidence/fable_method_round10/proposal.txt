@@ -1,0 +1,134 @@
+**Scope.** Nothing below bounds the number of states N polynomially. H2 is neither proved nor refuted here, and general polynomial SAT remains unproved. Nothing was run this turn; all computations are by hand.
+
+`★ Insight ─────────────────────────────────────`
+- Storing eliminated clauses unrestricted and keeping ρ as a conjunct makes the invariant monotone under branching: later assignments only strengthen the left-hand sides.
+- Merging and dominance compare only F. Correctness is per state, so histories with different eliminated sets never need to agree.
+`─────────────────────────────────────────────────`
+
+## 1. Invariant J
+
+State S = (F, ρ, E, σ), with σ = [(x₁,C₁),…,(x_k,C_k)] oldest first, and D = V ∖ (dom ρ ∪ E).
+
+- **J1 (syntactic, poly-time checkable).** dom ρ, E = {x₁..x_k} and D partition V. var(F) ⊆ D. Every clause of C_j contains x_j or ¬x_j and no x_i with i < j.
+- **J2.** F ∧ ρ ∧ ⋀_j C_j ≡ F₀ ∧ ρ.
+- **J3.** For each j, F ∧ ρ ∧ ⋀_{i>j} C_i entails every non-tautological x_j-resolvent of C_j.
+
+Assumptions on Canon and the streaming step:
+- **A1:** output is equivalent to input (retained UP units are fine).
+- **A2:** no new variables are introduced.
+- **A3:** clause count does not increase (used only for cost).
+
+**Lemma A** (pen-and-paper, conditional on A1–A2, not Lean-checked). J holds at the root and is preserved by accepted elimination, branching and pass-through.
+
+*Proof sketch.*
+- **Branch:** ρ′ = ρ ∪ {v=b} and Canon(F|v=b) ∧ ρ′ ≡ F ∧ ρ′, so every left-hand side is only strengthened.
+- **Eliminate x:** write F = F_rest ∪ C_x. Then F′ ≡ F_rest ∧ Res_x(C_x), so F′ ∧ C_x ≡ F. Older J2/J3 instances are unchanged semantically, and the new J3 instance is F′ ⊨ Res_x(C_x). A2 gives x ∉ var(F′). ∎
+
+**Consequences.**
+1. **Completeness:** if F₀ ∧ ρ is SAT then F is SAT (J2).
+2. **Witness:** for any τ ⊨ F, LIFT(τ) ⊨ F₀. Descending in j, τ satisfies all x_j-resolvents, so no positive and negative clause of C_j are both otherwise-false; the lift rule then satisfies C_j, and J2 finishes.
+3. **Frontier:** F₀ is SAT iff some live state has F SAT. Pruning S₂ against a currently live S₁ preserves this if the dominance test certifies F₂ ⊨ F₁. That certification is unverified for your actual test.
+
+Rejections and stream aborts never touch J. So the streamed rule is sound, though it is a different procedure from exact acceptance (your 3 aborted trials).
+
+**Audit.** Check J1 at every state, J2/J3 by 2ⁿ truth table for n ≤ 8, and always assert τ ⊨ F₀ at the end.
+
+## 2. Pseudocode
+
+```
+ELIM(F,ρ,E,σ):
+  loop:
+    for x in sorted(var(F), key=(pos(x)*neg(x), index)):
+      Cx := {C∈F : x∈var(C)}
+      R  := StreamRes(x, Cx, F∖Cx, cap=m0)     # None on abort
+      if R = None: continue
+      F' := Canon(R)
+      if |F'| ≤ |F|:
+        assert x ∉ var(F')
+        (F,E,σ) := (F', E∪{x}, cons((x,Cx),σ))  # persistent cons
+        goto loop                               # retry all remaining
+    return (F,ρ,E,σ)
+
+STEP(S, t):  v := π[t]
+  assert var(F) ∩ E = ∅
+  if v ∉ var(F): return [S]        # eliminated or vanished: never branched
+  out := []
+  for b in 0,1:
+    F' := Canon(F|v=b)
+    if ⊥ ∉ F': out += ELIM(F', ρ∪{v:b}, E, σ)
+  return out
+
+LIFT(S, τF):  τ := ρ ∪ τF
+  for v ∈ V∖(dom ρ ∪ E ∪ var F): τ[v] := 0     # defaults BEFORE replay
+  for (x,Cx) in σ newest-first:
+    τ[x] := 1 iff ∃C∈Cx: x∈C and all other literals false under τ
+  assert τ ⊨ F0;  return τ
+```
+
+The default assignments must precede the stack replay, because stacked clauses can mention variables that have vanished from F. By J1 every other variable of C_j is assigned when x_j is processed.
+
+`★ Insight ─────────────────────────────────────`
+- The test `v ∉ var(F)` covers both eliminated and vanished variables. J1 guarantees E ∩ var(F) = ∅, so no separate lookup in E is needed; the assert makes that auditable.
+- A pass-through state needs no new ELIM call: ELIM is deterministic in F and the state is already at its fixpoint.
+`─────────────────────────────────────────────────`
+
+## 3. Bit cost (proposed accounting, unmeasured)
+
+Let m = |F₀|, λ = ⌈log₂ 2n⌉, and κ(m,n) = the bit cost of one Canon call. κ is unspecified and must be measured. Under A3, |F| ≤ m in every state.
+
+**Per ELIM call.**
+- Trials: at most n(n+1)/2, as you corrected.
+- Per trial: at most ⌊m²/4⌋ resolution pairs. Each pair costs O(nλ) to build plus at most m+1 subsumption comparisons (by the cap) at O(nλ) each.
+- Total: T_ELIM ≤ n(n+1)/2 · (c·m³nλ + κ).
+
+**Per expanded state.** T_state ≤ 2·T_ELIM + 2κ + O(mnλ).
+
+**Space.**
+- Each state holds F (≤ mnλ bits), ρ and E (≤ 3n bits) and one pointer of w ≤ ⌈log₂(nN+1)⌉ bits.
+- Each accepted elimination adds one shared stack node of at most mnλ + w bits.
+- A root path carries at most n nodes, so a history is at most n(mnλ + w) bits.
+
+**Whole run.** With N_exp expanded states, N created states and P ≤ nN accepted eliminations:
+- Time ≤ N_exp · T_state + T_merge + T_dom + T_2SAT.
+- Space ≤ N(mnλ + 3n + w) + P(mnλ + w).
+- T_merge = O(N·mnλ) with a trie keyed on F.
+- Naive pairwise dominance costs Σ_t W_t² · O(m²nλ), where W_t is the frontier width at level t. This term is quadratic in the frontier and is not absorbed by N · poly.
+- The only bound on N that follows from the definitions is N ≤ 2ⁿ⁺¹ − 1.
+
+## 4. H2
+
+I could not hand-verify a counterexample under the real min-product rule, so I give a conditional comparison lemma and an obstruction test instead.
+
+**Extra hypotheses (H2′).**
+- (a) Elimination happens only at the root, so E is the same for every state.
+- (b) E is a suffix of π.
+- (c) Merge-only frontier: no dominance pruning, widths counted before 2SAT discharge.
+- (d) Canon is idempotent and Canon(Canon(F)|ℓ) = Canon(F|ℓ).
+- (e) For x ∉ var(ℓ): Canon(Canon(DP_x F)|ℓ) = Canon(DP_x(Canon(F|ℓ))).
+
+**Lemma C** (conditional; d and e are unverified for your Canon). For t ≤ n − |E|, W_t^E ≤ W_t^MRA.
+
+*Proof sketch.* By (d), the plain frontier at level t is {Canon(F₀|ρ)} over assignments ρ to π₁..π_t. By (e) and induction over E, Canon(F₀′|ρ) = Φ(Canon(F₀|ρ)), where Φ is the iterated Canon∘DP map. So the E-frontier is the image of the plain frontier under Φ. ∎
+
+**Why (b) cannot be dropped: test T8 (hand-computed, please reproduce).**
+- Variables p₁p₂p₃, x, y₁..y₄; order π = (p₁,p₂,p₃,x,y₁,…,y₄).
+- For ρ ∈ {0,1}³, let N_ρ be the 3-literal clause false exactly at p = ρ.
+- Pairs (i,j): 000:(1,2), 001:(1,3), 010:(1,4), 011:(2,3), 100:(2,4), 101:(3,4), 110:(1,2), 111:(3,4).
+- Clauses: N_ρ ∨ x ∨ y_i and N_ρ ∨ ¬x ∨ y_j, 16 in total.
+
+Hand result:
+- **Plain MRA, level 4:** residuals are the units {(y₁)},…,{(y₄)}, so W₄ = 4.
+- **Forced root elimination of x:** cross-ρ resolvents are tautologies, leaving 8 resolvents N_ρ ∨ y_i ∨ y_j. This is accepted, since 8 ≤ 16.
+- **Level 3, and level 4 where x is absent:** six pairwise non-entailing states {(y_i ∨ y_j)}, so W₄ = 6 > 4.
+
+**Limit of T8.** It refutes H2 only for forced elimination. Under real min-product the pure y's (product 0) are eliminated first and F₀ collapses at the root. H2 for actual E-MRA stays open.
+
+Two mechanisms could break it:
+- **Cofactor mixing**, as in T8, once the y's are made non-eliminable.
+- **Non-confluence** of bounded elimination: plain residuals merge while per-state ELIM fixpoints differ.
+
+**Tests to run (n ≤ 8).**
+1. Truth-table J2/J3 on every state of T6 and T8.
+2. Exhaustively check (d) and (e) for your Canon on small CNFs, n ≤ 5.
+3. Reproduce T8 under forced elimination.
+4. Search de-purified T8 variants and non-confluent cores under the real rule, reporting per-level W_t for both solvers.

@@ -1,0 +1,11 @@
+{
+  "verdict": "finite_restricted_claims_pass",
+  "receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fable_worstcase_round7_review/test-receipt.json",
+  "limits": [
+    "150small cases,1015cuts; not a formal proof or full solver implementation.",
+    "No universal bound on combined affine/nonlinear frontier and no efficient universally good order.",
+    "Counting after existential projection must restore the number of private-variable extensions."
+  ],
+  "at": "2026-11-26T18:20:50.037411+00:00",
+  "general_polynomial_sat_proof": false
+}

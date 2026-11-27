@@ -1,0 +1,4125 @@
+{
+  "at": "2026-11-27T02:03:32.055915+00:00",
+  "solver": "blq-localcert-scc-emra-ialh5-v3",
+  "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+  "options": {
+    "k": 5,
+    "max_windows": 256,
+    "max_pairs": 200000,
+    "max_tuples": 8192,
+    "max_rows": 128
+  },
+  "checks": {
+    "exhaustive_hull_tables": 273,
+    "hull_membership_points": 2106,
+    "equality_mod3_mod4_mod5_tables": 4,
+    "contradiction_kernel_cases": 6,
+    "planted_integer_solutions": 200,
+    "exhaustive_cnf_cases": 410,
+    "satisfiable_cases": 344,
+    "direct_counting_rejections": 66,
+    "correctness_failures": 0,
+    "budget_and_order_cases": 5
+  },
+  "fixtures": [
+    {
+      "source": "neon_antigravity_round2",
+      "variables": 12,
+      "clauses": 32,
+      "oracle_sat": true,
+      "baseline": {
+        "sat": true,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 1,
+        "accepted_dp": 1
+      },
+      "updated": {
+        "sat": true,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 1,
+        "accepted_dp": 1,
+        "counting": {
+          "calls": 1,
+          "refutations": 0,
+          "windows": 2,
+          "tuples": 12,
+          "seconds": 0.0010509579999995466,
+          "truncated_calls": 0
+        },
+        "root_counting": {
+          "status": "UNKNOWN",
+          "certificate": null,
+          "windows": 2,
+          "tuples": 12,
+          "constraints": 2,
+          "truncated": false,
+          "seconds": 0.0010509579999995466,
+          "options": {
+            "k": 5,
+            "max_windows": 256,
+            "max_pairs": 200000,
+            "max_tuples": 8192,
+            "max_rows": 128
+          },
+          "certificate_verified": false,
+          "general_polynomial_sat_proof": false
+        },
+        "partial_order": false,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "all_variables_in_odd_blocks",
+          "original_variables": 12,
+          "original_clauses": 32,
+          "seconds": 5.6167000000328926e-05
+        }
+      },
+      "baseline_seconds": 0.00021908400000025807,
+      "updated_seconds": 0.0016408750000005412
+    },
+    {
+      "source": "neon_antigravity_round3",
+      "variables": 12,
+      "clauses": 33,
+      "oracle_sat": false,
+      "baseline": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 1,
+        "accepted_dp": 0
+      },
+      "updated": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 1,
+        "accepted_dp": 0,
+        "counting": {
+          "calls": 0,
+          "refutations": 0,
+          "windows": 0,
+          "tuples": 0,
+          "seconds": 0.0,
+          "truncated_calls": 0
+        },
+        "root_counting": null,
+        "partial_order": false,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "all_variables_in_odd_blocks",
+          "original_variables": 12,
+          "original_clauses": 33,
+          "seconds": 6.18340000002604e-05
+        }
+      },
+      "baseline_seconds": 0.00018808399999947767,
+      "updated_seconds": 0.000685542000000261
+    },
+    {
+      "source": "fable_worstcase_round5",
+      "variables": 12,
+      "clauses": 37,
+      "oracle_sat": false,
+      "baseline": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 1,
+        "accepted_dp": 0
+      },
+      "updated": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 1,
+        "accepted_dp": 0,
+        "counting": {
+          "calls": 0,
+          "refutations": 0,
+          "windows": 0,
+          "tuples": 0,
+          "seconds": 0.0,
+          "truncated_calls": 0
+        },
+        "root_counting": null,
+        "partial_order": false,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "all_variables_in_odd_blocks",
+          "original_variables": 12,
+          "original_clauses": 37,
+          "seconds": 7.42919999998648e-05
+        }
+      },
+      "baseline_seconds": 0.0003509160000003675,
+      "updated_seconds": 0.0008562080000000805
+    },
+    {
+      "source": "neon_antigravity_round5",
+      "variables": 12,
+      "clauses": 78,
+      "oracle_sat": false,
+      "baseline": {
+        "sat": false,
+        "peak": 1,
+        "layers": [
+          {
+            "variable": 1,
+            "retained": 0
+          }
+        ],
+        "scc_rounds": 0,
+        "accepted_dp": 6
+      },
+      "updated": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "counting": {
+          "calls": 1,
+          "refutations": 1,
+          "windows": 1,
+          "tuples": 8,
+          "seconds": 0.0017139999999997713,
+          "truncated_calls": 0
+        },
+        "root_counting": {
+          "status": "UNSAT",
+          "certificate": {
+            "kind": "empty_table",
+            "window": [
+              1,
+              3,
+              4
+            ]
+          },
+          "windows": 1,
+          "tuples": 8,
+          "constraints": 0,
+          "truncated": false,
+          "seconds": 0.0017139999999997713,
+          "options": {
+            "k": 5,
+            "max_windows": 256,
+            "max_pairs": 200000,
+            "max_tuples": 8192,
+            "max_rows": 128
+          },
+          "certificate_verified": true,
+          "general_polynomial_sat_proof": false
+        },
+        "partial_order": false,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "no_dimension_reduction",
+          "original_variables": 12,
+          "original_clauses": 78,
+          "seconds": 0.0008472920000004436
+        }
+      },
+      "baseline_seconds": 0.018158624999999873,
+      "updated_seconds": 0.0035970000000000724
+    },
+    {
+      "source": "neon_antigravity_round6",
+      "variables": 12,
+      "clauses": 175,
+      "oracle_sat": false,
+      "baseline": {
+        "sat": false,
+        "peak": 4,
+        "layers": [
+          {
+            "variable": 1,
+            "retained": 2
+          },
+          {
+            "variable": 2,
+            "retained": 4
+          },
+          {
+            "variable": 3,
+            "retained": 0
+          }
+        ],
+        "scc_rounds": 4,
+        "accepted_dp": 42
+      },
+      "updated": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "counting": {
+          "calls": 1,
+          "refutations": 1,
+          "windows": 42,
+          "tuples": 784,
+          "seconds": 0.13882779200000073,
+          "truncated_calls": 0
+        },
+        "root_counting": {
+          "status": "UNSAT",
+          "certificate": {
+            "kind": "integer_contradiction",
+            "rows": [
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  -2,
+                  -2,
+                  -2,
+                  -2
+                ],
+                "rhs": 0,
+                "modulus": 3
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  6,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  1,
+                  -2,
+                  -2,
+                  -2,
+                  -2
+                ],
+                "rhs": 0,
+                "modulus": 3
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  8,
+                  9,
+                  10
+                ],
+                "coefficients": [
+                  1,
+                  -2,
+                  -2,
+                  -2,
+                  -2
+                ],
+                "rhs": 0,
+                "modulus": 3
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  5,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  1,
+                  -2,
+                  -2,
+                  -2,
+                  -2
+                ],
+                "rhs": 0,
+                "modulus": 3
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  6,
+                  7,
+                  11
+                ],
+                "coefficients": [
+                  1,
+                  -2,
+                  -2,
+                  -2,
+                  -2
+                ],
+                "rhs": 0,
+                "modulus": 3
+              },
+              {
+                "window": [
+                  2,
+                  5,
+                  9,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  1,
+                  -2,
+                  -2,
+                  -2,
+                  -2
+                ],
+                "rhs": 0,
+                "modulus": 3
+              },
+              {
+                "window": [
+                  6,
+                  7,
+                  8,
+                  9,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  -2,
+                  -2,
+                  -2,
+                  -1
+                ],
+                "rhs": -1,
+                "modulus": 3
+              }
+            ],
+            "dual": [
+              "1/3",
+              "-2/3",
+              "-2/3",
+              "-2/3",
+              "-2/3",
+              "-2/3",
+              "-2/3"
+            ]
+          },
+          "windows": 42,
+          "tuples": 784,
+          "constraints": 7,
+          "truncated": false,
+          "seconds": 0.13882779200000073,
+          "options": {
+            "k": 5,
+            "max_windows": 256,
+            "max_pairs": 200000,
+            "max_tuples": 8192,
+            "max_rows": 128
+          },
+          "certificate_verified": true,
+          "general_polynomial_sat_proof": false
+        },
+        "partial_order": false,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "all_variables_in_odd_blocks",
+          "original_variables": 12,
+          "original_clauses": 175,
+          "seconds": 0.0003096659999997087
+        }
+      },
+      "baseline_seconds": 0.38259799999999977,
+      "updated_seconds": 0.1415529160000002
+    },
+    {
+      "source": "neon_worstcase_auto_00002",
+      "variables": 12,
+      "clauses": 140,
+      "oracle_sat": false,
+      "baseline": {
+        "sat": false,
+        "peak": 4,
+        "layers": [
+          {
+            "variable": 1,
+            "retained": 2
+          },
+          {
+            "variable": 2,
+            "retained": 4
+          },
+          {
+            "variable": 3,
+            "retained": 0
+          }
+        ],
+        "scc_rounds": 0,
+        "accepted_dp": 53
+      },
+      "updated": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "counting": {
+          "calls": 1,
+          "refutations": 1,
+          "windows": 254,
+          "tuples": 6368,
+          "seconds": 0.9999815829999985,
+          "truncated_calls": 0
+        },
+        "root_counting": {
+          "status": "UNSAT",
+          "certificate": {
+            "kind": "integer_contradiction",
+            "rows": [
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  7
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  6,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  6,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  6,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  6,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  8,
+                  10
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  8,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  8,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  9,
+                  10
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  9,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  9,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  8,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  8,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  8,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  9,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  9,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  9,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  8,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  8,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  8,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  9,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  9,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  9,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  8,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  8,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  8,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  8,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  8,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  9,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  9,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  9,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  8,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  4,
+                  8,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  4,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              }
+            ],
+            "dual": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1/2",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "-1/2",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          "windows": 254,
+          "tuples": 6368,
+          "constraints": 78,
+          "truncated": false,
+          "seconds": 0.9999815829999985,
+          "options": {
+            "k": 5,
+            "max_windows": 256,
+            "max_pairs": 200000,
+            "max_tuples": 8192,
+            "max_rows": 128
+          },
+          "certificate_verified": true,
+          "general_polynomial_sat_proof": false
+        },
+        "partial_order": false,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "all_variables_in_odd_blocks",
+          "original_variables": 12,
+          "original_clauses": 140,
+          "seconds": 0.0002682499999995258
+        }
+      },
+      "baseline_seconds": 0.16608033300000002,
+      "updated_seconds": 1.0021111250000008
+    },
+    {
+      "source": "neon_worstcase_auto_00003",
+      "variables": 12,
+      "clauses": 143,
+      "oracle_sat": false,
+      "baseline": {
+        "sat": false,
+        "peak": 4,
+        "layers": [
+          {
+            "variable": 1,
+            "retained": 2
+          },
+          {
+            "variable": 2,
+            "retained": 4
+          },
+          {
+            "variable": 3,
+            "retained": 0
+          }
+        ],
+        "scc_rounds": 0,
+        "accepted_dp": 52
+      },
+      "updated": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "counting": {
+          "calls": 1,
+          "refutations": 1,
+          "windows": 256,
+          "tuples": 6432,
+          "seconds": 0.9440769170000003,
+          "truncated_calls": 1
+        },
+        "root_counting": {
+          "status": "UNSAT",
+          "certificate": {
+            "kind": "integer_contradiction",
+            "rows": [
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  7
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  6,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  4,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  6,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  6,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  5,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  6,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  6,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  5,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  8,
+                  10
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  8,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  8,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  9,
+                  10
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  9,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  9,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  1,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  4,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  8,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  8,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  8,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  9,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  9,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  9,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  3,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  8,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  8,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  8,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  9,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  9,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  9,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  8,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  8,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  2,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                "rhs": 2,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  6,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  8,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  8,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  8,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  9,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  9,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  9,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  1,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  4,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  8,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  3,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 1,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  4,
+                  5,
+                  6,
+                  7,
+                  9
+                ],
+                "coefficients": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  4,
+                  8,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 0,
+                "modulus": 0
+              },
+              {
+                "window": [
+                  4,
+                  9,
+                  10,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                "rhs": 1,
+                "modulus": 0
+              }
+            ],
+            "dual": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1/2",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "-1/2",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          "windows": 256,
+          "tuples": 6432,
+          "constraints": 78,
+          "truncated": true,
+          "seconds": 0.9440769170000003,
+          "options": {
+            "k": 5,
+            "max_windows": 256,
+            "max_pairs": 200000,
+            "max_tuples": 8192,
+            "max_rows": 128
+          },
+          "certificate_verified": true,
+          "general_polynomial_sat_proof": false
+        },
+        "partial_order": false,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "all_variables_in_odd_blocks",
+          "original_variables": 12,
+          "original_clauses": 143,
+          "seconds": 0.00027654199999993523
+        }
+      },
+      "baseline_seconds": 0.18343825000000002,
+      "updated_seconds": 0.9461273329999997
+    }
+  ],
+  "xor_family": [
+    {
+      "k": 2,
+      "result": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "counting": {
+          "calls": 1,
+          "refutations": 1,
+          "windows": 5,
+          "tuples": 144,
+          "seconds": 0.016734375000000412,
+          "truncated_calls": 0
+        },
+        "root_counting": {
+          "status": "UNSAT",
+          "certificate": {
+            "kind": "integer_contradiction",
+            "rows": [
+              {
+                "window": [
+                  3,
+                  4,
+                  5,
+                  6
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": -1,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  1,
+                  3,
+                  7,
+                  8,
+                  9
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  8,
+                  10,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  2,
+                  4,
+                  7,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  2,
+                  6,
+                  9,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              }
+            ],
+            "dual": [
+              "1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2"
+            ]
+          },
+          "windows": 5,
+          "tuples": 144,
+          "constraints": 5,
+          "truncated": false,
+          "seconds": 0.016734375000000412,
+          "options": {
+            "k": 5,
+            "max_windows": 256,
+            "max_pairs": 200000,
+            "max_tuples": 8192,
+            "max_rows": 128
+          },
+          "certificate_verified": true,
+          "general_polynomial_sat_proof": false
+        },
+        "partial_order": true,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "partial_order_experiment",
+          "seconds": 0.0
+        }
+      }
+    },
+    {
+      "k": 3,
+      "result": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "counting": {
+          "calls": 1,
+          "refutations": 1,
+          "windows": 7,
+          "tuples": 208,
+          "seconds": 0.03274512499999993,
+          "truncated_calls": 0
+        },
+        "root_counting": {
+          "status": "UNSAT",
+          "certificate": {
+            "kind": "integer_contradiction",
+            "rows": [
+              {
+                "window": [
+                  4,
+                  5,
+                  6,
+                  7
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": -1,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  1,
+                  4,
+                  8,
+                  9,
+                  10
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  1,
+                  12,
+                  13,
+                  15,
+                  16
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  2,
+                  5,
+                  8,
+                  11,
+                  12
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  2,
+                  6,
+                  14,
+                  15,
+                  17
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  3,
+                  7,
+                  10,
+                  16,
+                  17
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  3,
+                  9,
+                  11,
+                  13,
+                  14
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              }
+            ],
+            "dual": [
+              "1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2"
+            ]
+          },
+          "windows": 7,
+          "tuples": 208,
+          "constraints": 7,
+          "truncated": false,
+          "seconds": 0.03274512499999993,
+          "options": {
+            "k": 5,
+            "max_windows": 256,
+            "max_pairs": 200000,
+            "max_tuples": 8192,
+            "max_rows": 128
+          },
+          "certificate_verified": true,
+          "general_polynomial_sat_proof": false
+        },
+        "partial_order": true,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "partial_order_experiment",
+          "seconds": 0.0
+        }
+      }
+    },
+    {
+      "k": 4,
+      "result": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "counting": {
+          "calls": 1,
+          "refutations": 1,
+          "windows": 9,
+          "tuples": 272,
+          "seconds": 0.056097583999999756,
+          "truncated_calls": 0
+        },
+        "root_counting": {
+          "status": "UNSAT",
+          "certificate": {
+            "kind": "integer_contradiction",
+            "rows": [
+              {
+                "window": [
+                  5,
+                  6,
+                  7,
+                  8
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": -1,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  1,
+                  5,
+                  9,
+                  10,
+                  11
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  1,
+                  15,
+                  16,
+                  18,
+                  19
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  2,
+                  6,
+                  9,
+                  12,
+                  13
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  2,
+                  17,
+                  18,
+                  20,
+                  21
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  3,
+                  7,
+                  19,
+                  20,
+                  22
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  3,
+                  10,
+                  12,
+                  14,
+                  15
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  4,
+                  8,
+                  11,
+                  21,
+                  22
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              },
+              {
+                "window": [
+                  4,
+                  13,
+                  14,
+                  16,
+                  17
+                ],
+                "coefficients": [
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "rhs": 0,
+                "modulus": 2
+              }
+            ],
+            "dual": [
+              "1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2",
+              "-1/2"
+            ]
+          },
+          "windows": 9,
+          "tuples": 272,
+          "constraints": 9,
+          "truncated": false,
+          "seconds": 0.056097583999999756,
+          "options": {
+            "k": 5,
+            "max_windows": 256,
+            "max_pairs": 200000,
+            "max_tuples": 8192,
+            "max_rows": 128
+          },
+          "certificate_verified": true,
+          "general_polynomial_sat_proof": false
+        },
+        "partial_order": true,
+        "remaining_states": 0,
+        "solver": "blq-localcert-scc-emra-ialh5-v3",
+        "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+        "general_polynomial_sat_proof": false,
+        "compression": {
+          "status": "skipped",
+          "reason": "partial_order_experiment",
+          "seconds": 0.0
+        }
+      }
+    }
+  ],
+  "seconds": 10.502105959,
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false,
+  "scope": "Finite exhaustive oracles and exact certificate arithmetic; no universal growth bound."
+}

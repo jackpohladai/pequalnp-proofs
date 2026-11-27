@@ -1,0 +1,71 @@
+Paired bad-event union certificate and conditional branch invariant
+
+Candidate context: Sonnet02581, SHA256
+65032790f8e84e22ca9e548692b38174e16029ab533df978cb4718e43a7bd52e.
+The source was read and hashed, never executed. No Python or affine-rank
+probability implementation is verified by this component.
+
+For a finite assignment domain D, a finite index set P, and bad-event
+pairs (A_i,B_i), define the exact integer count
+
+  badMass(D) = sum_{i in P} |D intersect (A_i union B_i)|.
+
+The Lean file proves:
+
+1. If badMass(D) < |D|, there is an assignment in D outside every event
+   in every indexed pair. The proof bounds the cardinality of their union.
+2. If D_0 and D_1 are disjoint, badMass(D_0 union D_1) equals the sum of
+   their bad masses.
+3. Consequently a strict certificate on that union survives in at least
+   one branch. No equal-size or balanced-branch assumption is needed.
+4. A strict certificate on the singleton {x} implies x avoids all events.
+5. Paired bad mass is at most the sum of the individual event counts.
+
+Pairing accounts exactly for overlap inside each pair. Different pairs
+may still overlap; that remaining overcount is safe but can prevent a
+certificate even when a satisfying assignment exists. Events must cover
+the actual bad constraints for exclusion to imply SAT.
+
+Four-clause improvement, independently enumerated
+
+On the 32 assignments to x,y_1,y_2,y_3,y_4, take clauses (x OR y_i).
+Each bad clause has 8 assignments, so the ordinary sum is 32 and W=1.
+Pair clauses (1,2) and (3,4). Each pair union has 12 assignments, so the
+paired sum is 24 and W'=3/4. This is a strict certificate. The x=false
+branch has mass 24 over 16 assignments; x=true has mass 0 over 16.
+
+Unequal-branch selection caveat
+
+The branch theorem guarantees a branch satisfying badMass(D_j)<|D_j|.
+For unequal sizes, merely minimizing raw bad mass need not select it.
+For example, branch counts/masses (1,1) and (3,2) give a parent certificate
+3<4, but choosing the smaller raw mass selects the uncertified branch.
+Use the strict comparison or a correctly normalized conditional score.
+A specialized balanced-branch implementation needs its own refinement.
+
+Independent exhaustive finite checks
+
+verify_paired_union.py checks all 4,096 choices of four events over a
+three-point universe, 32,768 domain cases, and 110,592 disjoint partitions.
+There are 1,546 strict certificates. Existence, additivity, surviving
+branch, singleton safety and paired<=individual all pass. The script also
+checks the four-clause improvement and the unequal-branch counterexample.
+It does not import or execute the generated candidate.
+
+Limits
+
+The proof concerns exact finite counts. It supplies neither an efficient
+representation of D nor an algorithm computing those counts cheaply.
+Affine-event semantics, rank/count formulas, branch-selection code,
+pair selection, witness reconstruction, and total encoded-bit runtime
+remain separate obligations. It also gives no universal initial strict
+certificate. General completeness and the SAT-in-P target remain open.
+
+Read compile-receipt.json for the accepted source hash and actual compile
+status. This is local Lean kernel compilation, not an official project
+checker replay, upstream submission, or credit event.
+
+Final verification: Lean 4.36.0, exit 0, 36.858 seconds, no warnings or
+errors. All five printed theorem axiom lists contain only propext,
+Classical.choice and Quot.sound. Accepted source SHA256:
+0db91e5c4f64f5cab9c554ee08ad0fa5597b826263bcae1b369f87dbfbbc9253.

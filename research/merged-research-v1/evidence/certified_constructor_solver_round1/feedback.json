@@ -1,0 +1,74 @@
+{
+  "status": "locally_lean_checked_executable_certifying_constructor_procedure",
+  "sources": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/CertifiedConstructorSolver.lean",
+      "sha256": "431464c78e88d0cd40acd05ba3257815df610f2d119803da53e619b82a06d79b",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/CertifiedConstructorSolver.olean",
+      "artifact_sha256": "57c80d08e1cab730f0d413c6d55c6f23dbbea3bf6894a9e3c6a3f10683ab798f"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/ProcedureExamples.lean",
+      "sha256": "4a18c6969c4e342f743b4e2ee3f768ee856498878b0dcbcfcc02f8de49beea10",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/ProcedureExamples.olean",
+      "artifact_sha256": "ee40c9643469c856c90d358f264f3613e7987338f519944bccb691b5245eeb80"
+    }
+  ],
+  "public_entry_point": "PEqualNP.Outside.CertifiedConstructorSolver.certify",
+  "inputs": "offset, retained project CNF F, static Fin r/Fin h neighbor sets N, row guard clauses, supplied success-or-failure matching certificate",
+  "results": {
+    "unsupported": "Offset, positivity, or retained dual-Horn syntax check failed; no SAT/UNSAT claim",
+    "invalidCertificate": "Supported retained model computed but supplied matching certificate rejected; no SAT/UNSAT claim",
+    "unsat": "Constructed CNF has no satisfying assignment",
+    "sat": "Carries executable Assignment; its actual project CNF evaluation is proved true"
+  },
+  "new_checked_facts": [
+    "Executable procedure for explicit fresh guarded-CNF constructor with supplied matching certificate",
+    "Runtime checks enforce retained/guard offset bounds, positive guards, retained dual-Horn syntax and certificate validity",
+    "Four distinct results: unsupported, invalidCertificate, unsat, sat(computed assignment)",
+    "Unconditional public soundness for all typed inputs: returned SAT assignment evaluates encoded CNF true; returned UNSAT excludes every model",
+    "Successful certificates use active-masked edge values and executable fresh-ID assignment lift"
+  ],
+  "significance": "Previously separate syntax checker, retained greatest-model solver, matching validators, masked-edge adapter and executable witness lift now compose into one actual executable public procedure with unconditional result soundness on typed constructor inputs.",
+  "limits": [
+    "Matching certificate search",
+    "Arbitrary-CNF decomposition or recognition",
+    "External parser/serialized input refinement",
+    "Encoded-bit runtime",
+    "General SAT completeness"
+  ],
+  "critical_usage": "Call certify, not the lower-level processCertificate helper without its hypotheses. Never reinterpret unsupported or invalidCertificate as UNSAT. Fin/Finset typed bounds and distinctness still need faithful external parsing.",
+  "next_research_target": "Supply a verified certificate-producing matching algorithm, then a checked raw-CNF decomposition certificate that establishes equality to this constructor. Account for all bit operations separately.",
+  "actual_execution": [
+    [
+      "SAT",
+      "UNSAT",
+      "UNSAT",
+      "invalid certificate",
+      "invalid certificate",
+      "unsupported",
+      "unsupported",
+      "unsupported",
+      "SAT"
+    ],
+    true,
+    [
+      false,
+      true
+    ],
+    true
+  ],
+  "reusable_lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+  "lean_version": "4.36.0",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "official_checker": false,
+  "upstream_published": false,
+  "general_sat_solved": false,
+  "receipts": [
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/compile-receipt.json"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-27T02:19:17.469655+00:00",
+  "proposal": "Fable auto00058 ATOM-REFINE",
+  "all_subspaces_GF2_dimension3": 16,
+  "families_compared_with_exhaustive_basis_search": 4844,
+  "accepted": 3591,
+  "rejected": 1253,
+  "planted_compatible_families_dimensions4_6_8": 300,
+  "mismatches": 0,
+  "seconds": 1.1384381670000001,
+  "general_theorem_verified": false,
+  "polynomial_cost_verified": false,
+  "deployed": false
+}

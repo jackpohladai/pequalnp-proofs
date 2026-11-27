@@ -1,0 +1,87 @@
+{
+  "status": "locally_lean_checked_cnf_constructor_and_solver_output_composition",
+  "sources": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/GuardedCNFEncoding.lean",
+      "sha256": "2e935291f7d7ba714e7298853cbe29b91485bd08decfce5da9f368e9b36102f1"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/FreshGuardedCNF.lean",
+      "sha256": "7115ba63b757a9f37561ae1f480bbd1a37fde66f50741e05d8ec62dddd84231b"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/CheckedOutputProjection.lean",
+      "sha256": "572ef83e2edf61be5975e4d64731ac39e9569667a8e314d972fa3cfa76d31546"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/EncodingExamples.lean",
+      "sha256": "2ac6326f09fd514ab13c1d0b8d6241a7b47a213a4c5ccd42f9c4eca99f92047f"
+    }
+  ],
+  "new_checked_facts": [
+    "Explicit CNF row and column encoder with exact pointwise semantics",
+    "Injective/disjoint private variable assignment gluing",
+    "Actual encoded SAT iff retained-model plus private edge witness iff retained-model plus matching",
+    "Fresh edge IDs offset + Nat.pair(row,hole) satisfy injectivity and below-offset disjointness",
+    "Actual checked dual-Horn retained solver output reduces constructed CNF satisfiability to matching at its greatest model",
+    "Checked retained UNSAT excludes the constructed CNF"
+  ],
+  "premises": [
+    "Rows Fin r and holes Fin h with static finite neighbor sets",
+    "Explicit constructor adds retained F, guard-or-private-edge rows, and pairwise column exclusion clauses",
+    "Private edge-variable map injective on all row-hole pairs",
+    "All retained and guard literals disjoint from private IDs",
+    "Greatest-model output projection additionally requires positive guard literals and actual checkedSolve F = some (some T)"
+  ],
+  "fresh_constructor": "Fresh IDs are offset + Nat.pair(row.val,hole.val). All retained and guard variable IDs below offset suffice for disjointness; injectivity proved.",
+  "subtle_bridge": "The encoder constrains only valid neighbor edges. Extraction masks all non-neighbor edge values false before invoking typed HasPrivateEdges, so absent edge clauses are not assumed.",
+  "significance": "Connects previous typed matching and executable retained greatest-model proofs to the actual project CNF language. This is correctness of an explicit constructor, not an arbitrary-input recognizer.",
+  "remaining": [
+    "Recognition/decomposition of arbitrary input CNF",
+    "Executable matching solver",
+    "Executable full witness assembly: gluing uses Function.extend with classical choice",
+    "Generated Python candidate refinement",
+    "Encoded-bit runtime",
+    "General SAT completeness"
+  ],
+  "next_research_target": "Implement matching with a checked success/failure certificate and an executable fresh-variable witness lift. For arbitrary CNF inputs require a checked decomposition certificate/equality to the constructor; do not infer it from overlapping rows.",
+  "counterexamples": [
+    {
+      "violated_premise": "edge injectivity",
+      "instance": "Two rows and two holes, complete neighbor graph, all four edge IDs collide",
+      "typed_matching": true,
+      "encoded_sat": false
+    },
+    {
+      "violated_premise": "retained/edge disjointness",
+      "instance": "Retained NOT p and a single unguarded row whose private edge is also p",
+      "typed_retained_plus_matching": true,
+      "encoded_sat": false
+    }
+  ],
+  "finite_checks": {
+    "status": "passed",
+    "verifier_sha256": "202ae4c14c147b5d251ae469f4d07d5603c01e88fc02c9f1ba7e6aa6fb9989a4",
+    "pointwise_cnf_evaluations": 34425,
+    "guarded_matching_projections": 685,
+    "collision_counterexample_checked": true,
+    "retained_overlap_counterexample_checked": true,
+    "two_row_projection_assignments": 4,
+    "candidate_executed": false,
+    "scope": "Independent finite mirror; general equivalence separately checked in Lean"
+  },
+  "lean_version": "4.36.0",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "official_checker": false,
+  "upstream_published": false,
+  "general_sat_solved": false,
+  "candidate_executed": false,
+  "receipts": [
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/compile-receipt.json",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/finite-receipt.json"
+  ]
+}

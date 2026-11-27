@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-11-26T12:01:37.569819+00:00",
+  "id": "guarded_orientation_round1",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/OrientedConstructor.lean",
+  "extends_component_family": "matching_complete_round1",
+  "scope": "Supplied visible-variable sign orientation preserves the actual guarded encoding and restores original witnesses; checked restricted wrapper is decisive when transformed syntax checks pass. No automatic orientation discovery or general polynomial algorithm.",
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/guarded-renaming-validation.json",
+      "sha256": "e1aecf6290febcecb07126fd43e0186686a0b6f416275357d472f143060f63c3"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/guarded-renaming-independent-audit.json",
+      "sha256": "2f267df98ce13793297cc365b231a69e7b14e831d36c478a150fab0801953c6a"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/source-bound-branch-audit.json",
+      "sha256": "242703f4a63a4a9956c1e828474a677b7ef0594355ded497631c7614fde81f96"
+    }
+  ],
+  "status": "locally_lean_compiled",
+  "source_sha256": "845d0d3a6da2cdde5d7170bf5d1642a3decf8b35dd5e72d6d13917af0dbc1fb6",
+  "count_as_new_component_family": false,
+  "general_sat_proof": false,
+  "general_polynomial_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false
+}

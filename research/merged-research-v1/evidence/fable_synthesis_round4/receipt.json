@@ -1,0 +1,52 @@
+{
+  "finished_at": "2026-11-26T15:23:57.510591+00:00",
+  "exit_code": 1,
+  "success": false,
+  "seconds": 1125.521562208,
+  "model_usage": {
+    "claude-fable-5-2": {
+      "inputTokens": 4,
+      "outputTokens": 50868,
+      "cacheReadInputTokens": 3094,
+      "cacheCreationInputTokens": 1612,
+      "webSearchRequests": 0,
+      "costUSD": 2.0611628,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 32768,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 1612,
+      "canonicalModel": "claude-fable-5-2",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 1612,
+    "cache_read_input_tokens": 3094,
+    "output_tokens": 32775,
+    "output_tokens_details": {
+      "thinking_tokens": 32768
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1612,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "subtype": "success",
+  "is_error": true,
+  "fast_mode_state": "on",
+  "subscription_only": true,
+  "local_timeout_seconds": null,
+  "error_summary": "Request timed out. If the API is slow to answer, or a proxy or gateway holds responses, set API_TIMEOUT_MS above the limit in force (600000 by default)."
+}

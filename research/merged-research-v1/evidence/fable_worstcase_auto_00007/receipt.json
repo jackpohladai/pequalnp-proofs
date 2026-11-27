@@ -1,0 +1,52 @@
+{
+  "finished_at": "2026-11-26T19:13:54.248823+00:00",
+  "exit_code": 1,
+  "success": false,
+  "seconds": 494.812867541,
+  "model_usage": {
+    "claude-fable-5-2": {
+      "inputTokens": 2,
+      "outputTokens": 34200,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 14096,
+      "webSearchRequests": 0,
+      "costUSD": 1.593552,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 14096,
+      "canonicalModel": "claude-fable-5-2",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 14096,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 6,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 14096,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "subtype": "success",
+  "is_error": true,
+  "fast_mode_state": "on",
+  "subscription_only": true,
+  "local_timeout_seconds": null,
+  "error_summary": "API Error: Connection dropped (ECONNRESET). A VPN, firewall, or security software can cause this. Check those or switch networks, then try again."
+}

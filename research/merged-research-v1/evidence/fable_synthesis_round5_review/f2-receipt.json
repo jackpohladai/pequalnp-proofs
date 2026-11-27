@@ -1,0 +1,129 @@
+{
+  "source": "fable_synthesis_round5/proposal.txt section6",
+  "models": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "model_count": 10,
+  "all_32_affine_equations_tested": true,
+  "only_vanishing_affine_coefficient_vector": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "residual_solution_sets": {
+    "00": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "01": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "10": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "11": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  "distinct_residual_model_sets": 3,
+  "all_four_prefixes_satisfiable": true,
+  "important_scope": "Three different residual functions before 2SAT terminal dispatch, not three memoized full K1 solver states or a runtime lower bound."
+}

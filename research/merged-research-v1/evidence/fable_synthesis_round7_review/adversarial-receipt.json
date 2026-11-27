@@ -1,0 +1,68 @@
+{
+  "mechanism": "Connected F_n plus all eight signed 3-clauses on y1,z1,z2; exact MRA canonicalization and 2SAT dispatch enabled.",
+  "results": [
+    {
+      "n": 3,
+      "variables": 8,
+      "clauses": 14,
+      "x_first_max_states": 8,
+      "x_first_terminal_calls": 16,
+      "core_first_max_states": 2,
+      "core_first_terminal_calls": 0,
+      "both_return_unsat": true
+    },
+    {
+      "n": 4,
+      "variables": 10,
+      "clauses": 16,
+      "x_first_max_states": 16,
+      "x_first_terminal_calls": 32,
+      "core_first_max_states": 2,
+      "core_first_terminal_calls": 0,
+      "both_return_unsat": true
+    },
+    {
+      "n": 5,
+      "variables": 12,
+      "clauses": 18,
+      "x_first_max_states": 32,
+      "x_first_terminal_calls": 64,
+      "core_first_max_states": 2,
+      "core_first_terminal_calls": 0,
+      "both_return_unsat": true
+    },
+    {
+      "n": 6,
+      "variables": 14,
+      "clauses": 20,
+      "x_first_max_states": 64,
+      "x_first_terminal_calls": 128,
+      "core_first_max_states": 2,
+      "core_first_terminal_calls": 0,
+      "both_return_unsat": true
+    },
+    {
+      "n": 7,
+      "variables": 16,
+      "clauses": 22,
+      "x_first_max_states": 128,
+      "x_first_terminal_calls": 256,
+      "core_first_max_states": 2,
+      "core_first_terminal_calls": 0,
+      "both_return_unsat": true
+    },
+    {
+      "n": 8,
+      "variables": 18,
+      "clauses": 24,
+      "x_first_max_states": 256,
+      "x_first_terminal_calls": 512,
+      "core_first_max_states": 2,
+      "core_first_terminal_calls": 0,
+      "both_return_unsat": true
+    }
+  ],
+  "elapsed_seconds": 1.4666900634765625,
+  "scope": "Adversarial fixed-order scaling for the actual proposed MRA solver, not a lower bound for all variable orders or arbitrary SAT algorithms. Core-first ordering solves this family quickly.",
+  "general_polynomial_claim_refuted": false
+}

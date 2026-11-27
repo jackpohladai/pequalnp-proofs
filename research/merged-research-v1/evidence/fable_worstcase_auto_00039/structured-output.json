@@ -1,0 +1,72 @@
+{
+  "proposal": "SCOPE. Hand-derived; nothing executed. One unimplemented root extension, PDC (popular-difference collapse): a certified invertible F2-linear change of coordinates that keeps every clause exactly. It is structure exploitation with a conjectural polynomial preprocessing bound. It is not a SAT algorithm, gives no universal growth bound, and is distinct from the deployed bounded greedy BLQ.\n\nDIAGNOSIS OF NEON 00042 (F42). Let a,b,c,d be the parities of {1,5,9},{2,6,10},{3,7,11},{4,8,12}. The 96 core clauses expand (a\u2228b)(\u00aca\u2228c)(\u00aca\u2228d)(\u00acb\u2228c)(\u00acb\u2228d)(\u00acc\u2228\u00acd). The six extras are three point-pairs with differences e1+e5, e1+e9, e3+e7. Each pair cuts its block's stabilizer to one vector, so the blocks on triple 1 jointly demand x1+x5, x9, x1+x9, x5: full rank, hence no_dimension_reduction. This is a failure of BLQ's acceptance rule (exact stabilizers, one common basis, strict rank drop), not evidence that the function is hard.\n\nMECHANISM. State (G,T) with F(x)=G(Tx), T invertible, n unchanged. Move collapse(t,m), m in supp(t): y_i=x_i\u2295x_m for i in supp(t)\\{m}, y_i=x_i otherwise (an involution). Rewrite each clause C using S=vars(C)\u2229(supp(t)\\{m}):\n- S empty: unchanged.\n- x_m in vars(C): one clause, signs on S flipped iff C contains \u00acx_m.\n- otherwise: two clauses, C\u2228x_m and flip_S(C)\u2228\u00acx_m.\nThen merge (D\u2228l and D\u2228\u00acl become D) in a fixed order and subsume. Potential \u03a6 = total literal count; accept iff \u03a6 strictly drops. Candidates: t = the sign-difference set of two clauses on the same variable set, each pivot m, scored by exact \u0394\u03a6. Near-stabilizers suffice, incompatible blocks simply fail to merge, and extras are carried unchanged. SAT and UNSAT are both preserved; the lift is x=T^{-1}y.\n\nWORK ACCOUNTING (conjecture). Accepted moves \u2264 \u03a6(F) \u2264 L (encoded length). Candidates per round \u2264 clauses^2\u00b7width. Each evaluation is one rewrite of size \u2264 2\u03a6 plus merging. Total is polynomial in L (crude L^6) with no 2^n term, provided T18 replaces exhaustive checking. At n\u226412 the existing complete-enumeration rule should apply with project=T, lift=T^{-1}, r=n; whether the Lean statement assumes r<n must be checked.\n\nPREDICTIONS (independent tests unless marked deployed).\nP1. With T: y1=x1\u2295x5\u2295x9, y2=x2\u2295x6\u2295x10, y3=x3\u2295x7\u2295x11, y4=x4\u2295x8\u2295x12, y_i=x_i for i\u22655, the fixture formula G satisfies F42(x)=G(Tx) on all 4096 assignments.\nP2. PDC restricted to weight-2 t on F42: the first accepted move has \u0394\u03a6=\u2212175 (612 to 437), exactly 8 collapses are accepted, and final \u03a6=27 (6 binary plus 3 width-5 clauses).\nP3 (deployed; the fixture). G is refuted at root with compression skipped and peak 0, against the measured 16 for F42. If so, the deployed peak is not invariant under linear conjugation, and the 16 was a coordinate artifact.\nP4. On the 36+9 odd-block control, assuming nine 4-point coset blocks over variable pairs, PDC ends with 9 binary plus 9 width-4 clauses (\u03a6 180 to 54).\nAuto00008: no prediction, because its formula is not in this brief. If PDC halts there with \u03a6 unchanged, that is a PDC failure.\n\nFAILURE MODE AND ADVERSARY. A clause containing x_i but not the pivot doubles and widens. Greedy rejects when this straddle cost reaches the merge gain. Reproducible adversary: any Tseitin formula on a 3-regular graph. Every weight-2 collapse changes \u03a6 by +12 (one constraint 12 to 4, its neighbour 12 to 32), so PDC makes zero moves although Gaussian elimination solves it. Cyclic overlapping forms (x1\u2295x2, x2\u2295x3, x1\u2295x3 in separate blocks) can need a one-move uphill step.",
+  "missing_theorem": "T18 (first; prerequisite; Lean target, unproved). For every CNF G, nonzero t and pivot m: \u03c4\u2218\u03c4=id; the rewritten G^\u03c4 satisfies G(x)=G^\u03c4(\u03c4x) for all x; merge and subsumption preserve the function; G^\u03c4 has at most twice the clauses and width at most +1. Consequence: a composed certificate F=G\u2218T with no 2^n enumeration, plus the move bound \u2264\u03a6(F). Without T18 nothing beyond 12 variables is certified.\n\nT19 (first open). Partition the variables into groups V_j with parities a_j. Let H be a CNF on the a_j, C its exact expansion, and R group-saturated (each clause of R contains every group entirely or not at all). Let F=C\u222aR.\n(i) Along any sequence of within-group weight-2 collapses, no clause grows, and \u03a6 strictly drops whenever the group occurs in H (hand-derived).\n(ii) Hence a strictly decreasing path of at most \u03a3(|V_j|\u22121) collapses reaches G* containing H, with \u03a6(G*) \u2264 \u03a6(H)+\u03a6(R) (hand-derived).\n(iii) OPEN: every greedy max-gain local minimum reachable from F has \u03a6 \u2264 \u03a6(H)+\u03a6(R).\nI expect (iii) to fail when R carries its own popular cross-group differences; the minimal true hypothesis is unknown. None of this bounds the downstream solver's work on G*.",
+  "self_attack": "1. Known territory. This is greedy local search in GL_n(F2) for a short linear-clause (Res(\u2295)-style) representation, close to XOR recovery plus Gauss preprocessing. The novelty is limited to exact residue carriage and the scalar potential.\n2. The deployed-side fixture prediction is nearly trivial, since G contains an UNSAT 2-CNF. The information is in P1 and P2, which are unexecuted hand computations; an arithmetic slip in 175 or 27 is possible.\n3. No variables are removed. When the core is not refuted at root, the residue variables remain and the peak may be unchanged or worse. Merging changes occurrence products and hence DP order unpredictably.\n4. Greedy has barriers (Tseitin, cyclic overlaps). Depth-d lookahead costs n^{O(d)}, which is cap-raising in disguise. Minimising \u03a6 over GL_n is plausibly NP-hard (sparsest-basis flavour); that is a conjecture.\n5. Small \u03a6 does not imply easy, and a \u03a6-local minimum does not imply hard. Random 3-CNF has almost no repeated supports and so yields no candidates. Nonlinear disguises (x_i replaced by x_i\u2295x_j\u00b7x_k) are untouched. This is no progress toward general polynomial SAT.\n6. Merge-closure is not confluent, so \u03a6 depends on the fixed merge order; the L^6 bound is asserted, not proved.\n7. One conjugate pair proves no asymptotic statement about peaks.",
+  "mechanism_signature": "PDC | unimplemented | root-only | state (G,T), T in GL_n(F2), F=G\u2218T, n unchanged | move collapse(t,m), t from sign differences of same-support clause pairs | accept iff total literal count \u03a6 strictly drops | at most \u03a6(F) accepted moves | residue carried exactly, SAT and UNSAT sound | certificate: stepwise T18 (unproved) or 2^n enumeration at n\u226412 | no rank drop, no common basis, no stabilizer enumeration",
+  "delta_from_prior": "SRP (00038) altered the frontier at every layer and rested on trace-domination T17, which I expected to fail. RTS (00037) relaxed extras away, so it was UNSAT-only and needed one common stabilizer. LFQ (00036) and deployed BLQ need exact stabilizers, a compatible greedy basis and strict rank drop. PDC stays at the root, keeps n and every clause exactly, uses near-stabilizers (popular differences), replaces basis compatibility by a strictly decreasing potential, and has an explicit move bound. New here: the conjugate-pair test that the deployed peak is not GL-invariant, and three named adversaries (straddling residue, 3-regular Tseitin, cyclic overlapping forms).",
+  "fixture": {
+    "formula": [
+      [
+        1,
+        2
+      ],
+      [
+        -3,
+        -4
+      ],
+      [
+        -1,
+        3
+      ],
+      [
+        -2,
+        4
+      ],
+      [
+        -1,
+        4
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        -1,
+        -2,
+        -6,
+        9,
+        10
+      ],
+      [
+        1,
+        -3,
+        5,
+        -7,
+        11
+      ],
+      [
+        3,
+        4,
+        8,
+        11,
+        12
+      ]
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "predicted_sat": false,
+    "predicted_peak": 0
+  }
+}

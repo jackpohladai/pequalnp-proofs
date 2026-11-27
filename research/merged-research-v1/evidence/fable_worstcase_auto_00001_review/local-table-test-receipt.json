@@ -1,0 +1,116 @@
+{
+  "at": "2026-11-26T18:45:22.347241+00:00",
+  "windows_count": 42,
+  "assignment_trials": 224,
+  "block_results": [
+    {
+      "signed_block": [
+        1,
+        3,
+        4,
+        5,
+        12
+      ],
+      "discovered_by_two_support_rule": true,
+      "up_surviving_assignments": 11,
+      "all_survivors_satisfy_mod3_row": true
+    },
+    {
+      "signed_block": [
+        1,
+        3,
+        6,
+        10,
+        11
+      ],
+      "discovered_by_two_support_rule": true,
+      "up_surviving_assignments": 11,
+      "all_survivors_satisfy_mod3_row": true
+    },
+    {
+      "signed_block": [
+        1,
+        4,
+        8,
+        9,
+        10
+      ],
+      "discovered_by_two_support_rule": true,
+      "up_surviving_assignments": 11,
+      "all_survivors_satisfy_mod3_row": true
+    },
+    {
+      "signed_block": [
+        2,
+        3,
+        5,
+        7,
+        8
+      ],
+      "discovered_by_two_support_rule": true,
+      "up_surviving_assignments": 11,
+      "all_survivors_satisfy_mod3_row": true
+    },
+    {
+      "signed_block": [
+        2,
+        4,
+        6,
+        7,
+        11
+      ],
+      "discovered_by_two_support_rule": true,
+      "up_surviving_assignments": 11,
+      "all_survivors_satisfy_mod3_row": true
+    },
+    {
+      "signed_block": [
+        2,
+        5,
+        9,
+        10,
+        11
+      ],
+      "discovered_by_two_support_rule": true,
+      "up_surviving_assignments": 11,
+      "all_survivors_satisfy_mod3_row": true
+    },
+    {
+      "signed_block": [
+        -12,
+        6,
+        7,
+        8,
+        9
+      ],
+      "discovered_by_two_support_rule": true,
+      "up_surviving_assignments": 11,
+      "all_survivors_satisfy_mod3_row": true
+    }
+  ],
+  "sum_certificate": {
+    "coefficients": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      0
+    ],
+    "constant": 1,
+    "inconsistent_mod3": true
+  },
+  "empty_local_tables": 0,
+  "status": "specific_local_table_certificate_confirmed",
+  "general_polynomial_sat_proof": false,
+  "seconds": 0.14374089241027832,
+  "scope": "The seven required windows are discovered and their exact UP-filtered tables imply the inconsistent mod3rows. This certifies that the proposed affine-integer relaxation would reject this one input at root. No general lattice/HNF solver, inference loop, bit-complexity bound or Lean proof was implemented or verified.",
+  "input_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_antigravity_round6/structured-output.json",
+  "input_sha256": "39ad5e45b0aff828631c3c04572fd5960f1c2cb9ea409354556a53eafeed9cfb"
+}

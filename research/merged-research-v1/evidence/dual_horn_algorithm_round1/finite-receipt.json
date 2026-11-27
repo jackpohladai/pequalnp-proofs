@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "verifier_sha256": "3ee650e4bb4559826fcbfcd3da889f7390af1f4519f19c870ae1d2b3b1d7a752",
+  "dual_horn_formulas": 6462,
+  "satisfiable_formulas": 4339,
+  "total_flip_steps": 3910,
+  "max_flip_steps_on_three_variables": 3,
+  "model_domination_checks_along_traces": 14098,
+  "additional_edge_cases": 7,
+  "nondual_failure_checked": true,
+  "sparse_and_range_solvers_agree_on_all_formulas": true,
+  "billion_index_sparse_case_passed": true,
+  "scope": "Python mirror versus exhaustive oracle; Lean execution examples separately compiled",
+  "candidate_executed": false,
+  "bit_runtime_proved": false,
+  "general_sat_claim": false
+}

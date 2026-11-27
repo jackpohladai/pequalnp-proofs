@@ -1,0 +1,358 @@
+{
+  "source_proposal_sha256": "feaf5fdd1cb834df3d519ca680c1d31741ae8ab6bf6d288d14d9e3ffdab426f8",
+  "claims": [
+    {
+      "claim": "F2_x counting layers",
+      "observed": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "expected": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "claim": "F2_y counting layers",
+      "observed": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "claim": "F3_x counting layers",
+      "observed": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "expected": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "claim": "F3_interleaved counting layers",
+      "observed": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "claim": "F2 model count",
+      "observed": 10,
+      "expected": 10,
+      "pass": true
+    },
+    {
+      "claim": "F2 distinct residual functions",
+      "observed": 3,
+      "expected": 3,
+      "pass": true
+    },
+    {
+      "claim": "F2 semantically maximal residuals",
+      "observed": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "claim": "F3 model count",
+      "observed": 28,
+      "expected": 28,
+      "pass": true
+    },
+    {
+      "claim": "F3 distinct residual functions",
+      "observed": 7,
+      "expected": 7,
+      "pass": true
+    },
+    {
+      "claim": "F3 semantically maximal residuals",
+      "observed": 6,
+      "expected": 6,
+      "pass": true
+    },
+    {
+      "claim": "F2 dispatch depth [1, 2, 3, 4]",
+      "observed": 2,
+      "expected": 2,
+      "pass": true
+    },
+    {
+      "claim": "F2 dispatch depth [3, 4, 1, 2]",
+      "observed": 1,
+      "expected": 1,
+      "pass": true
+    },
+    {
+      "claim": "K4 Tseitin UNSAT oracle",
+      "observed": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "claim": "K4 all 720 orders follow predicted terminal behavior",
+      "observed": 0,
+      "expected": 0,
+      "pass": true
+    }
+  ],
+  "claim_failures": 0,
+  "details": {
+    "F2_x": {
+      "sat": null,
+      "layers": [
+        {
+          "pre_prune": 2,
+          "post_prune": 2
+        },
+        {
+          "pre_prune": 3,
+          "post_prune": 2
+        }
+      ],
+      "terminal_calls": 0,
+      "halt_depth": 2,
+      "partial_order": true
+    },
+    "F2_y": {
+      "sat": true,
+      "layers": [
+        {
+          "pre_prune": 2,
+          "post_prune": 2
+        },
+        {
+          "pre_prune": 3,
+          "post_prune": 1
+        }
+      ],
+      "terminal_calls": 0,
+      "halt_depth": 2,
+      "partial_order": false
+    },
+    "F3_x": {
+      "sat": null,
+      "layers": [
+        {
+          "pre_prune": 2,
+          "post_prune": 2
+        },
+        {
+          "pre_prune": 4,
+          "post_prune": 4
+        },
+        {
+          "pre_prune": 8,
+          "post_prune": 8
+        }
+      ],
+      "terminal_calls": 0,
+      "halt_depth": 3,
+      "partial_order": true
+    },
+    "F3_interleaved": {
+      "sat": true,
+      "layers": [
+        {
+          "pre_prune": 2,
+          "post_prune": 2
+        },
+        {
+          "pre_prune": 4,
+          "post_prune": 2
+        },
+        {
+          "pre_prune": 4,
+          "post_prune": 4
+        },
+        {
+          "pre_prune": 6,
+          "post_prune": 2
+        },
+        {
+          "pre_prune": 3,
+          "post_prune": 1
+        },
+        {
+          "pre_prune": 1,
+          "post_prune": 1
+        }
+      ],
+      "terminal_calls": 0,
+      "halt_depth": 6,
+      "partial_order": false
+    }
+  },
+  "k4_order_histogram": {
+    "(False, 2, 4, 2)": 720
+  },
+  "k4_counterexamples": [],
+  "correctness": {
+    "formulas": 2957,
+    "solver_runs": 17742,
+    "wrong_answers": 0,
+    "counterexamples": [],
+    "canonicalization_mismatches": 0
+  },
+  "interleaved_cycle_widths": [
+    {
+      "n": 2,
+      "max_S": 2,
+      "max_T": 4
+    },
+    {
+      "n": 3,
+      "max_S": 4,
+      "max_T": 6
+    },
+    {
+      "n": 4,
+      "max_S": 4,
+      "max_T": 6
+    },
+    {
+      "n": 5,
+      "max_S": 4,
+      "max_T": 6
+    },
+    {
+      "n": 6,
+      "max_S": 4,
+      "max_T": 6
+    },
+    {
+      "n": 7,
+      "max_S": 4,
+      "max_T": 6
+    },
+    {
+      "n": 8,
+      "max_S": 4,
+      "max_T": 6
+    },
+    {
+      "n": 9,
+      "max_S": 4,
+      "max_T": 6
+    },
+    {
+      "n": 10,
+      "max_S": 4,
+      "max_T": 6
+    },
+    {
+      "n": 11,
+      "max_S": 4,
+      "max_T": 6
+    },
+    {
+      "n": 12,
+      "max_S": 4,
+      "max_T": 6
+    }
+  ],
+  "elapsed_seconds": 0.9577257633209229,
+  "limits": "Finite independent tests only. No general polynomial width bound, order discovery theorem, or full solver formalization."
+}

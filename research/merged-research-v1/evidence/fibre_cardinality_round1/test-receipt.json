@@ -1,0 +1,47 @@
+{
+  "at": "2026-11-27T02:18:40.566041+00:00",
+  "checks": {
+    "valid_small_certificates": 400,
+    "global_equivalence_points": 23512,
+    "invalid_certificates_rejected": 1181,
+    "arbitrary_bad_certificates_crosschecked": 600
+  },
+  "large_blocks": [
+    {
+      "width": 16,
+      "rank": 14,
+      "explicit_forbidden_points": 4,
+      "global_truth_table_points": "65536",
+      "verification_seconds": 0.00011120799999997377,
+      "validation": "numeric certificate plus200sampled assignments; no global enumeration"
+    },
+    {
+      "width": 32,
+      "rank": 30,
+      "explicit_forbidden_points": 4,
+      "global_truth_table_points": "4294967296",
+      "verification_seconds": 0.0004574999999999996,
+      "validation": "numeric certificate plus200sampled assignments; no global enumeration"
+    },
+    {
+      "width": 64,
+      "rank": 62,
+      "explicit_forbidden_points": 4,
+      "global_truth_table_points": "18446744073709551616",
+      "verification_seconds": 0.00283033399999999,
+      "validation": "numeric certificate plus200sampled assignments; no global enumeration"
+    },
+    {
+      "width": 128,
+      "rank": 126,
+      "explicit_forbidden_points": 4,
+      "global_truth_table_points": "340282366920938463463374607431768211456",
+      "verification_seconds": 0.012657209000000003,
+      "validation": "numeric certificate plus200sampled assignments; no global enumeration"
+    }
+  ],
+  "seconds": 0.260686834,
+  "scope": "Experimental verifier controls. Python and general SAT runtime are not formally verified.",
+  "general_polynomial_sat_proof": false,
+  "deployed": false
+}

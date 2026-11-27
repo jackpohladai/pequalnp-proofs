@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-26T20:10:33.156995+00:00",
+  "solver": "blq-root-scc-emra-ialh5-v2",
+  "controller_alive": true,
+  "lanes": {
+    "fable": {
+      "folder": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fable_worstcase_auto_00014",
+      "alive": true,
+      "source_matches": true,
+      "helper_matches": true,
+      "code_in_prompt": true,
+      "source_delivery_recorded": true
+    },
+    "neon": {
+      "folder": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_worstcase_auto_00010",
+      "alive": true,
+      "source_matches": true,
+      "helper_matches": true,
+      "code_in_prompt": true,
+      "source_delivery_recorded": true
+    }
+  },
+  "codex_subagents_used": false,
+  "external_texts_enabled": false,
+  "general_polynomial_sat_proof": false,
+  "lean_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/compression-lean-receipt.json",
+  "pipeline_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/compression-pipeline-receipt.json"
+}

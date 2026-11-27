@@ -1,0 +1,138 @@
+{
+  "id": "bounded_matching_round1",
+  "checked_at_utc": "2026-11-26T11:16:07.155022+00:00",
+  "status": "locally_lean_compiled",
+  "extends_component_family": "matching_complete_round1",
+  "count_as_new_component_family": false,
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/BoundedGuardVectorInput.lean",
+  "source_sha256": "784a038f9fcb96bc7112b6c70409dba69954cd2ee4fbd9fa735251a2b986d114",
+  "scope": "Bounded matching tables and one precomputed guard vector, with exact refinement of the restricted constructed-CNF solver and partial cost bounds tied to explicit input.",
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-validation.json",
+      "sha256": "5e62a2056b6844b4f00dfe419b2f1040daf040f923aeb7f85e84e6cee44f04f1"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-additional-validation.json",
+      "sha256": "3fe3a2657dcecb6fbcf42ddf823291685cd8ec9549b435f945a82240e11f1436"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/bounded-loop-validation.json",
+      "sha256": "294280c8f3fa65bfac5798ca350e434f9c0f81b32716394cee52fc19730e5b73"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/bounded-matching-benchmark.json",
+      "sha256": "07ca89837d36d1cef008315e4f1f229145cc31a385b217b9ff95747a2ec0d6c0"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-validation.json",
+      "sha256": "6986291b8d4f7cb21e9f309bbc50f687b942faa396a0743d69abd9d30ed022fe"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-independent-audit.json",
+      "sha256": "c961a6c22da761bcf633c0048d6a4ef1beffa9cfc31c8c0231a206b022a46878"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/mixed-bounded-validation.json",
+      "sha256": "6bc53465a54e3ca5b2ab20ec9037ec698713d9a9b6bb174d5c9a475536599979"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/bounded-constructor-comparison.json",
+      "sha256": "2d45110bc8b869272346a8b0e3661372f426da92757c5480d497ec927f0d5f4f"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-cost-validation.json",
+      "sha256": "e57877f981bb0724e12964de2c607a10074aa0da04f871b43e5be9bd4476c235"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-examples-validation.json",
+      "sha256": "d294cfe728ede6d9a573e96b809bbaba24b3b93a3c325efb4afb4a88be6da861"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-independent-audit.json",
+      "sha256": "3873e7dcdfc4ccb46298e8b37c07a06151bab9a3ddee4b73675db19e46b830f1"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-examples-independent-audit.json",
+      "sha256": "e4b5f27e411db5e814d353678595367b0eda68371937b7935a8be1bb7c509b21"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/root-validation-audit.json",
+      "sha256": "5004ce714f7ab1249136592401bd8e6fc84f16acc501b22e0ba4d90f613971c3"
+    }
+  ],
+  "verified_pin_count": 49,
+  "formalized": [
+    "Concrete association list has distinct row and hole keys; overwrite update preserves validity on a free destination, agrees exactly with the logical matching update and stores at most one pair per row.",
+    "Direct row and owner lookup instrumentation agrees with the executable scans and makes at most r key comparisons on well-formed states.",
+    "Table replay, guarded augmentation and outer matching loop agree exactly with the original matcher; typed matcher remains sound and never inconclusive.",
+    "Retained support is computed once. One Boolean guard vector is used by matching, final certificate checks and witness masking. Explicit adjacency and guard-clause arrays are prepared once.",
+    "The final explicit solver is exactly equal to the original for every input; supported checks, rejection behavior, SAT assignments and UNSAT results are preserved.",
+    "Instrumented retained solver agrees with original run and counts actual clause-predicate evaluations. It makes at most (support cardinality+1) times clause count such evaluations, at most (b+1)*b for b=length(PEqualNP.Search.encodeCNF retainedFormula)."
+  ],
+  "partial_cost_limits": [
+    "Lookup comparison counts exclude bit lengths and allocation.",
+    "Retained clause-evaluation count excludes literal evaluation, negative-literal search, support/set operations, arithmetic and input/output encoding.",
+    "The prior raw search event bound also omits work. No combination here establishes total bit runtime."
+  ],
+  "finite_tests": {
+    "new_explicit_solver_systematic_cases": 6756,
+    "passed": 6756,
+    "truth_table_assignments": 135152,
+    "verified_sat_witnesses": 3482,
+    "unsat": 3274,
+    "targeted_supported_fixtures": 4,
+    "unsupported_controls": 4,
+    "bounded_state_and_lookup_fixtures": 8,
+    "retained_counter_kernel_fixtures": 8,
+    "includes_81_bit_ids": true,
+    "includes_1000_overwrites_retaining_one_entry": true,
+    "note": "These are separate formal-component integration fixtures, not additional reviewed generated-candidate jobs."
+  },
+  "performance": {
+    "comparison_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/bounded-constructor-comparison.json",
+    "samples": [
+      {
+        "m": 16,
+        "rows": 49,
+        "edge_entries": 97,
+        "cached_automatic_status": "sat",
+        "bounded_guard_vector_status": "sat",
+        "cached_automatic_ns": 46906625,
+        "bounded_guard_vector_ns": 19615375
+      },
+      {
+        "m": 32,
+        "rows": 97,
+        "edge_entries": 193,
+        "cached_automatic_status": "sat",
+        "bounded_guard_vector_status": "sat",
+        "cached_automatic_ns": 365053083,
+        "bounded_guard_vector_ns": 140256458
+      },
+      {
+        "m": 64,
+        "rows": 193,
+        "edge_entries": 385,
+        "cached_automatic_status": "sat",
+        "bounded_guard_vector_status": "sat",
+        "cached_automatic_ns": 2688715417,
+        "bounded_guard_vector_ns": 968730500
+      }
+    ],
+    "old_cached_largest_seconds": 2.688715417,
+    "bounded_guard_vector_largest_seconds": 0.9687305,
+    "scope": "Single paired typed-constructor comparisons using same prebuilt adjacency arrays and empty retained clauses/guards. Cached first; concurrent local work. Explicit input preparation and witness serialization not timed; no universal speedup or asymptotic claim."
+  },
+  "not_proved": [
+    "General SAT coverage or arbitrary-CNF decomposition/recognition",
+    "Total quadratic/cubic encoded-bit runtime for this restricted solver",
+    "Binary/text input parser refinement and finite witness serialization cost",
+    "Python implementation refinement",
+    "Upstream acceptance"
+  ],
+  "general_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false
+}

@@ -1,0 +1,71 @@
+Restricted greatest-guard composition
+
+Candidate context: Sonnet02816, SHA256
+11f2051569b518716fa1305318465e4331dcd8c2936e5b8b1fd4b1868a5a7239.
+The candidate was inspected read-only and was not executed.
+
+This proof imports a freshly compiled copy of the actual checked
+hall_projection_round1/GuardedHall.lean, source SHA256
+97827e26e1f4b7554920bc04e69dc4073769ba476c66fc76ccfd1bcfb360fa0b.
+The original source was not edited. Both dependency and composition were
+compiled under pinned Lean 4.36.0 with existing local dependencies.
+
+Exact premises
+
+Retained assignments form a preorder. F is the set satisfying the retained
+constraints. A chosen a* belongs to F and dominates every assignment in F.
+Each guard is monotone: a<=b and g(a,i)=true imply g(b,i)=true. The row/hole
+types, neighbor finsets, and row-private edge semantics remain static.
+No additional hidden constraints on the private edge variables are allowed.
+
+Checked consequences
+
+1. Increasing a retained assignment preserves a concrete private-edge
+   witness. The same edge Booleans can be kept; no new matching is needed.
+2. Rows with false guards at a* are a subset of the false-guard rows at
+   every other feasible retained assignment.
+3. Some feasible retained assignment has a private-edge extension if and
+   only if a* has one.
+4. By the imported checked matching bridge, this is equivalent to an
+   injective active-row matching at a*.
+5. If a* has no private-edge extension, no feasible assignment has one.
+6. Any concrete extension at a feasible assignment lifts, unchanged on
+   private edges, to the feasible assignment a*.
+
+The greatest premise is substantial
+
+A greatest feasible assignment is not merely an upper bound or a maximal
+feasible assignment. For example, the Boolean feasible set {01,10} has
+two maximal elements and no greatest element. With a positive first-bit
+guard and a row with no holes, one of these elements extends and the other
+does not. Selecting an arbitrary maximal element would be unsound.
+An upper bound outside F also cannot supply the reverse implication.
+
+The proof assumes monotone guards. A decreasing guard can be true at a
+smaller feasible assignment and false at its greatest assignment, reversing
+the conclusion for a row with no available hole. Likewise, an assignment-
+dependent neighbor graph is outside the static-neighbor premise.
+
+Finite verification
+
+verify_greatest_guard.py enumerates all six monotone Boolean functions on
+two bits, all thirteen nonempty feasible sets with a greatest element,
+all sixteen static two-row/two-hole graphs, and both row guard functions.
+All 7,488 compositions and 32,736 same-edge witness lifts pass. It also
+checks that {01,10} lacks a greatest element and the necessity of the
+monotonicity and feasible-greatest premises. No generated code is imported.
+
+Remaining obligations
+
+No dual-Horn closure theorem or greatest-model construction is proved here.
+The Python recognizer, positive-literal guard extraction, matching code,
+dense-variable representation, and encoded-bit runtime are not refined.
+The proof does not show that arbitrary CNF feasible sets have a greatest
+element or that general SAT can be decided by this procedure.
+
+Verification passed: dependency compile exit 0 in 23.617 seconds, followed
+by composition compile exit 0 in 7.209 seconds. The active-row inclusion
+theorem has no axioms; the other printed theorems use only propext,
+Classical.choice and Quot.sound. There are unused-section-variable
+warnings, no errors. This is local compiler/kernel checking, not upstream
+acceptance or the project's independent checker replay.

@@ -1,0 +1,14 @@
+{
+  "author": "Codex guarded Hall proof",
+  "kind": "research_feedback",
+  "about_candidate": "sol-00364",
+  "source_sha256": "d679d8976722a9861b75d4f6c0515800440c2c4d91287c61fa99f856b3e2d429",
+  "body": "Lean 4.36.0 checked exact guarded Hall projection for typed row-private edge Booleans e(i,h), fixed neighbor finsets N(i), and guards g(i) fixed by a retained assignment. Valid edges stay inside N; each row has a true guard or selected edge; no hole is selected by distinct rows. Existence of these private edges is equivalent to an injective matching of rows with false guards, and to: every subset S with |union N(S)|<|S| contains a true guard. The two-row instance exists p,q [(p OR x)(q OR NOT y)(NOT p OR NOT q)] iff x OR NOT y is separately checked without axioms. Independent finite tests passed 5054 graph/guard assignments and all16 tiny assignments. Do not apply this to private literals shared across multiple rows: Hydrogen00754's overlapping rows violate the premise. Preserve retained constraints. Neither the CNF recognizer nor Python implementation is verified, and enumerating all deficient subsets may be exponential. Next useful work is a faithful recognizer certificate or a compact guarded residual representation with a proved bound, not a claim that fixed-assignment matching solves retained SAT.",
+  "plain_language": "We proved a safe way to remove a specific group of hidden choices while keeping exactly the conditions that the visible choices must satisfy. The proof also identifies when it must not be used. It is a reusable simplification step, not a complete fast SAT solver.",
+  "lean_status": "passed",
+  "lean_source_sha256": "97827e26e1f4b7554920bc04e69dc4073769ba476c66fc76ccfd1bcfb360fa0b",
+  "lean_receipt": "compile-receipt.json",
+  "goal_category": "checked_projection_component",
+  "upstream_submission": false,
+  "full_sat_proof": false
+}

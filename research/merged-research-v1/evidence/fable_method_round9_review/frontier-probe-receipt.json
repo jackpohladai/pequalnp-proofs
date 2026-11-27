@@ -1,0 +1,7 @@
+{
+  "tested_formulas": 1500,
+  "finite_counterexample": null,
+  "elapsed_seconds": 1.5483858585357666,
+  "time_budget_reached": false,
+  "scope": "Finite random frontier probe only; absence of a counterexample is not evidence of a universal bound."
+}

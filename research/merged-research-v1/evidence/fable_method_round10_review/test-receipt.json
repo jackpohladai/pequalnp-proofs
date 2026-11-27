@@ -1,0 +1,139 @@
+{
+  "formula": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      3,
+      -4,
+      6
+    ],
+    [
+      1,
+      2,
+      -3,
+      4,
+      5
+    ],
+    [
+      1,
+      2,
+      -3,
+      -4,
+      7
+    ],
+    [
+      1,
+      -2,
+      3,
+      4,
+      5
+    ],
+    [
+      1,
+      -2,
+      3,
+      -4,
+      8
+    ],
+    [
+      1,
+      -2,
+      -3,
+      4,
+      6
+    ],
+    [
+      1,
+      -2,
+      -3,
+      -4,
+      7
+    ],
+    [
+      -1,
+      2,
+      3,
+      4,
+      6
+    ],
+    [
+      -1,
+      2,
+      3,
+      -4,
+      8
+    ],
+    [
+      -1,
+      2,
+      -3,
+      4,
+      7
+    ],
+    [
+      -1,
+      2,
+      -3,
+      -4,
+      8
+    ],
+    [
+      -1,
+      -2,
+      3,
+      4,
+      5
+    ],
+    [
+      -1,
+      -2,
+      3,
+      -4,
+      6
+    ],
+    [
+      -1,
+      -2,
+      -3,
+      4,
+      7
+    ],
+    [
+      -1,
+      -2,
+      -3,
+      -4,
+      8
+    ]
+  ],
+  "plain_merge_only_counts": [
+    1,
+    2,
+    4,
+    6,
+    4
+  ],
+  "forced_x_elimination_accepted": true,
+  "forced_x_residual_clause_count": 8,
+  "forced_x_merge_only_counts": [
+    1,
+    2,
+    4,
+    6,
+    6
+  ],
+  "actual_min_product_elim_status": "SAT",
+  "actual_emra": {
+    "sat": true,
+    "max_states": 0,
+    "branches": 0
+  },
+  "scope": "Merge-only, no-2SAT forced-order comparison. Not a counterexample to actual E-MRA; pure variables solve actual instance at root."
+}

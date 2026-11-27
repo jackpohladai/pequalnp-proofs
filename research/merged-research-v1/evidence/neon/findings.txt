@@ -1,0 +1,288 @@
+L-alg-001 Research Findings — Neon (Algebraic / Linear / Parity Route)
+======================================================================
+
+0. Target & Scope
+-----------------
+Target (from PEqualNP/Defs/{Base,Search,TimeAlt}.lean and work/positive-route-review/findings.txt):
+  Formal conjecture L-alg-001: PEqualNP.Search.SAT in PEqualNP.Library.P,
+  specifically asking for an explicit deterministic general SAT decision algorithm
+  with a proved uniform worst-case O(N^2) or O(N^3) bit-time bound in the actual
+  encoded input length N = (encodeCNF phi).length.
+
+Outcome of this research cycle:
+  We designed, implemented, tested, and adversarially falsified TWO concrete
+  algebraic SAT mechanisms that go beyond fixed-width resolution, fixed-degree
+  polynomial calculus, and naive LP relaxation:
+    - Mechanism 1 (APIC-1, implemented in work/alg001/neon/candidate.py):
+      Coupled F_2-Affine-Parity RREF + 2-SAT Implication SCC + Z-Clique-Counting
+      + Depth-1 Affine-Hull Join + Verified Greedy Self-Reduction.
+    - Mechanism 2 (QMC-2, evaluated in work/alg001/neon/hunt_counterexamples.py):
+      Degree-2 Pairwise-Correlation / Sherali-Adams Moment Consistency (McCormick
+      + all triangle inequalities + degree-2 clause cuts) coupled with F_2-Affine
+      closure.
+
+  Neither mechanism achieves general O(N^3) exact SAT:
+    1. Mechanism 1 (APIC-1) is 100% sound and solves 594/594 instances of the
+       independent adversarial corpus (work/alg001/adversarial/families.py:
+       all 512 2-var CNFs, all 11 edge cases, all 15 Tseitin instances, all 14
+       PHP ordinary/functional instances, all 36 random3, all 6 planted3), plus
+       3-COL(K_4), 3-COL(W_5), 3-COL(Moser), and 3-COL(Grotzsch)+AMO.
+    2. However, Candidate Lemma 1 (completeness of APIC-1) is FALSE: we exhibit
+       (a) a verified minimal UNSAT 3-CNF on 16 variables and 28 clauses where
+           APIC-1 finishes with F_2-rank 0 and returns UNKNOWN,
+       (b) a structured UNSAT 3-CNF 3-COL(Grotzsch) (33 vars, 71 clauses) where
+           APIC-1 returns UNKNOWN, and
+       (c) a verified SAT 3-CNF on 18 variables and 29 clauses (36 models) where
+           APIC-1 greedy self-reduction enters an APIC-1-invisible UNSAT branch
+           and returns UNKNOWN (demonstrating the witness-finding vs refutation
+           coupling).
+    3. Candidate Lemma 2 (completeness of Mechanism 2 / QMC-2) is ALSO FALSE:
+       we exhibit exact rational degree-2 moment witnesses satisfying 100% of
+       McCormick, triangle, and degree-2 clause cuts (with F_2-rank 0) on BOTH
+       the 16-var 28-clause UNSAT 3-CNF and 3-COL(Grotzsch)+AMO (all 21,824
+       triangle inequalities verified in exact Fraction arithmetic).
+    4. Exact bit-cost accounting shows that even before completeness fails,
+       depth-1 probing in APIC-1 costs O(n^5 + n^3 L) bit-time (vs O(N^3) for
+       depth-0 APIC-0), and exact rational elimination on QMC-2's M = Theta(n^2)
+       lifted variables incurs Hadamard bit-growth O(M log M) -> Omega~(n^8)
+       bit-time.
+
+No polynomial-time SAT algorithm is claimed. Every result below is backed by
+executable standard-library Python code in work/alg001/neon/.
+
+
+1. Mechanism 1: Coupled F_2-Affine + Implication + Z-Clique + Depth-1 Affine-Hull
+   Closure (APIC-1, implemented in work/alg001/neon/candidate.py)
+---------------------------------------------------------------------------------
+
+1.1 Motivation (repairing three classic algebraic blind spots simultaneously)
+  - Fixed-width resolution fails on Tseitin formulas over expanders -> repaired by
+    grouping clauses of width k <= 6 by variable tuple to extract exact F_2 parity
+    equations x_{i_1} XOR ... XOR x_{i_k} = b and maintaining a global F_2 RREF
+    basis (pivots substituted back into clauses for units and equivalences).
+  - Pure F_2 algebra fails on Pigeonhole PHP(m, n) due to (i) non-linearity of
+    at-most-one clauses (~x_i v ~x_j) and (ii) characteristic-2 finite-field
+    cancellation when m - n is even (verified explicitly on onto+functional
+    PHP(4,2): the 4 row-sum=1 and 2 col-sum=1 equations over F_2 are CONSISTENT
+    with rank 5/8 because 4 - 2 = 2 == 0 mod 2!). Repaired by a sound Z-counting
+    rule: pack pairwise-disjoint at-least-one clauses P_1, ..., P_m and cover
+    their literal union by cliques K_1, ..., K_h of the binary conflict graph
+    (~a v ~b); whenever m > h, sum_{i=1}^m P_i >= m > h >= sum_{j=1}^h K_j is a
+    sound UNSAT certificate over Z (zero cancellation, zero coefficient growth:
+    all multipliers are 1).
+  - Decoupled F_2 + 2-SAT misses cross-branch linear consequences -> repaired by
+    depth-1 probing: for each active variable v, run closure on (F & x_v=0) and
+    (F & x_v=1). If both refute -> UNSAT; if one refutes -> assert the other
+    branch's entire F_2 basis; if both survive -> compute the exact affine hull
+    aff(Sol(A_0) U Sol(A_1)) over F_2 (harvesting every unit, equivalence, AND
+    multi-variable parity equation implied on both branches!) via orthogonal
+    complement of span(ker(A_0) U ker(A_1) U {x_0 XOR x_1}).
+
+1.2 Exact Soundness Invariant & Edge-Case Handling (candidate.py)
+  Invariant maintained throughout Phase 1 (depth-0 + depth-1):
+    Every satisfying assignment sigma of the original formula phi satisfies both
+    (i) every remaining clause in `clauses` and (ii) every linear equation in
+    `f2.pivots` (maintained in STRICT RREF: each pivot bit p appears ONLY in
+    row `f2.pivots[p]` and in no other row).
+  - Strict RREF invariant check (bug caught and fixed during testing):
+    An initial draft of F2System.add_eq stopped reducing `mask` at the first
+    non-pivot highest bit, leaving lower pivot bits unreduced and breaking
+    sample_solution() on tseitin-cycle5-0-1 and tseitin-cube-0-1; defensive
+    witness verification caught the bug (returning UNKNOWN instead of false SAT).
+    Fixing add_eq to reduce ALL existing pivot bits present in `mask` restored
+    strict RREF and raised adversarial corpus solve rate to 594/594 (0 UNKNOWN).
+  - All syntactic edge cases covered explicitly:
+    * nvars == 0, clauses == [] -> SAT with assignment [].
+    * nvars == 0, clauses == [[]] -> UNSAT.
+    * Repeated literals within a clause -> deduplicated in clean_clauses.
+    * Tautological clauses (containing both v and -v) -> dropped cleanly.
+    * Empty clause [] anywhere -> immediate UNSAT.
+    * Duplicate clauses -> deduplicated.
+    * Isolated / unreferenced variables -> default to False in sample_solution.
+    * Exhausted budget -> OpCounter raises BudgetExceeded -> immediate UNKNOWN.
+  - Witness finding vs refutation:
+    Phase 2 performs deterministic greedy self-reduction (assigning an active
+    variable v to 0 or 1 if APIC-1 does not refute the branch). A SAT return is
+    emitted ONLY after verify_assignment() checks ALL original clauses on the
+    full list[bool] of length nvars. If greedy self-reduction hits a contradiction
+    after making an unproved choice, it returns UNKNOWN (never an unproved UNSAT
+    and never exponential backtracking).
+
+1.3 Candidate Lemma 1 (what would make APIC-1 complete)
+  Candidate Lemma 1:
+    For every unsatisfiable CNF formula phi, APIC-1 Phase 1 derives a sound
+    contradiction (UNSAT); and for every satisfiable CNF formula phi, APIC-1
+    Phase 2 greedy self-reduction never commits to an unsatisfiable branch.
+
+  STATUS OF CANDIDATE LEMMA 1: FALSE (both halves falsified explicitly below).
+
+1.4 Full Bit-Time Cost Accounting for APIC-1 (vs uniform O(N^2) / O(N^3) goal)
+  Let N be the encoded bit-length of phi under Search.encodeCNF, n = referenced
+  variables (n <= N after O(N log N) variable compression; NOTE: without
+  re-indexing sparse high variable indices, dense nvars-bit masks would scale
+  with max_var rather than N), m = number of clauses, m_2 = binary clauses,
+  L = total literal occurrences (L <= N).
+  - Representation size:
+    * F2System RREF: at most n rows of n bits each -> O(n^2) bits total.
+      Over F_2 there is ZERO coefficient growth (1 bit per entry).
+    * Implication graph: O(n + m_2) edges; condensation reachability bitset
+      takes O(n^2) bits.
+    * Clique counting: all coefficients are in {0, 1} -> O(1) bits per entry.
+  - Time per monotone depth-0 closure (APIC-0):
+    * F2 RREF across at most n pivot insertions: O(n^3) bit ops amortized.
+    * Clause scans & substitutions: O(L) per unit/equiv round, O(n L) naive
+      (O(L) with watched literals).
+    * Parity extraction (k <= 6): O(L log L) per pass.
+    * Binary SCC + reachability bitset: O(n(n + m_2)) bit ops per pass.
+    * Clique counting: O(m_2 + n^2) ops.
+    => Depth-0 APIC-0 with incremental maintenance fits in O(n^3 + n L) <= O(N^3)
+       bit-time (and already solves 2-SAT, Horn, Tseitin, and PHP!).
+  - Time for Depth-1 Probing (APIC-1 Phase 1):
+    * Up to n outer rank-increase rounds x n probed variables x 2 closures +
+      affine_hull_equations (O(n^3) bit ops per pair):
+    * Worst-case bit-time of APIC-1 is O(n^2 * (n^3 + n L)) = O(n^5 + n^3 L)
+      bit ops (already super-cubic O(N^5) worst case, even before completeness
+      fails!). Phase 2 runs at most n calls to Phase 1, giving O(n^6) worst case.
+    * Empirical scaling on scaled_family (from test_and_falsify.py):
+      PHP(3,2)->100 ops, PHP(4,3)->270, PHP(5,4)->580, PHP(6,5)->1065,
+      PHP(7,6)->1764 (quadratic in n = p*h, linear in m);
+      isolated(10,20,40)->5 ops; planted3(6,10,14)->852, 2857, 17937 ops.
+
+1.5 Verified Counterexamples Falsifying Candidate Lemma 1
+  (A) Minimal UNSAT 3-CNF Counterexample (16 variables, 28 clauses):
+      Found by hunt_counterexamples.py and verified MINIMAL UNSAT by exhaustive
+      2^16 = 65,536-assignment oracle (removing ANY single clause makes it SAT):
+        clauses = [
+          [10, 14, -2], [-1, 7, 2], [3, 8, -14], [-1, -2, 16],
+          [14, -11, -7], [-14, 4, 16], [-15, 13, 1], [-7, 11, 1],
+          [-13, 1, 7], [-3, -6, 7], [12, -5, 3], [5, -11, -10],
+          [-16, -3, -14], [9, 11, 8], [13, -3, -12], [-16, -5, -8],
+          [-11, -14, -4], [-16, -12, -2], [6, -9, -10], [15, 9, -5],
+          [-5, -1, -7], [-9, 16, 12], [-3, -1, -9], [-9, 3, 5],
+          [13, 10, 2], [5, 9, -8], [-1, 8, 6], [15, -9, 3]
+        ]
+      - Exhaustive oracle: UNSAT (0 models of 65,536).
+      - APIC-1 (budget 2,000,000): status = UNKNOWN in 15,159 ops (NOT budget
+        exhaustion; fixed point reached cleanly with F_2 rank = 0 / 16!).
+      - Exact diagnosis: All 28 clauses have width 3, zero parity blocks occur,
+        zero binary clauses exist at depth 0, and under EVERY single-literal
+        assignment x_v = b, the shrunk 2-clauses remain 2-SAT satisfiable with
+        no implied F_2 equations shared across x_v = 0 and x_v = 1 (loss of
+        3-way and multi-variable correlations).
+
+  (B) Structured UNSAT 3-CNF Counterexample: 3-COL(Grotzsch) without AMO
+      (33 variables, 71 clauses):
+      - Grotzsch graph has 11 vertices, 20 edges, triangle-free (omega = 2),
+        4-chromatic (chi = 4), so 3-COL is UNSAT.
+      - APIC-1 (budget 2,000,000): status = UNKNOWN in 162,656 ops.
+      - Contrast: adding vertex at-most-one clauses (3-COL(Grotzsch)+AMO,
+        104 clauses) lets APIC-1 refute it in 57,136 ops because AMO creates
+        2-SAT/XOR implication chains at depth 1; without AMO, vertices may hold
+        multiple colors in the depth-1 relaxation, breaking those chains.
+
+  (C) Verified SAT 3-CNF Witness-Finding Counterexample (18 variables, 29 clauses):
+      Constructed by shifting U's variables by +1 (to 2..17) and splitting its
+      first clause [11, 15, -3] via guard x_1 and Tseitin variable x_18 into
+      [1, 11, 18] and [-18, 15, -3], plus shifted U[1..27]:
+      - Exhaustive oracle (2^18 = 262,144 assignments): SAT (36 models; e.g.
+        [True, False, True, False, False, False, False, False, False, False,
+         False, True, False, False, False, False, False, False]).
+      - APIC-1 (budget 2,000,000): status = UNKNOWN in 27,051 ops.
+      - Exact diagnosis (finding vs verifying / decision-to-search gap):
+        Greedy self-reduction tests x_1 = False first. Under x_1 = False, the
+        formula reduces to an equisatisfiable copy of U (UNSAT), which APIC-1
+        cannot refute. APIC-1 therefore commits to the UNSAT branch x_1 = False
+        and later hits a contradiction at deeper depth, returning UNKNOWN even
+        though a 1-step check verifies any given witness in O(N) time.
+
+
+2. Mechanism 2: Degree-2 Pairwise-Correlation / Sherali-Adams Moment Consistency
+   Coupled with F_2-Affine Closure (QMC-2)
+---------------------------------------------------------------------------------
+
+2.1 Proposal (attempting to repair APIC-1's loss of correlations)
+  Lift variables x_1, ..., x_n to pairwise correlation variables y_{ij} = E[x_i x_j]
+  (1 <= i < j <= n; M = n + C(n,2) = Theta(n^2) variables) and require a rational
+  moment vector (x, y) in Q^M simultaneously satisfying:
+    (1) All McCormick / 2-variable local distribution bounds (4 per pair):
+        0 <= y_{ij} <= x_i, x_j  and  x_i + x_j - y_{ij} <= 1.
+    (2) All 4 triangle (Boole-Frechet / cut-polytope) inequalities for every
+        triple (i, j, k):
+        y_{ij} + y_{ik} - y_{jk} <= x_i (and cyclic), and
+        x_i + x_j + x_k - y_{ij} - y_{ik} - y_{jk} <= 1.
+    (3) Exact binary clause equations (for (a v b): E[(1-a)(1-b)] = 0).
+    (4) All degree-2 pairwise-linearized 3-clause cuts for C = (l_1 v l_2 v l_3):
+        E[l_1]+E[l_2]+E[l_3] >= 1 and E[l_1]+E[l_2]+E[l_3] - E[l_a l_b] >= 1
+        for all three pairs {a, b} subset {1, 2, 3}.
+    (5) Global F_2-affine closure from APIC-1 (so Tseitin/XOR is never missed).
+
+2.2 Candidate Lemma 2 (what would make QMC-2 complete)
+  Candidate Lemma 2:
+    Every unsatisfiable 3-CNF is either refuted by F_2-affine closure or has NO
+    rational moment vector (x, y) satisfying QMC-2 constraints (1)-(4).
+
+  STATUS OF CANDIDATE LEMMA 2: FALSE (falsified with exact Fraction witnesses).
+
+2.3 Verified Counterexamples Falsifying Candidate Lemma 2
+  (A) The 16-variable, 28-clause minimal UNSAT 3-CNF U above:
+      Exact witness: x_i = 1/2 for all i, y_{ij} = 1/4 for all i < j.
+      Verified in hunt_counterexamples.py with exact fractions.Fraction arithmetic:
+        - All McCormick inequalities hold (1/4 >= 0),
+        - All C(16,3)*4 = 2,240 triangle inequalities hold (1/4 <= 1/2, 3/4 <= 1),
+        - All 28*4 = 112 degree-2 clause cuts hold (3/2 - 1/4 = 5/4 >= 1),
+        - APIC-1 depth-1 F_2 closure has rank 0 / 16.
+      Diagnosis: Complete loss of 3-way correlations. Every 2-variable marginal
+      looks uniformly random, while global unsatisfiability resides purely in
+      3-way and higher-order clause interactions.
+
+  (B) 3-COL(Grotzsch)+AMO (33 variables, 104 clauses, UNSAT):
+      Exact witness: x_{v,c} = 1/3 for all (v, c); y_{(u,c1),(v,c2)} = 0 whenever
+      (u = v and c1 != c2) or (c1 = c2 and (u, v) in E(Grotzsch)), and 1/9
+      otherwise. Verified in exact Fraction arithmetic across all McCormick
+      inequalities, ALL C(33,3)*4 = 21,824 triangle inequalities, and all 104
+      clauses (succeeds because Grotzsch is triangle-free).
+
+2.4 Bit-Cost, Coefficient Growth, and Finite-Field Tradeoff Analysis for QMC-2
+  - Coefficient / bit-length growth over Q:
+    Even solving a single M x M linear subsystem over Q (with M = Theta(n^2))
+    suffers Hadamard bit-length blowup O(M log M) = O(n^2 log n) bits per entry.
+    Measured in hunt_counterexamples.py via exact Fraction Gaussian elimination
+    on dense M x M {-1, 0, 1, 2} matrices:
+      M = 10 -> max 7 bits;  M = 20 -> max 27 bits;  M = 30 -> max 44 bits.
+    Combined with M^3 arithmetic operations, exact Q-elimination alone costs
+    Omega~(M^4) = Omega~(n^8) bit-time (and exact LP on O(n^2) variables and
+    O(n^3) triangle constraints costs Omega~(n^6 - n^8) bit-time), violating
+    the O(N^3) bit-time target by five orders of magnitude.
+  - Why finite-field reduction (working mod p) cannot rescue QMC-2:
+    (i) Inequalities (>= 0) do not exist in F_p, so positivity/convexity and
+        clique-counting cuts disappear;
+    (ii) Counting/summation identities suffer characteristic-p cancellation
+         (as explicitly verified on onto+functional PHP(4,2) over F_2: 4 != 2
+         collapses to 0 == 0 mod 2, rank 5/8 consistent).
+
+
+3. Verification Summary & Artifacts
+-----------------------------------
+Artifacts created solely under work/alg001/neon/:
+  - candidate.py            Standard-library-only APIC-1 implementation matching
+                            solve(nvars, clauses, budget).
+  - test_and_falsify.py     Full verification against all 594 cases of
+                            work/alg001/adversarial/{families,oracle}.py, budget
+                            exhaustion tests, and scaled_family benchmarks.
+  - hunt_counterexamples.py Targeted adversarial falsification of APIC-1 and
+                            QMC-2 (4-chromatic 3-COL, minimal 16v/28c UNSAT
+                            3-CNF, 18v/29c SAT witness failure, exact Fraction
+                            QMC-2 verification, F_2 cancellation, Q bit growth).
+  - findings.txt            This report.
+
+Summary of test results:
+  - work/alg001/adversarial/families.py (594 cases vs exhaustive oracle):
+    594/594 exact matches, 0 soundness errors, 0 UNKNOWNs.
+  - Budget exhaustion checks (PHP(4,3), budgets 1, 5, 20, 100):
+    All return UNKNOWN cleanly upon exceeding budget; 0 unproved answers.
+  - Known remaining barrier to L-alg-001:
+    Closing the gap between O(N^3) algebraic/parity/counting closures and
+    general 3-SAT requires a compact representation that preserves higher-order
+    (>= 3-way) Boolean correlations WITHOUT (a) exponential state/clause blowup,
+    (b) Omega~(n^8) rational bit-growth from lifted Q-linear systems, or
+    (c) finite-field cancellation. No such representation is currently known.

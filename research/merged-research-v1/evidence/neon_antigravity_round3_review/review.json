@@ -1,0 +1,12 @@
+{
+  "verdict": "confirmed_UNSAT_finite_H2_counterexample",
+  "scope": "Twelve-variable 33-clause UNSAT fixture, exhaustive truth oracle. Full E-MRA peaks 2 versus plain MRA 1. Checker now explicitly requires UNSAT.",
+  "unverified": [
+    "Scalable family and 2^k extrapolation have not been checked."
+  ],
+  "at": "2026-11-26T18:01:26.387920+00:00",
+  "reviewer": "root",
+  "general_polynomial_sat_proof": false,
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_antigravity_round3/structured-output.json",
+  "test_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_antigravity_round3/test-receipt.json"
+}

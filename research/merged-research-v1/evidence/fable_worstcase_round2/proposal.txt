@@ -1,0 +1,117 @@
+# Round 3: affine repair, one new interaction, and where it stops
+
+**Verdict.** The repair below removes the parity-driven growth (Tseitin, your K5 fixture) at polynomial bit cost with exact reconstruction. It is not a worst-case bound, and no route I tried survives as a general repair; the bottleneck is in §6. Nothing here was machine-checked, and the citations are from memory.
+
+## 0. Corrections adopted
+- **Lemma 1:** withdrawn.
+- **State:** a triple (U, A, F), where U holds the retained unit records (as Canon does), A is an affine system in RREF, and F is the clause part.
+- **Still conjectures:** the read-once simulation and the all-order lower bound. TR19-178 is not transferred.
+
+## 1. Representation R: forbidden affine subspaces
+A clause forbids a subcube. A *linear clause* forbids an affine subspace W = {x : Mx = c}.
+- **Storage:** RREF [M|c] under the fixed variable order, rank r, at most r(n+1) bits, canonical per clause.
+- **Special cases:** an ordinary clause has unit rows; a k-variable XOR has r = 1, replacing 2^(k−1) clauses.
+- **Trivial clauses:** an inconsistent [M|c] is a tautology; r = 0 is the empty clause.
+- **Routing:** rank-1 clauses are equations and move to A; weight-1 rows of A move to U.
+- **Pivot substitution:** substituting A's pivots into F is row reduction, so the clause count is unchanged. In CNF it multiplies clauses by 2^(k−2).
+- **State bits:** at most n⌈log n⌉ + n for U, n(n+1) for A, and |F|·n(n+1) for F.
+
+## 2. Recognition
+**Hull pass.**
+1. Group clauses by the row space of M. For input CNF this is the variable set, by sorting, O(L log m).
+2. Each group has rank r and a constant set S ⊆ F₂^r.
+3. If |S| = 2^(dim aff S), replace the group by one clause of rank r − dim.
+4. Process groups in descending rank. Merges only feed strictly lower ranks, so the output is a function of the clause set.
+
+The test costs O(|S|r²) per group and O(wL) in total. It is equivalence-preserving because a union of parallel cosets indexed by an affine set is a coset. It is not a semantic normal form.
+
+**Local model-hull (optional).** For each clause support T with 2^|T| ≤ 2m, enumerate the models of the clauses inside T and add their affine-hull equations to A. This is sound and costs O(mL).
+
+It is needed because minimized encodings hide XORs. For (a∨b∨c), (¬a∨¬b), (¬a∨¬c), (¬b∨¬c), the hull pass finds nothing, while the model-hull gives a⊕b⊕c = 1.
+
+Recognition is necessarily local, since deciding whether F implies a given XOR is coNP-complete.
+
+## 3. Linear ELIM, extension, fallback
+Take y free in A and reduce each clause with y ordered first. Either y is absent, or Wᵢ = {z ∈ Dᵢ, y = gᵢ(z)} with Dᵢ affine and gᵢ an affine form.
+
+**Proposition 2 (short argument, needs Lean).** ∃y F ≡ (y-free clauses) ∧ ⋀_{i<j} forbid(Dᵢ ∩ Dⱼ ∩ {gᵢ⊕gⱼ = 1}).
+
+*Proof.* z dies iff both (z,0) and (z,1) are forbidden. That holds iff some i, j have z ∈ Dᵢ ∩ Dⱼ, gᵢ(z) = 0 and gⱼ(z) = 1. ∎
+
+- **Cost:** one resolvent per unordered pair, at most C(p,2), each O(n³) bit operations. Trying all variables in one state costs at most O(m²n⁴).
+- **Fallback identity:** for plain clauses the gᵢ are constants, and the rule gives exactly the non-tautological pos×neg resolvents. With the hull pass off, R-ELIM is your current ELIM.
+- **Model extension:** store the removed (Dᵢ, gᵢ). Set y = 1 iff some i has z ∈ Dᵢ and gᵢ(z) = 0. Then back-substitute A's pivots and replay U.
+- **Pipeline:** U-propagation, then A-absorption, then hull pass, then ELIM if the measure does not increase, then the existing branching, where each decision adds a row to U/A.
+
+Every step is polynomial. I claim no bound on the number of branch states.
+
+## 4. What this solves
+It solves Tseitin formulas on any graph in clause encoding, where degree is at most log₂m + 1 automatically.
+- Every vertex group is a hyperplane, so F empties.
+- A has |V| rows of |E|+1 bits.
+- One elimination costs O(|V|²|E|) bit operations, with one state and zero branches.
+
+On K5, 40 clauses become 5 rows of 11 bits, and the row sum is 0 = 1. The 32-resolvent blow-up becomes one row addition, and the stored (−4) sits in U.
+
+This is routine Gaussian dispatch, known from Gauss–Jordan in CryptoMiniSat and from Res(⊕) (Itsykson–Sokolov). It is not novel and says nothing about P vs NP.
+
+## 5. New interaction attempted: direction elimination
+R is GL(n,2)-invariant and CNF is not. ELIM on y is projection along e_y. In R one may project along any nonzero v:
+- clauses with v ∈ dir(Wᵢ) are kept;
+- the rest pair as in Proposition 2 after a basis change.
+
+**(a) Free directions.** If v ∈ ker A ∩ ⋂ dir(Wᵢ), found by one kernel computation in O(|F|n³), projection is free. More generally, translations that permute the clause set form a subspace. I believe this is computable as a linear system (per group, v must land in Stab(S_g)); that is unchecked.
+
+On plain-CNF K5 this subspace is the cycle space, of dimension 6. That gives six "wlog" units, then tree propagation, with no parity recognition. These are known as phase-shift symmetries.
+
+**(b) Oblique directions.** There are 2^k − 1 candidates against k variables. A state where every coordinate is rejected might accept an oblique v.
+
+**Missing Theorem D.** There is a polynomial-time candidate set Λ(F) such that if any direction is measure-non-increasing, some v ∈ Λ(F) is. I have no proof and no convincing Λ. The natural guess is the linear parts of gᵢ⊕gⱼ.
+
+**Fixture F6 (6 variables, hand-derived, please machine-check).** The clauses are y∨a∨b, ¬y∨¬a∨b, y∨c, y∨d, ¬y∨e.
+
+| | Clauses on y | Pairs | Resolvents | Count | Decision |
+|---|---|---|---|---|---|
+| CNF ELIM(y) | 3 pos, 2 neg | 6, one tautology | 5 | 5 → 5 | accepted |
+| R-ELIM(y) | 4, after merging the first two into b ∨ (y⊕a = 1) | 6, one empty | the same 5 | 4 → 5 | rejected |
+
+The five resolvents are a∨b∨e, ¬a∨b∨c, c∨e, ¬a∨b∨d and d∨e. The residual formula is the same and the decision is opposite. So clause count is not compression-invariant, and the hull pass can enlarge the frontier.
+
+**Candidate fix.** Use wt(W) = 2^(s−r), where s is the support size. This is the full-support CNF expansion size, and it gives 5 → 5 here.
+
+**Conjecture W.** Under wt, R-ELIM accepts whenever CNF ELIM accepts on the same order.
+- *Falsifier:* enumerate clause sets on at most 6 variables and at most 6 clauses. One instance where CNF accepts and wt rejects kills it.
+- *Why it may fail:* when gᵢ and gⱼ share variables, the supports cancel, so wt and the CNF resolvent count can diverge either way.
+
+**Fixture for D/(b).** Search R-states with at most 5 free dimensions and at most 8 clauses for one where every coordinate projection increases wt but some oblique v does not. If none exists at this size, (b) has no small-case support.
+
+**Self-critique: (b) does not survive as a worst-case repair.** An oblique acceptance is a coordinate acceptance after a basis change, and basis changes permute R-states. The worst case over R is therefore unchanged. Only CNF-originated instances whose hardness is a basis artifact benefit, and the only such family I can name is Tseitin, already solved in §4. In addition, (a) vanishes on generic CNF, because a single-clause group has a trivial stabilizer on its support.
+
+## 6. Remaining barrier
+After all reductions the problem is: do m affine subspaces cover F₂^k?
+
+Positive 1-in-3-SAT lands exactly here. A absorbs every XOR row, and F is the at-most-one binary clauses. This is NP-complete, since affine ∪ bijunctive is outside Schaefer's tractable classes.
+
+**Barrier fixture (7 variables): Fano 1-in-3.**
+- The triples are the 7 lines, giving 7 + 21 = 28 clauses.
+- A has rank 4, with 8 solutions: all-ones and the seven line indicators.
+- Each solution violates a binary clause, so the instance is UNSAT.
+- The reason is counting mod 3 (7 is not divisible by 3), which parity cannot see.
+
+At 3 residual dimensions it is trivial. Only a scaled family would test growth.
+
+**Proof-complexity status.** Each pair resolvent is a weakening plus one resolution on y⊕gᵢ, so R-ELIM traces are Res(⊕) derivations. As I recall, exponential lower bounds exist for tree-like and regular Res(⊕) (Itsykson–Sokolov; Efremenko–Garlík–Itsykson), and general Res(⊕) is open. Whether our memoized search lies in the regular fragment is unproved, which is the same caveat as TR19-178.
+
+**Sharpest bottleneck.** I know of no measure μ and polynomial-time rule such that every non-affine state admits a μ-non-increasing projection in some direction. Any such pair proves P = NP. The concrete open quantity is the number of distinct canonical (U, A, F) states reachable by branching on scaled 1-in-3 families. I have no approach to bounding it.
+
+## Next checks
+1. Put Proposition 2 and the hull merge in Lean beside the existing identity.
+2. Machine-verify F6.
+3. Enumerate for Conjecture W.
+4. Rerun the 19,242 solver runs under R with the hull pass off. Traces must match the current ones exactly.
+5. Run Fano and a scaled 1-in-3 family, recording state counts and bits.
+
+`★ Insight ─────────────────────────────────────`
+- Parity hardness for resolution is a coordinate artifact: a hyperplane needs 2^(k−1) subcubes but one affine row.
+- F6 shows that an acceptance test tied to a representation-dependent count can flip under an equivalence-preserving compression.
+`─────────────────────────────────────────────────`

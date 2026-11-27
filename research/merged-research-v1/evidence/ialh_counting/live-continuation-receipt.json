@@ -1,0 +1,17 @@
+{
+  "fable": {
+    "next_task_bytes": 75439,
+    "includes_full_current_algorithm": true,
+    "current_native_wrapper_alive": true,
+    "current_folder": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fable_worstcase_auto_00062"
+  },
+  "neon": {
+    "next_task_bytes": 74257,
+    "includes_full_current_algorithm": true,
+    "current_native_wrapper_alive": true,
+    "current_folder": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_worstcase_auto_00059"
+  },
+  "controller_alive": true,
+  "bulk_queue_paused": true,
+  "codex_subagents_used": false
+}

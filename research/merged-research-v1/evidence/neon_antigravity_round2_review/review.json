@@ -1,0 +1,12 @@
+{
+  "verdict": "confirmed_finite_H2_counterexample",
+  "scope": "Twelve-variable 32-clause SAT fixture, exhaustive truth oracle. Actual full repeated E-MRA peaks 2 versus plain MRA 1. General H2 claim is false; no asymptotic runtime verdict.",
+  "corrections": [
+    "The restriction operation removes the assigned literal; the explanation incorrectly describes its retention. Duplicate branching on an eliminated variable does not change this peak."
+  ],
+  "at": "2026-11-26T18:01:26.387920+00:00",
+  "reviewer": "root",
+  "general_polynomial_sat_proof": false,
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_antigravity_round2/structured-output.json",
+  "test_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_antigravity_round2/test-receipt.json"
+}

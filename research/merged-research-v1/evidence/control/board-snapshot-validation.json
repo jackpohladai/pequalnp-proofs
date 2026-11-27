@@ -1,0 +1,35 @@
+{
+  "test_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=work/alg001/shared_workspace python3 -S -m unittest -q test_board test_launch_recovery",
+  "tests_passed": 22,
+  "test_elapsed_seconds": 1.675,
+  "source_sha256": {
+    "work/alg001/shared_workspace/board.py": "6c13c17c1d99eda741f7b88d684a2036b9b7e8cdd84d2e9ed43b28bd37b7f218",
+    "work/alg001/shared_workspace/dashboard.html": "75621ed4dedee20d4d9f53a3faeb920717467fbc2ff2c711044246dc50436e2d",
+    "work/alg001/shared_workspace/test_board.py": "49912c684461bf3d549dc4e62774eb0283570d8bfcc53ab002054e9eb81f5854"
+  },
+  "benchmark": {
+    "environment": "Temporary SQLite workspace and isolated loopback HTTP server",
+    "fixture": {"jobs": 6000, "messages": 100, "concurrent_clients_per_batch": 4},
+    "uncached_reference": {
+      "method": "Bypassed the cache using the same aggregation and JSON encoding path",
+      "aggregations": 4,
+      "bulk_serializations": 4,
+      "request_latency_ms": [1395.68, 1398.28, 1143.13, 1225.29],
+      "capture_timestamps_utc": ["2026-11-26T08:50:53.694Z", "2026-11-26T08:50:53.694Z", "2026-11-26T08:50:53.692Z", "2026-11-26T08:50:53.692Z"]
+    },
+    "cached_cold": {
+      "aggregations": 1,
+      "bulk_serializations": 1,
+      "request_latency_ms": [441.13, 436.61, 443.47, 439.01],
+      "shared_capture_timestamp_utc": "2026-11-26T08:50:55.093Z"
+    },
+    "cached_warm_immediate": {
+      "aggregations": 0,
+      "bulk_serializations": 0,
+      "request_latency_ms": [8.96, 13.0, 22.16, 5.31],
+      "shared_capture_timestamp_utc": "2026-11-26T08:50:55.093Z"
+    },
+    "all_responses_verified": ["HTTP 200", "all-job count", "recent message count", "exact technical message", "exact plain-language message"]
+  },
+  "live_services_restarted_by_validation": false
+}

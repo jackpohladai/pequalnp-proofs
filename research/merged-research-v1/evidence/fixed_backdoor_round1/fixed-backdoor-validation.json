@@ -1,0 +1,429 @@
+{
+  "status": "checked supplied-backdoor solver for guarded constructor",
+  "utc": "2026-11-26T12:26:23.191044+00:00",
+  "compiler": "Lean 4.36.0 -j1 -DElab.async=false",
+  "modules": [
+    {
+      "source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/FixedRestriction.lean",
+        "sha256": "0b251c79c00d7b0a0245f984e6515ae006844fa74832da57ca1d6ead8f749b3f"
+      },
+      "temporary_source": {
+        "path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedRestriction.lean",
+        "sha256": "0b251c79c00d7b0a0245f984e6515ae006844fa74832da57ca1d6ead8f749b3f"
+      },
+      "durable_source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/source/FixedRestriction.lean",
+        "sha256": "0b251c79c00d7b0a0245f984e6515ae006844fa74832da57ca1d6ead8f749b3f"
+      },
+      "artifact": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedRestriction.olean",
+        "sha256": "bad878eded24a723c24c151a17638ba1328f39eb44aa2c47f3b0285ab2c07e16"
+      },
+      "compile": {
+        "command": [
+          "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+          "-j",
+          "1",
+          "-DElab.async=false",
+          "-o",
+          "FixedRestriction.olean",
+          "FixedRestriction.lean"
+        ],
+        "cwd": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g",
+        "compiled_source": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedRestriction.lean",
+        "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/constructor-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/success-check-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean",
+        "exit_code": 0,
+        "stdout": "'PEqualNP.Outside.FixedBackdoor.clause_eval_distribute' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.branchRetained_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.branchGuard_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.branch_encode_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.restrictClause_mem_delete' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "axioms": {
+        "PEqualNP.Outside.FixedBackdoor.clause_eval_distribute": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.branchRetained_eval": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.branchGuard_eval": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.branch_encode_eval": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.restrictClause_mem_delete": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_imports": [
+        {
+          "module": "OrientationRecognition",
+          "compile_artifact": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/OrientationRecognition.olean",
+            "sha256": "67d74454ef2df509b499199264b1fef9f3fd448ae85453c727b8cd6424866620"
+          },
+          "durable_artifact": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/OrientationRecognition.olean",
+            "sha256": "67d74454ef2df509b499199264b1fef9f3fd448ae85453c727b8cd6424866620"
+          }
+        },
+        {
+          "module": "LazyBranchSearch",
+          "compile_artifact": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean/LazyBranchSearch.olean",
+            "sha256": "383f41fe857a1da17e7e9bd0285c676bb1161a4d70393f658dd3f1799290ae6c"
+          },
+          "durable_artifact": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean/LazyBranchSearch.olean",
+            "sha256": "383f41fe857a1da17e7e9bd0285c676bb1161a4d70393f658dd3f1799290ae6c"
+          }
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/FixedSupport.lean",
+        "sha256": "5f41577e38c743584c3cb68f2c00639d17f7e15ca9d0e74c60df55a2bfda8a9d"
+      },
+      "temporary_source": {
+        "path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedSupport.lean",
+        "sha256": "5f41577e38c743584c3cb68f2c00639d17f7e15ca9d0e74c60df55a2bfda8a9d"
+      },
+      "durable_source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/source/FixedSupport.lean",
+        "sha256": "5f41577e38c743584c3cb68f2c00639d17f7e15ca9d0e74c60df55a2bfda8a9d"
+      },
+      "artifact": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedSupport.olean",
+        "sha256": "d9f868d73d6a117a0502fae08155a6cd3c0041c43519854e7546c67723804683"
+      },
+      "compile": {
+        "command": [
+          "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+          "-j",
+          "1",
+          "-DElab.async=false",
+          "-o",
+          "FixedSupport.olean",
+          "FixedSupport.lean"
+        ],
+        "cwd": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g",
+        "compiled_source": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedSupport.lean",
+        "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/constructor-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/success-check-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean",
+        "exit_code": 0,
+        "stdout": "'PEqualNP.Outside.FixedBackdoor.branchGuard_positive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.branchRetained_dual' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.branch_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.qualified_branch_recognized' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "axioms": {
+        "PEqualNP.Outside.FixedBackdoor.branchGuard_positive": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.branchRetained_dual": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.branch_bounds": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.qualified_branch_recognized": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_imports": [
+        {
+          "module": "FixedRestriction",
+          "compile_artifact": {
+            "path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedRestriction.olean",
+            "sha256": "bad878eded24a723c24c151a17638ba1328f39eb44aa2c47f3b0285ab2c07e16"
+          },
+          "durable_artifact": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedRestriction.olean",
+            "sha256": "bad878eded24a723c24c151a17638ba1328f39eb44aa2c47f3b0285ab2c07e16"
+          }
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/FixedBackdoorSolver.lean",
+        "sha256": "fb8ac19a522bd6a8f8f43ca66d7cda8af9e3fff84ca37ecbdadf388f8c9ae3f1"
+      },
+      "temporary_source": {
+        "path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedBackdoorSolver.lean",
+        "sha256": "fb8ac19a522bd6a8f8f43ca66d7cda8af9e3fff84ca37ecbdadf388f8c9ae3f1"
+      },
+      "durable_source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/source/FixedBackdoorSolver.lean",
+        "sha256": "fb8ac19a522bd6a8f8f43ca66d7cda8af9e3fff84ca37ecbdadf388f8c9ae3f1"
+      },
+      "artifact": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedBackdoorSolver.olean",
+        "sha256": "1235ab7fdc1b7dba28e0f60401b33224e8086a5157e508b2bd916c8c87a9eb19"
+      },
+      "compile": {
+        "command": [
+          "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+          "-j",
+          "1",
+          "-DElab.async=false",
+          "-o",
+          "FixedBackdoorSolver.olean",
+          "FixedBackdoorSolver.lean"
+        ],
+        "cwd": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g",
+        "compiled_source": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedBackdoorSolver.lean",
+        "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/constructor-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/success-check-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean",
+        "exit_code": 0,
+        "stdout": "'PEqualNP.Outside.FixedBackdoor.branch_formula_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.exact_branch_cover' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.leaf_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.solve_sat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.solve_unsat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.solveCounted_erases' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.solveCounted_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+        "stderr": ""
+      },
+      "axioms": {
+        "PEqualNP.Outside.FixedBackdoor.branch_formula_eval": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.exact_branch_cover": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.leaf_iff": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.solve_sat": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.solve_unsat": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.solveCounted_erases": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "PEqualNP.Outside.FixedBackdoor.solveCounted_le": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_imports": [
+        {
+          "module": "FixedSupport",
+          "compile_artifact": {
+            "path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedSupport.olean",
+            "sha256": "d9f868d73d6a117a0502fae08155a6cd3c0041c43519854e7546c67723804683"
+          },
+          "durable_artifact": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedSupport.olean",
+            "sha256": "d9f868d73d6a117a0502fae08155a6cd3c0041c43519854e7546c67723804683"
+          }
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/FixedBackdoorExamples.lean",
+        "sha256": "a0a076f52eb37019e5489867287531d7653eb8322692d6b40dd8ad7956954eff"
+      },
+      "temporary_source": {
+        "path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedBackdoorExamples.lean",
+        "sha256": "a0a076f52eb37019e5489867287531d7653eb8322692d6b40dd8ad7956954eff"
+      },
+      "durable_source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/source/FixedBackdoorExamples.lean",
+        "sha256": "a0a076f52eb37019e5489867287531d7653eb8322692d6b40dd8ad7956954eff"
+      },
+      "artifact": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedBackdoorExamples.olean",
+        "sha256": "42042d0a5a2a2927ca91bac4cf58ec21f772053d2eae4e8a8d69bb0f01cc6252"
+      },
+      "compile": {
+        "command": [
+          "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+          "-j",
+          "1",
+          "-DElab.async=false",
+          "-o",
+          "FixedBackdoorExamples.olean",
+          "FixedBackdoorExamples.lean"
+        ],
+        "cwd": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g",
+        "compiled_source": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedBackdoorExamples.lean",
+        "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/constructor-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/success-check-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean",
+        "exit_code": 0,
+        "stdout": "'PEqualNP.Outside.FixedBackdoor.opposed_guards_force_key' depends on axioms: [propext, Classical.choice, Quot.sound]\n[none, some (false, 2), some (true, 1), none, some (true, 1), some (true, 2), none, some (true, 1), some (false, 16)]\n'_private.FixedBackdoorExamples.0.PEqualNP.Outside.FixedBackdoor.Examples.observations' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+        "stderr": ""
+      },
+      "axioms": {
+        "PEqualNP.Outside.FixedBackdoor.opposed_guards_force_key": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "_private.FixedBackdoorExamples.0.PEqualNP.Outside.FixedBackdoor.Examples.observations": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_imports": [
+        {
+          "module": "FixedBackdoorSolver",
+          "compile_artifact": {
+            "path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedBackdoorSolver.olean",
+            "sha256": "1235ab7fdc1b7dba28e0f60401b33224e8086a5157e508b2bd916c8c87a9eb19"
+          },
+          "durable_artifact": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedBackdoorSolver.olean",
+            "sha256": "1235ab7fdc1b7dba28e0f60401b33224e8086a5157e508b2bd916c8c87a9eb19"
+          }
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/FixedBackdoorOracle.lean",
+        "sha256": "052fc0a8acfd58b25454ce612a49e180dd733e352942c03f1eb27cc59aaa87c4"
+      },
+      "temporary_source": {
+        "path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedBackdoorOracle.lean",
+        "sha256": "052fc0a8acfd58b25454ce612a49e180dd733e352942c03f1eb27cc59aaa87c4"
+      },
+      "durable_source": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/source/FixedBackdoorOracle.lean",
+        "sha256": "052fc0a8acfd58b25454ce612a49e180dd733e352942c03f1eb27cc59aaa87c4"
+      },
+      "artifact": {
+        "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedBackdoorOracle.olean",
+        "sha256": "69a72c8962793469bae49a73139ef356e9a630a34a4534c92b83c33e67308691"
+      },
+      "compile": {
+        "command": [
+          "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+          "-j",
+          "1",
+          "-DElab.async=false",
+          "-o",
+          "FixedBackdoorOracle.olean",
+          "FixedBackdoorOracle.lean"
+        ],
+        "cwd": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g",
+        "compiled_source": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedBackdoorOracle.lean",
+        "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/constructor-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/success-check-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean",
+        "exit_code": 0,
+        "stdout": "{ cases := 7056, recognized := 5336, sat := 3590, unsat := 1746, disagreements := 0, countViolations := 0 }\n'_private.FixedBackdoorOracle.0.PEqualNP.Outside.FixedBackdoor.Oracle.observations' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+        "stderr": ""
+      },
+      "axioms": {
+        "_private.FixedBackdoorOracle.0.PEqualNP.Outside.FixedBackdoor.Oracle.observations": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "direct_imports": [
+        {
+          "module": "FixedBackdoorSolver",
+          "compile_artifact": {
+            "path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g/FixedBackdoorSolver.olean",
+            "sha256": "1235ab7fdc1b7dba28e0f60401b33224e8086a5157e508b2bd916c8c87a9eb19"
+          },
+          "durable_artifact": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedBackdoorSolver.olean",
+            "sha256": "1235ab7fdc1b7dba28e0f60401b33224e8086a5157e508b2bd916c8c87a9eb19"
+          }
+        }
+      ]
+    }
+  ],
+  "reusable_lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/constructor-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/success-check-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean",
+  "dependencies": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/orientation-validation.json",
+      "sha256": "b59ad3944a64b33d3ce308b290907d300e91c9aab0181fd038944eaa934705be"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/orientation-independent-audit.json",
+      "sha256": "58c0a354440f913323bd6f28af41b65495599577a04d8647df8911ac2c4fa701"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-validation.json",
+      "sha256": "408cd732dfff35945d3d12d66b7c89d526e0013b6afdb01b24ebb700e48098c7"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/source-bound-branch-audit.json",
+      "sha256": "242703f4a63a4a9956c1e828474a677b7ef0594355ded497631c7614fde81f96"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/backdoor-oracle-validation.json",
+      "sha256": "0c8933b61e3bb09539afaa8c3b30c369c7d85537c41bde5cae5810a9639897ac"
+    }
+  ],
+  "codegen": {
+    "command": [
+      "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+      "-j",
+      "1",
+      "-DElab.async=false",
+      "-c",
+      "FixedBackdoorSolver.c",
+      "FixedBackdoorSolver.lean"
+    ],
+    "cwd": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-fixed-backdoor-jhtc690g",
+    "exit_code": 0,
+    "artifact": {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fixed_backdoor_round1/build/lib/lean/FixedBackdoorSolver.c",
+      "sha256": "417fe69606fa04d34646bd097ed777637eae052904d5714e2ea647f808d9f6ed"
+    },
+    "runtime_calls": {
+      "_Lazy_search(": [
+        126
+      ],
+      "_Lazy_searchCounted(": [
+        169
+      ],
+      "_OrientationRecognition_solve(": [
+        65
+      ]
+    },
+    "stdout": "'PEqualNP.Outside.FixedBackdoor.branch_formula_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.exact_branch_cover' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.leaf_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.solve_sat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.solve_unsat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.solveCounted_erases' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.FixedBackdoor.solveCounted_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+    "stderr": ""
+  },
+  "semantics": [
+    "Qualification validates all original visible bounds, checks supplied keys are visible, and checks that deleting the keys makes the retained clauses and guards jointly orientable.",
+    "Every branch binds the chosen keys by retained unit clauses. A guard satisfied by those fixed bits is represented by its satisfied fixed literals, each of which becomes positive under the branch orientation. Other guards delete the fixed literals.",
+    "The same original assignment and the same private IDs witness the exact branch equivalence. Any original model is covered by the finite branch list; the runtime traverses it lazily without constructing the list.",
+    "A qualifying supplied list is deduplicated, and the actual counter has upper bound 2^k for k distinct keys. Rejected keys are unsupported; accepted instances receive SAT or UNSAT. Public verdict is a Boolean and leaf callbacks internally use the checked oriented constructor."
+  ],
+  "boundary": [
+    "Opposed guard occurrences of any one variable force membership in every qualifying supplied key set. This is a static criterion and can be restrictive even on easy formulas.",
+    "The earlier source-bound audit gives a vertex-cover equivalence for the minimum qualifying set and an independent 20,952-case affine projection check. Neither affine pruning nor smaller backdoor discovery is included in this solver.",
+    "Visited-leaf counts exclude support checking, 2-CNF orientation search, and each leaf solve. Each visited leaf currently reruns orientation recognition and witness construction. Whole bit-time and a small-backdoor guarantee for arbitrary SAT remain open."
+  ],
+  "focused_fixture_count": 9,
+  "independent_oracle_cases": 7056
+}

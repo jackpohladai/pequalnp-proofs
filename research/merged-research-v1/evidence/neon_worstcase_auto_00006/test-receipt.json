@@ -1,0 +1,83 @@
+{
+  "status": "confirmed_finite_growth_fixture",
+  "summary": "New counting solver still reaches at least four simultaneous states on this finite UNSAT fixture. This is a finite test, not a general complexity result.",
+  "oracle_sat": false,
+  "observed": {
+    "sat": false,
+    "peak": 4,
+    "layers": [
+      {
+        "variable": 3,
+        "retained": 2
+      },
+      {
+        "variable": 5,
+        "retained": 4
+      },
+      {
+        "variable": 2,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 0,
+    "counting": {
+      "calls": 15,
+      "refutations": 8,
+      "windows": 361,
+      "tuples": 7184,
+      "seconds": 0.47057529,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 9,
+      "tuples": 144,
+      "constraints": 0,
+      "truncated": false,
+      "seconds": 0.01779145900000001,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "scc-emra-ialh5-v1",
+    "source_sha256": "62e6419f5ab94ae46dc77f5f43ceae0f0c4e0a75d701e66e756dc5ec2f29a2f6",
+    "general_polynomial_sat_proof": false
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 4,
+    "layers": [
+      {
+        "variable": 3,
+        "retained": 2
+      },
+      {
+        "variable": 5,
+        "retained": 4
+      },
+      {
+        "variable": 2,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 64
+  },
+  "baseline_seconds": 0.022608624999999993,
+  "updated_seconds": 0.48939862500000003,
+  "seconds": 0.5320957080000001,
+  "solver": "scc-emra-ialh5-v1",
+  "source_sha256": "62e6419f5ab94ae46dc77f5f43ceae0f0c4e0a75d701e66e756dc5ec2f29a2f6",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

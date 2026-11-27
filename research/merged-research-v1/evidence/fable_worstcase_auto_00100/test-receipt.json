@@ -1,0 +1,90 @@
+{
+  "status": "fixture_predictions_match",
+  "summary": "Fable finite prediction matched on the deployed solver; broader mathematical claims remain unverified. Observed peak: 1; compression: skipped. Skip reason: all_variables_in_odd_blocks.",
+  "oracle_sat": false,
+  "oracle": {
+    "status": "completed",
+    "sat": false,
+    "witness": null,
+    "method": "independent_bounded_dpll",
+    "nodes": 269,
+    "seconds": 0.0076949580000000295,
+    "formally_checked": false,
+    "general_polynomial_sat_proof": false
+  },
+  "observed": {
+    "sat": false,
+    "peak": 1,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 10,
+    "counting": {
+      "calls": 3,
+      "refutations": 2,
+      "windows": 287,
+      "tuples": 4300,
+      "seconds": 0.28727191599999996,
+      "truncated_calls": 1
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 256,
+      "tuples": 4032,
+      "constraints": 0,
+      "truncated": true,
+      "seconds": 0.271982625,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-composed-core-scc-emra-ialh5-v5",
+    "source_sha256": "ff1f4262060692f34f89f974a9ffe276231e639df5fac78dcd498b2704a14196",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "skipped",
+      "reason": "all_variables_in_odd_blocks",
+      "original_variables": 20,
+      "original_clauses": 47,
+      "seconds": 8.545899999995443e-05
+    },
+    "core_refutation": {
+      "status": "UNKNOWN",
+      "reason": "no_clauses_removed",
+      "seconds": 0.0005177499999999835,
+      "input_stage": "original"
+    }
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 1,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 26
+  },
+  "baseline_seconds": 0.013708833000000031,
+  "updated_seconds": 0.300203792,
+  "seconds": 0.32178625000000005,
+  "solver": "blq-composed-core-scc-emra-ialh5-v5",
+  "source_sha256": "ff1f4262060692f34f89f974a9ffe276231e639df5fac78dcd498b2704a14196",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

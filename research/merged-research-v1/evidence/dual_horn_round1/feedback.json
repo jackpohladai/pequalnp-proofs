@@ -1,0 +1,64 @@
+{
+  "status": "locally_lean_checked_restricted_component",
+  "related_candidate": "sonnet-02816",
+  "related_candidate_sha256": "11f2051569b518716fa1305318465e4331dcd8c2936e5b8b1fd4b1868a5a7239",
+  "sources": {
+    "DualHorn": {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/DualHorn.lean",
+      "source_sha256": "bac65e92d1e39cd9a76bbb353477704e7fd948d774b1e7aebc13990f7687c360"
+    },
+    "GreatestGuard": {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/greatest_guard_round1/GreatestGuard.lean",
+      "source_sha256": "c222ab95ec0f4f722c8a9ae3948a5514f528c3bb8b42d1c81bd2f0ce8702481e"
+    },
+    "DualHornGreatestGuard": {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/DualHornGreatestGuard.lean",
+      "source_sha256": "309b5fcbfa519b9c190cb0df95914a72b1de81ac4f8037890c07882be7612f0e"
+    }
+  },
+  "new_checked_facts": [
+    "Actual project dual-Horn CNF syntax supplies greatest feasible assignment",
+    "Positive clause guards are monotone",
+    "Under static neighbor and typed row-private edge interface, extension exists iff matching exists at the greatest retained model",
+    "Unsatisfiable retained CNF excludes every extension"
+  ],
+  "premises": [
+    "Each retained clause has at most one negative literal occurrence",
+    "All retained variables lie below a finite n",
+    "Retained CNF is satisfiable for greatest-model construction",
+    "All guard literals are positive",
+    "Static neighbor sets",
+    "Typed row-private edge variables with hole exclusivity"
+  ],
+  "significance": "Discharges the strongest semantic premises of GreatestGuard from concrete retained CNF syntax rather than assuming closure or a greatest model.",
+  "next_research_target": "Construct and verify an executable dual-Horn greatest-model algorithm; certify the retained/guard/private-edge decomposition and compose with checked matching. Then account for total encoded-bit runtime.",
+  "failure_to_generalize": "Arbitrary CNF may lack a greatest model; NOT x OR NOT y has models 01 and 10 but their OR 11 is not a model.",
+  "not_proved": [
+    "Efficient greatest-model construction",
+    "CNF decomposition recognizer/refinement",
+    "Python candidate correctness",
+    "Matching implementation",
+    "Encoded-bit runtime",
+    "General SAT or P=NP"
+  ],
+  "local_finite_checks": {
+    "formulas": 6462,
+    "model_pair_checks": 29479,
+    "positive_guard_comparisons": 216
+  },
+  "lean_version": "4.36.0",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "official_checker": false,
+  "upstream_published": false,
+  "general_sat_solved": false,
+  "candidate_executed": false,
+  "receipts": [
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/compile-receipt.json",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/composition-receipt.json",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/finite-receipt.json"
+  ]
+}

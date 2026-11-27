@@ -1,0 +1,121 @@
+{
+  "status": "fixture_predictions_match",
+  "summary": "Fable finite prediction matched on the deployed solver; broader mathematical claims remain unverified. Observed peak: 0; compression: skipped. Skip reason: incompatible_greedy_basis.",
+  "oracle_sat": false,
+  "observed": {
+    "sat": false,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 0,
+    "accepted_dp": 0,
+    "counting": {
+      "calls": 1,
+      "refutations": 1,
+      "windows": 3,
+      "tuples": 48,
+      "seconds": 0.00488283299999992,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNSAT",
+      "certificate": {
+        "kind": "integer_contradiction",
+        "rows": [
+          {
+            "window": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": -1,
+            "modulus": 2
+          },
+          {
+            "window": [
+              1,
+              2,
+              5,
+              6
+            ],
+            "coefficients": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "rhs": 1,
+            "modulus": 0
+          },
+          {
+            "window": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "coefficients": [
+              1,
+              1,
+              0,
+              0
+            ],
+            "rhs": 1,
+            "modulus": 0
+          }
+        ],
+        "dual": [
+          "1/2",
+          "-1/2",
+          "-1/2"
+        ]
+      },
+      "windows": 3,
+      "tuples": 48,
+      "constraints": 3,
+      "truncated": false,
+      "seconds": 0.00488283299999992,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": true,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-root-scc-emra-ialh5-v2",
+    "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "skipped",
+      "reason": "incompatible_greedy_basis",
+      "original_variables": 6,
+      "original_clauses": 24,
+      "seconds": 0.0001832090000000175
+    }
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 0,
+    "accepted_dp": 5
+  },
+  "baseline_seconds": 0.0011441250000000514,
+  "updated_seconds": 0.008061249999999909,
+  "seconds": 0.010826874999999958,
+  "solver": "blq-root-scc-emra-ialh5-v2",
+  "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

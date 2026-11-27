@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "verifier_sha256": "912ae542f5e695265fef503e7e45e6c618b39d1ee7136b278e39d773543c2bfa",
+  "graph_guard_instances": 685,
+  "success_certificate_checks": 15025,
+  "failure_certificate_checks": 5039,
+  "accepted_successes": 4155,
+  "accepted_failures": 590,
+  "masked_edge_witness_checked_on_all_successes": true,
+  "inactive_collision_counterexample_checked": true,
+  "malformed_cases_checked": true,
+  "negative_guard_counterexample_checked": true,
+  "complete_search_implemented": false,
+  "candidate_executed": false,
+  "scope": "Independent finite validation mirrors; no arbitrary-CNF or runtime claim"
+}

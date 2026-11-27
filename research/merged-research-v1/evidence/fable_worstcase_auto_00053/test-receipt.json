@@ -1,0 +1,256 @@
+{
+  "status": "fixture_predictions_match",
+  "summary": "Fable finite prediction matched on the deployed solver; broader mathematical claims remain unverified. Observed peak: 0; compression: compressed. Exact compression certificate also checked in Lean.",
+  "oracle_sat": true,
+  "observed": {
+    "sat": true,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 0,
+    "accepted_dp": 8,
+    "counting": {
+      "calls": 1,
+      "refutations": 0,
+      "windows": 45,
+      "tuples": 548,
+      "seconds": 0.024393083000000038,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 45,
+      "tuples": 548,
+      "constraints": 0,
+      "truncated": false,
+      "seconds": 0.024393083000000038,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-root-scc-emra-ialh5-v2",
+    "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "compressed",
+      "original_variables": 12,
+      "original_clauses": 36,
+      "quotient_variables": 10,
+      "quotient_clauses": 9,
+      "certificate": {
+        "variables": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "basis_forms": [
+          14,
+          28,
+          56,
+          112,
+          224,
+          448,
+          896,
+          1792,
+          9,
+          2304
+        ],
+        "quotient": [
+          [
+            1,
+            9
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            10
+          ]
+        ],
+        "right_inverse": [
+          2,
+          6,
+          13,
+          27,
+          54,
+          109,
+          219,
+          731,
+          1,
+          877
+        ]
+      },
+      "blocks": [
+        {
+          "support": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        }
+      ],
+      "verification_assignments": 5120,
+      "seconds": 0.068466417,
+      "certificate_verified": true,
+      "general_polynomial_sat_proof": false
+    }
+  },
+  "baseline": {
+    "sat": true,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 0,
+    "accepted_dp": 9
+  },
+  "baseline_seconds": 0.0009656250000000255,
+  "updated_seconds": 0.095139625,
+  "compression_lean": {
+    "source_sha256": "5280071f036c3ee1540db322976706baf7d31f08020ad8bef3ad4f0a71f46157",
+    "lean_version": "4.36.0",
+    "scope": "Exact candidate compression equivalence and constructive lifting; not a verification of Python or runtime.",
+    "general_polynomial_sat_proof": false,
+    "status": "checked",
+    "exit_code": 0,
+    "seconds": 3.991016291
+  },
+  "seconds": 4.093359583,
+  "solver": "blq-root-scc-emra-ialh5-v2",
+  "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

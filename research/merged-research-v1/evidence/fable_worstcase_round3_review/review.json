@@ -1,0 +1,146 @@
+{
+  "reviewed_at": "2026-11-26T17:42:25.218118+00:00",
+  "proposal_sha256": "c6994ed3d6eeb2626336fb04a5efbb452fec35291ecfa1d3185ec134091c5949",
+  "verdict": "Seven-variable elimination predictions match. Six selected Steiner systems up to21 variables refute with at most6 retained states; no observed exponential-growth benchmark or general bound.",
+  "tests": {
+    "seven_variable_details": {
+      "first": {
+        "pairs": 9,
+        "resolvents_before_dedup": 6,
+        "clauses_before": 14,
+        "clauses_after": 14
+      },
+      "second_trials": [
+        {
+          "variable": 2,
+          "pairs": 16,
+          "non_taut_resolvents": 10,
+          "clauses_after": 16,
+          "accepted": false
+        },
+        {
+          "variable": 3,
+          "pairs": 16,
+          "non_taut_resolvents": 10,
+          "clauses_after": 16,
+          "accepted": false
+        },
+        {
+          "variable": 4,
+          "pairs": 16,
+          "non_taut_resolvents": 10,
+          "clauses_after": 16,
+          "accepted": false
+        },
+        {
+          "variable": 5,
+          "pairs": 16,
+          "non_taut_resolvents": 10,
+          "clauses_after": 16,
+          "accepted": false
+        },
+        {
+          "variable": 6,
+          "pairs": 16,
+          "non_taut_resolvents": 10,
+          "clauses_after": 16,
+          "accepted": false
+        },
+        {
+          "variable": 7,
+          "pairs": 16,
+          "non_taut_resolvents": 10,
+          "clauses_after": 16,
+          "accepted": false
+        }
+      ],
+      "brute_models": 0
+    },
+    "scaling": [
+      {
+        "v": 7,
+        "clauses": 14,
+        "first_elimination_accepted": true,
+        "solver": {
+          "sat": false,
+          "max_states": 1,
+          "branches": 4
+        },
+        "seconds": 0.0019719600677490234
+      },
+      {
+        "v": 9,
+        "clauses": 24,
+        "first_elimination_accepted": false,
+        "solver": {
+          "sat": false,
+          "max_states": 2,
+          "branches": 6
+        },
+        "seconds": 0.0049130916595458984
+      },
+      {
+        "v": 13,
+        "clauses": 52,
+        "first_elimination_accepted": false,
+        "solver": {
+          "sat": false,
+          "max_states": 4,
+          "branches": 14
+        },
+        "seconds": 0.02879476547241211
+      },
+      {
+        "v": 15,
+        "clauses": 70,
+        "first_elimination_accepted": false,
+        "solver": {
+          "sat": false,
+          "max_states": 6,
+          "branches": 26
+        },
+        "seconds": 0.07971501350402832
+      },
+      {
+        "v": 19,
+        "clauses": 114,
+        "first_elimination_accepted": false,
+        "solver": {
+          "sat": false,
+          "max_states": 4,
+          "branches": 14
+        },
+        "seconds": 0.1542508602142334
+      },
+      {
+        "v": 21,
+        "clauses": 140,
+        "first_elimination_accepted": false,
+        "solver": {
+          "sat": false,
+          "max_states": 6,
+          "branches": 26
+        },
+        "seconds": 0.4476499557495117
+      }
+    ],
+    "elapsed_seconds": 0.7292091846466064,
+    "scope": "Finite specified Steiner systems, not an all-order or asymptotic bound; every pair checked to occur in exactly one block."
+  },
+  "corrections": [
+    "Immutable histories do not prevent state merging: current method keys on residual CNF and keeps one entire survivor history. The proposal statement that every history makes a state distinct is false.",
+    "Proof-system literature and applicability not verified; no general P-versus-NP implication.",
+    "The specific Fano integer certificate and Boolean CNF bridge are now Lean-checked. A general lattice solver, automatic discovery and runtime remain unverified."
+  ],
+  "general_polynomial_sat_proof": false,
+  "formal": {
+    "checked_at": "2026-11-26T17:46:40.794154+00:00",
+    "exit_code": 0,
+    "elapsed_seconds": 3.194401083,
+    "source_sha256": "61d5f9e5aa082e0ef577a9b7f8a2330fe263a04e13dc4b9d78bb40442caeea2e",
+    "lean_version": "4.36.0",
+    "stdout": "'IntegerCertificates.exactlyOne_equation' does not depend on any axioms\n'IntegerCertificates.fano_cnf_unsatisfiable' depends on axioms: [propext, Quot.sound]\n'IntegerCertificates.divisibility_obstruction' does not depend on any axioms\n'IntegerCertificates.fano_exactly_one_impossible' depends on axioms: [propext, Quot.sound]\n",
+    "stderr": "",
+    "scope": "Generic supplied integer divisibility obstruction, seven Fano exactly-one equations, Boolean CNF-to-equation bridge and exact seven-variable28-clause Fano CNF unsatisfiability. No general lattice solver, automatic recognizer, or general polynomial-time SAT proof."
+  }
+}

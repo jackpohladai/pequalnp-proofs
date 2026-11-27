@@ -1,0 +1,125 @@
+{
+  "seven_variable_details": {
+    "first": {
+      "pairs": 9,
+      "resolvents_before_dedup": 6,
+      "clauses_before": 14,
+      "clauses_after": 14
+    },
+    "second_trials": [
+      {
+        "variable": 2,
+        "pairs": 16,
+        "non_taut_resolvents": 10,
+        "clauses_after": 16,
+        "accepted": false
+      },
+      {
+        "variable": 3,
+        "pairs": 16,
+        "non_taut_resolvents": 10,
+        "clauses_after": 16,
+        "accepted": false
+      },
+      {
+        "variable": 4,
+        "pairs": 16,
+        "non_taut_resolvents": 10,
+        "clauses_after": 16,
+        "accepted": false
+      },
+      {
+        "variable": 5,
+        "pairs": 16,
+        "non_taut_resolvents": 10,
+        "clauses_after": 16,
+        "accepted": false
+      },
+      {
+        "variable": 6,
+        "pairs": 16,
+        "non_taut_resolvents": 10,
+        "clauses_after": 16,
+        "accepted": false
+      },
+      {
+        "variable": 7,
+        "pairs": 16,
+        "non_taut_resolvents": 10,
+        "clauses_after": 16,
+        "accepted": false
+      }
+    ],
+    "brute_models": 0
+  },
+  "scaling": [
+    {
+      "v": 7,
+      "clauses": 14,
+      "first_elimination_accepted": true,
+      "solver": {
+        "sat": false,
+        "max_states": 1,
+        "branches": 4
+      },
+      "seconds": 0.0019719600677490234
+    },
+    {
+      "v": 9,
+      "clauses": 24,
+      "first_elimination_accepted": false,
+      "solver": {
+        "sat": false,
+        "max_states": 2,
+        "branches": 6
+      },
+      "seconds": 0.0049130916595458984
+    },
+    {
+      "v": 13,
+      "clauses": 52,
+      "first_elimination_accepted": false,
+      "solver": {
+        "sat": false,
+        "max_states": 4,
+        "branches": 14
+      },
+      "seconds": 0.02879476547241211
+    },
+    {
+      "v": 15,
+      "clauses": 70,
+      "first_elimination_accepted": false,
+      "solver": {
+        "sat": false,
+        "max_states": 6,
+        "branches": 26
+      },
+      "seconds": 0.07971501350402832
+    },
+    {
+      "v": 19,
+      "clauses": 114,
+      "first_elimination_accepted": false,
+      "solver": {
+        "sat": false,
+        "max_states": 4,
+        "branches": 14
+      },
+      "seconds": 0.1542508602142334
+    },
+    {
+      "v": 21,
+      "clauses": 140,
+      "first_elimination_accepted": false,
+      "solver": {
+        "sat": false,
+        "max_states": 6,
+        "branches": 26
+      },
+      "seconds": 0.4476499557495117
+    }
+  ],
+  "elapsed_seconds": 0.7292091846466064,
+  "scope": "Finite specified Steiner systems, not an all-order or asymptotic bound; every pair checked to occur in exactly one block."
+}

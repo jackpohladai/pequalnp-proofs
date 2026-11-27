@@ -1,0 +1,13 @@
+{
+  "status": "checked",
+  "exit_code": 0,
+  "stdout": "'CompressionSoundness.equisat_of_projection' does not depend on any axioms\n'CompressionSoundness.certificateCheck_sound' depends on axioms: [propext, Quot.sound]\n'CompressionSoundness.equisat_of_two_maps' does not depend on any axioms\n'CompressionInstances.core0_forward' depends on axioms: [propext]\n'CompressionInstances.core0_backward' depends on axioms: [propext]\n'CompressionInstances.core0_equisatisfiable' depends on axioms: [propext]\n'CompressionInstances.core1_forward' depends on axioms: [propext]\n'CompressionInstances.core1_backward' depends on axioms: [propext]\n'CompressionInstances.core1_equisatisfiable' depends on axioms: [propext]\n'CompressionInstances.core2_forward' depends on axioms: [propext]\n'CompressionInstances.core2_backward' depends on axioms: [propext]\n'CompressionInstances.core2_equisatisfiable' depends on axioms: [propext]\n'CoreRefutations.core0_full_unsat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CoreRefutations.core1_full_unsat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CoreRefutations.core2_full_unsat' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "at": "2026-11-27T02:23:38.254941+00:00",
+  "seconds": 52.693362042,
+  "source_sha256": "28d6d29788fb09abcd98d9b44bc737f3fa05f7658791bd08d98da563e827783c",
+  "cases": 3,
+  "scope": "Exact UNSAT proofs for three original inputs via explicit clause-subset certificates, compression equivalence, and finite binary-quotient refutation.",
+  "general_polynomial_sat_proof": false,
+  "python_implementation_verified": false
+}

@@ -1,0 +1,40 @@
+{
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/paired_union_round1/PairedUnion.lean",
+  "source_sha256": "0db91e5c4f64f5cab9c554ee08ad0fa5597b826263bcae1b369f87dbfbbc9253",
+  "checked_at_utc": "2026-11-26T08:05:54Z",
+  "lean_version": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "exit_code": 0,
+  "elapsed_seconds": 36.858,
+  "output": "'PEqualNP.Outside.PairedUnion.certificate_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.badMass_disjoint_union' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.certificate_branch' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.singleton_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.paired_le_individual' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "command": [
+    "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+    "-j",
+    "1",
+    "-DElab.async=false",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-paired-union-tk0p29g7/PairedUnion.lean"
+  ],
+  "lean_path_setup": "Existing project and pinned manifest package build/lib/lean paths only; no dependency download",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "private_raw_receipt": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-paired-union-tk0p29g7/receipt.json",
+  "formalized_scope": [
+    "strict paired-mass certificate implies a good assignment exists",
+    "bad mass additive across disjoint domain branches",
+    "strict certificate survives in at least one branch without balance assumptions",
+    "singleton certificate implies all indexed events avoided",
+    "paired mass is bounded by sum of individual counts"
+  ],
+  "not_proved": [
+    "efficient finite-domain representation",
+    "affine event rank/count formula",
+    "Python branch selection/refinement",
+    "operational bit-time",
+    "universal initial certificate",
+    "general SAT completeness"
+  ],
+  "upstream_checker": false,
+  "full_sat_proof": false
+}

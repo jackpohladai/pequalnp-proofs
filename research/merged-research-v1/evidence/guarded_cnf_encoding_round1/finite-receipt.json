@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "verifier_sha256": "202ae4c14c147b5d251ae469f4d07d5603c01e88fc02c9f1ba7e6aa6fb9989a4",
+  "pointwise_cnf_evaluations": 34425,
+  "guarded_matching_projections": 685,
+  "collision_counterexample_checked": true,
+  "retained_overlap_counterexample_checked": true,
+  "two_row_projection_assignments": 4,
+  "candidate_executed": false,
+  "scope": "Independent finite mirror; general equivalence separately checked in Lean"
+}

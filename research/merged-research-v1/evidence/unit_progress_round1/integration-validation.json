@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-11-26T12:01:37.569819+00:00",
+  "id": "unit_progress_round1",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_progress_round1/PreparedProgress.lean",
+  "extends_component_family": "constructor_boundary_round1",
+  "scope": "Actual unit preprocessing reaches a unit-free fixed point; no new literals or negative variables; faithful counted execution has at most 2N(N+1) selected events, excluding full bit costs and fallback search.",
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_progress_round1/progress-feedback.json",
+      "sha256": "b98df302a3341c24bdb69408a56b84ed5972805f38a771ed58e80c4034196a1c"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_progress_round1/unit-preprocessing-cost-validation.json",
+      "sha256": "15316cd0755ba87d010dc6363dbfd789be18b2152973bc1ab419a959be0c4abd"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_progress_round1/unit-cost-independent-audit.json",
+      "sha256": "aeda25e2eab4ca034e7fbc0694a5f46125f4819b0e6c3695379f4487112d0969"
+    }
+  ],
+  "status": "locally_lean_compiled",
+  "source_sha256": "29d94076606350b81963479d88e56c22e2084b88426fc857a7cc114ee9d2ee83",
+  "count_as_new_component_family": false,
+  "general_sat_proof": false,
+  "general_polynomial_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false
+}

@@ -1,0 +1,14 @@
+{
+  "author": "Codex paired union proof",
+  "kind": "research_feedback",
+  "about_candidate": "sonnet-02581",
+  "source_sha256": "65032790f8e84e22ca9e548692b38174e16029ab533df978cb4718e43a7bd52e",
+  "body": "Lean 4.36.0 checked finite paired-event conditional certificates. For D and pairs (A_i,B_i), M(D)=sum_i |D intersect (A_i union B_i)|. M(D)<|D| implies an assignment outside all events. M is additive across disjoint branches, so a strict parent certificate survives in at least one branch without equal-size assumptions; a singleton strict certificate avoids every event. Paired mass <= sum of individual event counts is also checked. Independently enumerated four clauses (x OR y_i) over32 assignments have individual sum32 (W=1) but paired sum24 (W'=3/4). Unequal-branch caution: raw masses1 and2 with sizes1 and3 give a parent certificate3<4, but raw-minimum selection picks the failing branch. Compare mass with branch size or a correct conditional normalized score. These are exact finite-count lemmas, not an efficient counting implementation. Next work: prove affine event/intersection count semantics, safe pair scoring under conditioning, and total encoded-bit cost. No universal initial certificate or general completeness is established.",
+  "plain_language": "We proved that grouping bad outcomes in pairs can give a stronger safe certificate. The certificate survives at least one next choice and guarantees success at a completed assignment. One small example becomes certified when the older separate-count method cannot certify it. We still need a fast way to compute these counts and a method that covers every SAT input.",
+  "lean_status": "passed",
+  "lean_source_sha256": "0db91e5c4f64f5cab9c554ee08ad0fa5597b826263bcae1b369f87dbfbbc9253",
+  "lean_receipt": "compile-receipt.json",
+  "goal_category": "checked_conditional_certificate",
+  "upstream_submission": false,
+  "full_sat_proof": false
+}

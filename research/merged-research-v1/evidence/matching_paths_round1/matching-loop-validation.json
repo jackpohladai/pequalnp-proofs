@@ -1,0 +1,142 @@
+{
+  "checked_at_utc": "2026-11-26T10:23:40.418292+00:00",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/MatchingLoop.lean",
+  "source_sha256": "68c9dad3135d37afb920bed0692d7f70754ffdc64dc2f3681d7891cff2a8a403",
+  "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/loop-build/lib/lean/MatchingLoop.olean",
+  "artifact_sha256": "16f6cd9af1d34c996f3ed2b92c2f4211e0785c2548cc8d1af553fd54c20f9990",
+  "compiled_source": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-loop-3qihcsan/MatchingLoop.lean",
+  "compiled_artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-loop-3qihcsan/MatchingLoop.olean",
+  "lean_version": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "compile": {
+    "command": [
+      "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+      "-j",
+      "1",
+      "-DElab.async=false",
+      "-o",
+      "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-loop-3qihcsan/MatchingLoop.olean",
+      "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-loop-3qihcsan/MatchingLoop.lean"
+    ],
+    "env": {
+      "LEAN_PATH": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean"
+    },
+    "elapsed_seconds": 10.781,
+    "exit_code": 0,
+    "stdout": "'PEqualNP.Outside.MatchingLoop.tryPath_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.visit_checked' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.solveWith_checked' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.solveFromBfs_checked' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.solveFromBfs_no_inconclusive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.Result.accepted_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n(\"success\", [some 1, some 0])\n(\"failure\", [some 0, some 1, some 2])\n(\"inconclusive\", [])\n(\"inconclusive\", [])\n(\"inconclusive\", [])\n(\"success\", [none])\n(\"failure\", [some 0])\n",
+    "stderr": "",
+    "working_directory": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-loop-3qihcsan"
+  },
+  "reusable_lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+  "dependency_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-compile-receipt.json",
+  "dependency_receipt_sha256": "5ce27c0e9e4fa5394275c07ffe95683dd50541e1ed4ffae6b1c14635753a7b84",
+  "dependencies": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/AugmentingReassignment.lean",
+      "source_sha256": "8d4c2afe36187af456beebccfe5cb6c5a135fd3b9c272b277a709f60ff16736a",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean/AugmentingReassignment.olean",
+      "artifact_sha256": "8bed920842988fc786b9686fb3ab50f0d53cda4b45d7842888bda4da9145ea8d"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/ActiveAugmentation.lean",
+      "source_sha256": "38f40a6fbb42baa744bf72889f9b0a4957870cad9768718766ee7bd1599ad8dc",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean/ActiveAugmentation.olean",
+      "artifact_sha256": "24ced4cf418d1b629efd41ceb2c38743eb9255db711d40dc51b72b281d617118"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/AugmentationExamples.lean",
+      "source_sha256": "281d1c9324b60faa84079e10dd5caec9ee5d3a80acfa54b02536e0a6cb38db23",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean/AugmentationExamples.olean",
+      "artifact_sha256": "9cc544d48994a82557ba9f1b40e63812c59b7d8c5ee0e24087ec39c197fa8cbf"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/AugmentationBfsBridge.lean",
+      "source_sha256": "43cabae8a7548a394f8ef58d91d33fe9e837f4a3a00466a5bbea109d03d498f5",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean/AugmentationBfsBridge.olean",
+      "artifact_sha256": "4ee62818f9c885f6731ab8ad6891818032916425159b16c27043c2faf90b749b"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/BfsClosure.lean",
+      "source_sha256": "9a32da616ebfb4f2b0cb23c77330047d4a10286df0f5541fd95b0f2751819950",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean/BfsClosure.olean",
+      "artifact_sha256": "37382556cc088636f81f0bf12efcca5121cce48203e0fc5ec1eda518904db0fa"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_search_round1/ExhaustedSearchCut.lean",
+      "source_sha256": "38177bfc1846b89e75fe3a1b930b9fc6cc14a0f7b8c080cea1f394ef49233871",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean/ExhaustedSearchCut.olean",
+      "artifact_sha256": "ffef17ec9cb79a9d598e5dad1d7302a5808120c02484fff140471c411516f34c"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/MatchingCertificates.lean",
+      "source_sha256": "986dfd8c4772da727126a0cbfcbca82ddc368c5aefcd1a8e5b6989d68762b13e",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean/MatchingCertificates.olean",
+      "artifact_sha256": "990176e28900d54e43d2c34bb799f437f09cca8d1c8782625b4ebed232a33d1d"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/hall_projection_round1/GuardedHall.lean",
+      "source_sha256": "97827e26e1f4b7554920bc04e69dc4073769ba476c66fc76ccfd1bcfb360fa0b",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/augmentation-build/lib/lean/GuardedHall.olean",
+      "artifact_sha256": "aa5c82d9dd9955a3131767b174cb56dc9efacedb3ffcee1e3e72e168afe2b510"
+    }
+  ],
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "proven_axioms": {
+    "PEqualNP.Outside.MatchingLoop.tryPath_sound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.MatchingLoop.visit_checked": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.MatchingLoop.solveWith_checked": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.MatchingLoop.solveFromBfs_checked": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.MatchingLoop.solveFromBfs_no_inconclusive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.MatchingLoop.Result.accepted_correct": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "execution_examples": {
+    "supplied_two_root_augmentation": "(\"success\", [some 1, some 0])",
+    "bfs_proper_hall_subset_after_two_augmentations": "(\"failure\", [some 0, some 1, some 2])",
+    "missing_free_path": "(\"inconclusive\", [])",
+    "wrong_root_path": "(\"inconclusive\", [])",
+    "invalid_cut": "(\"inconclusive\", [])",
+    "inactive_row_zero_holes": "(\"success\", [none])",
+    "active_row_zero_holes": "(\"failure\", [some 0])"
+  },
+  "formalized_scope": [
+    "Executable finite fold over all typed rows, skipping inactive or previously covered rows.",
+    "An accepted replay uses active rows only, covers the requested root, and preserves validity and prior coverage.",
+    "Success terminates with a certificate accepted by successCheck. A failure result carries an actual cut accepted by failureCheck.",
+    "The two accepted certificate branches respectively imply existence and nonexistence of matching.",
+    "For the existing BFS, exhausted search supplies a checked cut and row-count fuel suffices. Only the free-hole branch requires a path callback.",
+    "Missing, invalid or wrong-root paths and invalid cut proposals are inconclusive."
+  ],
+  "remaining_obligations": [
+    "Supply an executable path callback and prove that it always returns a replayable path when BFS finds a free hole.",
+    "Refine the accepted Python implementation and prove encoded-bit runtime if that claim is needed.",
+    "Upstream checker integration."
+  ],
+  "complete_matching_search_verified": false
+}

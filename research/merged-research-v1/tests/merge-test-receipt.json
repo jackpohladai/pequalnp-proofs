@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "solver": "merged-research-v1",
+  "source_sha256": "fbde1ec629edf02e14168c8c76ed76c5b8268c1bf9cf49aaab897fb3555f2c90",
+  "checks": [
+    {
+      "source": "fable72",
+      "cache_off_calls": 12,
+      "cache_on_calls": 8,
+      "same_decision_and_layers": true
+    },
+    {
+      "source": "neon58",
+      "default_peak": 8,
+      "explicit_quotient_order_peak": 2,
+      "sat": false
+    },
+    {
+      "source": "neon_worstcase_auto_00053",
+      "core_preserved": true,
+      "peak": 0,
+      "sat": false
+    },
+    {
+      "source": "neon_worstcase_auto_00056",
+      "core_preserved": true,
+      "peak": 0,
+      "sat": false
+    }
+  ],
+  "invalid_order_cases": 3,
+  "basic_cache_parity_cases": 5,
+  "general_polynomial_sat_proof": false,
+  "scope": "Integration checks only; no new conjectures tested."
+}

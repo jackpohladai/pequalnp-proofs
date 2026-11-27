@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "source_sha256": "a2fda9b9ad5ea7b3476a0b734846b77d770fbc7cc25739fd1beed393dff377e4",
+  "identity_product_entries_checked": 87381,
+  "observations": [
+    {
+      "k": 0,
+      "matrix_dimension": 1,
+      "rank": 1
+    },
+    {
+      "k": 1,
+      "matrix_dimension": 2,
+      "rank": 2
+    },
+    {
+      "k": 2,
+      "matrix_dimension": 4,
+      "rank": 4
+    },
+    {
+      "k": 3,
+      "matrix_dimension": 8,
+      "rank": 8
+    },
+    {
+      "k": 4,
+      "matrix_dimension": 16,
+      "rank": 16
+    },
+    {
+      "k": 5,
+      "matrix_dimension": 32,
+      "rank": 32
+    },
+    {
+      "k": 6,
+      "matrix_dimension": 64,
+      "rank": 64
+    },
+    {
+      "k": 7,
+      "matrix_dimension": 128,
+      "rank": 128
+    },
+    {
+      "k": 8,
+      "matrix_dimension": 256,
+      "rank": 256
+    }
+  ],
+  "candidate_executed": false,
+  "scope": "Finite checks of a fixed GF2 representation; not SAT runtime bounds"
+}

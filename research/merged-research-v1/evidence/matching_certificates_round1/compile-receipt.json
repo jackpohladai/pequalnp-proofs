@@ -1,0 +1,160 @@
+{
+  "checks": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/MatchingCertificates.lean",
+      "source_sha256": "986dfd8c4772da727126a0cbfcbca82ddc368c5aefcd1a8e5b6989d68762b13e",
+      "exit_code": 0,
+      "elapsed_seconds": 18.945,
+      "output": "'PEqualNP.Outside.MatchingCertificates.successCheck_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.failureCheck_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_success_has_matching' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_failure_no_matching' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.matching_iff_success_certificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.no_matching_iff_failure_certificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_certificates_cannot_conflict' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/MatchingCertificates.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/MatchingCertificates.lean"
+      ],
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/MatchingCertificates.olean",
+      "artifact_sha256": "990176e28900d54e43d2c34bb799f437f09cca8d1c8782625b4ebed232a33d1d"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/CertifiedCNFConclusions.lean",
+      "source_sha256": "9b5598680c2ed4a3a78c809ea422e5a7583d607a5264ee7256336f2ef538b427",
+      "exit_code": 0,
+      "elapsed_seconds": 8.001,
+      "output": "'PEqualNP.Outside.MatchingCertificates.accepted_success_encoded_sat' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_failure_encoded_unsat' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/CertifiedCNFConclusions.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/CertifiedCNFConclusions.lean"
+      ],
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/CertifiedCNFConclusions.olean",
+      "artifact_sha256": "dd2b54d5e1d0510d948c73a1d38a0ce2999e85c96c227b0bbaa4b56d943da23e"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/CertificateExamples.lean",
+      "source_sha256": "aae9a64f99b431469a9a2093cdecef9eb423cbcc7b0b30b11dae871aec256632",
+      "exit_code": 0,
+      "elapsed_seconds": 4.337,
+      "output": "true\nfalse\ntrue\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/CertificateExamples.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/CertificateExamples.lean"
+      ],
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/CertificateExamples.olean",
+      "artifact_sha256": "155c335a13129026f6ec67ddfca962ac141232f6737de9435f8a627364e37b58"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/CertificateEdges.lean",
+      "source_sha256": "3704e00a2e995fbac64029dda8ebfd16056e0e98bd4bd5ac6c8c1ce84d749d42",
+      "exit_code": 0,
+      "elapsed_seconds": 16.245,
+      "output": "'PEqualNP.Outside.MatchingCertificates.accepted_certificate_edges' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_certificate_private_edges' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/CertificateEdges.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/CertificateEdges.lean"
+      ],
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/CertificateEdges.olean",
+      "artifact_sha256": "4780de85a41b710ec9c04e04e03a4522ebe8459417325f284c284bde86726c6b"
+    }
+  ],
+  "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-guarded-encoding-gdwu96c4:/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4:/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt",
+  "guarded_hall_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/GuardedHall.olean",
+  "guarded_hall_artifact_sha256": "aa5c82d9dd9955a3131767b174cb56dc9efacedb3ffcee1e3e72e168afe2b510",
+  "exit_code": 0,
+  "source_bytes_rechecked": true,
+  "dependency_checks": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/GuardedCNFEncoding.lean",
+      "source_sha256": "2e935291f7d7ba714e7298853cbe29b91485bd08decfce5da9f368e9b36102f1",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-guarded-encoding-gdwu96c4/GuardedCNFEncoding.olean",
+      "artifact_sha256": "a5d4c2ad3cf48b71aa934872520541448100ade129b7513c7723e37bdc892790"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/FreshGuardedCNF.lean",
+      "source_sha256": "7115ba63b757a9f37561ae1f480bbd1a37fde66f50741e05d8ec62dddd84231b",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-guarded-encoding-gdwu96c4/FreshGuardedCNF.olean",
+      "artifact_sha256": "5d3c6284c55bb2b1c4242435b16045deaff1f85d34c30d9f5545271b62cca1ff"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/CheckedOutputProjection.lean",
+      "source_sha256": "572ef83e2edf61be5975e4d64731ac39e9569667a8e314d972fa3cfa76d31546",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-guarded-encoding-gdwu96c4/CheckedOutputProjection.olean",
+      "artifact_sha256": "26c7853cf8437f02a65cabcc6f81fa5fac0fd27b4bc2ee48fee07cc43008c05a"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/EncodingExamples.lean",
+      "source_sha256": "2ac6326f09fd514ab13c1d0b8d6241a7b47a213a4c5ccd42f9c4eca99f92047f",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-guarded-encoding-gdwu96c4/EncodingExamples.olean",
+      "artifact_sha256": "2e50a6527a3b9839303985840076164d49630c9c4147eec9c793f2f1e08fb899"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/DualHorn.lean",
+      "source_sha256": "bac65e92d1e39cd9a76bbb353477704e7fd948d774b1e7aebc13990f7687c360",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/DualHorn.olean",
+      "artifact_sha256": "d823158319b1e95d00c9da01ab8c23a5861d9c65c473381557147b1c1913c2b7"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/greatest_guard_round1/GreatestGuard.lean",
+      "source_sha256": "c222ab95ec0f4f722c8a9ae3948a5514f528c3bb8b42d1c81bd2f0ce8702481e",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/GreatestGuard.olean",
+      "artifact_sha256": "f1d0d233a364af2d6bb79e46a6d354a9086529c7d797f1fb39154a65d6c5350c"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/SparseDualHornAlgorithm.lean",
+      "source_sha256": "daa56ed221032d946455a1aec0804784a0e2903a503fe52b92bd06784cb8af25",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4/SparseDualHornAlgorithm.olean",
+      "artifact_sha256": "d414556d03e587d7b5e359028d141c04426e9e30dcfb811295afebeeb3fe652e"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/CheckedDualHorn.lean",
+      "source_sha256": "896e92006dc17258f210a256732a685dcfa7128bce4b6daa3e7c3586c2ae9623",
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4/CheckedDualHorn.olean",
+      "artifact_sha256": "6fe37fffb252e15d571970d2e2e4853cc985ef841cbf3308cefa567e4c131287"
+    }
+  ],
+  "dependency_receipt": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/compile-receipt.json",
+    "sha256": "878160022fb1d78078e3b35c3eb8911dffec313511d404a8cd6baa9aa92981d7"
+  },
+  "lean_version": "4.36.0",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "no_new_axioms": true,
+  "private_raw_receipt": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-cert-tuk27rjq/final-receipt.json",
+  "formalized_scope": [
+    "Executable success and failure certificate validators with exact iff conditions",
+    "Accepted success yields guarded matching; accepted failure excludes it",
+    "Each matching/nonmatching instance has a corresponding certificate, semantically",
+    "Accepted success and failure cannot conflict",
+    "Accepted certificates give SAT/UNSAT for the constructed CNF at actual checked retained-solver output under positive guards",
+    "Executable active-masked certificate-to-edge adapter satisfies the private-edge witness conditions"
+  ],
+  "not_proved": [
+    "Complete executable matching search",
+    "External certificate parser or serialization refinement",
+    "Arbitrary input CNF recognition/decomposition",
+    "Total operational encoded-bit runtime",
+    "General SAT completeness"
+  ],
+  "upstream_checker": false,
+  "general_sat_solved": false
+}

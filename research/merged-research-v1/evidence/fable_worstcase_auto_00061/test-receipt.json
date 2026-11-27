@@ -1,0 +1,92 @@
+{
+  "status": "fixture_prediction_failed",
+  "summary": "Fable finite prediction failed on the deployed solver; broader mathematical claims remain unverified. Observed peak: 2; compression: skipped. Skip reason: incompatible_greedy_basis.",
+  "oracle_sat": false,
+  "oracle": {
+    "status": "completed",
+    "sat": false,
+    "witness": null,
+    "method": "independent_bounded_dpll",
+    "nodes": 511,
+    "seconds": 0.02605720800000011,
+    "formally_checked": false,
+    "general_polynomial_sat_proof": false
+  },
+  "observed": {
+    "sat": false,
+    "peak": 2,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 4,
+    "accepted_dp": 0,
+    "counting": {
+      "calls": 7,
+      "refutations": 4,
+      "windows": 108,
+      "tuples": 2056,
+      "seconds": 0.7140165840000003,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 12,
+      "tuples": 192,
+      "constraints": 0,
+      "truncated": false,
+      "seconds": 0.06170691699999997,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-localcert-scc-emra-ialh5-v3",
+    "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "skipped",
+      "reason": "incompatible_greedy_basis",
+      "original_variables": 16,
+      "original_clauses": 72,
+      "seconds": 0.003973624999999981
+    }
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 2,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 4,
+    "accepted_dp": 42
+  },
+  "baseline_seconds": 0.12339991599999989,
+  "updated_seconds": 0.866026083,
+  "seconds": 1.016083292,
+  "solver": "blq-localcert-scc-emra-ialh5-v3",
+  "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

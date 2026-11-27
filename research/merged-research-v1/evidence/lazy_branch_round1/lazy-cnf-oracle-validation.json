@@ -1,0 +1,106 @@
+{
+  "status": "verified",
+  "utc": "2026-11-26T11:40:25.727441+00:00",
+  "source": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/LazyCNFOracle.lean",
+    "sha256": "94d48976018d80aab5baab05cc88f2b14ea459efbf1945fb7ce42dd3d3c0c5e9"
+  },
+  "artifact": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/independent-oracle-build/LazyCNFOracle.olean",
+    "sha256": "1534af327853c60f3ad3de64e5cf90ee63d837a0198eb57458574bf0cb418093"
+  },
+  "generated_c": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/independent-oracle-build/LazyCNFOracle.c",
+    "sha256": "9c50109d86e888a53f865cce86c2cca950c86bd8633825bd7e9211ff5cad4e3a"
+  },
+  "compiler": "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+  "command": [
+    "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+    "-j",
+    "1",
+    "-DElab.async=false",
+    "-o",
+    "/tmp/pnp-lazy-oracle.OMe9u5/LazyCNFOracle.olean",
+    "-c",
+    "/tmp/pnp-lazy-oracle.OMe9u5/LazyCNFOracle.c",
+    "LazyCNFOracle.lean"
+  ],
+  "cwd": "/tmp/pnp-lazy-oracle.OMe9u5",
+  "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean",
+  "wall_seconds_total": 7.706313875,
+  "timeout_seconds": 90,
+  "exit_code": 0,
+  "stdout": "[{ cases := 4369, sat := 3396, unsat := 973, disagreements := 0, inconclusive := 0 },\n { cases := 463, sat := 405, unsat := 58, disagreements := 0, inconclusive := 0 },\n { cases := 400, sat := 200, unsat := 200, disagreements := 0, inconclusive := 0 },\n { cases := 40, sat := 26, unsat := 14, disagreements := 0, inconclusive := 0 }]\n'_private.LazyCNFOracle.0.PEqualNP.Outside.LazyCNFOracle.stats' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+  "stderr": "",
+  "validation_receipt": {
+    "path": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-lazy-branch-wevz3rly/run.json",
+    "sha256": "be466f58ec57d10774f23d5993c02ae52a6cc809f82e4a06362af8099c7a10bc"
+  },
+  "old_validation_receipt": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/general-cnf-validation.json",
+    "sha256": "60b6510a17c4465821b6b6e02fb6928aa3be3443d688ef5092837bbbd6f7bd67"
+  },
+  "solver_source": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/LazyMixedGuardSolver.lean",
+    "sha256": "455ab97f5b06173d712857313b565defd5d7ab6a91f0bb45378c6c00ce6840c3"
+  },
+  "solver_artifact": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean/LazyMixedGuardSolver.olean",
+    "sha256": "458660ee25298751f7af0b2a1cb6f834c19da27f56bab806f92153902a4d903f"
+  },
+  "core_source": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/LazyBranchSearch.lean",
+    "sha256": "21eee4963a04e068acaadb7ad202040401ef8e6ff74bc710b02af3399f3b29ca"
+  },
+  "core_artifact": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean/LazyBranchSearch.olean",
+    "sha256": "383f41fe857a1da17e7e9bd0285c676bb1161a4d70393f658dd3f1799290ae6c"
+  },
+  "observed": {
+    "groups": [
+      {
+        "name": "distinct",
+        "cases": 4369,
+        "sat": 3396,
+        "unsat": 973,
+        "disagreements": 0,
+        "inconclusive": 0
+      },
+      {
+        "name": "repeated",
+        "cases": 463,
+        "sat": 405,
+        "unsat": 58,
+        "disagreements": 0,
+        "inconclusive": 0
+      },
+      {
+        "name": "seeded",
+        "cases": 400,
+        "sat": 200,
+        "unsat": 200,
+        "disagreements": 0,
+        "inconclusive": 0
+      },
+      {
+        "name": "wide-ID",
+        "cases": 40,
+        "sat": 26,
+        "unsat": 14,
+        "disagreements": 0,
+        "inconclusive": 0
+      }
+    ],
+    "total_regression_cases": 5272,
+    "branch_controls": {
+      "contradictory_k8": [
+        false,
+        256
+      ],
+      "last_leaf_sat_k4": [
+        true,
+        16
+      ]
+    }
+  }
+}

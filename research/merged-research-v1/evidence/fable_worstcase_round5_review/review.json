@@ -1,0 +1,18 @@
+{
+  "verdict": "finite_fixture_verified_SCC_repair_unimplemented",
+  "scope": "Twelve-variable 37-clause UNSAT fixture: peak 4 and 14 branch attempts agree with independent oracle/testing.",
+  "unverified": [
+    "SCC-substitution Canon+ implementation, reconstruction, full cost and all-input bound.",
+    "Dovetailing requires accounting for actual machine work; does not prove any constituent polynomial."
+  ],
+  "corrections": [
+    "Signed literal representatives must preserve complements; arbitrary independent representatives do not suffice.",
+    "Exponential counts of hypothetical satisfiable residuals do not imply the early-exit SAT solver actually visits them.",
+    "No bound on one algorithm proves a limitation on all polynomial-time SAT algorithms."
+  ],
+  "at": "2026-11-26T18:01:26.387920+00:00",
+  "reviewer": "root",
+  "general_polynomial_sat_proof": false,
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fable_worstcase_round5/structured-output.json",
+  "test_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fable_worstcase_round5/test-receipt.json"
+}

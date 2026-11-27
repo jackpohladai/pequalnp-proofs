@@ -1,0 +1,91 @@
+**Status.** Each claim below is either proved in a line or labelled a conjecture. I claim no bound on the number of expanded states, so nothing here bears on P vs NP. G2's clause list is not in this brief, so the new test is self-contained and hand-computed, not run.
+
+## 1. State and invariants
+
+A state is S = (ρ, F, E, Σ): branch assignment ρ, canonical residual F, eliminated set E, and stack Σ = [(x₁,D₁),…,(x_k,D_k)], where D_i is the set of clauses containing x_i deleted at that elimination. Let U_S = V ∖ (E ∪ dom ρ).
+
+- **I0 (disjointness).** E = {x_i}, E ∩ dom ρ = ∅, and vars(F) ⊆ U_S.
+- **I1 (projection).** As Boolean functions on U_S, F ≡ (∃E. F₀)|ρ. Proof: Canon preserves equivalence because units are retained, DP elimination is exactly ∃x, and ∃x commutes with restricting a different variable.
+- **I2 (lifting).** For every α ⊨ F total on U_S, Lift_S(α) ⊨ F₀. Lift sets τ := ρ ∪ α, defaults the remaining U_S variables to false, then pops Σ in reverse, setting x_i := true iff some (C ∨ x_i) ∈ D_i has C falsified by τ. Always re-check τ ⊨ F₀.
+- **I3 (frontier).** F₀ is SAT iff some live state has a satisfiable residual.
+
+I1 and I2 are properties of a single state and never mention another state's E. That is why differing eliminated sets are harmless.
+
+## 2. Dominance drops and merges
+
+Define A ⪯ B (A dominates B) when every clause of F_A contains some clause of F_B. Then SAT(F_B) ⇒ SAT(F_A) even if U_A ≠ U_B. Proof: each witnessing D ⊆ C has vars(D) ⊆ U_A, so a model of F_B, copied on those variables and false elsewhere, satisfies F_A.
+
+- **Drop B.** I3 survives, and B's (ρ, Σ) is discarded whole. No history transfers; a witness always comes from the survivor's own stack.
+- **Merge (F_A = F_B).** Keep one (ρ, E, Σ) triple intact. Never union or interleave stacks. Key the frontier on the clause set only.
+- **Implementation obligations.**
+  - Σ is a persistent per-state cons list (shared prefixes, refcounted), never a global per-variable table.
+  - The dominator must be live at drop time, with a fixed total-order tie-break against mutual drops.
+  - Any inherited MRA dominance rule that compares ρ's or assumes equal variable sets must be re-derived as the cover test or disabled.
+- **Asymmetry for UNSAT proofs.** Dropped witness histories are garbage, but clause provenance of a dropped B is not. Refuting B requires re-deriving A's sub-refutation from B's clauses. Whether that charge is polynomial in the trace length is open.
+
+## 3. Corrected cost
+
+Let n = |V|, m₀ = |F₀|, L = ⌈log₂ 2n⌉, N = states expanded, W = peak frontier.
+
+- **Residual.** At most m₀ clauses, but width can reach n, so the bound is m₀·n·L bits, not |F₀| bits. The clause-count guard does not cap width or occurrences.
+- **Exact trial.** A trial with p positive and q negative occurrences materializes up to m − (p+q) + pq ≤ max(m, m²/4) clauses. The transient cost is O(m₀²·n·L) bits, paid even when the trial is rejected.
+- **Stack.** At most n entries and at most n·m₀ clauses per path, so at most n²·m₀·L bits per state.
+- **Total space.** O(W·n²·m₀·L + m₀²·n·L).
+- **Time.** At most n trials per state. With naive subsumption this is O(N·n²·m₀⁴·L), and N is unbounded here.
+- **Proof length.** Len = R + U + B + X, where:
+  - R = retained non-tautological resolvents (rejected-trial resolvents cost time, not proof steps);
+  - U = unit-resolution literal strikes, including the final ⊥ strike;
+  - B = one resolution per branch node;
+  - X = the re-derivation charge from §2.
+  
+  For G2, R = 6 and U ≥ 1, so Len = 6 + U. It equals 7 only if instrumentation shows no other strikes.
+- **STUCK ≠ MRA.** A STUCK residual is Canon(∃E.F), which can be wider and denser than the plain MRA residual. Branching, dominance and 2SAT detection then see a different formula, and only I1 relates the two.
+
+## 4. Partial result (proved)
+
+**Lemma.** Elimination with (p−1)(q−1) ≤ 1 is always retained, since pq ≤ p+q and Canon never adds clauses. Hence every variable in a STUCK residual has p, q ≥ 2 and p+q ≥ 5, and the residual has no units or pure literals.
+
+This does not contradict NP-hardness of bounded-occurrence SAT. A (2,2) step can double the occurrences of neighbouring variables, which is where the hidden cost sits.
+
+## 5. Next improvement: streaming net-cap trial (E-MRA-B)
+
+Stream the resolvents of x into F_rest in lexicographic parent order. Skip tautologies and forward-subsumed resolvents, delete backward-subsumed live clauses on insert, and abort once the live count exceeds |F|. On completion, run full Canon.
+
+- **Proved.** Every clause set ever held has at most m₀+1 clauses, so the transient term drops from m₀²·n·L/4 to (m₀+1)·n·L bits.
+- **Sound, given one check.** If Canon is a confluent normal form, B-accept implies exact-accept with the identical residual. That confluence should be checked directly.
+- **Conservative.** B can reject an elimination exact E-MRA retains, but only through a transient excess.
+- **Conjecture H3 (falsifiable).** On min-product traces of G_n, n = 2..12, B never aborts a trial that exact E-MRA retains. G2 then keeps 12, 10, 8, 4, ⊥. One abort falsifies it.
+
+**Test T6**, variables (x,a,b,c,d,e):
+
+F = (x∨a)(x∨b)(¬x∨c)(¬x∨d)(¬x∨e)(a∨c∨e)
+
+F has 6 clauses and 12 models. Force x as the first admissible choice (p=2, q=3).
+
+| Check | Expected |
+|---|---|
+| Exact trial | 6 resolvents, peak 7 clauses, canonical 6; (a∨c∨e) backward-subsumed by (a∨c); RETAIN |
+| Net-cap trial | peak live 6 in either stream order; RETAIN; same residual |
+| Naive cap "new ≤ p+q" | ABORT (6 > 5); a bug-detector variant, must differ |
+| Residual | (a∨c)(a∨d)(a∨e)(b∨c)(b∨d)(b∨e), 11 models |
+| Continuation (min-product, lowest index) | a pure, then b pure; counts 6, 6, 3, 0; SAT |
+| Lift | c=d=e=0, then b=1, a=1, x=0 |
+| Witness | (x,a,b,c,d,e) = (0,1,1,0,0,0), satisfies all 6 clauses |
+| Counters | R=6, U=0, B=0 |
+| Full admissible-choice tree | 0 STUCK paths, every terminal SAT |
+
+The last row is proved: non-x variables stay pure-positive in every reachable residual, and x becomes pure once it is alone. I do not predict the terminal path count.
+
+## 6. H2
+
+H2 is not falsified here, and I cannot prove it. Sections 3 and 4 show that E-MRA and MRA frontiers are not comparable state by state.
+
+The sharpest threat is an elimination that MRA would instead branch on. For (x∨a∨b)(¬x∨c), eliminating x yields (a∨b∨c), while branching on x leaves 2-CNF on both sides.
+
+**Falsifier.** Over all 3-CNFs on at most 6 variables, compare peak frontiers under a fixed branching order. Any instance with E-MRA peak > MRA peak refutes H2.
+
+`★ Insight ─────────────────────────────────────`
+- Witness correctness is per-state (I2) and frontier completeness is existential (I3). A dominance drop therefore needs only "SAT(F_B) ⇒ SAT(F_A)", never a translation between histories.
+- A count-only retention guard bounds the number of clauses but not width or occurrences. Every hidden cost in §3 traces back to that gap.
+- SAT witnesses and UNSAT proofs behave oppositely under pruning: the first can forget dropped states, the second cannot.
+`─────────────────────────────────────────────────`

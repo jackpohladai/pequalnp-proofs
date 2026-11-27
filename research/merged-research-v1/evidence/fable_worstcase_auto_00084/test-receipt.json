@@ -1,0 +1,9 @@
+{
+  "status": "no_fixture",
+  "summary": "Mathematical proposal saved without a finite fixture; its claims remain unverified.",
+  "seconds": 0.00010083300000002238,
+  "solver": "blq-composed-core-scc-emra-ialh5-v5",
+  "source_sha256": "ff1f4262060692f34f89f974a9ffe276231e639df5fac78dcd498b2704a14196",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

@@ -1,0 +1,1 @@
+{"checks": {"large_controls": 14, "global_equivalence_comparisons": 69, "right_inverse_matrices": 200, "dpll_vs_exhaustive": 200, "certificate_mutations_rejected": 6, "original_oracle_inconclusive": 2}, "unchanged_lean_proof_reused": true, "seconds": 5.686918374999999}

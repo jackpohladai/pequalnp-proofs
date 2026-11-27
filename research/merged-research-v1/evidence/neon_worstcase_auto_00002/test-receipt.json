@@ -1,0 +1,28 @@
+{
+  "status": "confirmed_finite_growth_fixture",
+  "oracle_sat": false,
+  "observed": {
+    "sat": false,
+    "peak": 4,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 4
+      },
+      {
+        "variable": 3,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 53
+  },
+  "summary": "Finite SCC-E-MRA growth fixture confirmed. This is not a general complexity result.",
+  "seconds": 0.3683888912200928,
+  "solver": "scc_emra",
+  "general_polynomial_sat_proof": false
+}

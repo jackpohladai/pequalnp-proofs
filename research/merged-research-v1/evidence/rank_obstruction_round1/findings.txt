@@ -1,0 +1,52 @@
+Fixed-cut exact GF(2) matrix-chain obstruction
+
+Source inspected read-only: sonnet-01747/candidate.py, SHA256
+94284afb62ba16bc0d4c8a236451c11f017747030a1d1e7127b79b0f8dc64ebd.
+No generated candidate code was executed.
+
+For F_k = AND_i (x_i OR y_i), split the ordered input after all x variables
+and before all y variables. The truth table at that cut is a 2^k by 2^k
+matrix over GF(2). Its entry is 1 exactly when each coordinate pair has at
+least one true bit. Therefore the matrix is the k-fold Kronecker power of
+B=[[0,1],[1,1]]. The inverse of B is C=[[1,1],[1,0]]. Their tensor powers
+are inverses, hence the cut matrix has rank exactly 2^k.
+
+Any exact matrix-chain representation with intermediate dimension d at
+this cut gives a factorization K=L*R through d coordinates. Rank(K) <= d,
+so d>=2^k. This is a lower bound for this exact fixed-order representation.
+It is not a lower bound for deciding SAT. This family is easy to satisfy
+and is also 2-SAT; a direct witness, a 2-SAT fast path, another order or a
+different representation can bypass it. With the alternating order
+x_1,y_1,x_2,y_2,..., the same product has bounded intermediate width.
+
+RankObstruction.lean formalizes recursive bit tuples, the kernel and its
+explicit inverse, both inverse products, dimension 2^k, full rank, and the
+factorization width bound. Its Boolean jointIndicator states exactly the
+coordinatewise AND-of-ORs function; kernel_entry connects it to the matrix.
+Check the compile receipt for actual verification status.
+
+Final verification: pinned Lean 4.36.0 compiled the full source with exit 0
+in 56.907 seconds. All six printed theorem axiom lists contain only propext,
+Classical.choice and Quot.sound. There is one harmless unused-simp-argument
+warning. The accepted source SHA256 is
+d06d9c2bad7ff35b5edf07f61cb1297217b8ef5875476f89d7866ac5571e94d1.
+This is local compiler/kernel verification, not an official project checker
+replay or an upstream submission/acceptance.
+
+The Python source builds and compresses the full clause indicator before
+extracting a witness. The theorem would apply to an exact representation
+at its midpoint if refinement establishes that its chain implements the
+specified function with this order. That refinement, concrete allocation
+costs and a total bit-time lower bound are not proved here.
+
+The independent verifier constructs the truth tables without candidate
+imports, checks explicit inverse products and Gaussian ranks for k=0..8,
+including dimension 256. It checks 87,381 matrix-product entries. These are
+finite regression checks separate from the quantified Lean theorem.
+
+Feedback: a generator proposing fixed-order exact rank compression should
+state and prove a small-rank invariant for every allowed input, or expose
+the width growth and return UNKNOWN honestly. Avoid claiming that passing
+this easy family after adding a 2-SAT fast path supplies a general bound.
+The remaining goal is a different universally controlled representation,
+an order-selection theorem with total cost, or a different algorithm.

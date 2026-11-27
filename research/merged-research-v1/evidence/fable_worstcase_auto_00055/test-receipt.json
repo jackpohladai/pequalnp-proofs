@@ -1,0 +1,64 @@
+{
+  "status": "fixture_predictions_match",
+  "summary": "Fable finite prediction matched on the deployed solver; broader mathematical claims remain unverified. Observed peak: 0; compression: skipped. Skip reason: incompatible_greedy_basis.",
+  "oracle_sat": true,
+  "observed": {
+    "sat": true,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 0,
+    "accepted_dp": 3,
+    "counting": {
+      "calls": 1,
+      "refutations": 0,
+      "windows": 3,
+      "tuples": 48,
+      "seconds": 0.002589041000000014,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 3,
+      "tuples": 48,
+      "constraints": 0,
+      "truncated": false,
+      "seconds": 0.002589041000000014,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-root-scc-emra-ialh5-v2",
+    "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "skipped",
+      "reason": "incompatible_greedy_basis",
+      "original_variables": 6,
+      "original_clauses": 12,
+      "seconds": 0.00012862499999999333
+    }
+  },
+  "baseline": {
+    "sat": true,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 0,
+    "accepted_dp": 3
+  },
+  "baseline_seconds": 0.0002819580000000266,
+  "updated_seconds": 0.00484358300000004,
+  "seconds": 0.005338791999999981,
+  "solver": "blq-root-scc-emra-ialh5-v2",
+  "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

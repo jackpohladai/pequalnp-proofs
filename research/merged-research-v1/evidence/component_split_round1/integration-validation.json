@@ -1,0 +1,190 @@
+{
+  "at_utc": "2026-11-26T12:16:17.900028+00:00",
+  "id": "component_split_round1",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/EmptyFirstComponents.lean",
+  "entrypoint": "PEqualNP.Outside.EmptyFirstComponents.solveCNF",
+  "scope": "Checked general finite-CNF solver: global unit preprocessing, immediate empty-clause rejection, exact independent-component extraction and short-circuit per-component decision. Leaf calls bounded by the sum of powers of two in prepared component negative supports. Worst case remains exponential.",
+  "extends_component_family": "constructor_boundary_round1",
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/component-split-validation.json",
+      "sha256": "5de49f92199faf610282fc1e07add1e26d3ecab9eb99332b02e9d7d02547da88"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/component-split-independent-audit.json",
+      "sha256": "a63f215d769689c485b27ec7d95e0eea587ad42d0cfc42edbbfb0b7bb31aa43e"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/component-extraction-validation.json",
+      "sha256": "627b5fec5b1289707acf635f6f0341c1ebf1bb032390ad22e8978f1058f19323"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/component-cost-validation.json",
+      "sha256": "f72790861bd218cee80a4a00ba38d7a73a109bac922c24178af705f7c3337e07"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/prepared-components-validation.json",
+      "sha256": "38800f2b3582e2fceb76e2b1e2eff7595a19515e8abd39a9eeb426c377e91431"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/component-execution-independent-audit.json",
+      "sha256": "9de8b3389b242c75c0d4e4ce2f8f39e3f3152fb53ff6e543656aa18ebb9f40fc"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/empty-first-components-validation.json",
+      "sha256": "ffc3322e8530d4465c5b6e824d5728cb0992d7948118e519f5281501e93ecb97"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/empty-first-feedback.json",
+      "sha256": "0304671d3d3b6a89c56d1cf0ba22261bcfb57364c1e841b3f4be2db438c2e5bc"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_independent_round1/empty-first-oracle-validation.json",
+      "sha256": "865a89037c9f9649e703c7a45cceb0262dddc032219337bbff2deae27c0eabb6"
+    }
+  ],
+  "finite_tests": {
+    "final_entrypoint_cases": 5376,
+    "sat": 4064,
+    "unsat": 1312,
+    "disagreements": 0,
+    "invalid_partitions": 0,
+    "paired_xor_six_before_after_calls": [
+      1366,
+      12
+    ],
+    "hundred_pairs_split_only_calls": 200,
+    "unit_bridge_before_after_calls": [
+      6,
+      4
+    ],
+    "known_empty_before_after_calls": [
+      12,
+      0
+    ],
+    "positive_components_unsplit_split_calls": [
+      1,
+      3
+    ]
+  },
+  "limits": [
+    "No universal speedup; partitioning/checking overhead and per-leaf costs not counted.",
+    "No full bit-runtime bound or general polynomial SAT algorithm.",
+    "No runtime original-ID satisfying witness is returned by this general decision wrapper.",
+    "Finite integration cases are separate from generated-candidate test counts."
+  ],
+  "verified_pins": {
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/ComponentSplit.lean": "5878d2c8f2185d32f05654cc4806ac1c49a1c54edc1ae453e83fd252436b88e1",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/build/lib/lean/ComponentSplit.olean": "088af399310e715d4453f8e42780b070534cbbcd1e3f1cce8e5630cd479324ca",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-split-2pxe_vnp/ComponentSplit.lean": "5878d2c8f2185d32f05654cc4806ac1c49a1c54edc1ae453e83fd252436b88e1",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/build/source/ComponentSplit.lean": "5878d2c8f2185d32f05654cc4806ac1c49a1c54edc1ae453e83fd252436b88e1",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitPreparedDecision.olean": "ae07b83e6bf4f4c64667b6322d68f3f5538f0974713a75130142206e3dd2b9b1",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-decision-validation.json": "809d33cf2aaa3082b9e6efbe82992f83295761fde66c7cd3da53ee785becff91",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/component-split-validation.json": "5de49f92199faf610282fc1e07add1e26d3ecab9eb99332b02e9d7d02547da88",
+    "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean": "a4c5d3dfc1672faf014e59bd17724035259ff0d22a4ffbdf5a75e142f564817e",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitPreparedDecision.lean": "161dcabd2cdac615e291302e08b527ac04e8b787b31bf9de769729a4da214d20",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/ExtractComponents.lean": "fd5a0826764f7ca14451c609a4d9d5dd48e0f05a8c828b67057206bd192cd012",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-extraction-tmiaqy1e/ExtractComponents.lean": "fd5a0826764f7ca14451c609a4d9d5dd48e0f05a8c828b67057206bd192cd012",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/extraction-build/source/ExtractComponents.lean": "fd5a0826764f7ca14451c609a4d9d5dd48e0f05a8c828b67057206bd192cd012",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/extraction-build/lib/lean/ExtractComponents.olean": "eceea4d1c544b75039df0519f297c8a56306ccd8ff7d065991d16e1058e7f54a",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-extraction-tmiaqy1e/ExtractComponents.olean": "eceea4d1c544b75039df0519f297c8a56306ccd8ff7d065991d16e1058e7f54a",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/ComponentExecution.lean": "b9b52b28ac73a40e8521893964f55e042706260038e81c95c40daa904ee265b1",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-extraction-ru6m59d8/ComponentExecution.lean": "b9b52b28ac73a40e8521893964f55e042706260038e81c95c40daa904ee265b1",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/extraction-build/source/ComponentExecution.lean": "b9b52b28ac73a40e8521893964f55e042706260038e81c95c40daa904ee265b1",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/extraction-build/lib/lean/ComponentExecution.olean": "d0c1d8e17fbc1ccab9ff37487b8d2db7ab8daf2342fdd9fb7ba1d8a31933fbd7",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-extraction-ru6m59d8/ComponentExecution.olean": "d0c1d8e17fbc1ccab9ff37487b8d2db7ab8daf2342fdd9fb7ba1d8a31933fbd7",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/ComponentFixtures.lean": "5e7d44e5911a2d9e3a72090e0e1f53a3d02e36cd5b8bba94277859532a948445",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-extraction-_ok78y97/ComponentFixtures.lean": "5e7d44e5911a2d9e3a72090e0e1f53a3d02e36cd5b8bba94277859532a948445",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/extraction-build/source/ComponentFixtures.lean": "5e7d44e5911a2d9e3a72090e0e1f53a3d02e36cd5b8bba94277859532a948445",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/extraction-build/lib/lean/ComponentFixtures.olean": "0c0d7293b8d5106c93b4ee85e58dd752177fea75202d8a871649c57fede7a860",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-extraction-_ok78y97/ComponentFixtures.olean": "0c0d7293b8d5106c93b4ee85e58dd752177fea75202d8a871649c57fede7a860",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/ComponentLargeStress.lean": "3ab82771fe594c6901eb1a8a4f930abb651a630a3116dd02ec4ace6de9731e22",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-extraction-f9bn4qdd/ComponentLargeStress.lean": "3ab82771fe594c6901eb1a8a4f930abb651a630a3116dd02ec4ace6de9731e22",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/extraction-build/source/ComponentLargeStress.lean": "3ab82771fe594c6901eb1a8a4f930abb651a630a3116dd02ec4ace6de9731e22",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/extraction-build/lib/lean/ComponentLargeStress.olean": "913a39eb2b41a9e062477695280ddf1eeb36bdfdf18c3ad270e7135c96c7b2cf",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-extraction-f9bn4qdd/ComponentLargeStress.olean": "913a39eb2b41a9e062477695280ddf1eeb36bdfdf18c3ad270e7135c96c7b2cf",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/ComponentCost.lean": "17f39db0055508e02433db8d1b4e2ed7e0c91ddf86bc51dad51e89cebcf6373f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/build/lib/lean/ComponentCost.olean": "158ced5c52b55bf4460c20127041f14100c4671cd8c31dbe896f00c68ee180a2",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-split-6pxcfv_x/ComponentCost.lean": "17f39db0055508e02433db8d1b4e2ed7e0c91ddf86bc51dad51e89cebcf6373f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/component-extraction-validation.json": "627b5fec5b1289707acf635f6f0341c1ebf1bb032390ad22e8978f1058f19323",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/PreparedComponents.lean": "40f4ed6f5eaefd86c487af66ac5c1a1919a94c4d752eb3658f2395f952ebf715",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/build/lib/lean/PreparedComponents.olean": "88c9c6223b03656bbc0b19db30a210e5f54cfddbe1506031dfd439281cf43fd3",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-split-jkxqbf3p/PreparedComponents.lean": "40f4ed6f5eaefd86c487af66ac5c1a1919a94c4d752eb3658f2395f952ebf715",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/build/source/PreparedComponents.lean": "40f4ed6f5eaefd86c487af66ac5c1a1919a94c4d752eb3658f2395f952ebf715",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/component-cost-validation.json": "f72790861bd218cee80a4a00ba38d7a73a109bac922c24178af705f7c3337e07",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/prepared-components-validation.json": "38800f2b3582e2fceb76e2b1e2eff7595a19515e8abd39a9eeb426c377e91431",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/prepared-component-examples-validation.json": "f62e6f53ec48c838bf94a4a1dbe1a3693a21f192bd7455f2ff48947da966d2ff",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_independent_round1/component-oracle-validation.json": "25ae955c34c65a01f0b472291be055afa7af042b8fd717b547a60aa0f2d8be80",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_independent_round1/prepared-component-oracle-validation.json": "9797dbd9cb79d0ec287fab584e42234eb2e68e1cb01ed69fbdb27c7e20e55240",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/EmptyFirstComponents.lean": "99ac8c8f5a66b08e80a1a01a756951ebb01233503cf0b5512d7c4b3a656627a8",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/build/lib/lean/EmptyFirstComponents.olean": "fe2e27e6197d8266cde125736c0ee081da1e858c4c48be8e57b1e602df128ebb",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-component-split-z79n_mr3/EmptyFirstComponents.lean": "99ac8c8f5a66b08e80a1a01a756951ebb01233503cf0b5512d7c4b3a656627a8",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/build/source/EmptyFirstComponents.lean": "99ac8c8f5a66b08e80a1a01a756951ebb01233503cf0b5512d7c4b3a656627a8",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/empty-first-components-validation.json": "ffc3322e8530d4465c5b6e824d5728cb0992d7948118e519f5281501e93ecb97",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/empty-first-examples-validation.json": "e60ae781eb75cf7de730632c1bbcbf7a1404230b3f4a2ef93d2ab36fa93d24a9",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_round1/composition-feedback.json": "3aecdde71b2a815061a4f9787e532cb2102d8317ca40e93c087015c121e3ef47",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_independent_round1/EmptyFirstOracle.lean": "2086204d0739a8a613f4901e46631249633605632069f4b1f02bb159a3a79086",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_independent_round1/empty-first-build/EmptyFirstOracle.olean": "73fb67268163516b0ce1289b8a12a7bb32a9879f13ff5a8f6e3d09994f425585",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/component_split_independent_round1/empty-first-build/EmptyFirstOracle.c": "7cb0dca0610e286e8febb53653b7c11a602c853f8c1cdc41a3991781ab49ac97",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/PEqualNP/Library/SearchHelpers/Encoding.lean": "b332774467ccc1dfeeb7221cfe83890f6eb7a8c21d62c97bf0f81100dc26e4c0",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/PEqualNP/Library/SearchHelpers/Encoding.lean": "b332774467ccc1dfeeb7221cfe83890f6eb7a8c21d62c97bf0f81100dc26e4c0",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/source/PEqualNP/Library/SearchHelpers/Encoding.lean": "b332774467ccc1dfeeb7221cfe83890f6eb7a8c21d62c97bf0f81100dc26e4c0",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/PEqualNP/Library/SearchHelpers/Encoding.olean": "456136338e9372e990ecdf198eb47b4a1b06701874b36d33146bce22a528f14e",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/PEqualNP/Defs.olean": "038cba4a426cfd3ba5d6877f6b153cb89a9330e8ec5d5d72b84061aa4d5926cc",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/PEqualNP/Defs.olean": "038cba4a426cfd3ba5d6877f6b153cb89a9330e8ec5d5d72b84061aa4d5926cc",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Bitwise.olean": "2e71ccbfddfa27a3afaa973937f4a00a4d1fba364018b555c53a59d11315ee38",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/PEqualNP/Library/SearchHelpers/TwoSat.lean": "afcd0e822d1ccb6059a60fbc4bee10398c3bc1866a6defd2a09e6a15ebb1ee0a",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/PEqualNP/Library/SearchHelpers/TwoSat.lean": "afcd0e822d1ccb6059a60fbc4bee10398c3bc1866a6defd2a09e6a15ebb1ee0a",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/source/PEqualNP/Library/SearchHelpers/TwoSat.lean": "afcd0e822d1ccb6059a60fbc4bee10398c3bc1866a6defd2a09e6a15ebb1ee0a",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/PEqualNP/Library/SearchHelpers/TwoSat.olean": "d6a6e2e1af1e59a69c51943e973a7ee63fd7f0e97e8f33b8ab045fe4b4f90667",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/PEqualNP/Library/SearchHelpers/Encoding.olean": "456136338e9372e990ecdf198eb47b4a1b06701874b36d33146bce22a528f14e",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Logic/Relation.olean": "0147325f2cab7b2410726d6b53ad4894c39cd74064728ef616863153b8aea870",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Finset/Card.olean": "24f5e4f54f643fc3b72ede36bcdbb9d05a7d6905d2007b9b932cc95394f3d611",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Logic/Function/Iterate.olean": "bc50a039b6c72c2af255630206fd92732eedb7e4dfd20e4b500b52331540178f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/OrientationConstraints.lean": "531371b82cfd62943f4fb3c8619d8560e7eb8a53a631465a4c41b61576115d0d",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/OrientationConstraints.lean": "531371b82cfd62943f4fb3c8619d8560e7eb8a53a631465a4c41b61576115d0d",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/source/OrientationConstraints.lean": "531371b82cfd62943f4fb3c8619d8560e7eb8a53a631465a4c41b61576115d0d",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/OrientationConstraints.olean": "5085615078465c0f08dca606c03b783dce915547923d9e8e56a1949cd3c4c89e",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/OrientationConstraints.c": "f637dd1f2b8496c821936185e57a781eb603db996966a6cfb139563e2c4d1147",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/build/lib/lean/OrientedConstructor.olean": "23ec2154480be4c65237a9ec88a07f78965052a3453f1c1970e51185b99da709",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/OrientationRecognition.lean": "2edb05239a1d80f6f3a5c039c42c8072bea18ba77f792aa8c9bd5749cf7076a2",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/OrientationRecognition.lean": "2edb05239a1d80f6f3a5c039c42c8072bea18ba77f792aa8c9bd5749cf7076a2",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/source/OrientationRecognition.lean": "2edb05239a1d80f6f3a5c039c42c8072bea18ba77f792aa8c9bd5749cf7076a2",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/OrientationRecognition.olean": "67d74454ef2df509b499199264b1fef9f3fd448ae85453c727b8cd6424866620",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/OrientationRecognition.c": "b8dd103bc701443bdd6554c066687ffa87cd720b23333773cebc97794121318f",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/OrientationConstraints.olean": "5085615078465c0f08dca606c03b783dce915547923d9e8e56a1949cd3c4c89e",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/PEqualNP/Library/SearchHelpers/TwoSat.olean": "d6a6e2e1af1e59a69c51943e973a7ee63fd7f0e97e8f33b8ab045fe4b4f90667",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/OrientationExamples.lean": "9545a2d9055f332a15a8b68a30ac18db058fd7fd650daf3a3ec63971f3352cf7",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/OrientationExamples.lean": "9545a2d9055f332a15a8b68a30ac18db058fd7fd650daf3a3ec63971f3352cf7",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/source/OrientationExamples.lean": "9545a2d9055f332a15a8b68a30ac18db058fd7fd650daf3a3ec63971f3352cf7",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/build/lib/lean/OrientationExamples.olean": "11501a8fd60de86846cefa0f053aeabd1444948216c4de76aa949ffba21b5e1b",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/OrientationRecognition.olean": "67d74454ef2df509b499199264b1fef9f3fd448ae85453c727b8cd6424866620",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/guarded-renaming-validation.json": "e1aecf6290febcecb07126fd43e0186686a0b6f416275357d472f143060f63c3",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/orientation-validation.json": "b59ad3944a64b33d3ce308b290907d300e91c9aab0181fd038944eaa934705be",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/sparse-constructor-validation.json": "9e31c42e45b6fcadc02388c08ce1dad2ef0758bbc6400c959ff8d1bb75542693",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/OrientationConstraints.c": "f637dd1f2b8496c821936185e57a781eb603db996966a6cfb139563e2c4d1147",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/OrientationRecognition.c": "b8dd103bc701443bdd6554c066687ffa87cd720b23333773cebc97794121318f",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-bndf9or_/OrientationExamples.olean": "11501a8fd60de86846cefa0f053aeabd1444948216c4de76aa949ffba21b5e1b",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/GuardedRenaming.lean": "115a4dd753f9f8aad346393372f61d8e9a48a91f69274446724405e919a2a94c",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/build/lib/lean/GuardedRenaming.olean": "eb944dafba25f825c4c83e9c972bfc7b03ec51f3be168d2d69e4ad3170b9f6e3",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/GuardedCNFEncoding.olean": "a5d4c2ad3cf48b71aa934872520541448100ade129b7513c7723e37bdc892790",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/OrientedConstructor.lean": "845d0d3a6da2cdde5d7170bf5d1642a3decf8b35dd5e72d6d13917af0dbc1fb6",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/constructor-build/lib/lean/SparseValidatedConstructor.olean": "a62a0b7ca37d985d985521d069ab96d7ff17a38e9a63bafd4a3c40e530c09d47",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/OrientedExamples.lean": "da23abb57abe65437c78035687c9a0b08660f7168abbb3d3317baaf20536ec01",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/build/lib/lean/OrientedExamples.olean": "4c28e593c07adf25f1ea305bfef588ecb8cca4a1493272b91db6fb60702b6cfb",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/OrientationIndependentOracle.lean": "813ece20ea5354049f81939e28077cdb613ee6b492be85dc1f9d60d43d47d02b",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-independent-g2_r8u1a/OrientationIndependentOracle.lean": "813ece20ea5354049f81939e28077cdb613ee6b492be85dc1f9d60d43d47d02b",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/audit-build/OrientationIndependentOracle.lean": "813ece20ea5354049f81939e28077cdb613ee6b492be85dc1f9d60d43d47d02b",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/orientation_constraints_round1/audit-build/OrientationIndependentOracle.olean": "bb6c81867a9389db39db60a42743d3ae63abab5211162a61055d049715b6250f",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-orientation-independent-g2_r8u1a/OrientationIndependentOracle.olean": "bb6c81867a9389db39db60a42743d3ae63abab5211162a61055d049715b6250f"
+  },
+  "status": "locally_lean_compiled",
+  "source_sha256": "99ac8c8f5a66b08e80a1a01a756951ebb01233503cf0b5512d7c4b3a656627a8",
+  "count_as_new_component_family": false,
+  "general_sat_proof": false,
+  "general_polynomial_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false,
+  "general_finite_cnf_decider_verified": true
+}

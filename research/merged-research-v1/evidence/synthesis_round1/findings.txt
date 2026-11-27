@@ -1,0 +1,97 @@
+Synthesis round 1: an exact obstruction and bounded repair for coarse pivot counts
+
+Candidate examined: sonnet-01227, SHA256
+a7c68be67b3a8f7d379f0874a2a7a258fae3ec3041d82ba94fa94fc6b7a730d6.
+This candidate honestly returns UNKNOWN when no pivot satisfies U <= S.
+
+Construction (mathematical argument)
+
+Let F be any proper 3-CNF: every clause has exactly three distinct variables,
+there are no tautological clauses, and duplicate clauses are removed. For each
+occurring variable x, add fresh variables a_x,b_x and the four clauses
+
+  (x OR a_x OR b_x)
+  (x OR NOT a_x OR NOT b_x)
+  (NOT x OR a_x OR NOT b_x)
+  (NOT x OR NOT a_x OR b_x).
+
+These clauses express x XOR a_x XOR b_x = true. For every assignment to the
+original variables, choosing a_x=x and b_x=true satisfies all added clauses.
+Conversely every model of the padded formula is a model of F on its original
+variables. Thus padding preserves satisfiability, adds 2n variables and 4n
+clauses, and does not solve any of the original constraints. A collision-free
+binary-identifier implementation renames x to 3x and uses 3x+1,3x+2 as auxiliaries;
+it adds at most a constant factor to encoded formula length, using only the
+distinct identifiers actually present (not a dense array up to max identifier).
+
+Every variable of the padded formula occurs at least twice with each polarity.
+All clauses have width three. Write p,q for the polarity occurrence counts.
+Then A=2p, B=2q, and the candidate's gap is
+
+  U-S = q*A+p*B-(A+B+p+q) = 4pq-3p-3q >= 4.
+
+The last inequality follows from p=2+r,q=2+s with r,s>=0:
+4pq-3p-3q = 4+5r+5s+4rs. Therefore the candidate immediately returns UNKNOWN
+on every such padded input. The stalled class still contains every proper
+3-SAT instance via a simple satisfiability-preserving reduction. This is an
+obstruction to classifying all stalled inputs as an already easy fragment;
+it is not a lower bound for general SAT algorithms or a proof that P differs
+from NP.
+
+Constructive repair
+
+For either fresh auxiliary, the four raw Davis-Putnam resolvents are all
+tautological. After tautology deletion, their retained literal count is zero.
+The coarse upper bound U=16 > S=12 hides this. An exact precheck restricted to
+at most four resolvent pairs can admit these pivots safely. More generally,
+bound the precheck's pair count and charge its literal scans; accept only when
+the exact normalized retained-literal count does not exceed removed literals.
+This improves the partial solver without unbounded search for a good pivot.
+On the constructed family it removes the redundant parity padding and leaves
+the original arbitrary formula F. It supplies no universal progress guarantee.
+
+Formal and finite evidence
+
+StalledParity.lean uses the project's actual CNF/assignment evaluation types.
+Its theorem claims are: exact odd-parity semantics; the four auxiliary
+resolvents are tautologies; uniform equisatisfiability of the padded formula
+for every CNF and every selected variable list; exactly four added clauses per
+list entry; and the positive pivot-gap arithmetic for all p,q>=2.
+The mathematical bridge from occurrence counts of a proper deduplicated 3-CNF
+to the abstract p,q arithmetic is explained above, not yet formalized in Lean.
+The Lean file is not an upstream assignment submission. Check compile-receipt
+before describing its verification status.
+
+Final verification: Lean 4.36.0 compiled the full file successfully at
+2026-11-26 07:01:17 UTC, exit 0, in 79.58 seconds. All five printed theorem
+axiom lists contain only propext, Classical.choice and Quot.sound. There are
+no warnings or errors in this final output. Source SHA256:
+a2e4b09af3f4c6897868044b64820c841badfd8a333b890206fcc15a43cd34f3.
+This is a local Lean compiler/kernel check, not the project's independent
+official checker replay or an upstream acceptance.
+
+verify_padding.py independently checks 456 inputs, including all 256 subsets
+of the eight proper 3-clauses on three variables. There were 21,888 checks of
+the explicit assignment extension; full padded truth tables were also checked
+for those 256 inputs. All padded variables had gap at least four. No generated
+candidate code was executed. Finite checks are not the proof of the generic
+claim, and no operational bit-time bound is established here.
+
+bounded_exact_elimination.py is a concrete repair component. It constructs at
+most four resolvents for one proposed pivot and accepts only an exact
+non-growing literal-count result. Its finite verification removed the parity
+padding on all 256 proper three-variable formulas in 768 elimination steps,
+recovering each original formula exactly. These source and finite-check
+receipts do not constitute a formal refinement proof of the Python component.
+
+Composition with the existing project
+
+The checked residual/projection components justify semantic transformations.
+The pigeonhole-capacity component handles a recognizable fragment; guards can
+retain arbitrary SAT. Affine extraction can remove this padding or solve a
+pure XOR family, but it must keep every other original clause. The complete
+Fable decider is correct with an exponential search family. Combining these
+pieces retains the missing obligation: guaranteed progress on every remaining
+CNF, with total representation, construction, arithmetic and search cost
+bounded quadratically/cubically in encoded input length. A collection of
+bounded fast paths plus brute-force fallback does not establish that bound.

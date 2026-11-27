@@ -1,0 +1,138 @@
+{
+  "enabled": true,
+  "version": "merged-research-v1",
+  "source_sha256": "fbde1ec629edf02e14168c8c76ed76c5b8268c1bf9cf49aaab897fb3555f2c90",
+  "at": "2026-11-27T02:59:06.123127+00:00",
+  "options": {
+    "k": 5,
+    "max_windows": 256,
+    "max_pairs": 200000,
+    "max_tuples": 8192,
+    "max_rows": 128
+  },
+  "checked_cases": {
+    "total": 326,
+    "sat": 170,
+    "unsat": 156,
+    "compressed": 69,
+    "skipped": 257,
+    "failures": 0
+  },
+  "dependencies_sha256": {
+    "merged_research/runtime/check_scc_and_growth.py": "c4a35347e35586121b21b5ff4c78163c2cfa64788e1e88523dd50f2adcd59e36",
+    "merged_research/runtime/test_elim.py": "3e2ec629665246ef298eb61be73bfb4a581a308f0527422514f8644eeb58bf03",
+    "merged_research/runtime/test_mra.py": "6eebead22f7d33abc66a17550bf29a18df266836440695ae080d407dc51fc72b"
+  },
+  "dependency": "sympy 1.14.0",
+  "reference": "https://docs.sympy.org/latest/modules/matrices/normalforms.html",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false,
+  "existing_regressions": {
+    "exhaustive_hull_tables": 273,
+    "hull_membership_points": 2106,
+    "equality_mod3_mod4_mod5_tables": 4,
+    "contradiction_kernel_cases": 6,
+    "planted_integer_solutions": 200,
+    "exhaustive_cnf_cases": 410,
+    "satisfiable_cases": 344,
+    "direct_counting_rejections": 66,
+    "correctness_failures": 0,
+    "budget_and_order_cases": 5
+  },
+  "compression_limits": {
+    "max_variables": 64,
+    "max_block_width": 8,
+    "max_clauses": 1024,
+    "max_space_points": 16384,
+    "max_verification_work": 8000000
+  },
+  "compression_certificate_rule_lean_checked": true,
+  "concrete_compressions_lean_checked": 11,
+  "snapshot_files": {
+    "compression.py": {
+      "source": "merged_research/runtime/compression.py",
+      "sha256": "aa504c7cbb0fcfee7765099c222c9707797178a825f90730fafb5c441c57c8cf",
+      "review_text": true
+    },
+    "finite_oracle.py": {
+      "source": "merged_research/runtime/finite_oracle.py",
+      "sha256": "ff927ecf763405202090afdd6f215f9586ca41b38ef2e4e6209fb81d79673389",
+      "review_text": false
+    },
+    "export_compression_lean.py": {
+      "source": "merged_research/runtime/export_compression_lean.py",
+      "sha256": "36ff961ae50eefa510a15f500488c0821560baeecb603d4071955c38cbff6ec4",
+      "review_text": false
+    },
+    "CompressionSoundness.lean": {
+      "source": "merged_research/runtime/CompressionSoundness.lean",
+      "sha256": "32eff5851b7af275d87eec2af9552f9d94e016a90705a10686d7df803b5491af",
+      "review_text": false
+    },
+    "core_refutation.py": {
+      "source": "merged_research/runtime/core_refutation.py",
+      "sha256": "7fc37c02aa6ce73930dc3e0a2a6e76bbe517b4a8db3940a3c2c158ed489baf6b",
+      "review_text": true
+    },
+    "export_core_lean.py": {
+      "source": "merged_research/runtime/export_core_lean.py",
+      "sha256": "6e73448fa9d104ec546373ed5b89ca01f406a48d0249053ff8e4e65df1aa03b1",
+      "review_text": false
+    },
+    "check_scc_and_growth.py": {
+      "source": "merged_research/runtime/check_scc_and_growth.py",
+      "sha256": "c4a35347e35586121b21b5ff4c78163c2cfa64788e1e88523dd50f2adcd59e36",
+      "review_text": false
+    },
+    "test_elim.py": {
+      "source": "merged_research/runtime/test_elim.py",
+      "sha256": "3e2ec629665246ef298eb61be73bfb4a581a308f0527422514f8644eeb58bf03",
+      "review_text": false
+    },
+    "test_mra.py": {
+      "source": "merged_research/runtime/test_mra.py",
+      "sha256": "6eebead22f7d33abc66a17550bf29a18df266836440695ae080d407dc51fc72b",
+      "review_text": false
+    }
+  },
+  "lean_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/compression-lean-receipt.json",
+  "scope": "Consolidated existing solver with canonical-state counting cache and explicit quotient order. Proof components compiled together; no universal polynomial-time proof.",
+  "scalable_certificates": true,
+  "larger_controls": 14,
+  "largest_tested_variables": 64,
+  "largest_lean_checked_variables": 32,
+  "candidate_limits": {
+    "max_variable_id": 32,
+    "max_clauses": 512,
+    "max_clause_width": 12
+  },
+  "checker_sha256": "540bfd66b094a568f3aeb1bc3e3b5f87f3be61caaada50c4b8ce15656ded8427",
+  "larger_test_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/scaling-test-receipt.json",
+  "larger_lean_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/scaling-lean-receipt.json",
+  "finite_check_timeout_seconds": 180,
+  "unsat_core": true,
+  "concrete_core_refutations_lean_checked": 4,
+  "core_limits": {
+    "max_removed_per_block": 4,
+    "max_pairs": 300000,
+    "max_width": 8,
+    "max_variables": 64,
+    "max_clauses": 1024
+  },
+  "core_lean_limits": {
+    "max_quotient_variables": 8,
+    "timeout_seconds": 120
+  },
+  "core_test_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fibre_cardinality_round1/core-test-receipt.json",
+  "core_lean_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fibre_cardinality_round1/core-lean-receipt.json",
+  "pipeline_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/core_v5_pipeline_review/test-receipt.json",
+  "composed_core": true,
+  "composed_core_lean_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/core_v5_pipeline_review/core-lean-receipt.json",
+  "composed_core_test_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/quotient_core_round1/test-receipt.json",
+  "source": "merged_research/runtime/solver.py",
+  "checker_source": "merged_research/runtime/check_proposal.py",
+  "canonical_package": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research",
+  "counting_cache": true,
+  "explicit_quotient_order": true,
+  "merge_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/merge-manifest.json"
+}

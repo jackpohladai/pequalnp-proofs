@@ -1,0 +1,99 @@
+{
+  "proposal": "AUDIT (code read, nothing executed). _verify_certificate builds blocks from every dense original clause, rejects repeated-variable clauses, confines each block's used forms to its support mask, compares all 2^|support| local points and checks every entry of P\u00b7L=I. With 0<r<n this gives x\u21a6Px (models of F to models of Q) and y\u21a6Ly (back), so equisatisfiability is sound. A zero-count block is rejected automatically because every clause has a falsifying local point. I find no omitted-block bug, and skips never alter the input. The defects are cost-only: the r\u00b2n+work budget is tested after the tables are evaluated; `work` counts literal operations, not bits; refute() rescans the whole formula per tuple per UP pass and verify_certificate recomputes every table; step() memoises raw states, not the canonical `reduced` formula, so equal canonical inputs repeat IALH. These drive time, not peak.\n\nSOUND RESTRICTED RULE: SYNTACTIC COFACTOR QUOTIENT (SCQ). For M\u2286V, |M|=m, and \u03b1\u2208{0,1}^M, let R_\u03b1 be the deduplicated plain restriction of F (no UP). Call \u03b1 dead if R_\u03b1 contains the empty clause. Let c_1..c_\u03ba be the classes of live \u03b1 under clause-set equality, s=\u2308log2 \u03ba\u2309, and e an injective code into {0,1}^s on fresh bits y. Define G = (\u2229_c R_c) \u222a {(y\u2260e(c))\u2228C : C\u2208R_c\u2216\u2229R} \u222a {(y\u2260u) : u an unused code}. Then for every \u03b2 on V\u2216M: \u2203\u03b1 F(\u03b1,\u03b2) \u27fa \u2203y G(y,\u03b2), because G restricted to y=e(c) equals R_c as a clause set and G restricted to an unused code contains the empty clause. A model lifts through any fixed section \u03c3(c)\u2208c. The proof is three lines and is not Lean-checked. Accept only if s<m and \u2016G\u2016\u2264\u2016F\u2016 (literal bits). The verifier recomputes the 2^m restrictions of the clauses touching M and compares clause sets: O(2^m\u00b7(\u2016F_M\u2016+\u2016G_y\u2016)\u00b7log n) bit operations, with no global table and no right inverse. For m=2, \u03ba=2 the classes are {00,11}|{01,10} (the XOR case BLQ already covers), a degenerate projection, or one point against three (OR/AND up to signs). The last is the nonlinear case BLQ cannot express: a one-point forbidden set is an odd block with trivial stabilizer.\n\nNEON58. In the 16-variable quotient each pair {x,x'} has R_10=R_01=R_11 (eight identical width-3 links, positives satisfied) and R_00 (four pair clauses), so \u03ba=2. Eight contractions give clause counts 48\u219240\u219236\u219234\u219233\u219225\u219221\u219219\u219218, ending with variables p_1..p_4, q_1..q_4 and clauses (\u00acp_1\u2228..\u2228\u00acp_4), (\u00acq_1\u2228..\u2228\u00acq_4), p_i\u2228q_j. On the 20-variable input, m=2 closure should accept 12 steps (4 XOR-class, then 8 OR-class) and reach the same formula. The fixture is that image. Hand trace of pinned v5 on it: compression skips with all_variables_in_odd_blocks; core returns no_clauses_removed; root IALH examines 16 two-windows and 48 three-windows (all single-point tables), then window [1,2,3,4] has an empty UP table. That is 65 windows, 464 tuples, one call, peak 0.\n\nTOTAL WORK. Size-nonincreasing acceptance plus s<m gives at most n accepted steps, all on formulas of size \u2264\u2016F\u2016. With candidate family \ud835\udc9e the closure costs O(n\u00b7|\ud835\udc9e|\u00b72^m\u00b7\u2016F\u2016\u00b7log n) bit operations. For m=2, candidates are pairs co-occurring in a clause or sharing a negative-link hash (at most w\u00b7\u2016F\u2016 pairs), which is polynomial. On the Neon58 quotient: \u2264120 pairs \u00d7 4 restrictions \u00d7 \u226424 touched clauses \u00d7 width 4 \u2248 5\u00b710^4 literal operations per round, for eight rounds. This bounds preprocessing only; residual search after closure is unbounded in general.\n\nCERTIFICATE-FREE FALLBACK. Listing detected twins adjacently in the branch order carries no proof obligation, since every full order is exact. The trusted peak-2 run is one finite instance of this.\n\nWORK INVARIANT. Let \u03ba_F(U) be the number of distinct live R_\u03b1 over U, W(F,\u03c0) its maximum over prefixes of \u03c0, and W(F)=min_\u03c0 W(F,\u03c0). A solver caching raw restrictions does at most 2n\u00b7W(F,\u03c0) restriction steps (immediate). Proposition (short proof, unchecked): if W(F,\u03c0)\u2264w, the first \u2308log2 w\u2309+1 variables of \u03c0 form a class-reducing M, and contracting it (size test waived) gives W(G)\u2264w with \u2016G\u2016\u2264w(\u2016F\u2016+|F|\u00b7log w). So SCQ-contractibility is a local witness of small cofactor profile.\n\nNOT HANDLED. (1) Arbitrary extras: a clause containing x but not its twin separates R_10 from R_01, giving \u03ba=3, and the step is rejected. Only an UNSAT-only \u03b4-twin core (drop \u2264\u03b4 separating input clauses, subset-checked like the deployed gate) is available; nothing on the SAT side. (2) Pigeonhole: a pigeon row has 2^h\u22121 pairwise distinct live cofactors. A hole column has h+2 classes, but binary recoding enlarges the formula, so the size test rejects it. Cofactors there are equal only up to renaming. (3) Encodings where twins are semantic but links differ syntactically. (4) Kernel-free expanding structures with no small-\u03ba set.\n\nINDEPENDENT TESTS for the unimplemented rule: (a) the 12-step and 8-step counts and the clause sequence above, under every pair-scan order; (b) adding, per pair, one clause containing exactly one member blocks all m=2 steps on the quotient while it stays UNSAT.",
+  "missing_theorem": "MT (width preservation and confluence; open). There is a fixed polynomial p such that for every CNF F, every m, and every class-reducing SCQ step F\u2192G on any M with |M|\u2264m (not only prefixes of an optimal order): W(G) \u2264 p(W(F),2^m) and \u2016G\u2016 \u2264 p(W(F),2^m)\u00b7\u2016F\u2016. What I can currently argue: (a) the prefix case, with W(G)\u2264W(F); (b) for arbitrary M only a semantic bound of order W^(2^m) (a sketch, and not syntactic). If MT holds, greedy closure over all \u2264m-subsets with m=\u2308log2 W\u2309+1 followed by raw cached restriction decides F in n^O(log W)\u00b7poly(\u2016F\u2016) bit operations. That is quasi-polynomial in W and polynomial only for bounded W. Two further gaps: (i) the bound is for a raw-restriction caching solver; v5's elim_plus and prune are history-dependent, so 'v5 peak \u2264 W' is unproved in either direction. (ii) MT gives no polynomial SAT algorithm, because W(F) is expected to be exponential for most CNFs; the pigeon-row count 2^h\u22121 shows it for one natural cut only, not for every order. The exact remaining obstruction for arbitrary CNF is merging cofactors that are equal only up to a verified renaming, with bounded discovery and certificate cost. No such theorem is known to me, and an unrestricted version would imply P=NP.",
+  "self_attack": "1. Not new mathematics: m=2, \u03ba=2 is Ashenhurst simple disjoint decomposition restated on clause sets. The sound rule is restricted; the speed claim is absent.\n2. Reordering alone already gives peak 2 on Neon58, so SCQ's marginal value is only fewer and cheaper IALH calls. That is unmeasured and could be negative on inputs with many failing candidates.\n3. Syntactic equality depends on representation: one separating extra clause or a non-prime encoding defeats it. The \u03b4-twin core is UNSAT-only and inherits the unbounded core-selection problem.\n4. Greedy closure may be non-confluent: an accepted step could destroy a better later module. MT is exactly this gap, and my arbitrary-M bound is doubly exponential in m.\n5. For m>2 the candidate family is unspecified. All \u2264m-subsets is n^m; two-clause unions may miss modules.\n6. The fixture is deliberately easy. It confirms only that the contracted image is refuted at the root by v5's existing UP tables; it says nothing about discovery cost or about harder images. The trace assumes hull_rows handles single-point tables without error, as existing regressions suggest.\n7. Pigeonhole total work (the measured nonlinear cost) is untouched. Table recomputation and the missing canonical-input cache are engineering observations, not theorems.\n8. The cofactor profile ignores SCC, DP and IALH pruning, so it can overestimate v5 badly (Neon54/55 peak 0) or underestimate its time.",
+  "mechanism_signature": "Checked nonlinear quotient of a bounded variable set by syntactic cofactor classes: an arbitrary class map \u03c4 with section lift, a local 2^m clause-set verifier, and size-nonincreasing closure. The invariant is the live syntactic cofactor profile W. Twin-adjacent ordering is the certificate-free fallback.",
+  "delta_from_prior": "BLQ and the core detector quotient only by GF(2)-linear forms (coset-invariant forbidden sets); my previous fixture (00078) attacked incompatible greedy bases. Fable73's link-twin contraction, whose exact statement I have not seen, appears to be the m=2, \u03ba=2 one-against-three instance. This proposal adds the general class-map rule with explicit verifier and bit cost, a termination argument, the profile invariant with the prefix-contraction proposition, the open width-preservation theorem, and an exactly traced v5 prediction for the contracted Neon58 image. It concedes that reordering alone reaches peak 2.",
+  "fixture": {
+    "formula": [
+      [
+        -1,
+        -2,
+        -3,
+        -4
+      ],
+      [
+        -5,
+        -6,
+        -7,
+        -8
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ]
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "predicted_sat": false,
+    "predicted_peak": 0
+  }
+}

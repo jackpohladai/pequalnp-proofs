@@ -1,0 +1,89 @@
+{
+  "status": "locally_lean_checked_executable_restricted_solver",
+  "related_candidate": "sonnet-02816",
+  "related_candidate_sha256": "11f2051569b518716fa1305318465e4331dcd8c2936e5b8b1fd4b1868a5a7239",
+  "components": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/DualHornAlgorithm.lean",
+      "sha256": "2f7b2d9fb997589337d0270bc2d1493191fa022edbc3f47b437527a4227a54a2"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/SparseDualHornAlgorithm.lean",
+      "sha256": "daa56ed221032d946455a1aec0804784a0e2903a503fe52b92bd06784cb8af25"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/CheckedDualHorn.lean",
+      "sha256": "896e92006dc17258f210a256732a685dcfa7128bce4b6daa3e7c3586c2ae9623"
+    }
+  ],
+  "new_checked_facts": [
+    "Automatic finite support of actual project CNF variables",
+    "Support cardinality at most literal occurrence count",
+    "Executable sparse-support dual-Horn solver returns correct UNSAT or an actual greatest model",
+    "Fuel equals number of distinct occurring variables; each recursive flip decreases cardinality",
+    "Executable dual-Horn syntax checker with exact iff theorem",
+    "Checked solver distinguishes unsupported syntax from UNSAT"
+  ],
+  "semantics": "A returned true-variable set T represents state support T: members of T are true, other support variables false, variables outside support true.",
+  "syntax": "Every clause has at most one negative literal occurrence. Positive and repeated positive literals, empty clauses/formulas, and tautologies are handled exactly by project semantics; repeated negative occurrences are conservatively unsupported.",
+  "invariant": "Every actual satisfying assignment remains pointwise below the current assignment.",
+  "progress": "A selected negative variable of a violated clause must currently be true and is forced false in every model; erasing it decreases true-set cardinality by exactly one.",
+  "significance": "Replaces the preceding finite-maximality existence proof with an executable correct algorithm and exact syntax checker; provides the retained greatest model needed by the checked guarded-matching composition.",
+  "remaining": [
+    "Formal operational encoded-bit runtime for scanning, membership, support construction and variable comparisons",
+    "Private-edge/retained/guard decomposition recognizer and disjointness certificate",
+    "Matching implementation and witness assembly",
+    "Concrete generated-candidate refinement",
+    "General SAT completeness"
+  ],
+  "counterexample_outside_class": {
+    "formula": [
+      [
+        -1,
+        -2
+      ],
+      [
+        1
+      ]
+    ],
+    "satisfying_assignment": [
+      true,
+      false
+    ],
+    "unguarded_solver": "can report UNSAT",
+    "checked_wrapper": "returns unsupported"
+  },
+  "sparse_encoding_check": "Variable identifier 1,000,000,000 is handled using a two-variable support and one flip; checked in Lean by reduction.",
+  "finite_checks": {
+    "status": "passed",
+    "verifier_sha256": "3ee650e4bb4559826fcbfcd3da889f7390af1f4519f19c870ae1d2b3b1d7a752",
+    "dual_horn_formulas": 6462,
+    "satisfiable_formulas": 4339,
+    "total_flip_steps": 3910,
+    "max_flip_steps_on_three_variables": 3,
+    "model_domination_checks_along_traces": 14098,
+    "additional_edge_cases": 7,
+    "nondual_failure_checked": true,
+    "sparse_and_range_solvers_agree_on_all_formulas": true,
+    "billion_index_sparse_case_passed": true,
+    "scope": "Python mirror versus exhaustive oracle; Lean execution examples separately compiled",
+    "candidate_executed": false,
+    "bit_runtime_proved": false,
+    "general_sat_claim": false
+  },
+  "lean_version": "4.36.0",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "official_checker": false,
+  "upstream_published": false,
+  "general_sat_solved": false,
+  "candidate_executed": false,
+  "receipts": [
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/compile-receipt.json",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/sparse-compile-receipt.json",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/finite-receipt.json"
+  ]
+}

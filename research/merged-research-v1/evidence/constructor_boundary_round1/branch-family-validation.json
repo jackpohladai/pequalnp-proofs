@@ -1,0 +1,71 @@
+{
+  "id": "constructor_boundary_round1",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/GeneralCNFDecision.lean",
+  "source_sha256": "0cf01b66b04e9768de2869879a9260db94cc1246db721c00b88823de802fee70",
+  "scope": "Checked general finite-CNF decision procedure by exhaustive conditioning; at most 2^k branch solver calls with eagerly materialized candidates, not a polynomial-time result.",
+  "status": "locally_lean_compiled",
+  "lean_version": "4.36.0",
+  "general_finite_cnf_decider_verified": true,
+  "general_sat_proof": false,
+  "general_polynomial_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false,
+  "formalized_scope": [
+    "Zero-hole constructor exactly preserves every CNF clause/literal list",
+    "Mixed guard conditioning with fresh positive flag and shifted private edges preserves satisfiability; each branch passes original supported checks",
+    "Runtime mixed-input checks enforce retained dual-Horn syntax and identifier separation",
+    "solveCNF on any finite CNF returns some true iff satisfiable, some false iff unsatisfiable, and never none",
+    "Exactly 2^k candidate assignments are materialized, where k is distinct negatively occurring variables; counted short-circuit branch invocations at most 2^k"
+  ],
+  "not_formalized": [
+    "Polynomial bound on the branch count for arbitrary formulas",
+    "Complete bit-time bound or binary parser refinement",
+    "Original-ID satisfying witness output",
+    "Upstream strict checking"
+  ],
+  "technique": "Standard exhaustive conditioning; this is a checked implementation, not a new P-versus-NP breakthrough.",
+  "finite_tests": {
+    "mixed_status_fixtures": 7,
+    "general_cnf_fixtures": 6,
+    "exhausted_two_negative_variable_calls": 4
+  },
+  "verified_pins": {
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/ZeroHoleCoverage.lean": "78ec445a60cc77f0242b8e19e08e3fd5c7131c9c1954083cdc191ff6fdc9bea1",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean/ZeroHoleCoverage.olean": "9b87da77392c6d0c98db4141bada6d5b12960daa499ccfb1711b49cb21db1578",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean/ExplicitConstructorInput.olean": "c256f35a8df652f57a5bd062627ef13ef4ce21f02c3d05feaec9a896dc04e5d4",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/MixedGuardBranches.lean": "699fae50e78c3ba947fec8000ae77d6264304df92fdadb19243d386a82b0e8ad",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean/MixedGuardBranches.olean": "56db9768949b2ce6442314ada2edaa163e08e0e94d6a52d95ccecb1f46cf836c",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/MixedGuardSolver.lean": "fb297079b9d0098b84581ac82d549e092a9c60edbd0f4f1d2c522a2fba01cf7c",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean/MixedGuardSolver.olean": "fb009de9f0296c14cd1315d5eb577e6b678db6d6585b953dbd67b4569bcfe783",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-compile-receipt.json": "642ce7d402918f4a24d1e78434f0813cdbe469b7d30e0a3a52c4d7969266b4fb",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-validation.json": "f117cf623c664cecdc682b531582aacff574bb8333f76af8ff2ff0993456efa7",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guard_boundary_round1/compile-receipt.json": "21b2ad6e5e5084cf41637f3238b0c1824c58247aeb2ba0add6026d62c3f5adc4",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-validation.json": "d761aee8e42b9900cb8a5755eb36e484d0fffed3aaf3235901cd623f35e3ee02",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/ExplicitConstructorInput.lean": "f588eebe4ad202e8d4d4f32695a34782e93df958b2a169447653034e4d1350f9",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/AutomaticConstructorTotal.lean": "43b48cbd9a47884c740d0c5197918e1a6e8818a148c4fcac194c36483ea4ae5b",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean/AutomaticConstructorTotal.olean": "f29a161e4ab26a420aa9921c390f4ff4b5e7386e5978808fc1377c5c2d22364f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guard_boundary_round1/NegativeGuardBoundary.lean": "61d03c8cdfc0ab9b690086014bae508c421a7ebed0c07dca533aef82bf4e38d6",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guard_boundary_round1/build/lib/lean/NegativeGuardBoundary.olean": "c5d43d199a88f8c56d419c018186b1766f1bb842a6099735829ed517b8eccd32",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/GeneralCNFDecision.lean": "0cf01b66b04e9768de2869879a9260db94cc1246db721c00b88823de802fee70",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean/GeneralCNFDecision.olean": "8c94adced8223cc1e6b69fb09e54059d3885fd05f4b48e679f88cca362dd5f20"
+  },
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/constructor-boundary-validation.json",
+      "sha256": "9f7bbfdd5754a060dc5f27805765a196e4ae69a75565d0ae0c3fd2df2f4c0551"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/independent-audit.json",
+      "sha256": "4930ce0e4f74cd46a2117c6fdbc29f5324185790f69c0e22769ddf2ac92d4f6c"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/general-cnf-validation.json",
+      "sha256": "60b6510a17c4465821b6b6e02fb6928aa3be3443d688ef5092837bbbd6f7bd67"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/general-cnf-independent-audit.json",
+      "sha256": "60fe702ba528d40eff122e359c6fdcd34ebbedd3049006f9974aa54af1cf4c14"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+L-alg-001 Research Findings — Hydrogen (Global Residual Compression + Algebraic/Combinatorial Obstructions)
+Date: 2026-11-26
+Candidate: work/alg001/hydrogen/candidate.py
+Candidate SHA-256: c743418c4cce608709cdd9f9582f2b6cbc18a5c88a06da6a9d5e9c1f0aa42354
+Prior Round-1 Archive: work/alg001/hydrogen/findings-round1.txt
+Test Output Record: work/alg001/hydrogen/result.json
+
+========================================================================
+1. CANDIDATE ALGORITHMS & REVISION HISTORY
+========================================================================
+Attempt 1 (archived in findings-round1.txt):
+  Global F2-Affine (RREF) + 2-SAT Implication SCC + Fixed-Width (k<=6) XOR Extraction +
+  Degree-Sorted Canonical Residual Memoization.
+  Demonstrated Round-1 Failure:
+  - PHP(8,7) with randomly shuffled variable IDs (seed 999) exploded from 41 nodes (73,005 ops)
+    to UNKNOWN at 2,000,001 ops (2,929 nodes), because (-deg[v], v) broke symmetry ties by
+    raw variable index.
+  - 7-regular Tseitin (10 vertices, 35 edges) required 33 nodes (1,114,653 ops) because
+    _extract_xor_groups capped XOR block width at k <= 6.
+
+Revision 1 (current work/alg001/hydrogen/candidate.py, sha256 c743418c...):
+  1) Dynamic Pivot-Mask Strict RREF in F2System:
+     - Tracks self.pivot_mask (bitmask of all RREF pivots) and reduces dynamically via
+       while True: hit = m & self.pivot_mask ... instead of iterating a frozen bitmask
+       snapshot of the input mask.
+     - Charges word_cost = max(1, (n_active + 63) // 64) per big-int row XOR/scan/clone.
+  2) Dynamic Arbitrary-Width k-XOR Extraction (_extract_xor_groups):
+     - Sets max_k = len(clauses).bit_length() + 1, because a complete k-XOR block contains
+       2^(k-1) <= len(clauses) clauses automatically. Solves arbitrary-degree Tseitin in 1 node.
+  3) Disjoint Conflict-Clique Cardinality Check (_conflict_clique_unsat):
+     - Builds the binary conflict graph (edge (l1, l2) iff (-l1, -l2) is in clauses), greedily
+       selects r pairwise literal-disjoint clauses whose literals all have conflict degree >= 1,
+       and greedily partitions those literals into s disjoint conflict cliques. If s < r, UNSAT.
+  4) Signed Bipartite 1-WL Color Refinement + Bipartite BFS Canonicalization (_wl_colors, _canonical_key):
+     - Refines colors on (variables, clauses, F2 rows) up to min(8, n_active) rounds and orders
+       variables via O(sum |c|) bipartite BFS guided by 1-WL colors; also tie-breaks branching
+       by 1-WL color before raw variable ID.
+
+========================================================================
+2. EXACT INVARIANT NEEDED FOR CORRECTNESS
+========================================================================
+At every recursive state (L, R), where L is a consistent F2 RREF system over active variables
+{0..n_act-1} and R is a deduplicated, non-tautological CNF:
+
+  Invariant I(L, R):
+    1. Strict RREF: For every pivot p in L.rows, (L.rows[p] & L.pivot_mask) == (1 << p).
+    2. Semantic Equivalence: For every assignment sigma in {0,1}^n_act,
+         sigma |= Phi_orig  <=>  (sigma |= L  and  sigma |= R),
+       where any variable substituted out via unit or 2-XOR equivalence (v_piv = v_rep ^ c)
+       is absent from R while its defining row remains in L.
+    3. Pure-Literal Restriction: A literal l is eliminated as pure ONLY if var(l) appears in
+       ZERO rows of L (neither as pivot nor tail), ensuring no masked parity constraint on var(l).
+    4. Component Independence: Connected components are computed on the UNION graph of R and
+       active F2 rows of L, so F2 couplings across disjoint clause components are never split.
+    5. Conflict-Clique Soundness: Every pair in a clique Q_j has (-l1, -l2) in R, so
+       sum_{l in Q_j} sigma(l) <= 1. For r pairwise literal-disjoint clauses C_i subset U_j Q_j,
+       r <= sum_i sum_{l in C_i} sigma(l) <= sum_j sum_{l in Q_j} sigma(l) <= s, so s < r => UNSAT.
+    6. Base / Edge Cases:
+       - Empty formula (clauses == []): returns SAT immediately (all False).
+       - Any empty clause ([] in clauses): returns UNSAT immediately.
+       - Repeated literals in a clause: deduplicated; contradictory (v and -v) dropped as tautology.
+       - Exhausted budget: raises BudgetExhausted and returns UNKNOWN (never an unproved answer).
+
+========================================================================
+3. FULL COST ACCOUNTING (BIT-LEVEL & REPRESENTATION SIZES)
+========================================================================
+Let N be the encoded CNF bit length (PEqualNP.Search.encodeCNF: 4 + 2*bit_length(v) per literal,
++2 bits per clause). Let r <= N be active referenced variables, m <= N clauses, L_tot <= N total
+literal occurrences, w_r = max(1, ceil(r/64)) word width of active-variable bitmasks.
+Note: solve(nvars, clauses, budget) takes O(nvars) at the very end only to materialize the
+length-nvars output list[bool]; all internal states compress to r active variables.
+
+Per-node honest cost accounted in OpsTracker:
+  - Input parsing & active remapping: O(L_tot + m) parse_ops.
+  - F2 RREF add_equation & clone: each row XOR/scan charges w_r lin_ops; up to r pivots along a
+    root-to-leaf path, cumulative F2 work is O(r^2 * w_r) = O(r^3 / 64) bit-ops (worst case O(N^3)).
+  - 2-SAT Tarjan SCC + SCC-DAG bitset reachability: O(r + m_2) plus O(m_2 * (num_comps/64))
+    scc_ops, charging comp_words = max(1, (num_comps + 63) // 64) per bitset OR.
+  - XOR-group extraction: O(m + L_tot) reduce_ops.
+  - Conflict-clique cardinality check: O(m_2 + L_tot + r^2) reduce_ops.
+  - 1-WL refinement + bipartite BFS canonicalization:
+    Up to min(8, r) rounds charging (r + m + L_tot + |L|) * ceil(log2(r + m)) reduce_ops,
+    plus O(r + L_tot + |L| * w_r) for bipartite BFS and normalized key construction.
+  - Worst-case per-node bit-cost: O(N^3) (dominated by dense F2 Gaussian elimination + 2-SAT DAG
+    bitset reachability + multi-round WL sorting).
+  - Crucial asymptotic distinction: O(N^3) per node times B(N) search nodes is O(N^3 * B(N)),
+    NOT O(N^3) total unless B(N) = O(1) or per-node * B(N) <= O(N^3).
+
+========================================================================
+4. VERIFIED TESTS (LOCAL EXECUTION, NO LEAN CLAIMED)
+========================================================================
+All verified outputs are recorded in work/alg001/hydrogen/result.json:
+
+  1) F2System Insertion-Order Audit vs Brute Force:
+     - Tested 9,072 cases: all permutations of 300 random 4-variable systems (consistent and
+       inconsistent) plus 50 random permutations of 70-variable multi-word systems (35 equations).
+     - Failures: 0 (consistency, strict RREF invariant (row & pivot_mask) == (1 << p), and
+       solve_any() solution validity all matched brute force 100%).
+  2) Adversarial Corpus (work/alg001/adversarial/families.py vs oracle.exhaustive):
+     - 594 / 594 exact matches (0 mismatches, all SAT witnesses verified), all solved within
+       budget 2 * N^2 in 0.102s (exhaustive2 512/512, random3 36/36, tseitin 15/15,
+       pigeonhole 14/14, edge-cases 11/11, planted3 6/6).
+  3) Shuffled Pigeonhole Principle (fixes Round-1 PHP(8,7) permuted failure):
+     - PHP(5,4) shuffled (N=564):   UNSAT, 1 node,   717 ops
+     - PHP(7,6) shuffled (N=1929):  UNSAT, 1 node, 2,375 ops
+     - PHP(8,7) shuffled (N=3092):  UNSAT, 1 node, 3,638 ops (was UNKNOWN @ 2M ops in Round 1)
+     - PHP(10,9) shuffled (N=6834): UNSAT, 1 node, 8,177 ops
+  4) Arbitrary-Width XOR / Mixed XOR+CNF (fixes Round-1 7-regular Tseitin bottleneck):
+     - Tseitin 7-regular (10 verts, 35 edges, N=25348): UNSAT, 1 node, 10,890 ops
+       (was 33 nodes, 1,114,653 ops in Round 1).
+     - Tseitin 4x4 grid + 20 random 3-clauses (N=3784): UNSAT, 1 node, 893 ops.
+  5) Graph k-Coloring CNFs (shuffled variable IDs):
+     - K3 3-coloring (nv=9, N=472):                 SAT,   2 nodes,     880 ops
+     - K4 3-coloring shuffled (nv=12, N=800):       UNSAT, 5 nodes,   3,455 ops
+     - Grotzsch 3-coloring shuffled (nv=33, N=2956): UNSAT, 13 nodes, 1 memo, 51,104 ops
+     - Mycielski-5 3-col shuffled (nv=69, N=9794):  UNSAT, 17 nodes, 0 memo, 207,810 ops
+     - Mycielski-5 4-col shuffled (nv=92, N=12562): UNSAT, 459 nodes, 15 memo, 3,843,098 ops
+
+========================================================================
+5. EXPLICIT LIMITATIONS & NEXT VERIFIED OBSTACLES
+========================================================================
+Limitations:
+  - Does NOT prove P = NP or a uniform O(N^2) or O(N^3) SAT algorithm.
+  - Finite soundness and polynomial-budget checks are empirical only, not asymptotic proofs.
+  - Under any poly(N) budget, hard unstructured / non-algebraic instances return UNKNOWN.
+
+Verified Next Obstacles (exposed by active adversarial stress-testing):
+  Obstacle A — Unstructured Random 3-CNF at/above Threshold (0 memo hits):
+    - Across all tested threshold random 3-CNFs (n = 60, 100, 120, 130, 150, 170),
+      memo_hits == 0 at every node:
+        ratio=4.26, n=100, N=9518:   UNSAT,   241 nodes, 0 memo, 2,557,944 ops
+        ratio=4.26, n=120, N=11803:  SAT,     270 nodes, 0 memo, 3,406,505 ops
+        ratio=4.50, n=130, N=13664:  UNKNOWN, 314 nodes, 0 memo, 5,000,317 ops (budget cap)
+        ratio=4.50, n=150, N=16230:  UNKNOWN, 278 nodes, 0 memo, 5,000,005 ops (budget cap)
+    - Why: Random 3-CNF has no F2 linear subblocks, no 2-clause conflict cliques, and
+      locally tree-like asymmetric neighborhoods so every residual branch produces a distinct
+      1-WL signature (0% residual reuse).
+
+  Obstacle B — Higher-Chromatic Triangle-Free Coloring (Mycielski-5 4-coloring, 459 nodes, 3.84M ops):
+    - In 4-coloring of triangle-free 5-chromatic graphs, every vertex positive clause matches
+      its own 4-color clique (r = 23 == s = 23), and edge conflict cliques have size 2. Thus
+      disjoint clique cardinality cannot detect the 5-chromatic odd-cycle / Mycielski obstruction,
+      and 1-WL equivalence memoization recovers only 15 hits out of 459 search nodes.
+
+========================================================================
+6. DECISIVE STILL-OPEN LEMMA
+========================================================================
+Any constructive residual-compression SAT algorithm of this architecture can achieve a proved
+uniform worst-case O(N^2) or O(N^3) bit-time bound if and only if one proves:
+
+  Open Lemma (Polynomial Quotient-Reachability Bound):
+    There exists a polynomial-time computable, satisfiability-preserving equivalence / reduction
+    operator (Phi -> [Phi]_~) supporting polynomial-time SAT witness reconstruction such that,
+    for EVERY encoded CNF Phi of bit-length N, the total work summed over the DAG of distinct
+    canonical residual classes reachable along branching is bounded by O(N^2) (or O(N^3)),
+    without any promise on treewidth, XOR structure, symmetry, or conflict-clique coverability.
+
+On unstructured random 3-CNF (where k-XOR blocks, 2-SCCs, conflict cliques, and 1-WL symmetries
+are all absent), no polynomial bound on the number of reachable residual states is known.

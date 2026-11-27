@@ -1,0 +1,32 @@
+{
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/rank_obstruction_round1/RankObstruction.lean",
+  "source_sha256": "d06d9c2bad7ff35b5edf07f61cb1297217b8ef5875476f89d7866ac5571e94d1",
+  "checked_at_utc": "2026-11-26T07:35:44Z",
+  "lean_version": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "exit_code": 0,
+  "elapsed_seconds": 56.907,
+  "output": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-rank-obstruction-69otza0e/RankObstruction.lean:61:79: warning: This simp argument is unused:\n  h\n\nHint: Omit it from the simp argument list.\n  [apply] simp [base]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'PEqualNP.Outside.RankObstruction.base_mul_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.kernel_mul_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.inverse_mul_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.kernel_entry' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.RankObstruction.kernel_rank' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.factorization_width_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "command": [
+    "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+    "-j",
+    "1",
+    "-DElab.async=false",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-rank-obstruction-69otza0e/RankObstruction.lean"
+  ],
+  "lean_path_setup": "Existing work/pequalnp-sparse/lean/.lake/build/lib/lean plus existing package build/lib/lean directories from pinned lake-manifest.json; no dependencies downloaded",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "private_raw_receipt": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-rank-obstruction-69otza0e/receipt.json",
+  "upstream_checker": false,
+  "full_sat_proof": false,
+  "scope": "Exact all-x/all-y cut representation: recursively defined AND-of-ORs indicator, two-sided inverse, rank 2^k, any exact factorization through d coordinates needs d>=2^k",
+  "not_proved": [
+    "Python implementation refinement",
+    "SAT decision lower bound",
+    "operational bit-time bound",
+    "order-independent representation lower bound"
+  ]
+}

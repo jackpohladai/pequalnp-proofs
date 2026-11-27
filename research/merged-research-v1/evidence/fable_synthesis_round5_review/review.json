@@ -1,0 +1,61 @@
+{
+  "reviewed_at": "2026-11-26T16:09:25.195167+00:00",
+  "proposal_sha256": "894652606e79fbce876fb7f6ffd4232936afe2952c8b9612ff8e3c986776fb5e",
+  "verdict": "Useful restricted affine-state formula and a checked finite counterexample; no checked general polynomial SAT algorithm.",
+  "formal_result": {
+    "path": "F2Counterexample.lean",
+    "lean": "4.36.0",
+    "compiled": true,
+    "axioms": [],
+    "theorems": 6,
+    "scope": "F2 has trivial affine hull; its four assignments to x1,x2 produce exactly three distinct residual Boolean functions, each satisfiable. This refutes affine-hull-only residual counting, not a runtime bound for the full proposed solver."
+  },
+  "independent_tests": {
+    "f2": "All 16 assignments and 32 affine coefficient vectors enumerated; 10 satisfying assignments, only zero vanishing affine functional, three distinct residual model sets.",
+    "t1": "Both affine cut-state formulas hold in 39,246 matrix/cut/consistent-right-hand-side cases over 954 matrices. Finite corroboration, not a general formal proof."
+  },
+  "findings": [
+    {
+      "severity": "scope",
+      "claim": "F2 gives three K1 keys",
+      "finding": "The three residual functions occur before the terminal 2SAT dispatch. Every conditioned formula is satisfiable 2CNF, so the full K1 procedure may decide each before creating any memo key. Correct residual-function counterexample; not a full-solver state-count or runtime lower bound."
+    },
+    {
+      "severity": "scope",
+      "claim": "Everything before Conjecture C is proved",
+      "finding": "T0 is a dependency list and T2 a proof sketch, not checked proofs of the implemented canonicalizer. Exact parity conversion, SCC substitution, projection/reconstruction, and runtime iteration bounds remain implementation/proof obligations."
+    },
+    {
+      "severity": "quantifier",
+      "claim": "ID-order decoy family and random n=20..60 tests can refute Conjecture C",
+      "finding": "Conjecture C existentially quantifies a polynomial-time branching rule. A bad fixed rule or finite growth sample cannot refute existence of some different rule with a polynomial bound. Useful screening only."
+    },
+    {
+      "severity": "precision",
+      "claim": "T keys imply resolution size poly(n)*T",
+      "finding": "The algorithm returns from terminal simplifications before memoization, so T can be zero on a nonempty easy UNSAT input. An exact theorem needs T+1 or a node-count convention including terminal/root states, and overhead in encoded input length."
+    },
+    {
+      "severity": "precision",
+      "claim": "PHP lower bound 2^Omega(n)",
+      "finding": "The parameter n is ambiguous: conventional pigeonhole formulas have quadratically many propositional variables in the number of pigeons/holes. Do not translate an exponential-in-pigeons bound into exponential-in-number-of-variables without stating the parameter."
+    },
+    {
+      "severity": "citation_unverified",
+      "claim": "Proof-system and matching-with-side-constraints citations",
+      "finding": "No literature claims were independently source-verified in this narrow finite-check review. Treat those sections as provisional; the parity-constrained matching and Res(xor) claims need exact theorem hypotheses before reuse."
+    }
+  ],
+  "recommended_fable_followup": [
+    "Use this checked F2 failure as a hard constraint: affine rank alone cannot bound nonlinear residual functions.",
+    "Define exact stored-state versus residual-function versus terminal-call counters and give a complete encoded-bit cost model.",
+    "Seek one new sound nonlinear compression rule together with a universally bounded potential; explicitly distinguish a restricted-width result from an all-CNF theorem.",
+    "If no general mechanism survives, provide a minimal counterexample and a sharply scoped reusable lemma rather than claiming an unproved polynomial number of states."
+  ],
+  "unsupported_claims_avoided": [
+    "No P=NP claim",
+    "No polynomial general SAT runtime claim",
+    "No exponential full-K1 lower bound",
+    "No claim that passing finite tests proves T1 generally"
+  ]
+}

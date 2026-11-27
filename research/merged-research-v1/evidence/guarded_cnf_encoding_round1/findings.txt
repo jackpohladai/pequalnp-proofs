@@ -1,0 +1,91 @@
+Actual CNF constructor linked to guarded matching and checked solver output
+
+The four Lean sources compiled successfully under pinned Lean 4.36.0.
+All printed theorem axioms are limited to propext, Classical.choice, and
+Quot.sound. Final source bytes and imported private-build dependencies
+were checked against their recorded SHA256 hashes. Original components
+and live services were not modified. No generated candidate was executed.
+
+Explicit constructor
+
+Rows are Fin r, holes Fin h, and static neighbors are N(i). The input
+supplies retained CNF F, a guard clause for each row, and an edge-variable
+map from row-hole pairs to Nat variable IDs. encode produces actual project
+Search CNF: F, followed by each guard OR its positive private-edge literals,
+followed by NOT edge(i,k) OR NOT edge(j,k) for distinct rows sharing hole k.
+Both ordered row pairs are emitted; this harmlessly duplicates exclusions.
+The constructor uses finite ranges and lists and is executable Lean.
+
+Pointwise semantics and gluing
+
+rowClause_eval and columns_eval prove exact evaluation equivalences for
+the generated rows and columns. encode_eval proves the whole constructor
+evaluates true exactly when F evaluates true and the row/column conditions
+hold under the same actual Nat-indexed assignment.
+
+The encoder mentions only neighbor edges. Extraction masks non-neighbor
+edge values false before building the typed HasPrivateEdges witness. Thus
+the typed validity requirement is proved rather than assumed from absent
+clauses. This detail matters when unused private variables have arbitrary
+values in a satisfying assignment.
+
+Conversely, an injective edge-ID map and literal-level disjointness from
+F and every guard clause allow a typed edge witness to be glued onto the
+retained assignment. glue_edge proves all edge values are recovered and
+glue_clause proves every retained or guard clause keeps its evaluation.
+The gluing proof uses Function.extend and classical choice; this establishes
+existence/correctness of the lift, not an executable full witness assembler.
+
+encoded_sat_iff_private_edges and encoded_sat_iff_matching establish the
+full actual-CNF SAT equivalence to a retained model plus typed matching.
+The base equivalence allows arbitrary guard clauses, including negatives.
+
+Concrete collision-free variable constructor
+
+FreshGuardedCNF defines edge IDs as offset + Nat.pair(row.val,hole.val).
+Injectivity is proved. If every retained and guard variable is below the
+offset, disjointness is proved as well. fresh_encoded_sat_iff_matching
+therefore discharges the abstract map premises with a concrete constructor.
+The offset bound is a premise about these explicit inputs, not an arbitrary
+CNF recognition algorithm or an encoded-bit runtime statement.
+
+Composition with the executable retained solver
+
+CheckedOutputProjection uses the prior runtime-checked dual-Horn solver.
+If checkedSolve F returns some (some T), and all guard literals are positive,
+encoded_sat_at_checked_output proves the complete constructed CNF is SAT
+exactly when matching succeeds at the actual greatest retained model
+state (support F) T. This combines the executable result theorem, positive
+guard monotonicity, the prior GreatestGuard theorem, and the new CNF bridge.
+checked_unsat_excludes_encoding proves that a checked retained UNSAT answer
+also excludes every assignment to the constructed CNF. Unsupported syntax
+is not interpreted as UNSAT.
+
+Validation
+
+GuardedCNFEncoding passed in 28.435 seconds; FreshGuardedCNF in 3.158;
+CheckedOutputProjection in 2.757; EncodingExamples in 15.432. All exited zero.
+The actual executable two-row encoder was reduced to its exact four-clause
+list, and Lean proved its existential p,q projection is x OR NOT y.
+
+Independent finite enumeration checked 34,425 pointwise CNF evaluations
+and 685 guarded matching projections over up to three rows and two holes.
+It also checked all four x,y cases of the requested two-row example.
+Two explicit counterexamples demonstrate necessary constructor premises:
+with two rows/two holes and all edge IDs identical, typed matching exists
+but the encoded CNF is UNSAT; with retained NOT p sharing the single row's
+edge ID p, retained satisfiability plus typed matching again fails to imply
+encoded satisfiability. Neither premise may be silently discarded.
+
+Remaining gaps
+
+This is constructor correctness, not recognition/decomposition of an
+arbitrary input CNF. A real recognizer must certify that its original input
+equals this construction with the stated disjointness and indexing data.
+An executable matching solver, full witness assembly, generated-candidate
+refinement, and total encoded-bit runtime remain unproved. The result does
+not show arbitrary SAT reduces to this restricted structure and is not a
+general SAT or P=NP proof.
+
+All results are local Lean checks; no official checker replay, upstream
+publication, assignment acceptance, or website-credit claim is made.

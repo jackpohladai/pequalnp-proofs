@@ -1,0 +1,41 @@
+{
+  "registered_at_utc": "2026-11-26T14:15:05.207252+00:00",
+  "id": "two_sat_dispatch_round1",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/two_sat_dispatch_round1/TwoSatDispatch.lean",
+  "entrypoint": "PEqualNP.Outside.TwoSatDispatch.solveCNF",
+  "extends_component_family": "constructor_boundary_round1",
+  "scope": "Checked optional general-CNF dispatch: raw binary components use exact project2SAT; other components retain complete fallback. Every raw width\u22642 input uses zero fallback leaves. Global unit preparation and known-empty rejection preserved.",
+  "deployment": "alternative_only; existing EmptyFirstComponents general entrypoint retained",
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/two_sat_dispatch_round1/two-sat-dispatch-validation.json",
+      "sha256": "13cfcf7b473b427753ba6e21daeafda2c687fc2d7c1ec8113555da16ba374b3b"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/two_sat_dispatch_round1/two-sat-dispatch-measured-validation.json",
+      "sha256": "11f79544d6c977da3734063f8cfaaf14564198fa5bf80b3cda9f985f94732d15"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/two_sat_dispatch_independent_round1/two-sat-batch-validation.json",
+      "sha256": "4fdb79ba327d2fba6ca3a52e86d4a3818426807478e7fefc9f93243fd17a1585"
+    }
+  ],
+  "tests": {
+    "independent_cases_passed": 5401,
+    "sat": 4084,
+    "unsat": 1317,
+    "disagreements": 0,
+    "focused_and_paired_cases": 17,
+    "earlier_5679_case_run": "Timed out after75seconds; not a passed test",
+    "initial_batch_harness": "Type errors preserved; corrected one-evaluation-per-group version passed"
+  },
+  "performance": "Measured9-vertex SAT chain slowed39.243ms\u2192762.167ms, while9-vertex UNSAT cycle improved132.870ms\u219213.645ms. Single-run selected fixtures; no universal speedup or full bit-runtime proof.",
+  "status": "locally_lean_compiled",
+  "source_sha256": "dbefc77c17cb571671d13ab426b4052f7f7da466f6962d9f17045cf1a9faa577",
+  "count_as_new_component_family": false,
+  "general_polynomial_sat_proof": false,
+  "general_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false
+}

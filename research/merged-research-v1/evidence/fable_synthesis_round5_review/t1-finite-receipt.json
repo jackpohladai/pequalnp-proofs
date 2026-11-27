@@ -1,0 +1,8 @@
+{
+  "scope": "Finite exhaustive corroboration, not a proof of the general T1 theorem",
+  "matrices": 954,
+  "matrix_cut_consistent_rhs_checks": 39246,
+  "mismatches": 0,
+  "shapes": "all 1<=m<=3,1<=n<=3 plus (1,4),(2,4)",
+  "elapsed_seconds": 0.425152063369751
+}

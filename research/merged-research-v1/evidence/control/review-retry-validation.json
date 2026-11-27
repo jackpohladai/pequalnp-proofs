@@ -1,0 +1,18 @@
+{
+  "test_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=work/alg001/shared_workspace python3 -S -m unittest -q test_coordinator",
+  "working_directory": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at",
+  "observed_test_run": {
+    "exit_code": 0,
+    "tests_run": 54,
+    "tests_passed": 54,
+    "elapsed_seconds": 4.785
+  },
+  "current_sha256": {
+    "work/alg001/shared_workspace/coordinator.py": "5af775c62bfd11153407bd57a0883b55c813adc738b22045037a51d4dc42dd66",
+    "work/alg001/shared_workspace/test_coordinator.py": "7f06c93e59fba27f68f696f139a29545c99035fa7cf0463dea9a527b25389910"
+  },
+  "max_automatic_retries_per_candidate_first_review": 1,
+  "not_deployed": true,
+  "graceful_restart_required": true,
+  "deployment_timing": "After the active generation goal or drain to preserve throughput."
+}

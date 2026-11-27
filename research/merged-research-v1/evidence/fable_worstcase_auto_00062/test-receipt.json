@@ -1,0 +1,74 @@
+{
+  "status": "fixture_prediction_failed",
+  "summary": "Fable finite prediction failed on the deployed solver; broader mathematical claims remain unverified. Observed peak: 0; compression: skipped. Skip reason: no_dimension_reduction.",
+  "oracle_sat": false,
+  "oracle": {
+    "status": "completed",
+    "sat": false,
+    "witness": null,
+    "method": "independent_bounded_dpll",
+    "nodes": 39,
+    "seconds": 0.01905887499999981,
+    "formally_checked": false,
+    "general_polynomial_sat_proof": false
+  },
+  "observed": {
+    "sat": false,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 1,
+    "accepted_dp": 27,
+    "counting": {
+      "calls": 1,
+      "refutations": 0,
+      "windows": 63,
+      "tuples": 1374,
+      "seconds": 0.8024012500000002,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 63,
+      "tuples": 1374,
+      "constraints": 80,
+      "truncated": false,
+      "seconds": 0.8024012500000002,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-localcert-scc-emra-ialh5-v3",
+    "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "skipped",
+      "reason": "no_dimension_reduction",
+      "original_variables": 31,
+      "original_clauses": 197,
+      "seconds": 0.01719808399999989
+    }
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 1,
+    "accepted_dp": 27
+  },
+  "baseline_seconds": 0.22996954200000008,
+  "updated_seconds": 1.0634212090000001,
+  "seconds": 1.3139354589999999,
+  "solver": "blq-localcert-scc-emra-ialh5-v3",
+  "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

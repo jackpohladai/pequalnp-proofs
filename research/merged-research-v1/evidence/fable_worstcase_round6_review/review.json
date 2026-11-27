@@ -1,0 +1,12 @@
+{
+  "verdict": "worked_example_verified_universal_bound_missing",
+  "verified": "Five-variable union representation agrees on all32assignments,18models,noHornrenaming. Previous SCC repair removes the three known fixtures in independent implementation.",
+  "unverified": [
+    "All-input DAG node count",
+    "Total connector nodes are not bounded merely by counting distinct component leaves.",
+    "Tree decomposition schedule bound and discovery cost."
+  ],
+  "at": "2026-11-26T18:12:07.873177+00:00",
+  "independent_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_antigravity_round4_review/test-receipt.json",
+  "general_polynomial_sat_proof": false
+}

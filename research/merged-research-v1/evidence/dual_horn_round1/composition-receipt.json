@@ -1,0 +1,90 @@
+{
+  "sources": {
+    "DualHorn": {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/DualHorn.lean",
+      "source_sha256": "bac65e92d1e39cd9a76bbb353477704e7fd948d774b1e7aebc13990f7687c360"
+    },
+    "GreatestGuard": {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/greatest_guard_round1/GreatestGuard.lean",
+      "source_sha256": "c222ab95ec0f4f722c8a9ae3948a5514f528c3bb8b42d1c81bd2f0ce8702481e"
+    },
+    "DualHornGreatestGuard": {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/DualHornGreatestGuard.lean",
+      "source_sha256": "309b5fcbfa519b9c190cb0df95914a72b1de81ac4f8037890c07882be7612f0e"
+    }
+  },
+  "checked_guarded_hall_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/GuardedHall.olean",
+  "checked_guarded_hall_artifact_sha256": "aa5c82d9dd9955a3131767b174cb56dc9efacedb3ffcee1e3e72e168afe2b510",
+  "checks": [
+    {
+      "module": "DualHorn",
+      "exit_code": 0,
+      "elapsed_seconds": 33.304,
+      "output": "'PEqualNP.Outside.DualHorn.clause_join_closed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHorn.cnf_join_closed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHorn.positive_clause_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHorn.exists_greatest_model' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHorn.positive_guard_family_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/DualHorn.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/DualHorn.lean"
+      ]
+    },
+    {
+      "module": "GreatestGuard",
+      "exit_code": 0,
+      "elapsed_seconds": 8.462,
+      "output": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/GreatestGuard.lean:21:0: warning: automatically included section variable(s) unused in theorem `PEqualNP.Outside.GreatestGuard.edgeWitness_monotone`:\n  [Finite R]\n  [DecidableEq R]\n  [DecidableEq H]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite R] [DecidableEq R] [DecidableEq H] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/GreatestGuard.lean:38:0: warning: automatically included section variable(s) unused in theorem `PEqualNP.Outside.GreatestGuard.greatest_active_subset`:\n  [Finite R]\n  [DecidableEq R]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite R] [DecidableEq R] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n'PEqualNP.Outside.GreatestGuard.extension_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GreatestGuard.greatest_active_subset' does not depend on any axioms\n'PEqualNP.Outside.GreatestGuard.exists_feasible_iff_at_greatest' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.GreatestGuard.greatest_matching_iff_feasible_extension' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.GreatestGuard.greatest_failure_excludes_all' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.GreatestGuard.concrete_witness_lift' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/GreatestGuard.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/GreatestGuard.lean"
+      ]
+    },
+    {
+      "module": "DualHornGreatestGuard",
+      "exit_code": 0,
+      "elapsed_seconds": 39.477,
+      "output": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/DualHornGreatestGuard.lean:31:0: warning: automatically included section variable(s) unused in theorem `PEqualNP.Outside.DualHornGreatestGuard.retained_unsatisfiable_excludes_extension`:\n  [Finite R]\n  [DecidableEq R]\n  [DecidableEq H]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite R] [DecidableEq R] [DecidableEq H] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n'PEqualNP.Outside.DualHornGreatestGuard.restricted_extension_iff_matching' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.DualHornGreatestGuard.retained_unsatisfiable_excludes_extension' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/DualHornGreatestGuard.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/DualHornGreatestGuard.lean"
+      ]
+    }
+  ],
+  "exit_code": 0,
+  "upstream_checker": false,
+  "full_sat_proof": false,
+  "lean_version": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "final_source_hashes_rechecked": true,
+  "formalized_scope": [
+    "Actual project dual-Horn CNF syntax supplies greatest feasible assignment",
+    "Positive clause guards are monotone",
+    "Under static neighbor and typed row-private edge interface, extension exists iff matching exists at the greatest retained model",
+    "Unsatisfiable retained CNF excludes every extension"
+  ],
+  "not_proved": [
+    "Efficient greatest-model construction",
+    "CNF decomposition recognizer/refinement",
+    "Python candidate correctness",
+    "Matching implementation",
+    "Encoded-bit runtime",
+    "General SAT or P=NP"
+  ],
+  "private_raw_receipt": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/receipt.json"
+}

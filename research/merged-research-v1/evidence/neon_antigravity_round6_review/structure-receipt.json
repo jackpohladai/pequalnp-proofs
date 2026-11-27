@@ -1,0 +1,150 @@
+{
+  "at": "2026-11-26T18:34:36.523578+00:00",
+  "blocks": [
+    {
+      "signed_variables": [
+        1,
+        3,
+        4,
+        5,
+        12
+      ],
+      "truth_table_assignments_checked": 32,
+      "satisfying_assignments": 11
+    },
+    {
+      "signed_variables": [
+        1,
+        3,
+        6,
+        10,
+        11
+      ],
+      "truth_table_assignments_checked": 32,
+      "satisfying_assignments": 11
+    },
+    {
+      "signed_variables": [
+        1,
+        4,
+        8,
+        9,
+        10
+      ],
+      "truth_table_assignments_checked": 32,
+      "satisfying_assignments": 11
+    },
+    {
+      "signed_variables": [
+        2,
+        3,
+        5,
+        7,
+        8
+      ],
+      "truth_table_assignments_checked": 32,
+      "satisfying_assignments": 11
+    },
+    {
+      "signed_variables": [
+        2,
+        4,
+        6,
+        7,
+        11
+      ],
+      "truth_table_assignments_checked": 32,
+      "satisfying_assignments": 11
+    },
+    {
+      "signed_variables": [
+        2,
+        5,
+        9,
+        10,
+        11
+      ],
+      "truth_table_assignments_checked": 32,
+      "satisfying_assignments": 11
+    },
+    {
+      "signed_variables": [
+        -12,
+        6,
+        7,
+        8,
+        9
+      ],
+      "truth_table_assignments_checked": 32,
+      "satisfying_assignments": 11
+    }
+  ],
+  "formula_exactly_matches_blocks": true,
+  "mod3_sum_certificate": {
+    "coefficients": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      0
+    ],
+    "constant": 1,
+    "contradiction_mod3": true
+  },
+  "syntactic_xor_scan": [
+    {
+      "prefix": [],
+      "complete_xor_blocks": []
+    },
+    {
+      "prefix": [
+        false
+      ],
+      "complete_xor_blocks": []
+    },
+    {
+      "prefix": [
+        true
+      ],
+      "complete_xor_blocks": []
+    },
+    {
+      "prefix": [
+        false,
+        false
+      ],
+      "complete_xor_blocks": []
+    },
+    {
+      "prefix": [
+        false,
+        true
+      ],
+      "complete_xor_blocks": []
+    },
+    {
+      "prefix": [
+        true,
+        false
+      ],
+      "complete_xor_blocks": []
+    },
+    {
+      "prefix": [
+        true,
+        true
+      ],
+      "complete_xor_blocks": []
+    }
+  ],
+  "correction": "Complete-block syntactic XOR extraction finds nothing through depth2. The broader claim that no semantic GF2 equations exist is false: after a selector is1, an Exactly2-of4 block entails even parity. That is not the implemented extractor.",
+  "general_polynomial_sat_proof": false,
+  "scope": "Finite encoding and explicit modular contradiction certificate checked in Python; not Lean, not asymptotic growth proof."
+}

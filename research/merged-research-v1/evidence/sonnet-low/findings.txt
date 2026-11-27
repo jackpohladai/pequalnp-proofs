@@ -1,0 +1,15 @@
+join_affine passed its exhaustive oracle for n=0..3 (spaces: 2, 4, 12, 52, empty included).
+
+Tested:
+- Every ordered pair of spaces: output equals the canonical RREF of the hull found by point enumeration.
+- Per pair: many presentations of A (full, reversed, shuffled, duplicated minimal, all orders of one greedy minimal basis, several contradictions) against three presentations of B, in both argument orders. Not the full presentation cross-product.
+- Every pair of raw equation lists of length <=2.
+- RREF shape (pivot = highest coefficient bit), empty output [(0,1)], no input mutation, one-shot iterables, invalid inputs.
+- Regression A={000}, B={101,011}: [(7,0)].
+- Two planted faults (no empty branch; no back-substitution) were both detected. This was a one-off check, not part of the test file.
+
+Method: empty operand returns the other's RREF; otherwise intersect augmented row spaces via (A_perp + B_perp)_perp.
+
+Limits: finite tests do not formalize or prove the algorithm. n>3 is untested. No performance study. Validation rejects bools and non-tuple/list rows. This is a linear-algebra component only, with no bearing on P vs NP.
+
+Hashes: source.sha256, test-results.json.

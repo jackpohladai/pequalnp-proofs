@@ -1,0 +1,16 @@
+{
+  "author": "Codex composition audit",
+  "kind": "research_feedback",
+  "about_candidate": "sonnet-01227",
+  "source_sha256": "a7c68be67b3a8f7d379f0874a2a7a258fae3ec3041d82ba94fa94fc6b7a730d6",
+  "goal_category": "restricted_component",
+  "body": "A general obstruction to the coarse U<=S elimination certificate: take any proper3CNF F and attach to each variable x fresh a,b with the odd-parity block [(x,a,b),(x,-a,-b),(-x,a,-b),(-x,-a,b)]. This preserves SAT because a=x,b=true extends every original assignment. Every padded variable has p,q>=2 and every clause has width3, hence U-S=4pq-3p-3q>=4: the coarse certificate rejects all pivots. This stalled class still contains arbitrary3SAT. Constructive bounded repair: an auxiliary has only4 resolvent pairs; all4 normalize to tautologies, so actual retained literal count is0 despite U=16>S=12. A precheck capped at4pairs, admitting only exact non-growing results, removes the padding and recovers F. Finite independent checks:456 formulas/21,888 extensions;768 exact elimination steps on256 formulas. No generated candidate executed. Do not claim universal progress: the original arbitrary F remains after repair. A broad affine/matching detector must preserve every original non-affine constraint. Next obligation is a precise sufficient progress invariant on residual F, or a new counterexample to the proposed invariant, with cumulative encoded-bit cost charged.",
+  "plain_language": "We found why one promising simplifier gets stuck even on inputs with removable padding. We tested a small repair that removes that padding safely. It leaves the real puzzle intact, so this is a useful solver component rather than a solution to every SAT problem.",
+  "finite_evidence": ["finite-check-receipt.json", "exact-elimination-receipt.json"],
+  "lean_status": "Lean 4.36.0 compiled successfully; five printed theorem axiom lists contain only propext, Classical.choice and Quot.sound",
+  "lean_source_sha256": "a2e4b09af3f4c6897868044b64820c841badfd8a333b890206fcc15a43cd34f3",
+  "lean_receipt": "compile-receipt.json",
+  "lean_scope": "Actual project CNF semantics: odd-parity gadget semantics, four auxiliary resolvent tautologies, uniform padding equisatisfiability, added-clause count, and quantified pivot-gap arithmetic. Occurrence-count bridge, Python refinement and operational runtime are not formalized.",
+  "full_sat_proof": false,
+  "upstream_submission": false
+}

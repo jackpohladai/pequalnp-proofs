@@ -1,0 +1,103 @@
+**Status.** This is a hand-derived proposal: nothing here was run or machine-checked. It is not a polynomial SAT algorithm; the mechanism is bounded variable elimination (NiVER/SatELite), re-read as an exact state merge for MRA.
+
+## 1. Mechanism: gated sibling-merge (E-MRA)
+
+MRA's dominance test only compares states for implication. It never merges a disjunction of states, and that is the gap the family exploits.
+
+**Lemma 1 (merge identity, proved).** Write S = R ∧ P ∧ N, where P and N are the clauses containing x and ¬x, and P′, N′ are those clauses with the x-literal deleted. Then
+
+(S|x=0) ∨ (S|x=1) = (R ∧ P′) ∨ (R ∧ N′) ≡ R ∧ ⋀_{p∈P′, n∈N′} (p ∨ n).
+
+*Proof.* Distributivity. ∎
+
+So Davis–Putnam elimination of x is the exact CNF of the two sibling states, and it replaces two states by one.
+
+```
+ELIM(S):            # canon = UP (units retained), drop tautologies/duplicates, subsumption
+  stack ← []
+  loop:
+    if ⊥ ∈ S: return (UNSAT, stack)
+    if vars(S) = ∅: return (SAT, stack)
+    for x in vars(S) sorted by (|Pos(x)|·|Neg(x)|, index):
+      Res ← non-tautological resolvents on x of Pos(x) × Neg(x)
+      S' ← canon((S \ Pos(x) \ Neg(x)) ∪ Res)
+      if |S'| ≤ |S|:                                 # gate
+        push (x, Pos(x), Neg(x)); S ← S'; continue loop
+    return (STUCK(S), stack)
+
+E-MRA(F, order): MRA, except each new state G is replaced by ELIM(G)
+  (UNSAT → delete, SAT → answer SAT, STUCK(S) → S)
+  before dominance tests and 2SAT dispatch.
+Model: pop stack; set x true iff some clause of Pos(x) has all other literals false.
+```
+
+**Frontier invariant (proved from Lemma 1).** SAT(F) ⟺ some frontier state is satisfiable. Branching, canonization and 2SAT are exact. ELIM is equisatisfiable. A dominance drop only needs SAT(G) ⇒ SAT(H), which your Lean lemma supplies.
+
+**Lemma 2 (cost, proved).** Take m clauses and N variables. The gate keeps |S| ≤ m, and width is at most N. Each attempt forms at most m²/4 resolvents, with at most N attempts per elimination and at most N eliminations. ELIM therefore runs in O(N³m⁴) literal operations with naive subsumption, uses O(mN log N) bits of store, and keeps a stack of at most Nm clauses.
+
+## 2. What changes on the counterexample
+
+Let G_n = F_n ∧ C, with A_i = (x_i ∨ y_i ∨ ¬y_{i+1}), B_i = (¬x_i ∨ ¬y_i ∨ y_{i+1}), and C the eight clauses on y1, z1, z2.
+
+**Proposition (hand-proved, n ≥ 2, any tie-break).** ELIM refutes G_n with zero branches and zero 2SAT calls, for every supplied branching order.
+
+*Proof.*
+1. Invariant: the store is C ∪ {A_i, B_i : i ∈ I}.
+2. While I ≠ ∅, each x_i with i ∈ I has occurrence product 1. No present variable has product 0.
+3. The only other product-1 variables are y_j (j ≠ 1) with exactly one of j−1, j in I.
+4. In either case the single resolvent of the pair A_i, B_i is tautological, so the pair is deleted and the invariant holds.
+5. After n steps the store is C. Eliminating any core variable gives the four 2-clauses on the other two (the other 12 pairs are tautological), so 8 → 4.
+6. The next elimination gives two opposite units, so ⊥. ∎
+
+The clause count goes 2n+8 → … → 8 → 4 → ⊥, with 7 non-tautological resolvents in total.
+
+`★ Insight ─────────────────────────────────────`
+- The x-first children are (¬y_i ∨ y_{i+1}) and (y_i ∨ ¬y_{i+1}) plus the rest, and their disjunction is a tautology. The 2^n states are an implication-antichain whose OR is just C.
+- Dominance pruning cannot see that collapse; a merge can.
+- ELIM runs before branching, so the supplied order stops mattering on this family. Nothing has to find the core.
+`─────────────────────────────────────────────────`
+
+## 3. Falsification test (6 variables)
+
+Take G_2 with tie-break x1 < x2 < y1 < y2 < z1 < z2. The 12 clauses are:
+
+- (x1 ∨ y1 ∨ ¬y2), (¬x1 ∨ ¬y1 ∨ y2), (x2 ∨ y2 ∨ ¬y1), (¬x2 ∨ ¬y2 ∨ y1)
+- all 8 sign patterns on (y1, z1, z2)
+
+**Expected for G_2:** UNSAT.
+- Elimination order: x1, x2, y1, z1.
+- Clause counts: 12, 10, 8, 4, then units (z2), (¬z2) ⇒ ⊥.
+- 0 branches, 0 terminal calls.
+
+**Control:** delete (y1 ∨ z1 ∨ z2).
+
+**Expected for the control:** SAT.
+- Clause counts: 11, 9, 7, 3, 1, 0.
+- The 3-clause store is {(z1 ∨ ¬z2), (¬z1 ∨ z2), (¬z1 ∨ ¬z2)}, then {(¬z2)}.
+- The reconstructed model is all-false and must satisfy all 11 clauses.
+- A brute-force count gives exactly 5 models: the core forces y1 = z1 = z2 = 0, leaving (x1 ∨ ¬y2) ∧ (¬x2 ∨ ¬y2).
+
+Any deviation falsifies the implementation or my derivation.
+
+## 4. Theorems to test next
+
+**T1 (conjecture, order-robustness).** For all n ≥ 3, every gate-admissible elimination sequence on G_n ends in ⊥, not only the min-product rule. I proved only the min-product case. Test exhaustively for n = 2, 3 (at most 6! and 8! sequences) and by sampling for n ≤ 8. A single STUCK sequence refutes it. Passing gives finite evidence, not an all-n proof.
+
+**H2 (hypothesis, plausibly false).** For every CNF and every order, the E-MRA frontier is no larger than the MRA frontier. The risk is that resolvents widen clauses (width can reach N) and delay 2CNF dispatch. Rerun the 17,742-run exhaustive corpus on SAT/UNSAT answers only.
+
+## 5. What remains unproved, and a narrow rigorous limitation
+
+**Limitation (proved).** Every clause ELIM stores is derived from the input by resolution; canonization only deletes or unit-resolves. An ELIM-only UNSAT therefore yields a resolution refutation of size at most Nm²/4. By Haken and Urquhart, ELIM must return STUCK on pigeonhole and expander-Tseitin formulas for large n. There E-MRA degenerates to plain MRA.
+
+**Not claimed.** I do not claim that MRA or E-MRA as a whole is simulated by resolution. Lifting a refutation of H to a dominated state G reached under a different partial assignment needs H's assignment literals to be falsified at G. That state/merge invariant is unproved; it is the formula-caching subtlety studied by Beame–Impagliazzo–Pitassi–Segerlind (recalled, unverified). Abandoning MRA is therefore not yet justified.
+
+**Arbitrary CNFs.** There is no polynomial frontier bound, and the gate may never fire. The provable polynomial class is only the formulas where ELIM terminates with SAT or UNSAT.
+
+## 6. Obligations
+
+- **Representation.** Sorted literal lists, a hashed clause store, occurrence lists, and an elimination stack for model reconstruction.
+- **Counting.** Elimination destroys model counts, because ∃-projection is not count-preserving. The 14 count predictions do not transfer, so E-MRA must be SAT-only or carry a separate counting mode. This is consistent with the earlier finding that nonlinear residuals resist count shortcuts.
+- **Lean.** Prove Lemma 1, the reconstruction rule and the composed frontier invariant. Your existing dominance proof covers only the drop step.
+- **Bit cost.** Instrument peak |S|, peak width and resolvents formed against Lemma 2's bounds.
+- **Discovery.** There is no order search; the gate is local and deterministic. For T1, log the full admissible-choice tree.
+- **Evidence labels.** The Proposition is proved for all n ≥ 2 by hand and still needs a machine check. T1 and H2 are conjectures.

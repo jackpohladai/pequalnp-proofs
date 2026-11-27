@@ -1,0 +1,87 @@
+Alternating-path certificate producer and checked failed-search implication
+
+matching_search.py implements an alternating-path breadth-first search for the
+finite active-row bipartite matching problem. This is a search implementation,
+not enumeration of all matchings, subsets or SAT assignments. A separate agent
+independently tested the final frozen Python bytes and checked concrete outputs
+against the existing Lean validators. ExhaustedSearchCut.lean proves a key
+terminal implication. These are distinct kinds of evidence, not a complete
+formal verification of the Python search.
+
+Implementation
+
+Input rows have finite neighbor containers and exact Boolean guards. Active
+rows have false guards. The producer maintains row-to-hole and hole-to-row
+partial maps. From each unmatched active root it scans alternating paths using
+a row queue. Each reached row and hole is visited at most once in that attempt.
+On finding a free hole, it reverses the alternating path. On full exhaustion,
+it returns the reached row set as a deficient Hall certificate. Inactive rows
+are never searched or included in failure certificates.
+
+The graph is normalized by sorting/deduplicating neighborhoods. Invalid graph
+types/ranges raise TypeError or ValueError, rather than producing an UNSAT-like
+failure certificate. Every returned success/failure certificate must pass an
+explicit final validator; failure raises RuntimeError. This mandatory guard
+and the reconstruction path-length bound survive Python -O. Other internal
+assertions are diagnostic only. Sparse dictionaries avoid allocation by the
+numeric hole bound; 81-bit hole IDs are tested.
+
+The search records graph-operation counters. With a active rows and m active
+edges, at most a attempts, a*a row expansions, a*m edge scans and a*a path
+updates are expected from the visited-set structure and checked on test runs.
+These counters do not measure Python hash-table, sorting or integer bit costs
+and are not a formal encoded-bit runtime theorem.
+
+Checked Lean implication
+
+The theorem assumes a reached set S containing an unmatched root, row/owner
+table consistency (owner(k)=some i implies rowMatch(i)=some k), and full
+neighborhood closure: every hole in the entire union N(S) has an owner in S.
+It proves that owners inject this neighbor union into S with the root removed.
+Therefore |N(S)| < |S|. If all reached rows are active, failureCheck accepts S
+and no matching exists. The cardinal inequality is derived, not assumed.
+The premise uses the full neighbor union, not an undersampled visited-hole set.
+
+ExhaustedSearchCut.lean passed pinned Lean 4.36.0 in 34.004 seconds. Its axioms
+are only propext, Classical.choice and Quot.sound. The source-bound compile
+receipt and durable artifact are saved in this folder. Root independently
+audited the finite-cardinality argument and found it sound.
+
+Independent validation
+
+The final producer SHA is b2228cd0b580d9a4896ed00006f1eaa765114e43c6712a100ff56b181f28864d.
+The independent suite passed 7/7 tests normally and 7/7 under Python -O.
+Each run checks all 5,054 graph/guard instances through three rows and three
+holes against an independent ordered-injection oracle. Adversarial fixtures
+include a 1,100-row alternating ladder with a unique shifted matching, a proper
+deficient subset hidden in a globally balanced graph, zero dimensions,
+inactive rows, duplicate edges, malformed IDs, and sparse 81-bit hole IDs.
+
+Twelve actual outputs from these frozen Python bytes were translated with
+explicit checked Fin bounds and accepted by the pinned Lean validators.
+Four validator controls produced one expected acceptance and three rejections.
+This is finite cross-language evidence; it is not a Python-to-Lean refinement
+proof. The auditor-owned python-producer-validation.json records the exact
+source/test hashes, commands, results and generated Lean fixtures.
+
+Explicit remaining proof obligations
+
+1. Establish the initial partial-matching, neighbor-validity, active-domain and
+   inverse-table consistency invariants for the actual executable state.
+2. Prove BFS discovery preserves parent-chain validity, active reached rows,
+   and unique row/hole visits, with a finite search measure.
+3. Prove alternating-path reconstruction preserves neighbor validity,
+   injectivity and both partial tables, while adding exactly one matched row.
+4. Prove queue exhaustion establishes the full-neighborhood closure used by
+   the checked theorem, with no free hole and the root still unmatched.
+5. Prove outer-loop completion covers every active row and produces an accepted
+   success certificate.
+6. Refine the Python data/operations or replace the producer with a fully
+   verified typed Lean implementation; verify any external serialization.
+7. Account for operational encoded-bit costs and the still-separate raw-CNF
+   decomposition/recognition obligation.
+
+Do not report a fully verified matching-search component or general SAT solver
+from this work. The new kernel-checked fact is the failed-search implication
+under explicit invariants. Python tests and concrete Lean certificate checks
+remain separate. There is no general SAT, P=NP, upstream or website-credit claim.

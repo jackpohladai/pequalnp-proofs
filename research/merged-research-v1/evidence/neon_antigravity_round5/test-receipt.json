@@ -1,0 +1,20 @@
+{
+  "status": "not_confirmed",
+  "oracle_sat": false,
+  "observed": {
+    "sat": false,
+    "peak": 1,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 6
+  },
+  "summary": "Finite SCC-E-MRA growth fixture did not meet the specified criterion. This is not a general complexity result.",
+  "seconds": 0.12247991561889648,
+  "solver": "scc_emra",
+  "general_polynomial_sat_proof": false
+}

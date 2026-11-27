@@ -1,0 +1,14 @@
+{
+  "status": "fixture_predictions_match",
+  "summary": "Fable finite fixture matched its predictions. This does not verify its general theorem.",
+  "oracle_sat": false,
+  "observed": {
+    "sat": false,
+    "max_states": 4,
+    "branches": 14
+  },
+  "predicted_sat": false,
+  "predicted_peak": 4,
+  "elapsed_seconds": 0.047978878021240234,
+  "general_polynomial_sat_proof": false
+}

@@ -1,0 +1,84 @@
+{
+  "reviewed_at": "2026-11-26T17:34:12.507451+00:00",
+  "proposal_sha256": "f4caffb76b8e8aa076352591f380b233eec487f8ad3fc94d9e93c5defd5865a0",
+  "verdict": "Supplied parity/affine examples pass independent finite checks. Fable explicitly reports no surviving general worst-case repair.",
+  "tests": {
+    "F6": {
+      "clauses": 5,
+      "coordinate_elimination_accepted": true,
+      "exact_resolvents_match": true,
+      "projection_mismatches": 0,
+      "affine_merge_mismatches": 0,
+      "before_after_clause_counts": [
+        5,
+        5
+      ],
+      "affine_before_after_clause_counts": [
+        4,
+        5
+      ]
+    },
+    "Fano": {
+      "triples": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          1,
+          6,
+          7
+        ],
+        [
+          2,
+          4,
+          6
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          3,
+          4,
+          7
+        ],
+        [
+          3,
+          5,
+          6
+        ]
+      ],
+      "clauses": 28,
+      "parity_rank": 4,
+      "parity_solutions": 8,
+      "cnf_models": 0,
+      "parity_models_satisfying_cnf": 0
+    },
+    "K5": {
+      "charge_vectors": 32,
+      "truth_assignments_checked": 32768,
+      "cnf_xor_disagreements": 0,
+      "odd_charge_all_unsat": true,
+      "even_charge_models": [
+        64
+      ]
+    },
+    "elapsed_seconds": 0.22869396209716797,
+    "scope": "Finite example checks only; no implementation/proof of general affine compression, weighted elimination or polynomial state growth."
+  },
+  "remaining_obligations": [
+    "Implement and prove recognition/hull merge and affine elimination.",
+    "Prove a universal polynomial bound on remaining states; no candidate bound supplied.",
+    "Verify literature and proof-system simulations before using them."
+  ],
+  "general_polynomial_sat_proof": false,
+  "formal_component_checked": false
+}

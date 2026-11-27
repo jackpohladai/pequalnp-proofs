@@ -1,0 +1,79 @@
+Concrete dual-Horn syntax discharges the greatest-model premise
+
+DualHorn.lean uses the actual PEqualNP.Search Literal, Clause, CNF,
+Assignment, and evaluation definitions. A dual-Horn clause is defined
+syntactically by counting negative literal occurrences in its list and
+requiring that count to be at most one. Positive guards require every
+literal polarity to be true. No closure or greatest-model assumption is
+substituted for these syntax checks.
+
+The file proves binary model closure under coordinatewise Boolean OR.
+For a clause satisfied by two assignments, a positive witness remains
+true under OR. If both witnesses are negative, the syntactic count bound
+forces them to be the same literal, so its variable remains false. This
+lifts to CNFs using the actual list-conjunction semantics.
+
+It also proves positive-clause guards monotone under the actual pointwise
+Boolean order on assignments.
+
+Greatest-model existence
+
+VariablesBelow F n explicitly states that every variable identifier in F
+is less than n. From satisfiability, restrict a model to Fin n and extend
+it back by setting all outside variables true. The finite set of such
+models has a maximal element. The proved OR closure upgrades this element
+to a greatest model: OR with any other model stays feasible and dominates
+it, so maximality forces that OR below the chosen element. Finally, every
+original model restricts into this finite model set, and outside variables
+are already true. Thus the result dominates every actual Nat-indexed model,
+not just a sample of assignments.
+
+This is an existence proof using a finite maximal model. It does not
+construct a polynomial-time greatest-model algorithm. The index bound n
+is not a proved bound on encoded input length; sparse binary identifiers
+can be large. No runtime claim follows from finiteness of the model set.
+
+Direct composition
+
+DualHornGreatestGuard.lean imports the new DualHorn component and the
+unchanged GreatestGuard source. Its GuardedHall import resolves through
+the immutable checked_components bundle after verifying the artifact hash.
+The composition derives the greatest-feasible and monotone-guard premises
+from actual dual-Horn retained syntax and positive guards. For satisfiable
+retained F, some retained/private extension exists exactly when the active
+rows at the derived greatest model have an injective matching. A separate
+theorem says unsatisfiable retained F excludes every extension.
+
+The graph is still static and edge variables are still row-private. This
+does not certify a CNF recognizer's decomposition into retained variables,
+guards, rows and holes, or any Python solver implementation.
+
+Independent finite verification
+
+The verifier checks every subset of the allowed normalized clauses through
+two variables, and every dual-Horn formula with up to four clauses on three
+variables: 6,462 formulas, 4,339 satisfiable, and 29,479 model-pair OR checks.
+It verifies the greatest model and 216 positive-guard order comparisons.
+The two-negative clause (NOT x OR NOT y) supplies the expected counterexample
+to extending OR closure to arbitrary CNF. No candidate code is executed.
+
+Remaining obligations
+
+The retained dual-Horn greatest-model algorithm, recognition certificate,
+matching implementation, concrete variable encoding, witness assembly,
+and total encoded-bit runtime remain unproved. General CNF is not shown
+dual-Horn and general SAT is not solved. Read the source-bound compile
+receipts for exact accepted scopes; these are local Lean kernel checks,
+not an upstream assignment, project checker replay, or website credit.
+
+Final compile results
+
+The unchanged DualHorn source passed its initial pinned Lean 4.36.0 check
+in 16.244 seconds. The separate composition build recompiled DualHorn in
+33.304 seconds, the unchanged GreatestGuard dependency in 8.462 seconds,
+and DualHornGreatestGuard in 39.477 seconds. Every process exited zero.
+The only warnings are harmless unused section variables in GreatestGuard
+and the retained-unsatisfiable extension theorem. Printed theorem axioms
+are limited to propext, Classical.choice, and Quot.sound. Final source
+hashes match the accepted source bytes. The composition receipt records
+the checked GuardedHall import artifact hash and complete compiler output.

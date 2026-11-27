@@ -1,0 +1,47 @@
+{
+  "status": "fixture_predictions_match",
+  "summary": "Fable finite prediction matched on the deployed solver; broader mathematical claims remain unverified. Observed peak: 0; compression: skipped. Skip reason: all_variables_in_odd_blocks.",
+  "oracle_sat": false,
+  "observed": {
+    "sat": false,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 0,
+    "accepted_dp": 0,
+    "counting": {
+      "calls": 0,
+      "refutations": 0,
+      "windows": 0,
+      "tuples": 0,
+      "seconds": 0.0,
+      "truncated_calls": 0
+    },
+    "root_counting": null,
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-root-scc-emra-ialh5-v2",
+    "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "skipped",
+      "reason": "all_variables_in_odd_blocks",
+      "original_variables": 12,
+      "original_clauses": 8,
+      "seconds": 5.879200000002971e-05
+    }
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 0,
+    "accepted_dp": 0
+  },
+  "baseline_seconds": 0.0006076250000000005,
+  "updated_seconds": 0.006227333999999973,
+  "seconds": 0.02464675000000005,
+  "solver": "blq-root-scc-emra-ialh5-v2",
+  "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

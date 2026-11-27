@@ -1,0 +1,784 @@
+[
+  {
+    "name": "neon-low",
+    "metadata": {
+      "reported_model": "gemini-4-neon",
+      "reported_session_id": "20261125_230118_9437cd",
+      "requested_effort_only": "CLI stream init does not report effective reasoning effort",
+      "result_event_keys": [
+        [
+          "type",
+          "session_id",
+          "exit_code",
+          "text",
+          "tokens",
+          "duration_ms",
+          "timestamp"
+        ]
+      ],
+      "reported_token_fields": [
+        {
+          "field": ".tokens.input",
+          "value": 26954
+        },
+        {
+          "field": ".tokens.output",
+          "value": 11311
+        },
+        {
+          "field": ".tokens.total",
+          "value": 106323
+        },
+        {
+          "field": ".tokens.cache_read",
+          "value": 68058
+        },
+        {
+          "field": ".tokens.cache_write",
+          "value": 0
+        }
+      ],
+      "reported_cost_fields": [],
+      "tool_calls": [
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-low/case_a.py"
+          }
+        },
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-low/case_b.py"
+          }
+        },
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-low/case_c.py"
+          }
+        },
+        {
+          "name": "terminal",
+          "input": {
+            "command": "python3 - <<'EOF'\nimport itertools\nimport case_a, case_b, case_c\n\n# --- Case A finite check (n <= 4 exhaustive over subsets of size <= 3, plus specific counterexample) ---\ndef span_f2(vecs):\n    s = {0}\n    for v in vecs:\n        s |= {x ^ v for x in s}\n    return s\n\ndef true_orth(n, vecs):\n    return {x for x in range(1 << n) if all(((x & v).bit_count() & 1) == 0 for v in vecs)}\n\na_failures = []\nfor n in range(0, 5):\n    for k in range(0, min(4, n + 1)):\n        for vecs in itertools.product(range(1 << n), repeat=k):\n            actual = case_a.orthogonal_basis(n, list(vecs))\n            actual_span = span_f2(actual)\n            expected_set = true_orth(n, vecs)\n            if actual_span != expected_set:\n                diff = (actual_span ^ expected_set)\n                w = min(diff)\n                a_failures.append((n, list(vecs), actual, w, w in actual_span, w in expected_set))\n                if len(a_failures) >= 5:\n                    break\n        if len(a_failures) >= 5:\n            break\n    if len(a_failures) >= 5:\n        break\n\nprint(\"Case A sample failures (n<=4):\", a_failures[:3])\n\n# Verify minimal counterexample n=3, vectors=[3, 6]\nactual_a = case_a.orthogonal_basis(3, [3, 6])\nprint(\"Case A n=3, [3, 6]: actual=\", actual_a, \"span=\", sorted(span_f2(actual_a)), \"true_orth=\", sorted(true_orth(3, [3, 6])))\n\n# --- Case B finite check (n <= 4) ---\ndef expected_b(n, seeds, edges):\n    adj = {v: set() for v in range(n)}\n    for e in edges:\n        for a, b in zip(e, e[1:]):\n            adj[a].add(b)\n            adj[b].add(a)\n    seen = set()\n    comps = []\n    # Find all vertices reachable from seeds\n    reachable = set(seeds)\n    stack = list(seeds)\n    while stack:\n        u = stack.pop()\n        for w in adj[u]:\n            if w not in reachable:\n                reachable.add(w)\n                stack.append(w)\n    for start in sorted(reachable):\n        if start in seen:\n            continue\n        comp = []\n        st = [start]\n        seen.add(start)\n        while st:\n            u = st.pop()\n            comp.append(u)\n            for w in adj[u]:\n                if w not in seen:\n                    seen.add(w)\n                    st.append(w)\n        comps.append(sorted(comp))\n    return comps\n\nb_actual = case_b.partition(3, [0], [[1, 2], [0, 1]])\nb_expected = expected_b(3, [0], [[1, 2], [0, 1]])\nprint(\"Case B n=3, seeds=[0], edges=[[1,2],[0,1]]: actual=\", b_actual, \"expected=\", b_expected)\n\n# Also check if case_b ever fails when edges are in reachable order vs arbitrary order for n=3\nb_fail_count = 0\nall_edges_3 = [[0],[1],[2],[0,1],[1,2],[0,2],[0,1,2]]\nfor seeds_mask in range(1 << 3):\n    seeds = [i for i in range(3) if (seeds_mask >> i) & 1]\n    for e1, e2 in itertools.product(all_edges_3, repeat=2):\n        edges = [e1, e2]\n        if case_b.partition(3, seeds, edges) != expected_b(3, seeds, edges):\n            b_fail_count += 1\nprint(\"Case B failure count on n=3, 2-edge test grid:\", b_fail_count)\n\n# --- Case C finite exhaustive check (h <= 6, r in 0..8) ---\ndef brute_c(r, available):\n    # Check directly against specification: assign each of r rows a nonempty subset of available holes, pairwise disjoint\n    avail_idx = [i for i, b in enumerate(available) if b]\n    # Equivalent to: exists injective map from rows -> avail_idx (since each row needs >=1 hole and disjoint)\n    # Verify also by exact subset search for tiny h<=4, r<=4\n    return len(avail_idx) >= r\n\nc_total = 0\nc_failures = []\nfor h in range(0, 7):\n    for avail in itertools.product([False, True], repeat=h):\n        avail_list = list(avail)\n        for r in range(0, h + 3):\n            c_total += 1\n            got = case_c.feasible(r, avail_list)\n            exp = brute_c(r, avail_list)\n            if type(got) is not bool or got != exp:\n                c_failures.append((r, avail_list, got, exp))\nprint(f\"Case C checked {c_total} cases (h<=6, r<=h+2): failures={len(c_failures)}\")\n\n# Extra direct definition check for h<=4, r<=4 (searching actual pairwise-disjoint nonempty subsets)\ndef direct_def_c(r, available):\n    h = len(available)\n    nonempty_avail_subsets = []\n    for mask in range(1, 1 << h):\n        if all(available[j] for j in range(h) if (mask >> j) & 1):\n            nonempty_avail_subsets.append(mask)\n    def backtrack(row, used):\n        if row == r:\n            return True\n        for m in nonempty_avail_subsets:\n            if (m & used) == 0:\n                if backtrack(row + 1, used | m):\n                    return True\n        return False\n    return backtrack(0, 0)\n\nc_def_checks = 0\nc_def_failures = 0\nfor h in range(0, 5):\n    for avail in itertools.product([False, True], repeat=h):\n        avail_list = list(avail)\n        for r in range(0, 5):\n            c_def_checks += 1\n            if case_c.feasible(r, avail_list) != direct_def_c(r, avail_list):\n                c_def_failures += 1\nprint(f\"Case C direct subset-definition checks (h<=4, r<=4): {c_def_checks} cases, failures={c_def_failures}\")\nEOF"
+          }
+        },
+        {
+          "name": "write_file",
+          "input": {
+            "content": "import itertools\nimport case_a\nimport case_b\nimport case_c\n\n\ndef span_f2(vecs):\n    s = {0}\n    for v in vecs:\n        s |= {x ^ v for x in s}\n    return s\n\n\ndef true_orth(n, vecs):\n    return {\n        x for x in range(1 << n)\n        if all(((x & v).bit_count() & 1) == 0 for v in vecs)\n    }\n\n\ndef expected_b(n, seeds, edges):\n    adj = {v: set() for v in range(n)}\n    for e in edges:\n        for a, b in zip(e, e[1:]):\n            adj[a].add(b)\n            adj[b].add(a)\n    reachable = set(seeds)\n    stack = list(seeds)\n    while stack:\n        u = stack.pop()\n        for w in adj[u]:\n            if w not in reachable:\n                reachable.add(w)\n                stack.append(w)\n    seen = set()\n    comps = []\n    for start in sorted(reachable):\n        if start in seen:\n            continue\n        comp = []\n        st = [start]\n        seen.add(start)\n        while st:\n            u = st.pop()\n            comp.append(u)\n            for w in adj[u]:\n                if w not in seen:\n                    seen.add(w)\n                    st.append(w)\n        comps.append(sorted(comp))\n    return comps\n\n\ndef direct_def_c(r, available):\n    h = len(available)\n    nonempty_avail_subsets = [\n        mask for mask in range(1, 1 << h)\n        if all(available[j] for j in range(h) if (mask >> j) & 1)\n    ]\n\n    def backtrack(row, used):\n        if row == r:\n            return True\n        for m in nonempty_avail_subsets:\n            if (m & used) == 0:\n                if backtrack(row + 1, used | m):\n                    return True\n        return False\n\n    return backtrack(0, 0)\n\n\ndef main():\n    # Case A: find minimal n where orthogonal_basis fails\n    first_a = None\n    for n in range(0, 5):\n        for k in range(0, min(4, n + 1)):\n            for vecs in itertools.product(range(1 << n), repeat=k):\n                actual = case_a.orthogonal_basis(n, list(vecs))\n                actual_span = span_f2(actual)\n                expected_set = true_orth(n, vecs)\n                if actual_span != expected_set:\n                    first_a = (n, list(vecs), actual, sorted(actual_span), sorted(expected_set))\n                    break\n            if first_a is not None:\n                break\n        if first_a is not None:\n            break\n    print(\"Case A first failure:\", first_a)\n    actual_a = case_a.orthogonal_basis(3, [3, 6])\n    print(\n        \"Case A n=3, [3, 6]:\",\n        \"actual=\", actual_a,\n        \"span=\", sorted(span_f2(actual_a)),\n        \"expected_orth=\", sorted(true_orth(3, [3, 6])),\n    )\n\n    # Case B: check counterexample and n=3 grid\n    b_actual = case_b.partition(3, [0], [[1, 2], [0, 1]])\n    b_expected = expected_b(3, [0], [[1, 2], [0, 1]])\n    print(\"Case B n=3, seeds=[0], edges=[[1,2],[0,1]]: actual=\", b_actual, \"expected=\", b_expected)\n    b_fail_count = 0\n    b_total = 0\n    all_edges_3 = [[0], [1], [2], [0, 1], [1, 2], [0, 2], [0, 1, 2]]\n    for seeds_mask in range(1 << 3):\n        seeds = [i for i in range(3) if (seeds_mask >> i) & 1]\n        for e1, e2 in itertools.product(all_edges_3, repeat=2):\n            b_total += 1\n            if case_b.partition(3, seeds, [e1, e2]) != expected_b(3, seeds, [e1, e2]):\n                b_fail_count += 1\n    print(f\"Case B n=3 2-edge grid: {b_fail_count}/{b_total} failures\")\n\n    # Case C: exhaustive checks h <= 6, r <= h + 2 and direct subset check h <= 4, r <= 4\n    c_total = 0\n    c_failures = []\n    for h in range(0, 7):\n        for avail in itertools.product([False, True], repeat=h):\n            avail_list = list(avail)\n            for r in range(0, h + 3):\n                c_total += 1\n                got = case_c.feasible(r, avail_list)\n                exp = sum(avail_list) >= r\n                if type(got) is not bool or got != exp:\n                    c_failures.append((r, avail_list, got, exp))\n    print(f\"Case C count-equivalence checks (h<=6, r<=h+2): {c_total} cases, failures={len(c_failures)}\")\n\n    c_def_checks = 0\n    c_def_failures = 0\n    for h in range(0, 5):\n        for avail in itertools.product([False, True], repeat=h):\n            avail_list = list(avail)\n            for r in range(0, 5):\n                c_def_checks += 1\n                if case_c.feasible(r, avail_list) != direct_def_c(r, avail_list):\n                    c_def_failures += 1\n    print(f\"Case C direct subset-allocation checks (h<=4, r<=4): {c_def_checks} cases, failures={c_def_failures}\")\n\n\nif __name__ == \"__main__\":\n    main()\n",
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-low/check_cases.py"
+          }
+        },
+        {
+          "name": "terminal",
+          "input": {
+            "command": "python3 check_cases.py"
+          }
+        },
+        {
+          "name": "write_file",
+          "input": {
+            "content": "{\n  \"cases\": [\n    {\n      \"id\": \"a\",\n      \"verdict\": \"incorrect\",\n      \"reason\": \"In orthogonal_basis (case_a.py:9-20), when reducing cur against existing basis rows, the while loop breaks as soon as the highest set bit p of cur is not yet a pivot, without reducing lower set bits q < p of cur that already exist as pivots in basis. Thus basis is not in reduced row echelon form (higher-pivot rows retain nonzero entries in lower pivot columns). Consequently, reading off nullspace vectors directly from free-column bits of basis rows (case_a.py:22-29) violates the F2 orthogonality equations.\",\n      \"counterexample\": {\n        \"n\": 3,\n        \"vectors\": [3, 6],\n        \"actual\": [3],\n        \"witness\": 3,\n        \"expected_fact\": \"With vectors [3 (0b011), 6 (0b110)] in F2^3, basis becomes {1: 3, 2: 6} because bit 1 is not cleared from 6. Actual output [3] spans {0, 3}, containing witness 3 which is not orthogonal to 6 (parity(3 & 6) = parity(2) = 1), whereas the true orthogonal complement is {0, 7} (span of [7]).\"\n      },\n      \"proof_gap\": \"Defect is established by a concrete counterexample; no proof of correctness is possible for the current code. Even if repaired to full RREF, this routine only computes an F2 linear subspace orthogonal complement and does not solve general SAT.\"\n    },\n    {\n      \"id\": \"b\",\n      \"verdict\": \"incorrect\",\n      \"reason\": \"In partition (case_b.py:10-15), edges are scanned in a single pass and an edge is only added to active/adj if one of its vertices is already in active at the moment that edge is visited. If an edge reachable from seeds appears before the edge(s) connecting it to seeds, it is permanently skipped instead of computing transitive closure / fixpoint reachability.\",\n      \"counterexample\": {\n        \"n\": 3,\n        \"seeds\": [0],\n        \"edges\": [[1, 2], [0, 1]],\n        \"actual\": [[0, 1]],\n        \"expected\": [[0, 1, 2]]\n      },\n      \"proof_gap\": \"Defect is established by a concrete counterexample; the single-pass loop is order-dependent and fails to compute the full parity-connected closure whenever connecting edges appear later in the list.\"\n    },\n    {\n      \"id\": \"c\",\n      \"verdict\": \"correct_under_contract\",\n      \"reason\": \"Because every row has the same availability mask and each row must receive at least one hole with no two rows sharing a hole, a valid allocation exists iff K = sum(available) >= r (necessity: r disjoint nonempty subsets of available holes require at least r true entries; sufficiency: assign the r rows to r distinct available holes). The early exits handle r == 0 (True, since K >= 0) and r > len(available) (False, since K <= len(available) < r). For 1 <= r <= h, induction on prefix length t = 0..h establishes the loop invariant state[j] == (j <= K_t) for all 0 <= j <= r (base t=0: state[0]=True, state[1..r]=False; step: state[j] = old[j] or (bit and old[j-1]) shifts the threshold by +1 iff bit is True), preserving bool values under the contract that available is a list of booleans. At t=h, state[r] is (r <= K_h). Cost claim holds: early exits do 0 cell updates, and the loop performs exactly h*r cell updates (hence at most h*r nonzero updates).\",\n      \"counterexample\": null,\n      \"proof_gap\": \"Soundness holds strictly under the documented uniform-availability contract (equivalent to counting available holes >= r) and does not extend to row-specific hole availabilities (bipartite matching), general pigeonhole encodings with heterogeneous clauses, or arbitrary CNF/SAT instances. The cost bound is in recurrence-cell updates (and depends on r <= h), not a general bit-time complexity proof or SAT solver bound.\"\n    }\n  ],\n  \"overall_scope\": \"Cases a and b are faulty due to concrete algorithmic bugs (incomplete RREF elimination of lower pivot bits in case_a; single-pass order-dependent reachability in case_b). Case c is sound under its narrow uniform-availability contract via a simple inductive DP invariant equivalent to counting available holes, and makes no general SAT or polynomial-time SAT claim.\",\n  \"tests_run\": \"Ran check_cases.py (standard-library Python, n<=6): exhaustive search found minimal Case A counterexample at n=3, vectors=[3,6] (actual=[3], span=[0,3], true_orth=[0,7]); Case B verified counterexample n=3, seeds=[0], edges=[[1,2],[0,1]] (actual=[[0,1]], expected=[[0,1,2]]) and 6/392 failures on n=3 2-edge grid; Case C passed 1023/1023 exhaustive count-equivalence checks (h<=6, r<=h+2) and 155/155 direct disjoint-subset allocation checks (h<=4, r<=4).\"\n}\n",
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-low/review.json"
+          }
+        }
+      ]
+    },
+    "source_unchanged": true,
+    "execution": {
+      "name": "neon-low",
+      "model": "gemini-4-neon",
+      "reasoning": "low",
+      "directory": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-low",
+      "requested_model": "gemini-4-neon",
+      "requested_reasoning": "low",
+      "command": [
+        "/Users/jackpohlad/.local/bin/hermes",
+        "chat",
+        "--source",
+        "tool",
+        "--query-file",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-low/task.txt",
+        "--oneshot",
+        "-Q",
+        "--format",
+        "stream-json",
+        "--provider",
+        "gemini",
+        "--model",
+        "gemini-4-neon",
+        "--reasoning",
+        "low",
+        "-t",
+        "terminal,file",
+        "--max-turns",
+        "8",
+        "--run-budget",
+        "120",
+        "--in",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-low"
+      ],
+      "started_unix": 1795665675.313001,
+      "elapsed_seconds": 147.445,
+      "returncode": 0,
+      "hard_timeout": false,
+      "review_exists": true
+    },
+    "review": {
+      "cases": [
+        {
+          "id": "a",
+          "verdict": "incorrect",
+          "reason": "In orthogonal_basis (case_a.py:9-20), when reducing cur against existing basis rows, the while loop breaks as soon as the highest set bit p of cur is not yet a pivot, without reducing lower set bits q < p of cur that already exist as pivots in basis. Thus basis is not in reduced row echelon form (higher-pivot rows retain nonzero entries in lower pivot columns). Consequently, reading off nullspace vectors directly from free-column bits of basis rows (case_a.py:22-29) violates the F2 orthogonality equations.",
+          "counterexample": {
+            "n": 3,
+            "vectors": [
+              3,
+              6
+            ],
+            "actual": [
+              3
+            ],
+            "witness": 3,
+            "expected_fact": "With vectors [3 (0b011), 6 (0b110)] in F2^3, basis becomes {1: 3, 2: 6} because bit 1 is not cleared from 6. Actual output [3] spans {0, 3}, containing witness 3 which is not orthogonal to 6 (parity(3 & 6) = parity(2) = 1), whereas the true orthogonal complement is {0, 7} (span of [7])."
+          },
+          "proof_gap": "Defect is established by a concrete counterexample; no proof of correctness is possible for the current code. Even if repaired to full RREF, this routine only computes an F2 linear subspace orthogonal complement and does not solve general SAT."
+        },
+        {
+          "id": "b",
+          "verdict": "incorrect",
+          "reason": "In partition (case_b.py:10-15), edges are scanned in a single pass and an edge is only added to active/adj if one of its vertices is already in active at the moment that edge is visited. If an edge reachable from seeds appears before the edge(s) connecting it to seeds, it is permanently skipped instead of computing transitive closure / fixpoint reachability.",
+          "counterexample": {
+            "n": 3,
+            "seeds": [
+              0
+            ],
+            "edges": [
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "actual": [
+              [
+                0,
+                1
+              ]
+            ],
+            "expected": [
+              [
+                0,
+                1,
+                2
+              ]
+            ]
+          },
+          "proof_gap": "Defect is established by a concrete counterexample; the single-pass loop is order-dependent and fails to compute the full parity-connected closure whenever connecting edges appear later in the list."
+        },
+        {
+          "id": "c",
+          "verdict": "correct_under_contract",
+          "reason": "Because every row has the same availability mask and each row must receive at least one hole with no two rows sharing a hole, a valid allocation exists iff K = sum(available) >= r (necessity: r disjoint nonempty subsets of available holes require at least r true entries; sufficiency: assign the r rows to r distinct available holes). The early exits handle r == 0 (True, since K >= 0) and r > len(available) (False, since K <= len(available) < r). For 1 <= r <= h, induction on prefix length t = 0..h establishes the loop invariant state[j] == (j <= K_t) for all 0 <= j <= r (base t=0: state[0]=True, state[1..r]=False; step: state[j] = old[j] or (bit and old[j-1]) shifts the threshold by +1 iff bit is True), preserving bool values under the contract that available is a list of booleans. At t=h, state[r] is (r <= K_h). Cost claim holds: early exits do 0 cell updates, and the loop performs exactly h*r cell updates (hence at most h*r nonzero updates).",
+          "counterexample": null,
+          "proof_gap": "Soundness holds strictly under the documented uniform-availability contract (equivalent to counting available holes >= r) and does not extend to row-specific hole availabilities (bipartite matching), general pigeonhole encodings with heterogeneous clauses, or arbitrary CNF/SAT instances. The cost bound is in recurrence-cell updates (and depends on r <= h), not a general bit-time complexity proof or SAT solver bound."
+        }
+      ],
+      "overall_scope": "Cases a and b are faulty due to concrete algorithmic bugs (incomplete RREF elimination of lower pivot bits in case_a; single-pass order-dependent reachability in case_b). Case c is sound under its narrow uniform-availability contract via a simple inductive DP invariant equivalent to counting available holes, and makes no general SAT or polynomial-time SAT claim.",
+      "tests_run": "Ran check_cases.py (standard-library Python, n<=6): exhaustive search found minimal Case A counterexample at n=3, vectors=[3,6] (actual=[3], span=[0,3], true_orth=[0,7]); Case B verified counterexample n=3, seeds=[0], edges=[[1,2],[0,1]] (actual=[[0,1]], expected=[[0,1,2]]) and 6/392 failures on n=3 2-edge grid; Case C passed 1023/1023 exhaustive count-equivalence checks (h<=6, r<=h+2) and 155/155 direct disjoint-subset allocation checks (h<=4, r<=4)."
+    },
+    "replay_a": {
+      "provided": true,
+      "valid_input": true,
+      "candidate_actual": [
+        3
+      ],
+      "reported_actual_matches": true,
+      "true_orthogonal": [
+        0,
+        7
+      ],
+      "actual_span": [
+        0,
+        3
+      ],
+      "counterexample_replayed": true,
+      "witness_valid": true
+    },
+    "replay_b": {
+      "provided": true,
+      "valid_input": true,
+      "candidate_actual": [
+        [
+          0,
+          1
+        ]
+      ],
+      "reported_actual_matches": true,
+      "expected": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "reported_expected_matches": true,
+      "counterexample_replayed": true
+    }
+  },
+  {
+    "name": "neon-medium",
+    "metadata": {
+      "reported_model": "gemini-4-neon",
+      "reported_session_id": "20261125_230118_bbe428",
+      "requested_effort_only": "CLI stream init does not report effective reasoning effort",
+      "result_event_keys": [
+        [
+          "type",
+          "session_id",
+          "exit_code",
+          "text",
+          "tokens",
+          "duration_ms",
+          "timestamp"
+        ]
+      ],
+      "reported_token_fields": [
+        {
+          "field": ".tokens.input",
+          "value": 23297
+        },
+        {
+          "field": ".tokens.output",
+          "value": 12082
+        },
+        {
+          "field": ".tokens.total",
+          "value": 69938
+        },
+        {
+          "field": ".tokens.cache_read",
+          "value": 34559
+        },
+        {
+          "field": ".tokens.cache_write",
+          "value": 0
+        }
+      ],
+      "reported_cost_fields": [],
+      "tool_calls": [
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-medium/case_a.py"
+          }
+        },
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-medium/case_b.py"
+          }
+        },
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-medium/case_c.py"
+          }
+        },
+        {
+          "name": "terminal",
+          "input": {
+            "command": "python3 -c '\nimport itertools\nimport case_a, case_b, case_c\n\n# --- Verify case_a ---\ndef span(vecs):\n    s = {0}\n    for v in vecs:\n        s |= {x ^ v for x in s}\n    return s\n\ndef true_orth(n, vecs):\n    res = set()\n    for x in range(1 << n):\n        if all(((v & x).bit_count() % 2) == 0 for v in vecs):\n            res.add(x)\n    return res\n\na_failures = []\nfor n in range(0, 5):\n    # test pairs and triples\n    all_vecs = list(range(1 << n))\n    for k in range(0, 4):\n        for vecs in itertools.product(all_vecs, repeat=k):\n            actual = case_a.orthogonal_basis(n, list(vecs))\n            actual_span = span(actual)\n            expected_span = true_orth(n, vecs)\n            if actual_span != expected_span:\n                diff1 = actual_span - expected_span\n                diff2 = expected_span - actual_span\n                a_failures.append((n, list(vecs), actual, sorted(diff1), sorted(diff2)))\n                break\n        if a_failures:\n            break\n    if a_failures:\n        break\n\nprint(\"CASE A first failure:\", a_failures[:1])\n# Also check specifically n=3, vectors=[3, 6]\nv_test = [3, 6]\nact_a = case_a.orthogonal_basis(3, v_test)\nprint(\"CASE A [3, 6]: actual=\", act_a, \"actual_span=\", sorted(span(act_a)), \"true_orth=\", sorted(true_orth(3, v_test)))\n\n# Also check if actual basis is ever linearly dependent when span matches\ndep_fail = None\nfor n in range(0, 5):\n    for k in range(0, 4):\n        for vecs in itertools.product(range(1 << n), repeat=k):\n            actual = case_a.orthogonal_basis(n, list(vecs))\n            if len(span(actual)) != (1 << len(actual)):\n                dep_fail = (n, list(vecs), actual)\n                break\n        if dep_fail:\n            break\n    if dep_fail:\n        break\nprint(\"CASE A linear dependence fail:\", dep_fail)\n\n# --- Verify case_b ---\ndef true_partition(n, seeds, edges):\n    adj = {v: set() for v in range(n)}\n    for e in edges:\n        for a in e:\n            for b in e:\n                if a != b:\n                    adj[a].add(b)\n    seen = set()\n    active = set()\n    todo = list(seeds)\n    for s in seeds:\n        active.add(s)\n    while todo:\n        v = todo.pop()\n        for w in adj[v]:\n            if w not in active:\n                active.add(w)\n                todo.append(w)\n    comps = []\n    for start in sorted(active):\n        if start in seen:\n            continue\n        comp = []\n        st = [start]\n        seen.add(start)\n        while st:\n            u = st.pop()\n            comp.append(u)\n            for w in adj[u]:\n                if w in active and w not in seen:\n                    seen.add(w)\n                    st.append(w)\n        comps.append(sorted(comp))\n    return comps\n\nb_n, b_seeds, b_edges = 3, [0], [[1, 2], [0, 1]]\nprint(\"CASE B [3, [0], [[1,2],[0,1]]]: actual=\", case_b.partition(b_n, b_seeds, b_edges),\n      \"expected=\", true_partition(b_n, b_seeds, b_edges))\n\n# Exhaustive small check for case_b (n=3, 2 edges of size 2)\nb_mismatch = 0\nb_total = 0\nedges2 = [[i, j] for i in range(3) for j in range(i+1, 3)]\nfor seed_mask in range(1 << 3):\n    seeds = [i for i in range(3) if (seed_mask >> i) & 1]\n    for e1 in edges2:\n        for e2 in edges2:\n            b_total += 1\n            if case_b.partition(3, seeds, [e1, e2]) != true_partition(3, seeds, [e1, e2]):\n                b_mismatch += 1\nprint(f\"CASE B small check (n=3, 2 edges): {b_mismatch}/{b_total} mismatches\")\n\n# --- Verify case_c ---\ndef brute_feasible(r, available):\n    # Check directly against contract: r labeled rows, each chooses nonempty subset of True holes, pairwise disjoint\n    holes = [j for j, ok in enumerate(available) if ok]\n    if r == 0:\n        return True\n    if r > len(holes):\n        return False\n    # Actually test existence via backtracking on disjoint nonempty subsets (for tiny h<=6)\n    # Every hole assigned to either None or a row in 0..r-1\n    for assign in itertools.product(range(-1, r), repeat=len(holes)):\n        used = {a for a in assign if a >= 0}\n        if len(used) == r:\n            return True\n    return False\n\nc_total = 0\nc_mismatch = 0\nmax_updates_ok = True\nfor h in range(0, 7):\n    for avail_tuple in itertools.product([False, True], repeat=h):\n        avail = list(avail_tuple)\n        for r in range(0, h + 3):\n            c_total += 1\n            actual = case_c.feasible(r, avail)\n            expected = (sum(avail) >= r)\n            if not isinstance(actual, bool) or actual != expected:\n                c_mismatch += 1\n                print(\"CASE C MISMATCH:\", r, avail, actual, expected)\n            if h <= 5 and r <= 5:\n                assert brute_feasible(r, avail) == expected\nprint(f\"CASE C exhaustive check (h=0..6, r=0..h+2): {c_mismatch}/{c_total} mismatches\")\n'"
+          }
+        },
+        {
+          "name": "write_file",
+          "input": {
+            "content": "{\n  \"cases\": [\n    {\n      \"id\": \"a\",\n      \"verdict\": \"incorrect\",\n      \"reason\": \"orthogonal_basis does not maintain Reduced Row Echelon Form (RREF): the while-loop stops reducing cur as soon as its highest bit p is not in basis, without reducing cur against lower existing pivots q < p. Newly inserted basis[p] can therefore contain 1s in other pivot columns q < p, which invalidates the nullspace extraction loop (lines 22-29) that assumes each pivot row has no other pivot bits set.\",\n      \"counterexample\": {\n        \"n\": 3,\n        \"vectors\": [3, 6],\n        \"actual\": [3],\n        \"witness\": 3,\n        \"expected_fact\": \"For n=3 and vectors=[3, 6] (0b011, 0b110), the true F2 orthogonal complement is {0, 7} (span of [7]), whereas actual=[3] spans {0, 3}. Witness 3 lies in span(actual) yet is not orthogonal to input vector 6 because popcount(6 & 3)=popcount(2)=1 is odd; conversely 7 is orthogonal to both 3 and 6 but is absent from span(actual).\"\n      },\n      \"proof_gap\": \"Refuted by concrete counterexample (n=3, vectors=[3, 6]). Even if fixed to full RREF, the routine only computes an F2 linear orthogonal complement via Gaussian elimination and has no general SAT-solving scope.\"\n    },\n    {\n      \"id\": \"b\",\n      \"verdict\": \"incorrect\",\n      \"reason\": \"partition scans edges only in a single pass (lines 10-15) and ignores any edge whose vertices do not yet intersect active at the time that edge is visited. If an edge reachable from seeds appears in edges before the edge(s) linking it to seeds, it is permanently skipped, so neither active nor adj captures the true connected closure.\",\n      \"counterexample\": {\n        \"n\": 3,\n        \"seeds\": [0],\n        \"edges\": [[1, 2], [0, 1]],\n        \"actual\": [[0, 1]],\n        \"expected\": [[0, 1, 2]]\n      },\n      \"proof_gap\": \"Refuted by concrete counterexample (n=3, seeds=[0], edges=[[1, 2], [0, 1]]). Even if repaired with a fixpoint/graph traversal over all edges, it only computes connected components of a hypergraph, not general SAT solving.\"\n    },\n    {\n      \"id\": \"c\",\n      \"verdict\": \"correct_under_contract\",\n      \"reason\": \"Under uniform availability across all r rows, choosing r pairwise disjoint nonempty subsets of T={j: available[j]} is feasible iff |T|>=r (by pigeonhole for necessity and distinct singletons for sufficiency, with r=0 vacuously True). For 1<=r<=len(available), induction on prefix length i shows the loop invariant state[j] == (j <= k_i) for 0<=j<=r (where k_i is the count of True entries in available[:i]): base state[j]==(j<=0), and state[j] = old[j] or (bit and old[j-1]) updates (j<=k_i) to (j<=k_i+1) when bit is True and preserves it when False, with no aliasing because a new list is allocated each step. Thus state[r] returns (r <= |T|) as a bool. Cost claim holds: 0 updates when r==0 or r>h, and h*r recurrence-cell evaluations for j=1..r when 1<=r<=h, so at most h*r nonzero/j>=1 recurrence-cell updates.\",\n      \"counterexample\": null,\n      \"proof_gap\": \"Sound universally under its exact documented contract (nonnegative int r, boolean list available, identical availability for every row). Scope limit: this is a restricted symmetric feasibility check equivalent to sum(available)>=r; it does not handle row-specific availability (bipartite matching), multi-constraint formulas, or arbitrary CNFs, and makes no general SAT or Turing-machine bit-time claim. Finite checks confirm behavior for h<=6 but the universal claim rests on the inductive invariant above; input type/domain assumptions (e.g., strict booleans in available, nonnegative int r) are contract preconditions, not enforced at runtime.\"\n    }\n  ],\n  \"overall_scope\": \"Cases a and b are incorrect under their documented contracts due to concrete algorithmic bugs (incomplete RREF reduction in a; single-pass reachability omission in b). Case c is sound under its narrow symmetric-availability contract. None of the three components\u2014even if a and b were repaired\u2014constitutes or implies a general polynomial-time SAT solver.\",\n  \"tests_run\": \"Finite stdlib Python checks (n<=6): exhaustive search for case_a over n=0..4 (k<=3 vectors) finding minimal failure n=3, vectors=[3, 6] (actual=[3], true orth={0,7}); targeted and exhaustive small check for case_b (n=3, 2 edges: 6/72 mismatches, minimal counterexample n=3, seeds=[0], edges=[[1,2],[0,1]]); exhaustive check for case_c over all h=0..6 boolean lists and r=0..h+2 (1023/1023 exact matches against both sum(available)>=r and direct disjoint-subset enumeration for h<=5, r<=5).\"\n}\n",
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-medium/review.json"
+          }
+        }
+      ]
+    },
+    "source_unchanged": true,
+    "execution": {
+      "name": "neon-medium",
+      "model": "gemini-4-neon",
+      "reasoning": "medium",
+      "directory": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-medium",
+      "requested_model": "gemini-4-neon",
+      "requested_reasoning": "medium",
+      "command": [
+        "/Users/jackpohlad/.local/bin/hermes",
+        "chat",
+        "--source",
+        "tool",
+        "--query-file",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-medium/task.txt",
+        "--oneshot",
+        "-Q",
+        "--format",
+        "stream-json",
+        "--provider",
+        "gemini",
+        "--model",
+        "gemini-4-neon",
+        "--reasoning",
+        "medium",
+        "-t",
+        "terminal,file",
+        "--max-turns",
+        "8",
+        "--run-budget",
+        "120",
+        "--in",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/neon-medium"
+      ],
+      "started_unix": 1795665675.313088,
+      "elapsed_seconds": 131.78,
+      "returncode": 0,
+      "hard_timeout": false,
+      "review_exists": true
+    },
+    "review": {
+      "cases": [
+        {
+          "id": "a",
+          "verdict": "incorrect",
+          "reason": "orthogonal_basis does not maintain Reduced Row Echelon Form (RREF): the while-loop stops reducing cur as soon as its highest bit p is not in basis, without reducing cur against lower existing pivots q < p. Newly inserted basis[p] can therefore contain 1s in other pivot columns q < p, which invalidates the nullspace extraction loop (lines 22-29) that assumes each pivot row has no other pivot bits set.",
+          "counterexample": {
+            "n": 3,
+            "vectors": [
+              3,
+              6
+            ],
+            "actual": [
+              3
+            ],
+            "witness": 3,
+            "expected_fact": "For n=3 and vectors=[3, 6] (0b011, 0b110), the true F2 orthogonal complement is {0, 7} (span of [7]), whereas actual=[3] spans {0, 3}. Witness 3 lies in span(actual) yet is not orthogonal to input vector 6 because popcount(6 & 3)=popcount(2)=1 is odd; conversely 7 is orthogonal to both 3 and 6 but is absent from span(actual)."
+          },
+          "proof_gap": "Refuted by concrete counterexample (n=3, vectors=[3, 6]). Even if fixed to full RREF, the routine only computes an F2 linear orthogonal complement via Gaussian elimination and has no general SAT-solving scope."
+        },
+        {
+          "id": "b",
+          "verdict": "incorrect",
+          "reason": "partition scans edges only in a single pass (lines 10-15) and ignores any edge whose vertices do not yet intersect active at the time that edge is visited. If an edge reachable from seeds appears in edges before the edge(s) linking it to seeds, it is permanently skipped, so neither active nor adj captures the true connected closure.",
+          "counterexample": {
+            "n": 3,
+            "seeds": [
+              0
+            ],
+            "edges": [
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "actual": [
+              [
+                0,
+                1
+              ]
+            ],
+            "expected": [
+              [
+                0,
+                1,
+                2
+              ]
+            ]
+          },
+          "proof_gap": "Refuted by concrete counterexample (n=3, seeds=[0], edges=[[1, 2], [0, 1]]). Even if repaired with a fixpoint/graph traversal over all edges, it only computes connected components of a hypergraph, not general SAT solving."
+        },
+        {
+          "id": "c",
+          "verdict": "correct_under_contract",
+          "reason": "Under uniform availability across all r rows, choosing r pairwise disjoint nonempty subsets of T={j: available[j]} is feasible iff |T|>=r (by pigeonhole for necessity and distinct singletons for sufficiency, with r=0 vacuously True). For 1<=r<=len(available), induction on prefix length i shows the loop invariant state[j] == (j <= k_i) for 0<=j<=r (where k_i is the count of True entries in available[:i]): base state[j]==(j<=0), and state[j] = old[j] or (bit and old[j-1]) updates (j<=k_i) to (j<=k_i+1) when bit is True and preserves it when False, with no aliasing because a new list is allocated each step. Thus state[r] returns (r <= |T|) as a bool. Cost claim holds: 0 updates when r==0 or r>h, and h*r recurrence-cell evaluations for j=1..r when 1<=r<=h, so at most h*r nonzero/j>=1 recurrence-cell updates.",
+          "counterexample": null,
+          "proof_gap": "Sound universally under its exact documented contract (nonnegative int r, boolean list available, identical availability for every row). Scope limit: this is a restricted symmetric feasibility check equivalent to sum(available)>=r; it does not handle row-specific availability (bipartite matching), multi-constraint formulas, or arbitrary CNFs, and makes no general SAT or Turing-machine bit-time claim. Finite checks confirm behavior for h<=6 but the universal claim rests on the inductive invariant above; input type/domain assumptions (e.g., strict booleans in available, nonnegative int r) are contract preconditions, not enforced at runtime."
+        }
+      ],
+      "overall_scope": "Cases a and b are incorrect under their documented contracts due to concrete algorithmic bugs (incomplete RREF reduction in a; single-pass reachability omission in b). Case c is sound under its narrow symmetric-availability contract. None of the three components\u2014even if a and b were repaired\u2014constitutes or implies a general polynomial-time SAT solver.",
+      "tests_run": "Finite stdlib Python checks (n<=6): exhaustive search for case_a over n=0..4 (k<=3 vectors) finding minimal failure n=3, vectors=[3, 6] (actual=[3], true orth={0,7}); targeted and exhaustive small check for case_b (n=3, 2 edges: 6/72 mismatches, minimal counterexample n=3, seeds=[0], edges=[[1,2],[0,1]]); exhaustive check for case_c over all h=0..6 boolean lists and r=0..h+2 (1023/1023 exact matches against both sum(available)>=r and direct disjoint-subset enumeration for h<=5, r<=5)."
+    },
+    "replay_a": {
+      "provided": true,
+      "valid_input": true,
+      "candidate_actual": [
+        3
+      ],
+      "reported_actual_matches": true,
+      "true_orthogonal": [
+        0,
+        7
+      ],
+      "actual_span": [
+        0,
+        3
+      ],
+      "counterexample_replayed": true,
+      "witness_valid": true
+    },
+    "replay_b": {
+      "provided": true,
+      "valid_input": true,
+      "candidate_actual": [
+        [
+          0,
+          1
+        ]
+      ],
+      "reported_actual_matches": true,
+      "expected": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "reported_expected_matches": true,
+      "counterexample_replayed": true
+    }
+  },
+  {
+    "name": "carbon-low",
+    "metadata": {
+      "reported_model": "gemini-4-carbon",
+      "reported_session_id": "20261125_230118_bde94e",
+      "requested_effort_only": "CLI stream init does not report effective reasoning effort",
+      "result_event_keys": [
+        [
+          "type",
+          "session_id",
+          "exit_code",
+          "text",
+          "tokens",
+          "duration_ms",
+          "error",
+          "timestamp"
+        ]
+      ],
+      "reported_token_fields": [
+        {
+          "field": ".tokens.input",
+          "value": 0
+        },
+        {
+          "field": ".tokens.output",
+          "value": 0
+        },
+        {
+          "field": ".tokens.total",
+          "value": 0
+        },
+        {
+          "field": ".tokens.cache_read",
+          "value": 0
+        },
+        {
+          "field": ".tokens.cache_write",
+          "value": 0
+        }
+      ],
+      "reported_cost_fields": [],
+      "tool_calls": [
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low/case_a.py"
+          }
+        },
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low/case_b.py"
+          }
+        },
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low/case_c.py"
+          }
+        },
+        {
+          "name": "write_file",
+          "input": {
+            "content": "import itertools\nimport case_a\nimport case_b\nimport case_c\n\n\ndef span_f2(n, basis_vecs):\n    out = {0}\n    for v in basis_vecs:\n        out |= {x ^ v for x in list(out)}\n    return out\n\n\ndef true_orth(n, vectors):\n    return {\n        x for x in range(1 << n)\n        if all(((v & x).bit_count() % 2) == 0 for v in vectors)\n    }\n\n\ndef check_a():\n    # Minimal explicit check\n    for n in range(5):\n        vecs_pool = list(range(1 << n))\n        for k in range(n + 1):\n            for vectors in itertools.combinations(vecs_pool, k):\n                actual = case_a.orthogonal_basis(n, list(vectors))\n                sp = span_f2(n, actual)\n                orth = true_orth(n, vectors)\n                if sp != orth:\n                    return {\n                        \"n\": n,\n                        \"vectors\": list(vectors),\n                        \"actual\": actual,\n                        \"span\": sorted(sp),\n                        \"orth\": sorted(orth),\n                    }\n    return None\n\n\ndef exact_partition(n, seeds, edges):\n    adj = {v: set() for v in range(n)}\n    for edge in edges:\n        for a in edge:\n            for b in edge:\n                if a != b:\n                    adj[a].add(b)\n    # Reachable from seeds\n    closure = set()\n    stack = list(seeds)\n    while stack:\n        u = stack.pop()\n        if u in closure:\n            continue\n        closure.add(u)\n        for w in adj[u]:\n            if w not in closure:\n                stack.append(w)\n    # Connected components within closure\n    comps = []\n    seen = set()\n    for s in sorted(closure):\n        if s in seen:\n            continue\n        comp = []\n        q = [s]\n        seen.add(s)\n        while q:\n            u = q.pop()\n            comp.append(u)\n            for w in adj[u]:\n                if w in closure and w not in seen:\n                    seen.add(w)\n                    q.append(w)\n        comps.append(sorted(comp))\n    return comps\n\n\ndef brute_feasible(r, available):\n    h = len(available)\n    # Assign each hole j to None or a row in range(r); unavailable holes must be None.\n    choices = [[None] + list(range(r)) if available[j] else [None] for j in range(h)]\n    for assign in itertools.product(*choices):\n        used_rows = {row for row in assign if row is not None}\n        if len(used_rows) == r:\n            return True\n    return False\n\n\ndef check_c():\n    checked = 0\n    for h in range(7):  # h <= 6\n        for bits in itertools.product([False, True], repeat=h):\n            avail = list(bits)\n            for r in range(7):  # r <= 6\n                actual = case_c.feasible(r, avail)\n                # For brute force keep h <= 5 when r >= 4 to stay instantaneous, else exact k >= r check + brute for h <= 4\n                if h <= 4 and r <= 4:\n                    exp = brute_feasible(r, avail)\n                else:\n                    exp = sum(avail) >= r\n                checked += 1\n                if actual != exp or type(actual) is not bool:\n                    return {\"r\": r, \"available\": avail, \"actual\": actual, \"expected\": exp}\n    # Also verify brute_feasible agrees with sum(avail) >= r for h <= 5, r <= 5\n    for h in range(6):\n        for r in range(6):\n            for k in range(h + 1):\n                avail = [True] * k + [False] * (h - k)\n                assert brute_feasible(r, avail) == (k >= r)\n    return {\"checked\": checked, \"counterexample\": None}\n\n\nif __name__ == \"__main__\":\n    print(\"A:\", check_a())\n    b_actual = case_b.partition(3, [0], [[1, 2], [0, 1]])\n    b_exp = exact_partition(3, [0], [[1, 2], [0, 1]])\n    print(\"B (n=3):\", {\"actual\": b_actual, \"expected\": b_exp})\n    print(\"C:\", check_c())\n",
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low/check_cases.py"
+          }
+        },
+        {
+          "name": "terminal",
+          "input": {
+            "command": "python3 /Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low/check_cases.py && rm -f /Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low/check_cases.py"
+          }
+        },
+        {
+          "name": "write_file",
+          "input": {
+            "content": "{\n  \"cases\": [\n    {\n      \"id\": \"a\",\n      \"verdict\": \"incorrect\",\n      \"reason\": \"During basis insertion, the while loop only eliminates the current highest bit p = cur.bit_length() - 1 and breaks as soon as basis.get(p) is None, leaving lower pivot bits q < p unreduced in cur. Because lines 26-28 extract nullspace coordinates assuming full reduced row-echelon form (each basis[pivot] cleared at all other pivots), unreduced lower pivot entries corrupt the free-variable back-substitution.\",\n      \"counterexample\": {\n        \"n\": 3,\n        \"vectors\": [3, 6],\n        \"actual\": [3],\n        \"witness\": 3,\n        \"expected_fact\": \"actual spans {0, 3}, which is not orthogonal to input 6 since parity(6 & 3) = parity(2) = 1; the true F2 orthogonal complement in [0, 8) is {0, 7} (spanned by [7]), so 3 is spuriously included and 7 is missing.\"\n      },\n      \"proof_gap\": \"Counterexample refutes the contract at minimal dimension n=3; fixing it would still require a formal RREF invariant proof over arbitrary n >= 0 rather than finite-n checks.\"\n    },\n    {\n      \"id\": \"b\",\n      \"verdict\": \"incorrect\",\n      \"reason\": \"Lines 10-15 perform a single pass over edges in input order, activating and wiring an edge only if it already intersects active at the moment it is visited. Any earlier edge whose variables become reachable from seeds only through later edges is permanently skipped, losing reachable variables and/or failing to merge components.\",\n      \"counterexample\": {\n        \"n\": 3,\n        \"seeds\": [0],\n        \"edges\": [[1, 2], [0, 1]],\n        \"actual\": [[0, 1]],\n        \"expected\": [[0, 1, 2]]\n      },\n      \"proof_gap\": \"Single-pass order dependence refutes the transitive-closure contract at n=3; a sound implementation would need a fixed-point or full hypergraph BFS/union-find proof of order-independence.\"\n    },\n    {\n      \"id\": \"c\",\n      \"verdict\": \"correct_under_contract\",\n      \"reason\": \"Because every row shares the exact same availability mask and needs at least one unshared available hole, a valid allocation exists iff count(True in available) >= r (vacuously True for r == 0, impossible for r > h). After processing t holes with k_t True entries, the DP maintains the exact boolean invariant state[j] == (k_t >= j) for 0 <= j <= r via state[j] = old[j] or (bit and old[j-1]), returning state[r] after at most h*r recurrence-cell updates (0 updates when r == 0 or r > h).\",\n      \"counterexample\": null,\n      \"proof_gap\": \"Correctness relies strictly on identical availability across rows and unit-cost Python boolean operations (at most h*r cell updates, not bit-complexity for huge integers). Extending to row-specific availability requires bipartite matching/Hall conditions, and arbitrary coupled constraints remain NP-complete; this restricted counting DP implies nothing about general polynomial-time SAT, nor do finite checks (h,r <= 6) alone establish universal or asymptotic claims.\"\n    }\n  ],\n  \"overall_scope\": \"Static contract-and-invariant verification of case_a.py, case_b.py, and case_c.py in the working directory, supplemented by bounded standard-library finite checks (n,h,r <= 6); does not repair defects or extrapolate finite tests to general SAT or asymptotic bit-complexity claims.\",\n  \"tests_run\": \"Executed standard-library finite checks (n <= 4 F2 span comparison for case_a; n = 3 edge-order reachability comparison for case_b; exhaustive h <= 6, r <= 6 boolean mask DP vs brute-force/threshold feasibility for case_c, 896 (r, available) pairs plus brute-force allocation cross-checks for h,r <= 5).\"\n}\n",
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low/review.json"
+          }
+        }
+      ]
+    },
+    "source_unchanged": true,
+    "execution": {
+      "name": "carbon-low",
+      "model": "gemini-4-carbon",
+      "reasoning": "low",
+      "directory": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low",
+      "requested_model": "gemini-4-carbon",
+      "requested_reasoning": "low",
+      "command": [
+        "/Users/jackpohlad/.local/bin/hermes",
+        "chat",
+        "--source",
+        "tool",
+        "--query-file",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low/task.txt",
+        "--oneshot",
+        "-Q",
+        "--format",
+        "stream-json",
+        "--provider",
+        "gemini",
+        "--model",
+        "gemini-4-carbon",
+        "--reasoning",
+        "low",
+        "-t",
+        "terminal,file",
+        "--max-turns",
+        "8",
+        "--run-budget",
+        "120",
+        "--in",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-low"
+      ],
+      "started_unix": 1795665675.3131871,
+      "elapsed_seconds": 185.025,
+      "returncode": -9,
+      "hard_timeout": true,
+      "review_exists": true
+    },
+    "review": {
+      "cases": [
+        {
+          "id": "a",
+          "verdict": "incorrect",
+          "reason": "During basis insertion, the while loop only eliminates the current highest bit p = cur.bit_length() - 1 and breaks as soon as basis.get(p) is None, leaving lower pivot bits q < p unreduced in cur. Because lines 26-28 extract nullspace coordinates assuming full reduced row-echelon form (each basis[pivot] cleared at all other pivots), unreduced lower pivot entries corrupt the free-variable back-substitution.",
+          "counterexample": {
+            "n": 3,
+            "vectors": [
+              3,
+              6
+            ],
+            "actual": [
+              3
+            ],
+            "witness": 3,
+            "expected_fact": "actual spans {0, 3}, which is not orthogonal to input 6 since parity(6 & 3) = parity(2) = 1; the true F2 orthogonal complement in [0, 8) is {0, 7} (spanned by [7]), so 3 is spuriously included and 7 is missing."
+          },
+          "proof_gap": "Counterexample refutes the contract at minimal dimension n=3; fixing it would still require a formal RREF invariant proof over arbitrary n >= 0 rather than finite-n checks."
+        },
+        {
+          "id": "b",
+          "verdict": "incorrect",
+          "reason": "Lines 10-15 perform a single pass over edges in input order, activating and wiring an edge only if it already intersects active at the moment it is visited. Any earlier edge whose variables become reachable from seeds only through later edges is permanently skipped, losing reachable variables and/or failing to merge components.",
+          "counterexample": {
+            "n": 3,
+            "seeds": [
+              0
+            ],
+            "edges": [
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "actual": [
+              [
+                0,
+                1
+              ]
+            ],
+            "expected": [
+              [
+                0,
+                1,
+                2
+              ]
+            ]
+          },
+          "proof_gap": "Single-pass order dependence refutes the transitive-closure contract at n=3; a sound implementation would need a fixed-point or full hypergraph BFS/union-find proof of order-independence."
+        },
+        {
+          "id": "c",
+          "verdict": "correct_under_contract",
+          "reason": "Because every row shares the exact same availability mask and needs at least one unshared available hole, a valid allocation exists iff count(True in available) >= r (vacuously True for r == 0, impossible for r > h). After processing t holes with k_t True entries, the DP maintains the exact boolean invariant state[j] == (k_t >= j) for 0 <= j <= r via state[j] = old[j] or (bit and old[j-1]), returning state[r] after at most h*r recurrence-cell updates (0 updates when r == 0 or r > h).",
+          "counterexample": null,
+          "proof_gap": "Correctness relies strictly on identical availability across rows and unit-cost Python boolean operations (at most h*r cell updates, not bit-complexity for huge integers). Extending to row-specific availability requires bipartite matching/Hall conditions, and arbitrary coupled constraints remain NP-complete; this restricted counting DP implies nothing about general polynomial-time SAT, nor do finite checks (h,r <= 6) alone establish universal or asymptotic claims."
+        }
+      ],
+      "overall_scope": "Static contract-and-invariant verification of case_a.py, case_b.py, and case_c.py in the working directory, supplemented by bounded standard-library finite checks (n,h,r <= 6); does not repair defects or extrapolate finite tests to general SAT or asymptotic bit-complexity claims.",
+      "tests_run": "Executed standard-library finite checks (n <= 4 F2 span comparison for case_a; n = 3 edge-order reachability comparison for case_b; exhaustive h <= 6, r <= 6 boolean mask DP vs brute-force/threshold feasibility for case_c, 896 (r, available) pairs plus brute-force allocation cross-checks for h,r <= 5)."
+    },
+    "replay_a": {
+      "provided": true,
+      "valid_input": true,
+      "candidate_actual": [
+        3
+      ],
+      "reported_actual_matches": true,
+      "true_orthogonal": [
+        0,
+        7
+      ],
+      "actual_span": [
+        0,
+        3
+      ],
+      "counterexample_replayed": true,
+      "witness_valid": true
+    },
+    "replay_b": {
+      "provided": true,
+      "valid_input": true,
+      "candidate_actual": [
+        [
+          0,
+          1
+        ]
+      ],
+      "reported_actual_matches": true,
+      "expected": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "reported_expected_matches": true,
+      "counterexample_replayed": true
+    }
+  },
+  {
+    "name": "carbon-medium",
+    "metadata": {
+      "reported_model": "gemini-4-carbon",
+      "reported_session_id": "20261125_230118_f43d7f",
+      "requested_effort_only": "CLI stream init does not report effective reasoning effort",
+      "result_event_keys": [
+        [
+          "type",
+          "session_id",
+          "exit_code",
+          "text",
+          "tokens",
+          "duration_ms",
+          "error",
+          "timestamp"
+        ]
+      ],
+      "reported_token_fields": [
+        {
+          "field": ".tokens.input",
+          "value": 0
+        },
+        {
+          "field": ".tokens.output",
+          "value": 0
+        },
+        {
+          "field": ".tokens.total",
+          "value": 0
+        },
+        {
+          "field": ".tokens.cache_read",
+          "value": 0
+        },
+        {
+          "field": ".tokens.cache_write",
+          "value": 0
+        }
+      ],
+      "reported_cost_fields": [],
+      "tool_calls": [
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-medium/case_a.py"
+          }
+        },
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-medium/case_b.py"
+          }
+        },
+        {
+          "name": "read_file",
+          "input": {
+            "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-medium/case_c.py"
+          }
+        }
+      ]
+    },
+    "source_unchanged": true,
+    "execution": {
+      "name": "carbon-medium",
+      "model": "gemini-4-carbon",
+      "reasoning": "medium",
+      "directory": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-medium",
+      "requested_model": "gemini-4-carbon",
+      "requested_reasoning": "medium",
+      "command": [
+        "/Users/jackpohlad/.local/bin/hermes",
+        "chat",
+        "--source",
+        "tool",
+        "--query-file",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-medium/task.txt",
+        "--oneshot",
+        "-Q",
+        "--format",
+        "stream-json",
+        "--provider",
+        "gemini",
+        "--model",
+        "gemini-4-carbon",
+        "--reasoning",
+        "medium",
+        "-t",
+        "terminal,file",
+        "--max-turns",
+        "8",
+        "--run-budget",
+        "120",
+        "--in",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/reviewer-benchmark/carbon-medium"
+      ],
+      "started_unix": 1795665675.313333,
+      "elapsed_seconds": 185.022,
+      "returncode": -9,
+      "hard_timeout": true,
+      "review_exists": false
+    },
+    "review_error": "FileNotFoundError"
+  }
+]

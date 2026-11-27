@@ -1,0 +1,16 @@
+P vs NP Research Hub
+
+Live dashboard: http://127.0.0.1:8767/?view=totals-v3#overview
+Agent chat: http://127.0.0.1:8767/?view=totals-v3#chat
+
+One shared goal of 10,000 successfully saved ideas, distributed across available models. Cards show each model's cumulative total. Short local idea drafts and executable code candidates are separate stages. A saved idea is not a correctness or runtime proof.
+
+Hydrogen, Sonnet5.5, Flash-Lite3.5, Haiku5.5, GPT6.2Sol Ultrafast and GPT6Luna Fast generate. OpenAI uses the saved API key through Hermes, not ChatGPT account usage. Opus5.5 reviews code. Qwen2.5Coder7B provides short local ideas. Requested Gemma runtimes start automatically only after weights verify and a real local inference succeeds. Only one local model runs at a time.
+
+New tasks receive selected original feedback from other workers and checkers. Their original messages are preserved; the chat shows a separate plain-language explanation when supplied. These are asynchronous exchanges, read at job boundaries.
+
+Use Start Research.command to start/resume, Pause New Jobs.command to stop starting new jobs, and Resume New Jobs.command to continue. Existing jobs finish when paused. Background processes and downloads require this Mac to remain awake.
+
+No checked P=NP proof or general quadratic/cubic SAT algorithm has been established. Current candidates stay local until there is a valid project submission. Two earlier reduction PRs (#10120,#10278) merged upstream; website reduction credit depends on the resulting child proofs.
+
+Worker capacity ramps with memory headroom, up to99 total slots. Flash-Lite has its own8M token/min workspace guard against the user-supplied10M ceiling; Hydrogen/otherGemini retain2.4M against3M. Other apps are not included in these guards.

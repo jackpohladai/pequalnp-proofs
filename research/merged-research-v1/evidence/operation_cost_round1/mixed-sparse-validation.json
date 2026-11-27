@@ -1,0 +1,70 @@
+{
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/MixedConstructorTestsSparse.lean",
+  "source_sha256": "f9e69078464c3c922d73c4b369d354d7f9fd03e7364dfb06f181e1c7763aba5f",
+  "lean_version": "4.36.0",
+  "compiler_command": [
+    "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+    "-j",
+    "1",
+    "-DElab.async=false",
+    "-o",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-bounded-constructor-regression-iub19yv5/MixedConstructorTestsSparse.olean",
+    "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-bounded-constructor-regression-iub19yv5/MixedConstructorTestsSparse.lean"
+  ],
+  "exit_code": 0,
+  "stdout": "{ cases := 6756,\n  assignments := 135152,\n  encodingTruthTablesAgree := 6756,\n  privateIDChecksPass := 6756,\n  accepted := 6756,\n  expectedSat := 3482,\n  retainedUnsat := 2252,\n  sat := 3482,\n  unsat := 3274,\n  unsupported := 0,\n  inconclusive := 0,\n  satWitnessesVerified := 3482,\n  duplicateNeighborhoods := 2880,\n  emptyRows := 36,\n  emptyHoles := 372 }\n[true, true, true, true]\n[true, true, true, true]\n'_private.MixedConstructorTestsSparse.0.PEqualNP.Outside.MixedConstructorTestsSparse.systemCounts' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'_private.MixedConstructorTestsSparse.0.PEqualNP.Outside.MixedConstructorTestsSparse.targeted' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'_private.MixedConstructorTestsSparse.0.PEqualNP.Outside.MixedConstructorTestsSparse.boundaryControls' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+  "stderr": "",
+  "elapsed_seconds": 8.299914958,
+  "validation_receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/sparse-constructor-validation.json",
+      "sha256": "9e31c42e45b6fcadc02388c08ce1dad2ef0758bbc6400c959ff8d1bb75542693"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/MixedConstructorTests-validation.json",
+      "sha256": "f39d3e4910110fa2e54f3ebab06475e6f9df57cdad5009927a04ea161c213587"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-validation.json",
+      "sha256": "6986291b8d4f7cb21e9f309bbc50f687b942faa396a0743d69abd9d30ed022fe"
+    }
+  ],
+  "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/MixedConstructorTestsSparse-build/lib/lean/MixedConstructorTestsSparse.olean",
+  "artifact_sha256": "754ea310318f3edf6898ecdcb8db62b5a82bf0d55ade3677bf315f6ca7db5a14",
+  "compiled_source_snapshot": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/MixedConstructorTestsSparse-build/source/MixedConstructorTestsSparse.lean",
+  "recorded_utc": "2026-11-26T11:28:18.883059+00:00",
+  "systematic_counts": {
+    "cases": 6756,
+    "assignments": 135152,
+    "encodingTruthTablesAgree": 6756,
+    "privateIDChecksPass": 6756,
+    "accepted": 6756,
+    "expectedSat": 3482,
+    "retainedUnsat": 2252,
+    "sat": 3482,
+    "unsat": 3274,
+    "unsupported": 0,
+    "inconclusive": 0,
+    "satWitnessesVerified": 3482,
+    "duplicateNeighborhoods": 2880,
+    "emptyRows": 36,
+    "emptyHoles": 372
+  },
+  "targeted_fixture_passes": 4,
+  "unsupported_boundary_control_passes": 4,
+  "source_pins": {
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/SparseValidatedConstructor.lean": "c86e2d4eacd15536e50bbe1e48204c10e3030f1f1aeceb800f3433a7a0382d2f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/constructor-build/lib/lean/SparseValidatedConstructor.olean": "a62a0b7ca37d985d985521d069ab96d7ff17a38e9a63bafd4a3c40e530c09d47",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/constructor-build/lib/lean/SparseValidatedConstructor.c": "179136ef5be99b835b84c1581f7b52c6359a76532e148a92e4be740a266cc777",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/BoundedGuardVectorConstructor.lean": "3a3a0871118b543d9a9e21359b1819a10f7bce5011b3756a1f9f559a9668700f",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean/BoundedGuardVectorConstructor.olean": "f2f9492002d7fae25cdb8372193827e5febf812135ae036ac9821b3f18791404",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/BoundedGuardVectorInput.lean": "784a038f9fcb96bc7112b6c70409dba69954cd2ee4fbd9fa735251a2b986d114",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean/BoundedGuardVectorInput.olean": "eec956a8dea0448eccb4ab613ed769fdb80736fb72319a76aa94a13248c03625",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/sparse-constructor-validation.json": "9e31c42e45b6fcadc02388c08ce1dad2ef0758bbc6400c959ff8d1bb75542693"
+  },
+  "old_fixture_source": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/MixedConstructorTests.lean",
+    "sha256": "482206de22e58769e2330c7e39bcfe0685da53fb14d41d14e0d8b6329af70dbc"
+  },
+  "scope": "The old independent oracle/truth-table/witness suite is preserved. Each case now calls the sparse-validated bounded explicit natural-list constructor, including the unsupported-control cases. Counts describe the same fixed 6,756-case input space as the old harness."
+}

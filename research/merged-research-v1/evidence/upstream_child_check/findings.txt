@@ -1,0 +1,35 @@
+L-meta-7545 remains a conjecture in the official ledger. The merged reduction
+R_meta_2631_731 from PR 10278 uses this claim as its privateCase hypothesis.
+The pull request body mentions a locally tested proof without linking its source.
+The local checkouts and public contributor branch search yielded no exact proof.
+
+The proposition in L-meta-7545.statement.txt is the ledger statement. Its UTF-8
+bytes, excluding the trailing file newline, match the published SHA-256
+38cf323d98042d209d1dab50c499e68983f1ba927fb6f2d73797c8526bb4fa92.
+PostedStatement.lean imports the statement's defining module. Lean 4.36.0
+timed out after 55 seconds with the umbrella PEqualNP.Defs import and after
+90 seconds with the narrower NestedCoverCircuit import. Neither attempt
+reached an elaboration verdict. Elaborating a proposition checks its type
+and supplies no proof.
+
+For a clean least gate list, adapt EdgeFnAnd.and_core. Replace the private
+operand gate with NOT x. Under x=false, the AND output stays false and other
+wires keep their values. Charge the private gate, the AND, the second reader
+of x, and a later reader of the AND. The second reader cannot be the private
+operand or the AND's later reader, by Readers.Least.no_tri. The existence of
+the later reader follows from minimality and non-constancy under the
+restriction. For the graph function, an edge survives x=false: if a known
+edge meets x, its other endpoint has degree three and hence a neighbor
+different from x. Compare the all-false assignment with one setting both
+ends of that surviving edge true. The private operand cannot be the output
+in a least circuit, because the later AND would then be past the output
+and removable. The exact posted theorem additionally requires preserving the
+reader and private-operand premises when moving from its arbitrary minimal
+circuit to the clean representation. Existence of some clean least circuit
+alone does not preserve those premises. This is a proof plan.
+
+Reference sources
+https://data.pequalnp.com/data/lemma/L-meta-7545.873bcb492fac.json
+https://github.com/open-goat/pequalnp-proofs/pull/10278
+https://github.com/open-goat/pequalnp-proofs/blob/main/lean/PEqualNP/MetaComplexity/Helpers/EdgeFnAnd.lean
+https://github.com/open-goat/pequalnp-proofs/blob/main/lean/PEqualNP/MetaComplexity/Helpers/ReadersPat.lean

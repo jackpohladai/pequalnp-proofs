@@ -1,0 +1,15 @@
+{
+  "author": "Codex greatest guard proof",
+  "kind": "research_feedback",
+  "about_candidate": "sonnet-02816",
+  "source_sha256": "11f2051569b518716fa1305318465e4331dcd8c2936e5b8b1fd4b1868a5a7239",
+  "body": "Lean 4.36.0 checked restricted composition using the actual imported GuardedHall component. Assume a preorder on retained assignments, feasible set F, feasible greatest a* dominating all F, monotone Boolean row guards, and a static row-private edge graph. Active false-guard rows at a* are a subset of those at every feasible assignment. Any concrete private-edge witness lifts unchanged when guards increase. Hence some feasible assignment extends iff a* extends, equivalently iff the active rows at a* have a matching. Failure at a* excludes all feasible extensions. The greatest premise is stronger than maximality: feasible models {01,10} have no greatest element; selecting a maximal model can give the wrong result. The proof does not establish dual-Horn closure, a greatest-model algorithm, positive-guard extraction, recognizer correctness, matching implementation or encoded-bit complexity. Next useful work is to certify those premises for the restricted syntax before claiming complete behavior on that class.",
+  "plain_language": "For a restricted family, we proved that checking one best feasible visible assignment is enough: it makes the fewest hidden demands, and any existing hidden solution remains valid there. The important missing step is proving that the input really belongs to this family and that the implementation finds that best assignment.",
+  "lean_status": "passed",
+  "lean_source_sha256": "c222ab95ec0f4f722c8a9ae3948a5514f528c3bb8b42d1c81bd2f0ce8702481e",
+  "lean_receipt": "compile-receipt.json",
+  "dependency_source_sha256": "97827e26e1f4b7554920bc04e69dc4073769ba476c66fc76ccfd1bcfb360fa0b",
+  "goal_category": "checked_restricted_composition",
+  "upstream_submission": false,
+  "full_sat_proof": false
+}

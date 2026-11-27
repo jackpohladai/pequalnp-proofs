@@ -1,0 +1,53 @@
+{
+  "status": "checked_concrete_raw_BFS_operation_model",
+  "scope": "A separate executable list-seen scan and BFS, exactly result-equivalent to the existing raw path search on a concrete bounded matching table. Not yet substituted into whole solver.",
+  "receipts": [
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/scan-validation.json",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/search-validation.json",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/examples-validation.json"
+  ],
+  "counted": [
+    "nonempty queue pops",
+    "each neighbor inspection including duplicates",
+    "direct owner table key comparisons",
+    "seen-row list key comparisons",
+    "queue cells copied and new appended queue cell",
+    "new seen-row and reverse-path cons cells"
+  ],
+  "proved": [
+    "Primitive membership/append/owner counter result erasures.",
+    "Complete scan result projects to old scanPaths with seen list converted to Finset.",
+    "Unique seen-list/queue-length budget preserved by scan and queue pop.",
+    "Scan charged count <= E*(3r+q+4), or E*(3r+4) for queue.length<=seen.length.",
+    "Whole search result equals old rawSearchPath under projection.",
+    "Whole search charged count <= fuel*(1+D*(3r+4)), D bounds each adjacency length."
+  ],
+  "parameters": {
+    "r": "typed row count",
+    "E": "length of the current neighbor list, duplicates included",
+    "D": "upper bound on every row adjacency-list length",
+    "fuel": "actual maximum queue-pop rounds"
+  },
+  "excluded": [
+    "Nat equality/comparison bit cost",
+    "fixed function/branch runtime overhead",
+    "cost counter instrumentation overhead",
+    "plain cut BFS",
+    "path replay/row updates",
+    "success/failure validation",
+    "retained solver",
+    "witness queries",
+    "whole solver orchestration"
+  ],
+  "tests": {
+    "named_kernel_fixtures": 10,
+    "scan_counts": [
+      21,
+      18,
+      11,
+      3
+    ],
+    "small_and_81bit_search_count": 13
+  },
+  "interpretation": "Logical comparison/cell-event accounting, not a wall-clock, full primitive-machine, encoded-bit, general SAT or P=NP proof. Equal event count on 81-bit IDs explicitly does not imply equal bit cost."
+}

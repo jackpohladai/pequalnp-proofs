@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "stdout": "'ModularCertificate.block_mod3' does not depend on any axioms\n'ModularCertificate.modular_impossible' depends on axioms: [propext, Quot.sound]\n'ModularCertificate.neon_cnf_unsatisfiable' depends on axioms: [propext, Quot.sound]\n",
+  "stderr": "",
+  "at": "2026-11-26T18:47:20.187584+00:00",
+  "seconds": 3.413652181625366,
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_worstcase_auto_00001_review/ModularCertificate.lean",
+  "sha256": "53136bb25aa7c3b5d424d4e755347f7386a13e4120703357b01b799a23dab0c1",
+  "lean_version": "4.36.0",
+  "general_polynomial_sat_proof": false,
+  "scope": "Exact25clause Boolean-block-to-mod3 bridge and seven-block175clause concrete UNSAT theorem. No general algorithm or runtime bound."
+}

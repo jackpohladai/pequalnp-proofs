@@ -1,0 +1,15 @@
+{
+  "mode": "source_only_review",
+  "provider": "openai-api",
+  "endpoint": "https://api.openai.com/v1/responses",
+  "requested_model": "gpt-6.2-sol",
+  "requested_service_tier": "ultrafast",
+  "reasoning": "low",
+  "source_sha256": "9c4886b47b8f802bbeeaa4bcd00dcb180ae573849952b64589e72bb4c8c09926",
+  "http_statuses": [
+    429
+  ],
+  "responses": [],
+  "completed": false,
+  "failure": "HTTPError"
+}

@@ -1,0 +1,20 @@
+{
+  "finished_at": "2026-11-27T20:24:25.518684+00:00",
+  "success": true,
+  "exit_code": 0,
+  "seconds": 559.538076208,
+  "status": "SUCCESS",
+  "usage": {
+    "input_tokens": 39067,
+    "output_tokens": 71615,
+    "thinking_tokens": 66721,
+    "cache_read_tokens": 0,
+    "total_tokens": 110682
+  },
+  "model_requested": "gemini-4-neon-medium",
+  "model_reported": "gemini-4-neon-medium",
+  "conversation_id": "cb983d4b-b3e9-4d93-a733-4ca3b6c94f67",
+  "route": "antigravity_account",
+  "local_timeout_seconds": null,
+  "error_summary": ""
+}

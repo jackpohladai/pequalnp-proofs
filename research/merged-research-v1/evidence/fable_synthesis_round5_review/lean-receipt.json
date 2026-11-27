@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 2.471317768096924,
+  "source_sha256": "79b87775012cfaba8de363553a50d7ef525e56ccbbcf5eaa0f4ccaaf4fcddbeb",
+  "lean_version": "4.36.0",
+  "stdout": "'FableRound5Audit.F2_no_affine' does not depend on any axioms\n'FableRound5Audit.F2_prefix00_eq_prefix11' does not depend on any axioms\n'FableRound5Audit.F2_prefix00_ne_prefix01' does not depend on any axioms\n'FableRound5Audit.F2_prefix00_ne_prefix10' does not depend on any axioms\n'FableRound5Audit.F2_prefix01_ne_prefix10' does not depend on any axioms\n'FableRound5Audit.F2_every_prefix_satisfiable' does not depend on any axioms\n",
+  "stderr": "",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fable_synthesis_round5_review/F2Counterexample.lean"
+}

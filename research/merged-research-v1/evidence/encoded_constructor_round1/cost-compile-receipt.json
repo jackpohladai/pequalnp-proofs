@@ -1,0 +1,201 @@
+{
+  "status": "checked",
+  "compiler": "Lean 4.36.0",
+  "utc": "2026-11-26T10:53:21.652700+00:00",
+  "modules": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/RawSearchRounds.lean",
+      "source_sha256": "ac6c059acdf2771a51ddd1331e2c286ddbbc345482735ccd1a716bdbcbd20c56",
+      "exit_code": 0,
+      "output": "'PEqualNP.Outside.MatchingRoundCost.exploreMeter_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingRoundCost.rawMeter_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingRoundCost.proposeMeter_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-rounds-6hqhv_1a/RawSearchRounds.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-rounds-6hqhv_1a/RawSearchRounds.lean"
+      ],
+      "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+      "elapsed_seconds": 5.948840333,
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cost-build/lib/lean/RawSearchRounds.olean",
+      "artifact_sha256": "938f4de66522d95e96fe68e90dfcd96f9e6bb6be5309bb7f7f1043ef7e2d900d",
+      "compiled_source_snapshot": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cost-build/source/RawSearchRounds.lean"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/MatchingRoundCost.lean",
+      "source_sha256": "042ad1e1db084fa92666264c54d7a4290c99ad39e0b9beb76bee82446c1ecd23",
+      "exit_code": 0,
+      "output": "'PEqualNP.Outside.MatchingRoundCost.visitMeter_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingRoundCost.solveMeter_erase' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingRoundCost.solveMeter_visits_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingRoundCost.solveMeter_rawRounds_le_square' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-rounds-6hqhv_1a/MatchingRoundCost.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-rounds-6hqhv_1a/MatchingRoundCost.lean"
+      ],
+      "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-rounds-6hqhv_1a:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+      "elapsed_seconds": 2.201873625,
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cost-build/lib/lean/MatchingRoundCost.olean",
+      "artifact_sha256": "d087a8bc474e72827c3d062d3ef48d6771884624c90aacd09dcb2d1895238493",
+      "compiled_source_snapshot": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cost-build/source/MatchingRoundCost.lean"
+    }
+  ],
+  "reusable_lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cost-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+  "dependencies": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean/AutomaticConstructorExamples.olean",
+      "sha256": "f324a44938428bae494b8c65a065be9c3203048225f729c188d9ce5fc10abef6"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean/AutomaticConstructor.olean",
+      "sha256": "bd09fdab20bda66575b378b5a6ea0da8309202a204e16c99127ca3e1e6692b0f"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean/RawMatchingPathComposition.olean",
+      "sha256": "ef09881253be053aed2e15ecb297f72e4d9eb7984c1edea3dfdc48c5e78f0479"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean/RawMatchingCompleteness.olean",
+      "sha256": "652bbf6e06ea61dc0d1734d63b4c027a120e76eab2b30bf23aa08034e3b1ed62"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/CheckedOutputProjection.olean",
+      "sha256": "26c7853cf8437f02a65cabcc6f81fa5fac0fd27b4bc2ee48fee07cc43008c05a"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/SparseDualHornAlgorithm.olean",
+      "sha256": "d414556d03e587d7b5e359028d141c04426e9e30dcfb811295afebeeb3fe652e"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/CertificateEdges.olean",
+      "sha256": "4780de85a41b710ec9c04e04e03a4522ebe8459417325f284c284bde86726c6b"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/CertifiedCNFConclusions.olean",
+      "sha256": "dd2b54d5e1d0510d948c73a1d38a0ce2999e85c96c227b0bbaa4b56d943da23e"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/FreshGuardedCNF.olean",
+      "sha256": "5d3c6284c55bb2b1c4242435b16045deaff1f85d34c30d9f5545271b62cca1ff"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/CertifiedConstructorSolver.olean",
+      "sha256": "57c80d08e1cab730f0d413c6d55c6f23dbbea3bf6894a9e3c6a3f10683ab798f"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/ProcedureExamples.olean",
+      "sha256": "ee40c9643469c856c90d358f264f3613e7987338f519944bccb691b5245eeb80"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/CheckedDualHorn.olean",
+      "sha256": "6fe37fffb252e15d571970d2e2e4853cc985ef841cbf3308cefa567e4c131287"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/GuardedCNFEncoding.olean",
+      "sha256": "a5d4c2ad3cf48b71aa934872520541448100ade129b7513c7723e37bdc892790"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/ExecutableEdgeLift.olean",
+      "sha256": "d58d244614087d088502f0407d55ff5b42029d52aa4e3fdb7969bf059dfe8f0b"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/MatchingCertificates.olean",
+      "sha256": "990176e28900d54e43d2c34bb799f437f09cca8d1c8782625b4ebed232a33d1d"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/GuardedHall.olean",
+      "sha256": "aa5c82d9dd9955a3131767b174cb56dc9efacedb3ffcee1e3e72e168afe2b510"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/GreatestGuard.olean",
+      "sha256": "f1d0d233a364af2d6bb79e46a6d354a9086529c7d797f1fb39154a65d6c5350c"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean/DualHorn.olean",
+      "sha256": "d823158319b1e95d00c9da01ab8c23a5861d9c65c473381557147b1c1913c2b7"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/AugmentationBfsBridge.olean",
+      "sha256": "4ee62818f9c885f6731ab8ad6891818032916425159b16c27043c2faf90b749b"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/CorrespondenceExamples.olean",
+      "sha256": "66c4a2c08de91451e667cd566cdb2b1aa9e50527fc856e8739d400888480290c"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/BfsClosure.olean",
+      "sha256": "37382556cc088636f81f0bf12efcca5121cce48203e0fc5ec1eda518904db0fa"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/AugmentationExamples.olean",
+      "sha256": "9cc544d48994a82557ba9f1b40e63812c59b7d8c5ee0e24087ec39c197fa8cbf"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/PathCarryingSearch.olean",
+      "sha256": "20ce2fb69e6196c56e668221cc7c69aea79881cc484429d25c4c973906e65ca0"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/ActiveAugmentation.olean",
+      "sha256": "24ced4cf418d1b629efd41ceb2c38743eb9255db711d40dc51b72b281d617118"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/MatchingDecision.olean",
+      "sha256": "32a43772fdc7dede67680fef2fab93cc226344d7377a51ceb9f674156aaea54f"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/ReversePaths.olean",
+      "sha256": "ff4b4766f15145957e1a1ac9a2a0b7db6706c2129988711c95ead8e4dca1f04f"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/MatchingPathComposition.olean",
+      "sha256": "70a8a9b18a467a71a8faeab0a57711a03752baaee5e4ca42bd98c1960bdb0e3e"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/PathSearchExamples.olean",
+      "sha256": "bedbc5e7dbcdba519e2b321233da19ca06287e8bcc28e5e0e33886c05a6a69dd"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/SearchCorrespondence.olean",
+      "sha256": "a97158ca11af88676f1c20e436238216098e162eb3b92275524ba45774a857e9"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/MatchingCertificates.olean",
+      "sha256": "990176e28900d54e43d2c34bb799f437f09cca8d1c8782625b4ebed232a33d1d"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/ExhaustedSearchCut.olean",
+      "sha256": "ffef17ec9cb79a9d598e5dad1d7302a5808120c02484fff140471c411516f34c"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/MatchingLoop.olean",
+      "sha256": "16f6cd9af1d34c996f3ed2b92c2f4211e0785c2548cc8d1af553fd54c20f9990"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/GuardedHall.olean",
+      "sha256": "aa5c82d9dd9955a3131767b174cb56dc9efacedb3ffcee1e3e72e168afe2b510"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/RawPathInvariant.olean",
+      "sha256": "ddca6bc8cbc747a91cd676ead689ae6f1ff8f30ccf780adac79b72cf8f93fff1"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean/AugmentingReassignment.olean",
+      "sha256": "8bed920842988fc786b9686fb3ab50f0d53cda4b45d7842888bda4da9145ea8d"
+    }
+  ],
+  "scope": "Exact result-erasing instrumentation: actual raw path-search nonempty queue expansions <= fuel; actual visited outer roots <= r; accumulated raw expansions <= r*r.",
+  "not_counted": [
+    "plain cut BFS",
+    "neighbor scan lengths",
+    "owner/rowMatch closure application",
+    "replay",
+    "validation",
+    "allocation",
+    "encoded-bit arithmetic"
+  ],
+  "runtime_warning": "This is a selected-event bound, not full runtime. Separate source/C audit reports potentially supercubic owner-closure costs."
+}

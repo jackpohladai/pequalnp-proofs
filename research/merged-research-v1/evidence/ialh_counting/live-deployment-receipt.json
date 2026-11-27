@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-26T19:07:57.688722+00:00",
+  "controller_alive": true,
+  "bulk_paused": true,
+  "lanes": {
+    "fable": {
+      "status": "running",
+      "folder": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fable_worstcase_auto_00007",
+      "runner_alive": true,
+      "solver": "scc-emra-ialh5-v1",
+      "source_sha256": "62e6419f5ab94ae46dc77f5f43ceae0f0c4e0a75d701e66e756dc5ec2f29a2f6",
+      "source_matches": true,
+      "code_delivered": true,
+      "source_delivery_recorded": true
+    },
+    "neon": {
+      "status": "running",
+      "folder": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_worstcase_auto_00005",
+      "runner_alive": true,
+      "solver": "scc-emra-ialh5-v1",
+      "source_sha256": "62e6419f5ab94ae46dc77f5f43ceae0f0c4e0a75d701e66e756dc5ec2f29a2f6",
+      "source_matches": true,
+      "code_delivered": true,
+      "source_delivery_recorded": true
+    }
+  }
+}

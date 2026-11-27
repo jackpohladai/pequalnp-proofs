@@ -1,0 +1,130 @@
+{
+  "checked_at_utc": "2026-11-26T08:21:33.131928+00:00",
+  "lean_version": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "cwd": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source",
+  "compile_lean_path": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean",
+  "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean",
+  "modules": {
+    "ParityExtraction": {
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-R",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source",
+        "-o",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/ParityExtraction.olean",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source/ParityExtraction.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.004,
+      "verified": true,
+      "output": "'ParityExtraction.parity_cons_iff' does not depend on any axioms\n'ParityExtraction.exclude_false_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ParityExtraction.block_false_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ParityExtraction.replace_parity_subcollection' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "artifact": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/ParityExtraction.olean",
+      "artifact_sha256": "30f78d01a63405200830089ec696462f9b850418ccea7c1c5e37d494156abf75",
+      "reusable_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/ParityExtraction.olean"
+    },
+    "StalledParity": {
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-R",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source",
+        "-o",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/StalledParity.olean",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source/StalledParity.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 14.482,
+      "verified": true,
+      "output": "'PEqualNP.Outside.StalledParity.parityGadget_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.StalledParity.auxiliaryResolvents_tautological' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.StalledParity.padded_satisfiable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.StalledParity.padding_clause_count' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.StalledParity.width_three_pivot_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "artifact": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/StalledParity.olean",
+      "artifact_sha256": "b1b7f77b10844ab368f85e2dc63b1d37794106ab20feeb2bd874416672351ce2",
+      "reusable_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/StalledParity.olean"
+    },
+    "RankObstruction": {
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-R",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source",
+        "-o",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/RankObstruction.olean",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source/RankObstruction.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 21.954,
+      "verified": true,
+      "output": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source/RankObstruction.lean:61:79: warning: This simp argument is unused:\n  h\n\nHint: Omit it from the simp argument list.\n  [apply] simp [base]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'PEqualNP.Outside.RankObstruction.base_mul_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.kernel_mul_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.inverse_mul_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.kernel_entry' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.RankObstruction.kernel_rank' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.factorization_width_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "artifact": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/RankObstruction.olean",
+      "artifact_sha256": "c2cf2e94d627443e3e1baefe339f227b19751a3d3e82a3312351501396685a40",
+      "reusable_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/RankObstruction.olean"
+    },
+    "GuardedHall": {
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-R",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source",
+        "-o",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/GuardedHall.olean",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source/GuardedHall.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 10.945,
+      "verified": true,
+      "output": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source/GuardedHall.lean:74:0: warning: automatically included section variable(s) unused in theorem `PEqualNP.Outside.GuardedHall.private_edges_iff_matching`:\n  [Finite R]\n  [DecidableEq R]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite R] [DecidableEq R] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n'PEqualNP.Outside.GuardedHall.guarded_cuts_iff_matching' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedHall.private_edges_iff_matching' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedHall.guarded_hall_projection' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedHall.two_row_projection' does not depend on any axioms\n",
+      "artifact": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/GuardedHall.olean",
+      "artifact_sha256": "aa5c82d9dd9955a3131767b174cb56dc9efacedb3ffcee1e3e72e168afe2b510",
+      "reusable_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/GuardedHall.olean"
+    },
+    "PairedUnion": {
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-R",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source",
+        "-o",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/PairedUnion.olean",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source/PairedUnion.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.708,
+      "verified": true,
+      "output": "'PEqualNP.Outside.PairedUnion.certificate_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.badMass_disjoint_union' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.certificate_branch' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.singleton_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.paired_le_individual' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "artifact": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/PairedUnion.olean",
+      "artifact_sha256": "6babb30d4882b9b1db96ca985941aa080fe727a5a7c055e03c50565dd860d791",
+      "reusable_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/PairedUnion.olean"
+    },
+    "CheckedComposition": {
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-R",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source",
+        "-o",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/CheckedComposition.olean",
+        "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/source/CheckedComposition.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 7.37,
+      "verified": true,
+      "output": "ParityExtraction.replace_parity_subcollection.{u_1} {Var : Type u_1} (assignment : Var \u2192 Bool) (scope : List Var)\n  (masks : List (List Bool)) (blocked : Bool)\n  (covers : \u2200 (mask : List Bool), mask \u2208 masks \u2194 mask.length = scope.length \u2227 ParityExtraction.parity mask = blocked)\n  (original other : List (ParityExtraction.Clause Var))\n  (selection : original.Perm (List.map (ParityExtraction.exclude scope) masks ++ other)) :\n  ParityExtraction.cnfValue assignment original =\n    (ParityExtraction.parity (List.map assignment scope) == !blocked && ParityExtraction.cnfValue assignment other)\nPEqualNP.Outside.StalledParity.padded_satisfiable_iff (F : PEqualNP.Search.CNF) (xs : List \u2115) :\n  PEqualNP.Search.Satisfiable (PEqualNP.Outside.StalledParity.padded F xs) \u2194 PEqualNP.Search.Satisfiable F\nPEqualNP.Outside.RankObstruction.factorization_width_bound (k d : \u2115)\n  (L : Matrix (PEqualNP.Outside.RankObstruction.Bits k) (Fin d) (ZMod 2))\n  (R : Matrix (Fin d) (PEqualNP.Outside.RankObstruction.Bits k) (ZMod 2))\n  (h : L * R = PEqualNP.Outside.RankObstruction.kernel k) : 2 ^ k \u2264 d\nPEqualNP.Outside.GuardedHall.guarded_hall_projection.{u_1, u_2} {R : Type u_1} {H : Type u_2} [Finite R] [DecidableEq R]\n  [DecidableEq H] (N : R \u2192 Finset H) (g : R \u2192 Bool) :\n  PEqualNP.Outside.GuardedHall.HasPrivateEdges N g \u2194 PEqualNP.Outside.GuardedHall.GuardedCuts N g\nPEqualNP.Outside.PairedUnion.certificate_branch.{u_1, u_2} {\u03a9 : Type u_1} {I : Type u_2} [DecidableEq \u03a9]\n  (D\u2080 D\u2081 : Finset \u03a9) (P : Finset I) (A B : I \u2192 Finset \u03a9) (disjoint : Disjoint D\u2080 D\u2081)\n  (certificate : PEqualNP.Outside.PairedUnion.badMass (D\u2080 \u222a D\u2081) P A B < (D\u2080 \u222a D\u2081).card) :\n  PEqualNP.Outside.PairedUnion.badMass D\u2080 P A B < D\u2080.card \u2228 PEqualNP.Outside.PairedUnion.badMass D\u2081 P A B < D\u2081.card\n'PEqualNP.Outside.CheckedComposition.literalValue_eq_project' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.CheckedComposition.clauseValue_eq_project' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.CheckedComposition.cnfValue_eq_project' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.CheckedComposition.project_parity_replacement' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "artifact": "/private/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-checked-components-77p2od6y/lib/lean/CheckedComposition.olean",
+      "artifact_sha256": "bd410bad6302e5b650c2ea6f1eb78e32369f2d4597cce5d56027e0c6332d06af",
+      "reusable_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/build/lib/lean/CheckedComposition.olean"
+    }
+  },
+  "verified": true
+}

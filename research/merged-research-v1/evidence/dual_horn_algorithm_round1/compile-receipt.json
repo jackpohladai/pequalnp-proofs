@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/DualHornAlgorithm.lean",
+      "source_sha256": "2f7b2d9fb997589337d0270bc2d1493191fa022edbc3f47b437527a4227a54a2",
+      "exit_code": 0,
+      "elapsed_seconds": 18.152,
+      "output": "'PEqualNP.Outside.DualHornAlgorithm.negative_forced' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHornAlgorithm.erase_preserves_domination' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.DualHornAlgorithm.erase_strict_progress' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHornAlgorithm.run_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHornAlgorithm.solve_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4/DualHornAlgorithm.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4/DualHornAlgorithm.lean"
+      ],
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4/DualHornAlgorithm.olean",
+      "artifact_sha256": "c3caeec26f389cebc16b63f69654f1dfd27fab543b97a669aaecbad2e19f6db3"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/AlgorithmExamples.lean",
+      "source_sha256": "dae7c25766d1671ab61764bbe355cf801bcfe68baefee2cb2bacb8ab1a7ade7a",
+      "exit_code": 0,
+      "elapsed_seconds": 22.183,
+      "output": "some 0\nnone\nsome 2\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4/AlgorithmExamples.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4/AlgorithmExamples.lean"
+      ],
+      "artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4/AlgorithmExamples.olean",
+      "artifact_sha256": "22752787369275ed205bfd36c220255ee604ea7311598f9a91995f47d44b565f"
+    }
+  ],
+  "dependency_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/DualHorn.lean",
+  "dependency_source_sha256": "bac65e92d1e39cd9a76bbb353477704e7fd948d774b1e7aebc13990f7687c360",
+  "exit_code": 0,
+  "lean_path": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4:/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+  "dependency_artifact": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-composition-lufcm5jt/DualHorn.olean",
+  "dependency_artifact_sha256": "d823158319b1e95d00c9da01ab8c23a5861d9c65c473381557147b1c1913c2b7",
+  "source_bytes_rechecked": true,
+  "lean_version": "4.36.0",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "formalized_scope": [
+    "Executable dual-Horn solver in actual project CNF semantics",
+    "Every model remains below current assignment",
+    "Each flip reduces true-set cardinality by exactly one",
+    "Fuel n suffices for variable identifiers below n",
+    "Return value is correct UNSAT or an actual greatest model"
+  ],
+  "no_new_axioms": true,
+  "formal_bit_runtime_bound": false,
+  "upstream_checker": false,
+  "private_raw_receipt": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-dual-horn-alg-cimso8x4/final-receipt.json"
+}

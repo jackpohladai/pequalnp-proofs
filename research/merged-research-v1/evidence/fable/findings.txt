@@ -1,0 +1,43 @@
+L-alg-001 / Fable (Claude Fable 5.2): findings   [PRELIMINARY -- written 2026-11-26 00:20 EST]
+Three subagent tracks (dag_analysis/, candidate.py + experiments/, lean/ decider) are still
+running; their numbers are NOT in this draft. Everything below was produced or re-run by the
+lead. This file will be replaced by the final report.
+
+VERDICT
+No polynomial-time SAT algorithm was found; no O(N^2)/O(N^3) bound for general SAT is claimed
+or supported by anything here. Nothing here proves or disproves P = NP.
+
+ESTABLISHED SO FAR (see theory/theory.md for statements, proofs and status labels)
+1. Theorem A [paper proof + exact finite checks]. The unchanged native-search/residual_dag.py
+   allocates at least 2^k - 1 nodes on W_k = (-v|a)(v|b) AND_i (a|p_i|q_i) along the order
+   v,p_1..p_k,q_1..q_k,a,b, although that order has induced width 2 (plain bucket elimination
+   does O(k) work on it). Exact count 2^(k+1)+7k+7 for k = 1..14; the induction invariant is
+   machine-checked as an equality of child-id sets for k = 1..12.
+   -> theory/width2_counterexample.py, theory/verify_theoremA_invariant.py
+2. Repairs [finite checks + measurements]. R1 (miniscoped forget) makes W_k linear but is WORSE
+   than the original on Tseitin + redundant clauses (17428 vs 1366 nodes at 48 edges). R1b
+   (miniscope only when exactly one conjunct mentions the variable) fixes W_k (80 nodes at
+   k = 14) and keeps the original behaviour elsewhere. Neither changes the exponential growth
+   on PHP, random 3-CNF, 3-XOR.  -> repairs/
+3. Proposition 4.1 [paper proof]. For the generic "cofactor / OR / normalise" scheme, the
+   existence of a polynomial-time normaliser that keeps every intermediate DAG polynomial is
+   EQUIVALENT to SAT in P. The residual-DAG paradigm therefore neither loses nor gains anything:
+   its missing lemma is the target itself.
+4. Theorem M [paper proof; step (d) Lean-checked; finite checks]. Read-twice degree systems
+   (at-least-one / at-most-one / exactly-one / parity groups, every variable in <= 2 groups)
+   are decided in O(N^3) by a reduction to perfect matching (Edmonds), with UNSAT certified by
+   an independently re-verified Tutte-Berge barrier. Covers pigeonhole under any renaming,
+   hidden Hall violators, perfect matching on odd cliques, mutilated chessboards, Tseitin, and
+   mixtures. -> layers.py, tests/test_layers.py, lean/L_alg001_fable_matching.lean
+5. Lean [checked, exit 0, axioms propext/Classical.choice/Quot.sound]:
+   lean/L_alg001_fable_engine.lean (any exact representation engine with any
+   semantics-preserving normaliser decides SAT; the bucket / substitution identities),
+   lean/L_alg001_fable_matching.lean (Tutte violator <=> no perfect matching).
+6. Review of the other candidates [finite]. hydrogen, neon and the native hybrid: 0 wrong
+   answers on 10000 fuzz cases each and on 23 structured instances with known answers; all
+   three return UNKNOWN on perfect matching in K13.  -> review_lead/
+
+PRECISE MISSING LEMMA
+In the project's Lean terms: Nonempty (DegreeBound d 3) for a correct bit decider d, i.e. one
+fixed machine deciding SAT within C*n^3 + C steps. In the paradigm's terms: the Normalisation
+Lemma of Proposition 4.1, which is equivalent to SAT in P. No weaker statement suffices.

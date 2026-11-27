@@ -1,0 +1,147 @@
+{
+  "id": "encoded_constructor_round1",
+  "checked_at_utc": "2026-11-26T11:02:12.255919+00:00",
+  "status": "locally_lean_compiled",
+  "scope": "Checked explicit-list input and cached implementation of the existing restricted constructed-CNF solver; same results, no added general SAT coverage.",
+  "extends_component_family": "matching_complete_round1",
+  "count_as_new_component_family": false,
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/CachedExplicitInput.lean",
+  "source_sha256": "ce5b04b51de677f1583a5cbf6ec38aceb779a6aca67370e35d079c767404c33c",
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-compile-receipt.json",
+      "sha256": "642ce7d402918f4a24d1e78434f0813cdbe469b7d30e0a3a52c4d7969266b4fb"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-examples-compile.json",
+      "sha256": "28d48993c887105a47b657f24be0be0dcb670862122b609bfd701e579c03b00e"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-independent-audit.json",
+      "sha256": "0f0546241fac1b9e01d59c8520c801096769774c689c0f913b4796600087612f"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/MixedConstructorTests-validation.json",
+      "sha256": "f39d3e4910110fa2e54f3ebab06475e6f9df57cdad5009927a04ea161c213587"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cost-compile-receipt.json",
+      "sha256": "c36ced2da9b443cad046a2846e721b2ab7c84aef19966d31dc4d0f8c709c14e8"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cost-examples-receipt.json",
+      "sha256": "173d98f90ebe8ea9127d459550ce531028077b66027a37dfb7caa332fe1597bb"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/complexity-audit.json",
+      "sha256": "b565f84b365321214f3feb6d1a79e8a03a6a07792b768197b5577b2bfa1706e9"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build/codegen-receipt.json",
+      "sha256": "f7b9ba8fbd0389af5aa14bee90a4d6d2cdbc01b3d31111b26fa81cb105950421"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-validation.json",
+      "sha256": "4fb4cff4ae027c73e69f9240731e5fc0cdc611efc34c7341dc99bcac2b2adf0a"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-validation.json",
+      "sha256": "085586a99764741a4094dc1d90e9192d07718b287826b5d7c76539cc91db1fde"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-closure-timing.json",
+      "sha256": "781cab59f2b350a14ccd73758de695944ea7a43280c675e7840039430a5b209c"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-validation.json",
+      "sha256": "d761aee8e42b9900cb8a5755eb36e484d0fffed3aaf3235901cd623f35e3ee02"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-examples-validation.json",
+      "sha256": "8980ae2cb83e4f0b21530a22d9029a1ebdf9acdce086bb16cc6abad9c95e7465"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-independent-audit.json",
+      "sha256": "1a97724e522f7171eb432ba06f22c742e72110b716e3c61ec11bccaace72ac83"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/root-pin-audit.json",
+      "sha256": "2bd715635cb5cc0334d3f08adfb9f4e5ec000abb7599d42e4f804e8bfc22deab"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/complexity-independent-audit.json",
+      "sha256": "8cb5f2504bfbfc2ef9f44565f856f8b7f8b59549492cab958e8a8e3b29f00d7b"
+    }
+  ],
+  "formalized": [
+    "Explicit natural-number neighbor lists are bounds-checked before solving; accepted conversion preserves exact order and duplicates. Row count is the supplied list length.",
+    "Public explicit solver is sound, never inconclusive, and decisive when existing syntax, positivity and separation checks pass.",
+    "Cached move, replay, matcher, constructor and prepared-array interface each equal the preceding checked implementation; returned matching, cut and assignment are preserved.",
+    "Instrumented solver erases to the raw matcher. Visited roots are at most r and raw path-search expansion events at most r squared. These event bounds do not include all computation."
+  ],
+  "codegen_verified": [
+    "Previous row assignment cached once per move rather than inside each owner lookup",
+    "Retained support prepared outside the matching guard callback",
+    "Explicit typed adjacency and guard-clause arrays prepared once after neighbor validation; callbacks read from arrays",
+    "No reference CNF materialization in solve"
+  ],
+  "tests": {
+    "original_constructor_independent_oracle_cases": 6756,
+    "all_passed": true,
+    "truth_table_assignments_compared": 135152,
+    "sat_witnesses_verified": 3482,
+    "unsat": 3274,
+    "additional_supported_fixtures": 4,
+    "unsupported_controls": 4,
+    "cached_constructor_fixture_count": 7,
+    "cached_explicit_fixture_count": 9,
+    "partial_cost_fixtures": 8,
+    "note": "The 6756-case suite executed the frozen original. Universal result-equality theorems connect cached variants; focused fixtures execute the cached variants separately. These cases do not change the dashboard count of independently tested generated candidates."
+  },
+  "performance": {
+    "receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-closure-timing.json",
+    "samples": [
+      {
+        "m": 16,
+        "original": "sat",
+        "cached": "sat",
+        "original_nanoseconds": 164866209,
+        "cached_nanoseconds": 41291333
+      },
+      {
+        "m": 32,
+        "original": "sat",
+        "cached": "sat",
+        "original_nanoseconds": 2223479708,
+        "cached_nanoseconds": 311699000
+      },
+      {
+        "m": 64,
+        "original": "sat",
+        "cached": "sat",
+        "original_nanoseconds": 33866930459,
+        "cached_nanoseconds": 2471785416
+      }
+    ],
+    "largest_case_original_seconds": 33.866930459,
+    "largest_case_cached_seconds": 2.471785416,
+    "limits": "Single paired same-process observations on one sparse family using prebuilt adjacency arrays, original first, concurrent local compilation workload. No universal speedup or asymptotic bound. Timing compares cached constructor, not the later prepared-input wrapper or full witness serialization."
+  },
+  "analytical_obstruction": {
+    "formal_lean_cost_theorem": false,
+    "scope": "Audited analytical lower bound for the frozen original implementation and generated-code execution model on compact explicit binary adjacency input.",
+    "caveat": "Materialized reference CNF can be quadratically larger. This does not refute cubic time in expanded-CNF bit length and is not a lower bound for the problem class or SAT."
+  },
+  "not_proved": [
+    "Full encoded-bit runtime for cached implementation",
+    "Arbitrary CNF recognition/decomposition or coverage",
+    "Text/binary serialization parser refinement",
+    "Python implementation refinement",
+    "General quadratic/cubic SAT algorithm or P=NP",
+    "Upstream acceptance"
+  ],
+  "general_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false
+}

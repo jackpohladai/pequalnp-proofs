@@ -1,0 +1,79 @@
+{
+  "status": "locally_lean_checked_matching_validators_and_cnf_conclusions",
+  "sources": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/MatchingCertificates.lean",
+      "sha256": "986dfd8c4772da727126a0cbfcbca82ddc368c5aefcd1a8e5b6989d68762b13e"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/CertifiedCNFConclusions.lean",
+      "sha256": "9b5598680c2ed4a3a78c809ea422e5a7583d607a5264ee7256336f2ef538b427"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/CertificateExamples.lean",
+      "sha256": "aae9a64f99b431469a9a2093cdecef9eb423cbcc7b0b30b11dae871aec256632"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/CertificateEdges.lean",
+      "sha256": "3704e00a2e995fbac64029dda8ebfd16056e0e98bd4bd5ac6c8c1ce84d749d42"
+    }
+  ],
+  "new_checked_facts": [
+    "Executable success and failure certificate validators with exact iff conditions",
+    "Accepted success yields guarded matching; accepted failure excludes it",
+    "Each matching/nonmatching instance has a corresponding certificate, semantically",
+    "Accepted success and failure cannot conflict",
+    "Accepted certificates give SAT/UNSAT for the constructed CNF at actual checked retained-solver output under positive guards",
+    "Executable active-masked certificate-to-edge adapter satisfies the private-edge witness conditions"
+  ],
+  "success_certificate_type": "Fin r → Option (Fin h)",
+  "success_validation": "Every false-guard row has a Some neighboring hole; distinct false-guard rows cannot store the same hole. Inactive row entries are ignored.",
+  "failure_certificate_type": "Finset (Fin r)",
+  "failure_validation": "Every selected row has a false guard, and the union of its neighbor sets has cardinality strictly below the selected-row cardinality.",
+  "edge_adapter": "certificateEdges g cert i k := if g i = false then decide (cert i = some k) else false",
+  "important_scope": [
+    "Certificate-existence theorems are semantic, not an implemented search procedure",
+    "Fin and Finset typed interfaces enforce bounds/distinctness; external raw parsers must check these rather than coerce IDs modulo bounds or count duplicate rows",
+    "Encoded CNF UNSAT from a matching failure requires guards evaluated at the ACTUAL checked greatest retained result and all guard literals positive",
+    "Inactive row entries must be masked off when constructing edge values"
+  ],
+  "next_research_target": "Integrate the accepted certificateEdges with the independently checked executable fresh-variable lift. Add a certificate-producing augmenting-path matching algorithm and prove it returns an accepted success/failure certificate. Require a checked CNF decomposition certificate for arbitrary input.",
+  "remaining": [
+    "Complete executable matching search",
+    "External certificate parser or serialization refinement",
+    "Arbitrary input CNF recognition/decomposition",
+    "Total operational encoded-bit runtime",
+    "General SAT completeness"
+  ],
+  "negative_guard_counterexample": "Empty retained F, one negative guard NOT x, no holes. At greatest x=true the active row has a deficient-set certificate, but the constructed CNF NOT x is satisfiable at x=false. Positive-guard premise is essential.",
+  "finite_checks": {
+    "status": "passed",
+    "verifier_sha256": "912ae542f5e695265fef503e7e45e6c618b39d1ee7136b278e39d773543c2bfa",
+    "graph_guard_instances": 685,
+    "success_certificate_checks": 15025,
+    "failure_certificate_checks": 5039,
+    "accepted_successes": 4155,
+    "accepted_failures": 590,
+    "masked_edge_witness_checked_on_all_successes": true,
+    "inactive_collision_counterexample_checked": true,
+    "malformed_cases_checked": true,
+    "negative_guard_counterexample_checked": true,
+    "complete_search_implemented": false,
+    "candidate_executed": false,
+    "scope": "Independent finite validation mirrors; no arbitrary-CNF or runtime claim"
+  },
+  "lean_version": "4.36.0",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "official_checker": false,
+  "upstream_published": false,
+  "general_sat_solved": false,
+  "candidate_executed": false,
+  "receipts": [
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/compile-receipt.json",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/finite-receipt.json"
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "at": "2026-11-26T19:54:17.223684+00:00",
+  "source_proposal": "fable_worstcase_auto_00010",
+  "method": "Bounded exhaustive block spaces, greedy certified basis; NOT Fable atom descent.",
+  "fixtures": [
+    {
+      "status": "accepted_finite_quotient",
+      "source_variables": 12,
+      "source_clauses": 36,
+      "quotient_variables": 6,
+      "quotient_clauses": 9,
+      "quotient": [
+        [
+          -1,
+          4
+        ],
+        [
+          -1,
+          -5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          -4
+        ],
+        [
+          -2,
+          5
+        ],
+        [
+          -2,
+          -6
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          -3,
+          -6
+        ]
+      ],
+      "basis_forms": [
+        65,
+        130,
+        260,
+        520,
+        1040,
+        2080
+      ],
+      "blocks": [
+        {
+          "support": [
+            1,
+            4,
+            7,
+            10
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            5,
+            7,
+            11
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            6,
+            7,
+            12
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            4,
+            8,
+            10
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            5,
+            8,
+            11
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            6,
+            8,
+            12
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            4,
+            9,
+            10
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            5,
+            9,
+            11
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        }
+      ],
+      "block_assignment_checks": 144,
+      "full_assignment_checks": 4096,
+      "oracle_sat": false,
+      "quotient_solver_sat": false,
+      "quotient_solver_peak": 0,
+      "max_quotient_width": 2,
+      "seconds": 0.04380666700000002,
+      "source": "neon_worstcase_auto_00006",
+      "deployed_peak": 4
+    },
+    {
+      "status": "accepted_finite_quotient",
+      "source_variables": 12,
+      "source_clauses": 96,
+      "quotient_variables": 4,
+      "quotient_clauses": 6,
+      "quotient": [
+        [
+          -1,
+          2
+        ],
+        [
+          -1,
+          -3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          -2,
+          3
+        ],
+        [
+          2,
+          -4
+        ],
+        [
+          -3,
+          -4
+        ]
+      ],
+      "basis_forms": [
+        7,
+        56,
+        448,
+        3584
+      ],
+      "blocks": [
+        {
+          "support": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "forbidden_points": 16,
+          "stabilizer_size": 16,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            2,
+            3,
+            7,
+            8,
+            9
+          ],
+          "forbidden_points": 16,
+          "stabilizer_size": 16,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            2,
+            3,
+            10,
+            11,
+            12
+          ],
+          "forbidden_points": 16,
+          "stabilizer_size": 16,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "forbidden_points": 16,
+          "stabilizer_size": 16,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            5,
+            6,
+            10,
+            11,
+            12
+          ],
+          "forbidden_points": 16,
+          "stabilizer_size": 16,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "forbidden_points": 16,
+          "stabilizer_size": 16,
+          "form_rank": 2,
+          "quotient_clauses": 1
+        }
+      ],
+      "block_assignment_checks": 384,
+      "full_assignment_checks": 4096,
+      "oracle_sat": false,
+      "quotient_solver_sat": false,
+      "quotient_solver_peak": 0,
+      "max_quotient_width": 2,
+      "seconds": 0.10311391699999994,
+      "source": "neon_worstcase_auto_00007",
+      "deployed_peak": 16
+    }
+  ],
+  "random_controls": {
+    "total": 80,
+    "accepted": 80,
+    "sat": 46,
+    "unsat": 34,
+    "skipped": 0,
+    "block_assignment_checks": 2780,
+    "full_assignment_checks": 8372,
+    "failures": 0
+  },
+  "seconds": 0.352636584,
+  "deployment_changed": false,
+  "lean_verified": false,
+  "general_polynomial_sat_proof": false,
+  "scope": "Checks exact quotient predictions on finite inputs and controls. No proof of polynomial discovery, encoding robustness or general growth."
+}

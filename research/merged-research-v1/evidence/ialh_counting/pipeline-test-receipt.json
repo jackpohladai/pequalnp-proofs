@@ -1,0 +1,26 @@
+[
+  {
+    "case": "old_growth_rejected",
+    "verdict": "not_confirmed",
+    "solver": "scc-emra-ialh5-v1"
+  },
+  {
+    "case": "false_bug_rejected",
+    "verdict": "not_confirmed",
+    "solver": "scc-emra-ialh5-v1"
+  },
+  {
+    "case": "fable_zero_peak",
+    "verdict": "fixture_predictions_match",
+    "solver": "scc-emra-ialh5-v1"
+  },
+  {
+    "case": "no_fixture",
+    "verdict": "no_fixture",
+    "solver": "scc-emra-ialh5-v1"
+  },
+  {
+    "case": "changed_target",
+    "verdict": "held"
+  }
+]

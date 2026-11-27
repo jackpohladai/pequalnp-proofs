@@ -1,0 +1,13 @@
+{
+  "finished_at": "2026-11-26T15:03:28.764350+00:00",
+  "exit_code": 124,
+  "success": false,
+  "seconds": 600.440787583,
+  "model_usage": {},
+  "usage": {},
+  "subtype": null,
+  "is_error": null,
+  "fast_mode_state": null,
+  "subscription_only": true,
+  "error_summary": ""
+}

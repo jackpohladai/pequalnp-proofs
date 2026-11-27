@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "source_sha256": "0472508121658676577797785324e5eaf9f766d260efab0d18256e079b23e7c7",
+  "monotone_boolean_functions": 6,
+  "feasible_sets_with_greatest": 13,
+  "composition_cases": 7488,
+  "concrete_edge_witness_lifts": 32736,
+  "no_greatest_example": [
+    1,
+    2
+  ],
+  "monotonicity_counterexample_checked": true,
+  "feasible_greatest_requirement_checked": true,
+  "candidate_executed": false,
+  "general_sat_claim": false
+}

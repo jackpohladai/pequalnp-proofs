@@ -1,0 +1,58 @@
+### Executive Verdict
+E-MRA fails as a route to polynomial-time SAT. Claim (1) holds only with missing witness-completion and input-canonization invariants. Claim (2)’s advertised $O(mN\log N)$ storage bound is **false** ($\Theta(m^2N\log N)$ temporary-resolvent bits; stack up to $\Theta(mN^2\log N)$ bits for $m\ge N$), and its $O(N^3m^4)$ bound omits algorithmic/bit-cost assumptions. Claim (3) holds on the specific toy family but is an artifact of tautological pairs and a 3-variable core. Claim (4) is **false**: below is an explicit 25-variable, 77-clause connected UNSAT falsification test where E-MRA strictly worsens MRA’s frontier ($1 \to 4$, generalizing to $1 \to 2^k$). Claim (5) holds for *derived resolution steps* ($m\ge 2$) via a non-trivial unit-propagation accounting lemma, fails for *total proof clauses* at small $N,m$, and actually proves an exponential *barrier* against ELIM-only refutation. Bounded clause storage during preprocessing implies nothing about MRA’s global branching complexity.
+
+---
+
+### Audit of Claims
+
+#### (1) Exact existential projection and sound reconstruction — *Conditionally sound; two missing lemmas*
+Let $F_{t-1} = R \land P(x) \land N(x)$ be tautology-free, with $P(x)=\{(x\lor A_i)\}$ and $N(x)=\{(\neg x\lor B_j)\}$. Every total assignment $\alpha$ on $V\setminus\{x\}$ satisfying $G = R \land \mathrm{NTRes}_x(P,N)$ extends to $F_{t-1}$: if all $A_i$ are true under $\alpha$, set $x=0$; if some $A_{i^*}$ is false, set $x=1$ (no $B_j$ can also be false under $\alpha$, else $(A_{i^*}\lor B_j)$ would be non-tautological and falsified by $\alpha$). Canonization (unit propagation retaining units plus subsumption) preserves exact logical equivalence on $V\setminus\{x\}$. Retained units $(v)$ or $(\neg v)$ have product $0$: eliminating $v$ stores $P(v)=\{(v)\}$ (shortened clause $\square$, always false $\Rightarrow v=1$) or $P(v)=\emptyset$ ($\Rightarrow v=0$), reconstructing correctly.
+
+**Missing invariants (potential soundness bugs):**
+1. *Initial tautology removal:* If the input is not canonized first, a clause $(x\lor \neg x\lor C)$ breaks the $P(x)/N(x)$ partition.
+2. *Vanished variables and state variable sets:* A variable $u$ can disappear from the formula *without* being eliminated (e.g., $u$ occurs only in clauses deleted by eliminating $x$ or by subsumption). If MRA/2SAT returns a partial witness only over the residual CNF’s variables, evaluating a stored shortened clause $A_i$ containing $u$ is undefined (defaulting “not false” to $x=0$ and later setting $u$ can falsify $(x\lor A_i)$). **Required lemma:** before reverse reconstruction, extend the base witness arbitrarily to a *total* assignment on all un-eliminated variables.
+
+#### (2) Polynomial preprocessing, $O(N^3m^4)$ literal ops, $O(mN\log N)$ storage — *Storage bound FALSE; time/bit gaps*
+- **Temporary-resolvent storage error:** Because elimination accepts only after canonizing, a trial on $x$ materializes up to $|\mathrm{Pos}(x)|\cdot|\mathrm{Neg}(x)|\le m^2/4$ temporary resolvents before rejecting. Take $\lfloor m/2\rfloor$ clauses $(x\lor A_i)$ and $\lfloor m/2\rfloor$ clauses $(\neg x\lor B_j)$ with distinct positive clauses $A_i,B_j$ of length $\lfloor N/4\rfloor$ over disjoint variable halves (for $\binom{\lfloor N/2\rfloor}{\lfloor N/4\rfloor}\ge m/2$). Testing $x$ produces $\Theta(m^2)$ distinct non-tautological resolvents of length $\Theta(N)$, requiring **$\Theta(m^2 N\log N)$ bits**, refuting $O(mN\log N)$ by a factor of $m$.
+- **Unbounded stack growth:** Take $p=\lfloor m/2\rfloor$ clauses $C_i=(x_1\lor\dots\lor x_k\lor A_i)$ of length $\Theta(N)$, $k-1$ chain clauses $(\neg x_t\lor x_{t+1})$ ($k=\min(\lfloor N/4\rfloor,\lfloor m/4\rfloor)$), and high-product guards on $x_k$ and $A_i$. Then $\mathrm{prod}(x_1)=p<\mathrm{prod}(x_t)=p+1$ ($t\ge 2$); eliminating $x_1,\dots,x_{k-1}$ in sequence reduces clause count by $1$ each step while pushing $p$ clauses of length $\Theta(N)$ each time, totaling **$\Omega(\min(N,m)\cdot mN\log N)$ stack bits** ($\Omega(mN^2\log N)$ for $m\ge N$).
+- **Literal operations & bit costs:** At most $N+1$ rounds try $\le N$ variables ($O(N^2)$ trials). Each trial forms $M=O(m^2)$ clauses of length $\le N$ in $O(m^2N)$ literal ops. Pairwise subsumption on $M$ sorted clauses costs $O(M^2N)=O(m^4N)$ literal ops, giving $O(N^3m^4)$ total **only under unstated implementation lemmas**: (a) sorted clauses for $O(N)$ merge/subsumption, (b) linear-time $O(MN)$ unit propagation (naive re-scanning costs $O(MN^2)=O(m^2N^2)$ per trial $\Rightarrow O(N^4m^2)$, exceeding $O(N^3m^4)$ whenever $N>m^2$), and (c) one UP fixpoint before subsumption. In the encoded-bit model, each literal operation costs $\Theta(\log N)$ bits, giving $O(N^3m^4\log N)$ bit ops (and requiring compact indexing $N\le \text{input bits}$). Preprocessing is polynomial in bit-length, but this does not bound MRA after `STUCK`.
+
+#### (3) Every min-product tie-break refutes the failure family with no branching — *TRUE (with minor scope caveats), but non-generalizable*
+Assume $n\ge 2$ if $y_{\text{next}}=y_{(i\bmod n)+1}$ (cyclic; $n=1$ makes $F_1$ tautological) or $n\ge 1$ if $y_{\text{next}}=y_{i+1}$ (chain), and absent variables (product $0$) are excluded. While any subset $S\neq\emptyset$ of pairs $C_i^+=(x_i\lor y_i\lor\neg y_{\text{next}}), C_i^-=(\neg x_i\lor\neg y_i\lor y_{\text{next}})$ remains: every $x_i$ ($i\in S$) has product $1\cdot 1=1$; $y_1,z_1,z_2$ have product $\ge 16$; each $y_j$ ($j\ge 2$) in $d\ge 1$ remaining pairs has product $d^2\ge 1$. Note the dynamic tie: deleting one pair drops an adjacent $y_j$ from product $4$ to $1$. Yet **every** variable of product $1$ occurs in exactly one complementary pair $\{C_r^+,C_r^-\}$ whose resolvent is tautological (0 resolvents, clause count drops by $2$). Thus every min-product tie-break deletes all of $F_n$, leaving only the 8 clauses on $y_1,z_1,z_2$. By symmetry, eliminating any one yields all 4 binary clauses on the other two ($4\le 8$); eliminating either of those yields complementary units $(w),(\neg w)$, which UP refutes to $\square$ ($1\le 4$).
+
+*Adversarial caveat:* This succeeds solely because $F_n$ consists of isolated tautological pairs and a 3-variable core; replacing either by clauses with $|\mathrm{Pos}|\cdot|\mathrm{Neg}|>|\mathrm{Pos}|+|\mathrm{Neg}|$ (as in the test below) immediately yields `STUCK`.
+
+#### (4) Preprocessing never worsens the frontier — *FALSE*
+Eliminating a low-product variable $v$ can destroy a small branching cutset into binary residuals (blocking MRA’s 2SAT invocation) and expose an E-MRA-stuck formula whose retained units during MRA branching create an exponential frontier under the induced variable order.
+
+#### (5) ELIM-only UNSAT has resolution proof size $\le Nm^2/4$ — *Derived steps TRUE (missing UP lemma); total clauses FALSE; implies a barrier*
+The naive count ($N$ eliminations $\times m^2/4$ resolvents) **omits unit-propagation resolution steps** (shortening a clause by $r$ literals costs $r$ binary resolutions).
+- **Missing lemma (derived steps, $m\ge 2$):** Let $K_{\text{DP}}$ be the number of eliminations with $p_tq_t>0$, $U_{<k}$ the units derived by UP before the final step $k$, and $u_k$ the units derived by UP at step $k$. Once UP derives and retains a unit on variable $y$, $y$ appears in no other clause ($p\cdot q=0$ forever), so $K_{\text{DP}}+U_{<k}+u_k\le N$. At step $t<k$, deriving $u_t$ units and shortening the $\le m-u_t$ other surviving clauses of $F_t$ costs $\le \binom{u_t}{2}+(m-u_t)u_t\le (m-1)u_t\le u_t m^2/4$ steps. At step $k$, $u_k\le \max(m-1, m^2/4-1)$ (at least one clause forms $\square$), so UP derives $u_k$ units plus $\square$ in $\le u_k(u_k+1)/2\le u_k\max(m/2,m^2/8)\le u_k m^2/4$ steps. Summing with $\le K_{\text{DP}}m^2/4$ DP steps gives $\le (K_{\text{DP}}+U_{<k}+u_k)m^2/4\le Nm^2/4$ derived steps.
+- **Errors & barrier:** Counting *total proof clauses* (input + derived) fails immediately: $F=\{(x_1),(\neg x_1)\}$ ($N=1,m=2$) has $3>1$, and $\{(x_1),(\neg x_1\lor x_2),(\neg x_2)\}$ ($N=2,m=3$) has $5>4.5$. Bit-size of the proof is $O(N^2m^2\log N)$. Crucially, this polynomial bound means ELIM-only **cannot refute** any family requiring super-polynomial resolution proofs (e.g., Pigeonhole Principle / expander Tseitin formulas, `[unverified literature recollection]`), forcing `STUCK` and leaving MRA’s worst-case branching unconstrained.
+
+---
+
+### Fully Specified Small Falsification Test (Disproves Claim 4)
+
+Define the 8-variable, 24-clause cyclic binary gadget on $a_0,\dots,a_7$ (indices mod $8$):
+$$H_8(a) = \{(\neg a_i \lor a_{i+s}) : i\in\mathbb{Z}_8,\; s\in\{1,3,5\}\}.$$
+All shifts in $H_8(a)$ are odd, and $H_8(a)$ forces $a_0=\dots=a_7$. Eliminating any $a_i$ deletes $3+3=6$ clauses and forms 9 resolvents $(\neg a_{i-s}\lor a_{i+t})$: only $(s,t)\in\{(3,5),(5,3)\}$ are tautologies, leaving **7** distinct non-unit even-shift clauses disjoint from $H_8(a)$ (no UP, no subsumption; $7>6$, rejected).
+
+**Instance $T$ (25 variables: $v, u_0..u_7, w_0..w_7, z_0..z_7$; 77 clauses; connected UNSAT):**
+1. $H_8(u),\; H_8(w),\; H_8(z)$ ($72$ clauses).
+2. $(\neg u_4\lor\neg u_6)$ ($1$ clause).
+3. $P(v)=\{(v\lor u_0\lor u_2),\; (v\lor w_0\lor\neg w_1),\; (v\lor z_0\lor\neg z_1)\}$ and $N(v)=\{(\neg v\lor u_4)\}$ ($4$ clauses).
+
+**Supplied branching order:** $\pi = (v,\; w_0,\; z_0,\; w_1,\dots,w_7,\; z_1,\dots,z_7,\; u_0,\dots,u_7)$.
+
+- **UNSAT:** $H_8(u)$ forces $u_0=\dots=u_7$. All $1$ falsifies $(\neg u_4\lor\neg u_6)$; all $0$ forces $v=0$ via $(\neg v\lor u_4)$, falsifying $(v\lor u_0\lor u_2)$.
+- **MRA without E-MRA:** Branching on $v=1$ yields unit $(u_4)$, forcing all $u_i=1$ and $\square$ via UP. Branching on $v=0$ deletes $(\neg v\lor u_4)$ and shortens $P(v)$ to binary clauses, so **2SAT** immediately refutes the sole surviving residual. **Peak frontier $\le 1$** (at most $2$ pre-UP).
+- **E-MRA preprocessing:** $\mathrm{prod}(v)=3\cdot 1=3 < 9\le \mathrm{prod}(\text{all other variables})$, so $v$ is uniquely tried first, replacing 4 clauses with 3 non-tautological resolvents $(u_0\lor u_2\lor u_4), (w_0\lor\neg w_1\lor u_4), (z_0\lor\neg z_1\lor u_4)$ ($77\to 76$, accepted). In $T'$, every remaining variable is rejected:
+  - Pure-$H_8$ variables ($u_{1,3,5,7}, w_{2..7}, z_{2..7}$): $6$ deleted, $7$ added.
+  - $u_0,u_2$: $7$ deleted, $7$ binary $+ 3$ positive 3-clauses $=10$ added.
+  - $u_6$: $7$ deleted, $7$ binary $+ 3$ negative binary $(\neg u_{\text{odd}}\lor\neg u_4)=10$ added.
+  - $u_4$: $10$ deleted, $\ge 7+9+3=19$ added.
+  - $w_0$ ($z_0$ identical): $7$ deleted; $P_{H_8}(w_0)$ has no $\neg w_1$, so $7$ even-shift binary $+ 2$ unsubsumed 3-clauses $(\neg w_1\lor w_{3,5}\lor u_4)=9$ added (1 tautology with $(\neg w_0\lor w_1)$).
+  - $w_1$ ($z_1$ identical): $7$ deleted; $N_{H_8}(w_1)$ has no $w_0$, so $7$ binary $+ 2$ unsubsumed 3-clauses $(\neg w_{4,6}\lor w_0\lor u_4)=9$ added.
+  Thus E-MRA returns `STUCK` on $T'$.
+- **MRA after E-MRA (order $\pi'=\pi\setminus\{v\}$):** Branching on $w_0$ gives 2 states retaining $(w_1),\dots,(w_7)$ vs $(\neg w_1),\dots,(\neg w_7)$ (both satisfy $(w_0\lor\neg w_1\lor u_4)$ and keep 3-clause $(u_0\lor u_2\lor u_4)$, blocking 2SAT). Branching next on $z_0$ splits each into 2, yielding **4 pairwise dominance-incomparable states** (distinct states contain complementary retained units $(w_1)/(\neg w_1)$ or $(z_1)/(\neg z_1)$, so neither clause set contains the other). **Peak frontier $= 4 > 1$** (with $k$ copies of $H_8$, **$2^k$ vs $1$**).

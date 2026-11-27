@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-11-26T17:46:40.794154+00:00",
+  "exit_code": 0,
+  "elapsed_seconds": 3.194401083,
+  "source_sha256": "61d5f9e5aa082e0ef577a9b7f8a2330fe263a04e13dc4b9d78bb40442caeea2e",
+  "lean_version": "4.36.0",
+  "stdout": "'IntegerCertificates.exactlyOne_equation' does not depend on any axioms\n'IntegerCertificates.fano_cnf_unsatisfiable' depends on axioms: [propext, Quot.sound]\n'IntegerCertificates.divisibility_obstruction' does not depend on any axioms\n'IntegerCertificates.fano_exactly_one_impossible' depends on axioms: [propext, Quot.sound]\n",
+  "stderr": "",
+  "scope": "Generic supplied integer divisibility obstruction, seven Fano exactly-one equations, Boolean CNF-to-equation bridge and exact seven-variable28-clause Fano CNF unsatisfiability. No general lattice solver, automatic recognizer, or general polynomial-time SAT proof."
+}

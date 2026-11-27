@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "source_sha256": "981741f8e4896f20302101b9f184e7215d7370fecd28628c10019439cb9ac9fb",
+  "proper_3cnf_formulas": 256,
+  "exact_elimination_steps": 768,
+  "pairs_per_step": 4,
+  "retained_resolvent_literals_per_step": 0,
+  "result": "Removed all parity padding and recovered each original arbitrary formula exactly",
+  "general_sat_solver": false,
+  "operational_bit_time_proof": false
+}

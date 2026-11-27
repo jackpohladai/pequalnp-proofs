@@ -1,0 +1,145 @@
+{
+  "at": "2026-11-26T18:10:01.785387+00:00",
+  "scc_projection_cases": 307,
+  "full_solver_random_cases": 300,
+  "projection_or_solver_failures": 0,
+  "old_fixtures": [
+    {
+      "source": "neon_antigravity_round2",
+      "variables": 12,
+      "clauses": 32,
+      "oracle_sat": true,
+      "observed": {
+        "sat": true,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 1,
+        "accepted_dp": 1
+      }
+    },
+    {
+      "source": "neon_antigravity_round3",
+      "variables": 12,
+      "clauses": 33,
+      "oracle_sat": false,
+      "observed": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 1,
+        "accepted_dp": 0
+      }
+    },
+    {
+      "source": "fable_worstcase_round5",
+      "variables": 12,
+      "clauses": 37,
+      "oracle_sat": false,
+      "observed": {
+        "sat": false,
+        "peak": 0,
+        "layers": [],
+        "scc_rounds": 1,
+        "accepted_dp": 0
+      }
+    }
+  ],
+  "neon_family": [
+    {
+      "k": 2,
+      "variables": 12,
+      "clauses": 72,
+      "xor_unsat_certificate_checked": true,
+      "observed": {
+        "sat": null,
+        "peak": 4,
+        "layers": [
+          {
+            "variable": 1,
+            "retained": 2
+          },
+          {
+            "variable": 2,
+            "retained": 4
+          }
+        ],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "partial_order": true,
+        "remaining_states": 4
+      },
+      "prediction_matches": true,
+      "exhaustive_oracle_sat": false
+    },
+    {
+      "k": 3,
+      "variables": 17,
+      "clauses": 104,
+      "xor_unsat_certificate_checked": true,
+      "observed": {
+        "sat": null,
+        "peak": 8,
+        "layers": [
+          {
+            "variable": 1,
+            "retained": 2
+          },
+          {
+            "variable": 2,
+            "retained": 4
+          },
+          {
+            "variable": 3,
+            "retained": 8
+          }
+        ],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "partial_order": true,
+        "remaining_states": 8
+      },
+      "prediction_matches": true
+    },
+    {
+      "k": 4,
+      "variables": 22,
+      "clauses": 136,
+      "xor_unsat_certificate_checked": true,
+      "observed": {
+        "sat": null,
+        "peak": 16,
+        "layers": [
+          {
+            "variable": 1,
+            "retained": 2
+          },
+          {
+            "variable": 2,
+            "retained": 4
+          },
+          {
+            "variable": 3,
+            "retained": 8
+          },
+          {
+            "variable": 4,
+            "retained": 16
+          }
+        ],
+        "scc_rounds": 0,
+        "accepted_dp": 0,
+        "partial_order": true,
+        "remaining_states": 16
+      },
+      "prediction_matches": true
+    }
+  ],
+  "fable_union_example": {
+    "model_count": 18,
+    "renamable_horn_renamings": 0,
+    "all_32_assignments_match_representation": true
+  },
+  "seconds": 1.1318299770355225,
+  "general_polynomial_sat_proof": false,
+  "scope": "Finite checks of one explicit implementation. Canon+ runs before full ELIM and again after its STUCK return. Growth measured through specified prefix only. XOR cancellation certificates checked, not Lean formalized. No universal or asymptotic claim."
+}

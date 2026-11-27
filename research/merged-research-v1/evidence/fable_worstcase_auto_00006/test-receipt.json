@@ -1,0 +1,7 @@
+{
+  "status": "no_fixture",
+  "summary": "Fable returned a mathematical draft without a finite fixture. Its claims remain unverified.",
+  "elapsed_seconds": 0.0007176399230957031,
+  "general_polynomial_sat_proof": false,
+  "solver": "scc_emra"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "test_source_sha256": "4812eb10bf46acd36bb0396a2e906f9a9fd6052e03876cbf6f4fe52c7aec50e4",
+  "proper_3cnf_formulas": 456,
+  "assignment_extension_checks": 21888,
+  "full_padded_truth_table_cases": 256,
+  "sat_cases": 399,
+  "unsat_cases": 57,
+  "candidate_execution": false,
+  "minimum_pivot_gap": 4,
+  "scope": "Finite regression checks of the padding construction; not a general SAT solver or a runtime proof."
+}

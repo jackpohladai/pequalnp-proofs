@@ -1,0 +1,100 @@
+{
+  "checked_at_utc": "2026-11-26T10:47:56.844514+00:00",
+  "status": "locally_lean_compiled",
+  "lean_version": "4.36.0",
+  "sources": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/AutomaticConstructor.lean",
+      "sha256": "d5fcbc13b514529584216e9e303710908f293bbb6ac28de670ee777d61db904c"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/AutomaticConstructorTotal.lean",
+      "sha256": "43b48cbd9a47884c740d0c5197918e1a6e8818a148c4fcac194c36483ea4ae5b"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/AutomaticConstructorExamples.lean",
+      "sha256": "e7d427c6e3e1ea4ca7355858bbf2f685a37d9cda1f717374dc088427a28e46f2"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/SearchCorrespondence.lean",
+      "sha256": "4dcbfaa1ca21f95e010695f045b6c5b8ffe8b70fb118f91c8df668be9c983ca4"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/RawMatchingPathComposition.lean",
+      "sha256": "10dcf044380e5f805f83e929c70d42da9f3eb8623ad177439bd1dda92bd14d45"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/RawMatchingCompleteness.lean",
+      "sha256": "2733393f5bd54aec2ae9b1a125dd5aaa0079a224df52251528304536c294be41"
+    }
+  ],
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-main-compile.json",
+      "sha256": "649c3771217b0f61c5851e42b40d46f17346af8a3135006c47ac8790e268188d"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-validation.json",
+      "sha256": "f117cf623c664cecdc682b531582aacff574bb8333f76af8ff2ff0993456efa7"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-examples-compile.json",
+      "sha256": "2fc353a337bffb625f8409714392ff717fdf0a7cd506b5965480b9954ffdaa4f"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-matching-validation.json",
+      "sha256": "a329c0b24474aae00f0ca983d083fdad2c7f23123761cbd09ba615fd6c74e558"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-receipt.json",
+      "sha256": "ab0e825dcd66d6c0330efe68ecada194adfee22c2c08a7a0338776511fb789fb"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-root-audit.json",
+      "sha256": "406a56b3cc145fb80cb74bb76b0e94a6b68611d3577ca10338a7fc8bf0f1cacf"
+    }
+  ],
+  "prior_constructor_receipt": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/compile-receipt.json",
+    "sha256": "aa9f92f006904ceab1e8969dbb85b469d6fd6aface1e5c4676aef7fe5b02f5ca"
+  },
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "formalized_scope": [
+    "Finite typed bipartite matching always returns a valid matching or a valid Hall failure certificate; no inconclusive branch is reachable.",
+    "Optimized raw-path matcher avoids the previous redundant existential search across all possible hole identifiers.",
+    "Automatic constructed-CNF solver computes the retained model and its own matching certificate; returned SAT assignments satisfy the actual encoding and returned UNSAT excludes all its models.",
+    "The public procedure never returns inconclusive. It returns SAT or UNSAT whenever executable inputCheck and dualHornCheck pass; unsupported input is explicitly rejected."
+  ],
+  "supported_class": "Explicit typed guarded matching CNF constructor; dual-Horn retained clauses, positive guards, identifiers below private-edge offset, disjoint fresh private-edge variables. Actual executable checks enforce these conditions.",
+  "finite_tests": {
+    "matching": {
+      "instances": 5054,
+      "verdicts_agree_and_certificates_accept": 5054,
+      "inconclusive": 0,
+      "oracle": "Recursive distinct-hole assignment for active rows"
+    },
+    "large_identifier_fixtures": {
+      "forced_augmentation_with_81_bit_hole_ids": "(\"success\", [some 1208925819614629174706177, some 1208925819614629174706176])",
+      "Hall_failure_with_81_bit_hole_id": "(\"failure\", [some 0, some 1])",
+      "all_tiny_graph_and_guard_configurations": "(5054, 5054)"
+    },
+    "automatic_constructor_cases": 7,
+    "automatic_stdout": "[3, 2, 2, 0, 0, 3, 3]; true; [false, true]; true"
+  },
+  "not_formalized": [
+    "Recognizing or decomposing arbitrary raw CNF into this restricted constructor",
+    "General SAT coverage and P=NP",
+    "Formal encoded-bit time bound, including input representation and closure-update costs",
+    "Python implementation refinement",
+    "Upstream strict-checker acceptance"
+  ],
+  "general_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false,
+  "complete_matching_search_verified": true
+}

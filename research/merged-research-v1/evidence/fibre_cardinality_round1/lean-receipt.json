@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-27T02:32:48.695658+00:00",
+  "status": "checked",
+  "exit_code": 0,
+  "source_sha256": "320db129f84a4586a0467d7a20a89c97e3ef9cbc4a9876817266c4e616b5eb48",
+  "lean_version": "4.36.0",
+  "mathlib_revision": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+  "checked_theorems": [
+    "preimage_card",
+    "exact_preimage_of_count",
+    "exact_preimage_of_cross_count",
+    "binary_block_certificate",
+    "blocks_equisatisfiable",
+    "counted_blocks_equisatisfiable",
+    "matrix_block_certificate",
+    "matrix_compatibility"
+  ],
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "scope": "Generic finite-group fibre counting; arbitrary-width binary block count certificates and compositional SAT equivalence under explicit map/right-inverse/compatibility assumptions. Matrix right-inverse and coordinate-compatibility equations are also connected to the abstract maps.",
+  "python_implementation_verified": false,
+  "discovery_completeness_verified": false,
+  "runtime_verified": false,
+  "general_polynomial_sat_proof": false,
+  "upstream_submitted": false,
+  "command": [
+    "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lake",
+    "env",
+    "lean",
+    "-j",
+    "1",
+    "-DElab.async=false",
+    "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fibre_cardinality_round1",
+    "-o",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fibre_cardinality_round1/build/FibreCardinality.olean",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fibre_cardinality_round1/FibreCardinality.lean"
+  ],
+  "completion_record": "Lean compiler exec session65815 exited0; matrix lemmas included."
+}

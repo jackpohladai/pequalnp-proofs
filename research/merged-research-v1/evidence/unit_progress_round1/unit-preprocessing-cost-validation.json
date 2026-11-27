@@ -1,0 +1,168 @@
+{
+  "checked_at_utc": "2026-11-26T11:56:16.832594+00:00",
+  "status": "compiled_and_executed",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_progress_round1/UnitPreprocessingCost.lean",
+  "source_sha256": "ee29b7ac880d20d6b294be9850bdddac2ac89e5a88ee989887bac001ad4c1b61",
+  "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_progress_round1/cost-build/lib/lean/UnitPreprocessingCost.olean",
+  "artifact_sha256": "cd2ced0358978522b12f53eb1feee3e84ce4e506caded2df86e0fec12700654e",
+  "compiled_source_snapshot": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-unit-preprocessing-cost-a3ioyexi/UnitPreprocessingCost.lean",
+  "compile": {
+    "command": [
+      "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+      "-j",
+      "1",
+      "-DElab.async=false",
+      "-o",
+      "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-unit-preprocessing-cost-a3ioyexi/UnitPreprocessingCost.olean",
+      "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-unit-preprocessing-cost-a3ioyexi/UnitPreprocessingCost.lean"
+    ],
+    "env": {
+      "LEAN_PATH": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-cost-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean"
+    },
+    "working_directory": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-unit-preprocessing-cost-a3ioyexi",
+    "lean_version": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+    "exit_code": 0,
+    "elapsed_seconds": 4.067,
+    "stdout": "({ unitRows := 51, restrictionRows := 42, keyTests := 9, emittedRows := 39, emittedLiterals := 4 }, 50)\n195\n'PEqualNP.Outside.UnitPropagation.Cost.firstUnitCounted_spec' depends on axioms: [propext]\n'PEqualNP.Outside.UnitPropagation.Cost.reduceClauseCounted_spec' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.UnitPropagation.Cost.reduceCounted_spec' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.UnitPropagation.Cost.propagateCounted_erases' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.UnitPropagation.Cost.propagateCounted_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.UnitPropagation.Cost.budgetCounted_spec' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.UnitPropagation.Cost.prepareCounted_erases' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.UnitPropagation.Cost.prepareEvents_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.UnitPropagation.Cost.prepareEvents_bits' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+    "stderr": ""
+  },
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axioms": {
+    "PEqualNP.Outside.UnitPropagation.Cost.firstUnitCounted_spec": [
+      "propext"
+    ],
+    "PEqualNP.Outside.UnitPropagation.Cost.reduceClauseCounted_spec": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.UnitPropagation.Cost.reduceCounted_spec": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.UnitPropagation.Cost.propagateCounted_erases": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.UnitPropagation.Cost.propagateCounted_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.UnitPropagation.Cost.budgetCounted_spec": [
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.UnitPropagation.Cost.prepareCounted_erases": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.UnitPropagation.Cost.prepareEvents_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PEqualNP.Outside.UnitPropagation.Cost.prepareEvents_bits": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "dependency_receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-decision-validation.json",
+      "sha256": "809d33cf2aaa3082b9e6efbe82992f83295761fde66c7cd3da53ee785becff91"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/unit-validation.json",
+      "sha256": "e53696cdd232192c9c39b1164e3c1bfa78e3cd58d7bb68daf8f737a512da3bd5"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-cost-validation.json",
+      "sha256": "e57877f981bb0724e12964de2c607a10074aa0da04f871b43e5be9bd4476c235"
+    }
+  ],
+  "resolved_dependencies": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitPreparedDecision.lean",
+      "source_sha256": "161dcabd2cdac615e291302e08b527ac04e8b787b31bf9de769729a4da214d20",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitPreparedDecision.olean",
+      "artifact_sha256": "ae07b83e6bf4f4c64667b6322d68f3f5538f0974713a75130142206e3dd2b9b1",
+      "first_resolved_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitPreparedDecision.olean"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/UnitPropagation.lean",
+      "source_sha256": "951566986ddc62b4e6ab81f98d51ab6781eb34d838adde0185333114010d9efd",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitPropagation.olean",
+      "artifact_sha256": "d158981179b295fe1a1a10d7404d297011c02b0af659723b60dca596a5d74d2d",
+      "first_resolved_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitPropagation.olean"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/RetainedScanCost.lean",
+      "source_sha256": "851c322da4af45d360ca9473f4555872dda308731ee2d6f933b8395ec108fcd7",
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-cost-build/lib/lean/RetainedScanCost.olean",
+      "artifact_sha256": "0a40cff0b45dcaf3177e47ba7cbe05976ece195c85b4a0a1d2641262d9c40d90",
+      "first_resolved_artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-cost-build/lib/lean/RetainedScanCost.olean"
+    }
+  ],
+  "reusable_lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_progress_round1/cost-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/retained-cost-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/lazy_branch_round1/lazy-branch-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/input-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-matching-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/cached-move-build:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/raw-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/correspondence-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/automatic-total-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/guard-vector-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/loop-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/bounded_matching_round1/state-build/lib/lean",
+  "original_budget_codegen": {
+    "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/unit_propagation_round1/build/lib/lean/UnitPreparedDecision.c",
+    "sha256": "98dd7e42cd1ebd942fa308c0e4171deba8640fa8ebbc538d17c291e7f9d060c6",
+    "map_then_sum_lines": [
+      37,
+      38
+    ],
+    "prepare_budget_then_propagate_lines": [
+      48,
+      49
+    ]
+  },
+  "events": [
+    "One unitRows event for every inspected CNF spine cell including empty clauses, stopping at the first unit. No scan at zero fuel.",
+    "One restrictionRows event per input clause processed by the restriction filterMap. One keyTests event for each literal reached in that clause, including the first satisfying fixed literal when present.",
+    "One emittedRows event per kept clause and one emittedLiterals event per surviving literal cons. Verified counts equal actual output clause and occurrence counts. These are logical list emissions, not counts of allocator calls or copies in a backend.",
+    "Upfront budget: one literal visit for each clause-length traversal, and three events per CNF row for map visit, length-cell emission and sum visit. This is a source-pass accounting, without asserting a compiler allocation count."
+  ],
+  "bounds": {
+    "parameters": {
+      "L": "literal occurrence count including duplicates",
+      "C": "clause count including empty clauses",
+      "N": "length of canonical encodeCNF F bit list"
+    },
+    "one_restriction": "at most 2C+2L selected events",
+    "propagate": "fuel*(3C+2L)",
+    "prepare": "(L+1)*(3C+2L), including upfront map/length/sum",
+    "encoded_length": "2N(N+1), via 4L+2C \u2264 N",
+    "cost_excluded": "Magnitude-dependent ID equality cost, sign comparison, counter arithmetic, reference counts, allocations, final hasEmpty check and later branch solver work."
+  },
+  "scope": "Executable control-flow instrumentation, exact erasure to the frozen preparation result and quadratic bound on named events only. No end-to-end runtime, formal bit-operation or general SAT claim.",
+  "fixtures": {
+    "padded_12_empties_and_3_step_chain": {
+      "input_C": 15,
+      "input_L": 5,
+      "remaining_empty_clauses": 12,
+      "unitRows": 51,
+      "restrictionRows": 42,
+      "keyTests": 9,
+      "emittedRows": 39,
+      "emittedLiterals": 4,
+      "upfront": 50,
+      "total": 195
+    },
+    "100_empty_clauses": {
+      "total": 300,
+      "explanation": "Fuel zero; only upfront budget scans are charged."
+    },
+    "early_satisfied_clause": {
+      "keyTests": 1
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "compiler": "Lean 4.36.0",
+  "utc": "2026-11-26T10:29:45.674304+00:00",
+  "status": "checked",
+  "base_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/path-compile-receipt.json",
+  "base_receipt_sha256": "8edaafb7eeed614de7a5091bccd65083e88cfffff5a6c46134753f19c95b8dab",
+  "modules": [
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/PathSearchExamples.lean",
+      "source_sha256": "0d3a6a6a4aed492f265555b732dbb89a2c7bed90046b24cb89d5ac63a3026481",
+      "exit_code": 0,
+      "output": "some (1, [0, 1])\nsome (some 1, some 0)\ntrue\n'PEqualNP.Outside.MatchingPaths.Examples.forced_alternating_path' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingPaths.Examples.replay_covers_selected_root' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingPaths.Examples.malformed_raw_path_is_rejected' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-paths-q6vw34jf/PathSearchExamples.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-paths-q6vw34jf/PathSearchExamples.lean"
+      ],
+      "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/path-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+      "elapsed_seconds": 1.578296875115484,
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/path-build/lib/lean/PathSearchExamples.olean",
+      "artifact_sha256": "bedbc5e7dbcdba519e2b321233da19ca06287e8bcc28e5e0e33886c05a6a69dd",
+      "compiled_source_snapshot": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/path-build/source/PathSearchExamples.lean"
+    },
+    {
+      "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/RawPathInvariant.lean",
+      "source_sha256": "228fba490068a98ae534d36f14c0ea36ef4da87988970f0b0a962d6a876e285a",
+      "exit_code": 0,
+      "output": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-paths-q6vw34jf/RawPathInvariant.lean:30:23: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i\u0335f\u0335_\u0335p\u0335o\u0335s\u0335i\u0332t\u0332e\u0332_\u0332e\u0332q\u0332_\u0332l\u0332e\u0332f\u0332t\u0332\n/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-paths-q6vw34jf/RawPathInvariant.lean:32:23: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i\u0335f\u0335_\u0335n\u0335e\u0335g\u0335i\u0332t\u0332e\u0332_\u0332e\u0332q\u0332_\u0332r\u0332i\u0332g\u0332h\u0332t\u0332\n/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-paths-q6vw34jf/RawPathInvariant.lean:25:21: warning: This simp argument is unused:\n  owner\n\nHint: Omit it from the simp argument list.\n  [apply] simp only\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-paths-q6vw34jf/RawPathInvariant.lean:28:21: warning: This simp argument is unused:\n  owner\n\nHint: Omit it from the simp argument list.\n  [apply] simp only\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'PEqualNP.Outside.MatchingPaths.rawSearchPath_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingPaths.searchPath_eq_raw' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "-o",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-paths-q6vw34jf/RawPathInvariant.olean",
+        "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-matching-paths-q6vw34jf/RawPathInvariant.lean"
+      ],
+      "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/path-build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Cli/.lake/build/lib/lean",
+      "elapsed_seconds": 10.936961499974132,
+      "artifact": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/path-build/lib/lean/RawPathInvariant.olean",
+      "artifact_sha256": "ddca6bc8cbc747a91cd676ead689ae6f1ff8f30ccf780adac79b72cf8f93fff1",
+      "compiled_source_snapshot": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/path-build/source/RawPathInvariant.lean"
+    }
+  ],
+  "scope": "Raw queue scan/discovery/explore preserve constructed reverse path invariant under Valid and root unmatched. Public validator never rejects a returned raw path on valid input. This does not prove old BFS free corresponds to raw path Some or row fuel suffices.",
+  "runtime_limitations": [
+    "followsDecidable existential ranges over Fin h, potentially enumerating entire numeric hole range.",
+    "No sparse encoded-bit complexity bound; no polynomial total-runtime theorem.",
+    "None means inconclusive, including fuel exhaustion or no free hole."
+  ],
+  "tests": {
+    "kernel_checked_examples": 8,
+    "runtime_eval_outputs": [
+      "some (1, [0, 1])",
+      "some (some 1, some 0)",
+      "true"
+    ]
+  }
+}

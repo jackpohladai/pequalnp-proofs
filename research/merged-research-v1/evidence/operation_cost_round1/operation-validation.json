@@ -1,0 +1,84 @@
+{
+  "id": "operation_cost_round1",
+  "checked_at_utc": "2026-11-26T11:32:45.684913+00:00",
+  "status": "locally_lean_compiled",
+  "extends_component_family": "matching_complete_round1",
+  "count_as_new_component_family": false,
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/SparseValidatedConstructor.lean",
+  "source_sha256": "c86e2d4eacd15536e50bbe1e48204c10e3030f1f1aeceb800f3433a7a0382d2f",
+  "scope": "Equivalent sparse certificate validation integrated with bounded matching and cached guards; concrete raw-search cost instrumentation with selected-operation bounds.",
+  "receipts": [
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/sparse-success-validation.json",
+      "sha256": "a5e8e96eef651127e14f6c5c2a5cecfe1abc41105c6732a78ed3d5509bb67cc4"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/sparse-success-benchmark.json",
+      "sha256": "32b8d0d7aeab8bb03b044d6e724c2edfc37f047b6704477e18d49d9686fcdc50"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/sparse-constructor-validation.json",
+      "sha256": "9e31c42e45b6fcadc02388c08ce1dad2ef0758bbc6400c959ff8d1bb75542693"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/sparse-constructor-independent-audit.json",
+      "sha256": "3d57011a9d913d3afe7ffdf5516fa113244c37016662530ca2dd9ea09f98f12c"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/mixed-sparse-validation.json",
+      "sha256": "39d4f9a3e86bbd79d8c4e2be1f2d3475287a7d0bec564fda94e81eee00dd9abd"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/sparse-constructor-comparison.json",
+      "sha256": "3480da8bc4856a909dbf14bfd7d89dd81dabe90937bef1e04e0ccc54ffac3bbe"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/scan-validation.json",
+      "sha256": "4a86710018d558598459ac81f21636cf3e5c1d7c03bdc0669e3ced80f90414d3"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/search-validation.json",
+      "sha256": "7ab5c3b7b35b7d09204b33df6576049eefa70bcf3942c31b200fe082823dd341"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/examples-validation.json",
+      "sha256": "244ca93a7a5684ecd53d1afcbe7188bbd3d714068bec5298b74fec51121bed41"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/bounded-cost-roadmap.json",
+      "sha256": "f7e8e409d8526d6a350fb06b6cb803e2c9373a40f3a9793a7aefce1acacda339"
+    },
+    {
+      "path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/root-validation-audit.json",
+      "sha256": "ef913988ce62f45a5de7ee24b5dc3de09f63883caa1d41576a113baa63af7f46"
+    }
+  ],
+  "formalized": [
+    "Sparse success validator equals the original for every certificate, retaining row checks and caching active values for uniqueness.",
+    "Typed and explicit constructor results equal the previous checked solver, including returned SAT assignment.",
+    "Instrumented raw path search projects exactly to the old search; cost includes specified edge, lookup, seen membership, queue-copy, discovery and queue-pop events. Under well-formed table and degree bound D, cost at most fuel*(1+D*(3*r+4))."
+  ],
+  "tests": {
+    "success_checker_comparisons": 15025,
+    "integrated_constructor_cases": 6756,
+    "truth_table_valuations": 135152,
+    "sat_witnesses": 3482,
+    "unsat": 3274,
+    "targeted_and_boundary_controls": 8,
+    "cost_kernel_fixtures": 10
+  },
+  "timing": {
+    "largest_old_ms": 793.81,
+    "largest_new_ms": 197.685,
+    "scope": "One paired typed-constructor run; same prebuilt arrays, old first, no input-parser/witness-output cost or universal speed claim.",
+    "receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/operation_cost_round1/sparse-constructor-comparison.json"
+  },
+  "not_proved": [
+    "Full bit-runtime, including comparison widths, other search, replay, propagation, checks and I/O",
+    "General polynomial-time SAT"
+  ],
+  "general_sat_proof": false,
+  "encoded_bit_runtime_proved": false,
+  "official_strict_checker": false,
+  "upstream_accepted": false
+}

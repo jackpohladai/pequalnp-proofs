@@ -1,0 +1,111 @@
+{
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/backdoor_oracle.py",
+  "source_sha256": "f03730c700e6c1194766f0b07474ff07c92b1f300a738286f4c370545aafed5a",
+  "command": [
+    "/usr/bin/python3",
+    "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_backdoor_audit_round1/backdoor_oracle.py"
+  ],
+  "exit_code": 0,
+  "observed_utc": "2026-11-26T11:56:12.629772+00:00",
+  "outputs": {
+    "orientation_and_renaming": {
+      "orientation_assignment_equivalences": 40960,
+      "accepted_partial_instances": 3749,
+      "encoding_assignment_equivalences": 655360
+    },
+    "guard_join_counterexample": {
+      "retained": [
+        [
+          1,
+          2
+        ]
+      ],
+      "guards": [
+        [
+          -1
+        ],
+        [
+          -2
+        ]
+      ],
+      "holes": 0,
+      "guard_vectors": [
+        [
+          false,
+          false
+        ],
+        [
+          false,
+          true
+        ],
+        [
+          true,
+          false
+        ]
+      ]
+    },
+    "cyclic_static_obstruction": [
+      {
+        "n": 5,
+        "clauses": 10,
+        "mandatory_deleted": 5
+      },
+      {
+        "n": 8,
+        "clauses": 16,
+        "mandatory_deleted": 8
+      },
+      {
+        "n": 32,
+        "clauses": 64,
+        "mandatory_deleted": 32
+      },
+      {
+        "n": 128,
+        "clauses": 256,
+        "mandatory_deleted": 128
+      }
+    ],
+    "vertex_cover_checks": 1024,
+    "affine_negative_projection_checks": 20952,
+    "hall_visible_cnf_lower_bound_checks": [
+      {
+        "rows": 2,
+        "holes": 1,
+        "minimal_bad": 1,
+        "non_taut_visible_implicates": 1
+      },
+      {
+        "rows": 3,
+        "holes": 1,
+        "minimal_bad": 3,
+        "non_taut_visible_implicates": 7
+      },
+      {
+        "rows": 4,
+        "holes": 2,
+        "minimal_bad": 4,
+        "non_taut_visible_implicates": 9
+      },
+      {
+        "rows": 5,
+        "holes": 2,
+        "minimal_bad": 10,
+        "non_taut_visible_implicates": 51
+      },
+      {
+        "rows": 6,
+        "holes": 3,
+        "minimal_bad": 15,
+        "non_taut_visible_implicates": 73
+      },
+      {
+        "rows": 7,
+        "holes": 3,
+        "minimal_bad": 35,
+        "non_taut_visible_implicates": 379
+      }
+    ]
+  },
+  "scope": "Independent tiny Boolean oracle, signed clause and implication logic, and projected affine systems. It does not import or execute generated candidate source."
+}

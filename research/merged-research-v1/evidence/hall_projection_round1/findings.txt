@@ -1,0 +1,69 @@
+Guarded Hall projection: exact typed semantic interface
+
+Source context: Sol00364, SHA256
+d679d8976722a9861b75d4f6c0515800440c2c4d91287c61fa99f856b3e2d429.
+The source was read and hashed, never executed. The proof is a mathematical
+component, not a verification of its recognizer or Python matching code.
+
+Fix a finite row type R, a hole type H, a finite neighbor set N(i) for each
+row, and a retained assignment that determines one Boolean guard g(i).
+The active rows are those with false guards. Every private edge variable
+is separately indexed by its row and hole: e(i,h). The block semantics are:
+
+1. A true edge belongs to its row's neighbor set.
+2. Every row has a true guard or at least one true neighboring edge.
+3. If e(i,h) and e(j,h) are both true, then i=j.
+
+There are no further constraints on these private edge variables. In
+particular, one private variable cannot secretly be shared across rows.
+Arbitrary Boolean guards are allowed because the retained assignment has
+already fixed their values; their internal syntax is irrelevant here.
+
+HasPrivateEdges states existence of such an edge assignment. HasMatching
+states existence of an injective choice of neighboring holes for exactly
+the active rows. GuardedCuts states that every row set S with fewer
+neighboring holes than rows must contain a true guard:
+
+  |union_{i in S} N(i)| < |S|  ==>  OR_{i in S} g(i).
+
+The Lean proof connects HasPrivateEdges <-> HasMatching <-> GuardedCuts.
+The Boolean-to-matching direction chooses one true edge for each active
+row; hole exclusivity makes the choices injective. The reverse direction
+sets just matching edges true and all other edges false. The guarded-cut
+equivalence instantiates Mathlib's finite Hall marriage theorem on the
+active-row subtype and translates finite subsets between the two types.
+
+The requested example is also a separate Lean theorem:
+
+  exists p,q: (p OR x) AND (q OR NOT y) AND NOT(p AND q)
+    iff x OR NOT y.
+
+Independent finite checks compare direct matching search with all guarded
+cuts on all 5,054 graph/guard assignments up to three rows and three holes.
+The tiny two-row example checks all 16 assignments to p,q,x,y. These tests
+do not import generated candidate code.
+
+Scope and remaining obligations
+
+This establishes an exact existential projection under the typed/private
+edge premises. It does not establish that an arbitrary CNF recognizer
+meets those premises, that all guarded cuts can be listed in polynomial
+space, that Python implements matching correctly, or that retained guard
+variables can be decided in polynomial time. There can be exponentially
+many row subsets. Actual operational encoded-bit cost is not analyzed.
+
+The reported Hydrogen00754 overlap example is outside this interface:
+[(1,2),(1,3),(-1,-2),(-1,-3),(-2,-3)] is satisfied by variable 1 alone,
+but variable 1 occurs in two positive rows. Treating those occurrences as
+two private row edges destroys the true sharing relation. A recognizer
+must reject that classification or retain a representation of the sharing.
+
+Read compile-receipt.json for the exact accepted source hash and checker
+status. This is local Lean compiler/kernel verification, not an upstream
+assignment submission, independent project checker replay, or SAT-in-P proof.
+
+Final verification passed: Lean 4.36.0, exit 0, 22.9 seconds. The full
+projection and both intermediate equivalences use only propext,
+Classical.choice and Quot.sound; the two-row theorem uses no axioms.
+There is one unused-section-variable warning and no errors. Accepted SHA256:
+97827e26e1f4b7554920bc04e69dc4073769ba476c66fc76ccfd1bcfb360fa0b.

@@ -1,0 +1,10 @@
+{
+  "status": "checked",
+  "exit_code": 0,
+  "stdout": "'CompressionSoundness.equisat_of_projection' does not depend on any axioms\n'CompressionSoundness.certificateCheck_sound' depends on axioms: [propext, Quot.sound]\n'CompressionSoundness.equisat_of_two_maps' does not depend on any axioms\n'CompressionInstances.case36_forward' depends on axioms: [propext]\n'CompressionInstances.case36_backward' depends on axioms: [propext]\n'CompressionInstances.case36_equisatisfiable' depends on axioms: [propext]\n'CompressionInstances.case96_forward' depends on axioms: [propext]\n'CompressionInstances.case96_backward' depends on axioms: [propext]\n'CompressionInstances.case96_equisatisfiable' depends on axioms: [propext]\n'CompressionInstances.positive_forward' depends on axioms: [propext]\n'CompressionInstances.positive_backward' depends on axioms: [propext]\n'CompressionInstances.positive_equisatisfiable' depends on axioms: [propext]\n",
+  "stderr": "",
+  "seconds": 5.5661862499999994,
+  "source_sha256": "fed5435e310b9973cecf7033a20a7c3f37c18f89abfd272a04b587d15dae09f0",
+  "cases": 3,
+  "general_polynomial_sat_proof": false
+}

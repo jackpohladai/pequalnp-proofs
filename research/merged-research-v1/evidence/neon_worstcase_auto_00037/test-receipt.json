@@ -1,0 +1,106 @@
+{
+  "status": "confirmed_finite_growth_fixture",
+  "summary": "The deployed solver still reaches at least four simultaneous states on this finite UNSAT fixture. This is a finite test, not a general complexity result. Observed peak: 16; compression: skipped. Skip reason: all_variables_in_odd_blocks.",
+  "oracle_sat": false,
+  "observed": {
+    "sat": false,
+    "peak": 16,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 4
+      },
+      {
+        "variable": 3,
+        "retained": 8
+      },
+      {
+        "variable": 4,
+        "retained": 16
+      },
+      {
+        "variable": 5,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 192,
+    "counting": {
+      "calls": 50,
+      "refutations": 0,
+      "windows": 342,
+      "tuples": 6680,
+      "seconds": 0.8310361700000009,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 0,
+      "tuples": 0,
+      "constraints": 0,
+      "truncated": false,
+      "seconds": 0.0004657500000000425,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-root-scc-emra-ialh5-v2",
+    "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "skipped",
+      "reason": "all_variables_in_odd_blocks",
+      "original_variables": 12,
+      "original_clauses": 98,
+      "seconds": 0.00038491700000009565
+    }
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 16,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 4
+      },
+      {
+        "variable": 3,
+        "retained": 8
+      },
+      {
+        "variable": 4,
+        "retained": 16
+      },
+      {
+        "variable": 5,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 192
+  },
+  "baseline_seconds": 0.411302042,
+  "updated_seconds": 1.2448777500000001,
+  "seconds": 1.7678388329999999,
+  "solver": "blq-root-scc-emra-ialh5-v2",
+  "source_sha256": "ddb1fc9a218044e456a7436bc4358d4b175a5397c55af2d8c5b396eeb8041a63",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

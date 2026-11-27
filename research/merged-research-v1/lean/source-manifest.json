@@ -1,0 +1,642 @@
+{
+  "CompressionSoundness": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/CompressionSoundness.lean",
+    "original_sha256": "32eff5851b7af275d87eec2af9552f9d94e016a90705a10686d7df803b5491af",
+    "merged_source": "lean/src/CompressionSoundness.lean",
+    "merged_sha256": "32eff5851b7af275d87eec2af9552f9d94e016a90705a10686d7df803b5491af",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "CheckedComposition": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/checked_components/CheckedComposition.lean",
+    "original_sha256": "c70cd7f82dd0967e1a9e901949d4225463fe1761ce02ded68b3cab8d0ed42a98",
+    "merged_source": "lean/src/CheckedComposition.lean",
+    "merged_sha256": "c70cd7f82dd0967e1a9e901949d4225463fe1761ce02ded68b3cab8d0ed42a98",
+    "imports": [
+      "ParityExtraction",
+      "StalledParity",
+      "RankObstruction",
+      "GuardedHall",
+      "PairedUnion"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "PairedUnion": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/paired_union_round1/PairedUnion.lean",
+    "original_sha256": "0db91e5c4f64f5cab9c554ee08ad0fa5597b826263bcae1b369f87dbfbbc9253",
+    "merged_source": "lean/src/PairedUnion.lean",
+    "merged_sha256": "0db91e5c4f64f5cab9c554ee08ad0fa5597b826263bcae1b369f87dbfbbc9253",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "GuardedHall": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/hall_projection_round1/GuardedHall.lean",
+    "original_sha256": "97827e26e1f4b7554920bc04e69dc4073769ba476c66fc76ccfd1bcfb360fa0b",
+    "merged_source": "lean/src/GuardedHall.lean",
+    "merged_sha256": "97827e26e1f4b7554920bc04e69dc4073769ba476c66fc76ccfd1bcfb360fa0b",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "RankObstruction": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/rank_obstruction_round1/RankObstruction.lean",
+    "original_sha256": "d06d9c2bad7ff35b5edf07f61cb1297217b8ef5875476f89d7866ac5571e94d1",
+    "merged_source": "lean/src/RankObstruction.lean",
+    "merged_sha256": "d06d9c2bad7ff35b5edf07f61cb1297217b8ef5875476f89d7866ac5571e94d1",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "StalledParity": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/synthesis_round1/StalledParity.lean",
+    "original_sha256": "a2e4b09af3f4c6897868044b64820c841badfd8a333b890206fcc15a43cd34f3",
+    "merged_source": "lean/src/StalledParity.lean",
+    "merged_sha256": "a2e4b09af3f4c6897868044b64820c841badfd8a333b890206fcc15a43cd34f3",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "ParityExtraction": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/parity_extraction_round1/ParityExtraction.lean",
+    "original_sha256": "db62a41c9e2ff136f5cabdd3e69f94ba6a00a35069d8dbe0e3f7887470406137",
+    "merged_source": "lean/src/ParityExtraction.lean",
+    "merged_sha256": "db62a41c9e2ff136f5cabdd3e69f94ba6a00a35069d8dbe0e3f7887470406137",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "CoreCandidate": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/core_v5_pipeline_review/CoreCandidate.lean",
+    "original_sha256": "24516ac14247537f47e3dfd869a50551b75bb73ae728cb12c4a17aaf5a77c366",
+    "merged_source": "lean/src/CoreCandidate.lean",
+    "merged_sha256": "3f67a0a81f003e50d5878bf1b60b594c2c969990a4e2eccdc5885fd56692581a",
+    "imports": [],
+    "namespace_isolated": true,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "CoreRefutations": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fibre_cardinality_round1/CoreRefutations.lean",
+    "original_sha256": "28d6d29788fb09abcd98d9b44bc737f3fa05f7658791bd08d98da563e827783c",
+    "merged_source": "lean/src/CoreRefutations.lean",
+    "merged_sha256": "69ddd07a7569bf1f62d1fcd92e9042a32bf2fc3e76b105f67ed93b930116cca8",
+    "imports": [],
+    "namespace_isolated": true,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "FibreCardinality": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fibre_cardinality_round1/FibreCardinality.lean",
+    "original_sha256": "320db129f84a4586a0467d7a20a89c97e3ef9cbc4a9876817266c4e616b5eb48",
+    "merged_source": "lean/src/FibreCardinality.lean",
+    "merged_sha256": "320db129f84a4586a0467d7a20a89c97e3ef9cbc4a9876817266c4e616b5eb48",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "LargerCompressionInstances": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/LargerCompressionInstances.lean",
+    "original_sha256": "43ad06eb857598df0e78c1dfb8ad511e4c76247c86b28f67096cbe2c74614a47",
+    "merged_source": "lean/src/LargerCompressionInstances.lean",
+    "merged_sha256": "b8b08b928278f575e5d13d8de648d6740cc08976114143cce8628d17ac07b2e0",
+    "imports": [],
+    "namespace_isolated": true,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "CompressionInstances": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/CompressionInstances.lean",
+    "original_sha256": "fed5435e310b9973cecf7033a20a7c3f37c18f89abfd272a04b587d15dae09f0",
+    "merged_source": "lean/src/CompressionInstances.lean",
+    "merged_sha256": "80c06b3522b7221ce7f55e597d0a22fec0f710ce1f02e9048d56ca557e4abae1",
+    "imports": [],
+    "namespace_isolated": true,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "ModularCertificate": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/neon_worstcase_auto_00001_review/ModularCertificate.lean",
+    "original_sha256": "53136bb25aa7c3b5d424d4e755347f7386a13e4120703357b01b799a23dab0c1",
+    "merged_source": "lean/src/ModularCertificate.lean",
+    "merged_sha256": "53136bb25aa7c3b5d424d4e755347f7386a13e4120703357b01b799a23dab0c1",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "GeneralCNFDecision": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/GeneralCNFDecision.lean",
+    "original_sha256": "0cf01b66b04e9768de2869879a9260db94cc1246db721c00b88823de802fee70",
+    "merged_source": "lean/src/GeneralCNFDecision.lean",
+    "merged_sha256": "177bbf997d9c5fcfd4e8636dbbecf122d6acf98dcb86006a4246cce1ae8754f3",
+    "imports": [
+      "ZeroHoleCoverage",
+      "MixedGuardSolver"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval fixtures",
+      "#eval solveCNFCounted allSigns"
+    ]
+  },
+  "MixedGuardSolver": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/MixedGuardSolver.lean",
+    "original_sha256": "fb297079b9d0098b84581ac82d549e092a9c60edbd0f4f1d2c522a2fba01cf7c",
+    "merged_source": "lean/src/MixedGuardSolver.lean",
+    "merged_sha256": "bd68b145a779fb686e528ec6295b2cf6209fc158359aebce5fbd7e87f2d56c1b",
+    "imports": [
+      "MixedGuardBranches"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval fixtures",
+      "#eval exhaustedBranches"
+    ]
+  },
+  "MixedGuardBranches": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/MixedGuardBranches.lean",
+    "original_sha256": "699fae50e78c3ba947fec8000ae77d6264304df92fdadb19243d386a82b0e8ad",
+    "merged_source": "lean/src/MixedGuardBranches.lean",
+    "merged_sha256": "699fae50e78c3ba947fec8000ae77d6264304df92fdadb19243d386a82b0e8ad",
+    "imports": [
+      "ExplicitConstructorInput"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "ExplicitConstructorInput": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/encoded_constructor_round1/ExplicitConstructorInput.lean",
+    "original_sha256": "f588eebe4ad202e8d4d4f32695a34782e93df958b2a169447653034e4d1350f9",
+    "merged_source": "lean/src/ExplicitConstructorInput.lean",
+    "merged_sha256": "f588eebe4ad202e8d4d4f32695a34782e93df958b2a169447653034e4d1350f9",
+    "imports": [
+      "AutomaticConstructorTotal"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "AutomaticConstructorTotal": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/AutomaticConstructorTotal.lean",
+    "original_sha256": "43b48cbd9a47884c740d0c5197918e1a6e8818a148c4fcac194c36483ea4ae5b",
+    "merged_source": "lean/src/AutomaticConstructorTotal.lean",
+    "merged_sha256": "43b48cbd9a47884c740d0c5197918e1a6e8818a148c4fcac194c36483ea4ae5b",
+    "imports": [
+      "AutomaticConstructor",
+      "RawMatchingCompleteness"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "RawMatchingCompleteness": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/RawMatchingCompleteness.lean",
+    "original_sha256": "2733393f5bd54aec2ae9b1a125dd5aaa0079a224df52251528304536c294be41",
+    "merged_source": "lean/src/RawMatchingCompleteness.lean",
+    "merged_sha256": "2733393f5bd54aec2ae9b1a125dd5aaa0079a224df52251528304536c294be41",
+    "imports": [
+      "RawMatchingPathComposition",
+      "SearchCorrespondence"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "SearchCorrespondence": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/SearchCorrespondence.lean",
+    "original_sha256": "4dcbfaa1ca21f95e010695f045b6c5b8ffe8b70fb118f91c8df668be9c983ca4",
+    "merged_source": "lean/src/SearchCorrespondence.lean",
+    "merged_sha256": "4dcbfaa1ca21f95e010695f045b6c5b8ffe8b70fb118f91c8df668be9c983ca4",
+    "imports": [
+      "RawPathInvariant",
+      "MatchingPathComposition"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "MatchingPathComposition": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/MatchingPathComposition.lean",
+    "original_sha256": "6037c7e6cadce4f24df72405f54698fa25a7081d09ed0d844b2580c7dcb3b9c9",
+    "merged_source": "lean/src/MatchingPathComposition.lean",
+    "merged_sha256": "1cbb1f91dff9fd65ab21a17afe7a1995fe848a7fa14cb5c0c079b5e0360afdd5",
+    "imports": [
+      "MatchingLoop",
+      "PathCarryingSearch"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval describe (solve twoRows (fun _ => false))",
+      "#eval describe (solve diamond (fun _ => false))",
+      "#eval describe (solve ladder (fun _ => false))",
+      "#eval describe (solve properCut (fun _ => false))",
+      "#eval describe (solve twoRows (fun i => i == 0))",
+      "#eval describe (solve (fun (_ : Fin 1) => ([] : List (Fin 0))) (fun _ => false))",
+      "",
+      "#eval (tinyResults.length, (tinyResults.filter id).length)",
+      ""
+    ]
+  },
+  "PathCarryingSearch": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/PathCarryingSearch.lean",
+    "original_sha256": "7495c76050d8b4ee7268c89639440ea7bdad51d0dc4bd54e183b1c423b9afcd5",
+    "merged_source": "lean/src/PathCarryingSearch.lean",
+    "merged_sha256": "7495c76050d8b4ee7268c89639440ea7bdad51d0dc4bd54e183b1c423b9afcd5",
+    "imports": [
+      "ReversePaths"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "ReversePaths": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/ReversePaths.lean",
+    "original_sha256": "38424fcf8e69b9fece41db8afc027c7ba650e881248a18658feb774b059ade43",
+    "merged_source": "lean/src/ReversePaths.lean",
+    "merged_sha256": "38424fcf8e69b9fece41db8afc027c7ba650e881248a18658feb774b059ade43",
+    "imports": [
+      "ActiveAugmentation"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "ActiveAugmentation": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/ActiveAugmentation.lean",
+    "original_sha256": "38f40a6fbb42baa744bf72889f9b0a4957870cad9768718766ee7bd1599ad8dc",
+    "merged_source": "lean/src/ActiveAugmentation.lean",
+    "merged_sha256": "38f40a6fbb42baa744bf72889f9b0a4957870cad9768718766ee7bd1599ad8dc",
+    "imports": [
+      "AugmentingReassignment",
+      "MatchingCertificates"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "MatchingCertificates": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/MatchingCertificates.lean",
+    "original_sha256": "986dfd8c4772da727126a0cbfcbca82ddc368c5aefcd1a8e5b6989d68762b13e",
+    "merged_source": "lean/src/MatchingCertificates.lean",
+    "merged_sha256": "986dfd8c4772da727126a0cbfcbca82ddc368c5aefcd1a8e5b6989d68762b13e",
+    "imports": [
+      "GuardedHall"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "AugmentingReassignment": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/AugmentingReassignment.lean",
+    "original_sha256": "8d4c2afe36187af456beebccfe5cb6c5a135fd3b9c272b277a709f60ff16736a",
+    "merged_source": "lean/src/AugmentingReassignment.lean",
+    "merged_sha256": "8d4c2afe36187af456beebccfe5cb6c5a135fd3b9c272b277a709f60ff16736a",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "MatchingLoop": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/MatchingLoop.lean",
+    "original_sha256": "68c9dad3135d37afb920bed0692d7f70754ffdc64dc2f3681d7891cff2a8a403",
+    "merged_source": "lean/src/MatchingLoop.lean",
+    "merged_sha256": "af96aa8387f59a963456d712e361168865758519949e8b3dfe34a28bca3e79e7",
+    "imports": [
+      "AugmentationBfsBridge"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval describe (solveFromBfs twoRows (fun _ => false) suppliedPath)",
+      "#eval describe (solveFromBfs fourRows (fun _ => false) suppliedCutPrefix)",
+      "#eval describe (solveFromBfs twoRows (fun _ => false) (fun _ _ => none))",
+      "#eval describe (solveFromBfs twoRows (fun _ => false) (fun _ _ => some (0, [1])))",
+      "#eval describe (solveWith (fun i => (twoRows i).toFinset) (fun _ => false) (fun _ _ => .cut \u2205))",
+      "#eval describe (solveFromBfs (fun (_ : Fin 1) => ([] : List (Fin 0)))",
+      "  (fun _ => true) (fun _ _ => none))",
+      "#eval describe (solveFromBfs (fun (_ : Fin 1) => ([] : List (Fin 0)))",
+      "  (fun _ => false) (fun _ _ => none))",
+      ""
+    ]
+  },
+  "AugmentationBfsBridge": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/AugmentationBfsBridge.lean",
+    "original_sha256": "43cabae8a7548a394f8ef58d91d33fe9e837f4a3a00466a5bbea109d03d498f5",
+    "merged_source": "lean/src/AugmentationBfsBridge.lean",
+    "merged_sha256": "43cabae8a7548a394f8ef58d91d33fe9e837f4a3a00466a5bbea109d03d498f5",
+    "imports": [
+      "ActiveAugmentation",
+      "BfsClosure"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "BfsClosure": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/BfsClosure.lean",
+    "original_sha256": "9a32da616ebfb4f2b0cb23c77330047d4a10286df0f5541fd95b0f2751819950",
+    "merged_source": "lean/src/BfsClosure.lean",
+    "merged_sha256": "40e0bdd632194f15f3b309f0c185787c265b7b6f86bead4a335cc3737fbf977b",
+    "imports": [
+      "ExhaustedSearchCut"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval exactCut (explore properCutAdj properCutOwner 4 (Frontier.start 0))",
+      "#eval outcomeView (explore ladderAdj ladderOwner 3 (Frontier.start 0))",
+      "#eval outcomeView (explore ladderAdj ladderOwner 2 (Frontier.start 0))",
+      "#eval outcomeView (explore (fun (_ : Fin 1) => ([] : List (Fin 0)))",
+      "  (fun _ => none) 1 (Frontier.start 0))",
+      ""
+    ]
+  },
+  "ExhaustedSearchCut": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_search_round1/ExhaustedSearchCut.lean",
+    "original_sha256": "38177bfc1846b89e75fe3a1b930b9fc6cc14a0f7b8c080cea1f394ef49233871",
+    "merged_source": "lean/src/ExhaustedSearchCut.lean",
+    "merged_sha256": "38177bfc1846b89e75fe3a1b930b9fc6cc14a0f7b8c080cea1f394ef49233871",
+    "imports": [
+      "MatchingCertificates"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "RawPathInvariant": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/RawPathInvariant.lean",
+    "original_sha256": "228fba490068a98ae534d36f14c0ea36ef4da87988970f0b0a962d6a876e285a",
+    "merged_source": "lean/src/RawPathInvariant.lean",
+    "merged_sha256": "228fba490068a98ae534d36f14c0ea36ef4da87988970f0b0a962d6a876e285a",
+    "imports": [
+      "PathCarryingSearch"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "RawMatchingPathComposition": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/RawMatchingPathComposition.lean",
+    "original_sha256": "10dcf044380e5f805f83e929c70d42da9f3eb8623ad177439bd1dda92bd14d45",
+    "merged_source": "lean/src/RawMatchingPathComposition.lean",
+    "merged_sha256": "e587ce3a0862d102380c08452e73d38fc0b33daf560d3a14cc90e1b8668e0386",
+    "imports": [
+      "MatchingPathComposition",
+      "RawPathInvariant"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval describe (solve wideAugment (fun _ => false))",
+      "#eval describe (solve (fun (_ : Fin 2) => [wideLeft]) (fun _ => false))",
+      "",
+      "#eval (tinyResults.length, (tinyResults.filter id).length)",
+      ""
+    ]
+  },
+  "AutomaticConstructor": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/AutomaticConstructor.lean",
+    "original_sha256": "d5fcbc13b514529584216e9e303710908f293bbb6ac28de670ee777d61db904c",
+    "merged_source": "lean/src/AutomaticConstructor.lean",
+    "merged_sha256": "d5fcbc13b514529584216e9e303710908f293bbb6ac28de670ee777d61db904c",
+    "imports": [
+      "RawMatchingPathComposition",
+      "CertifiedConstructorSolver"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "CertifiedConstructorSolver": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/certified_constructor_solver_round1/CertifiedConstructorSolver.lean",
+    "original_sha256": "431464c78e88d0cd40acd05ba3257815df610f2d119803da53e619b82a06d79b",
+    "merged_source": "lean/src/CertifiedConstructorSolver.lean",
+    "merged_sha256": "431464c78e88d0cd40acd05ba3257815df610f2d119803da53e619b82a06d79b",
+    "imports": [
+      "CertifiedCNFConclusions",
+      "CertificateEdges",
+      "ExecutableEdgeLift"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "ExecutableEdgeLift": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/executable_edge_lift_round1/ExecutableEdgeLift.lean",
+    "original_sha256": "6b60c34da711e9f0f394b45fc98db8db13f9d754275a5e5e79a515b79f23d38c",
+    "merged_source": "lean/src/ExecutableEdgeLift.lean",
+    "merged_sha256": "6b60c34da711e9f0f394b45fc98db8db13f9d754275a5e5e79a515b79f23d38c",
+    "imports": [
+      "FreshGuardedCNF"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "FreshGuardedCNF": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/FreshGuardedCNF.lean",
+    "original_sha256": "7115ba63b757a9f37561ae1f480bbd1a37fde66f50741e05d8ec62dddd84231b",
+    "merged_source": "lean/src/FreshGuardedCNF.lean",
+    "merged_sha256": "7115ba63b757a9f37561ae1f480bbd1a37fde66f50741e05d8ec62dddd84231b",
+    "imports": [
+      "GuardedCNFEncoding"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "GuardedCNFEncoding": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/GuardedCNFEncoding.lean",
+    "original_sha256": "2e935291f7d7ba714e7298853cbe29b91485bd08decfce5da9f368e9b36102f1",
+    "merged_source": "lean/src/GuardedCNFEncoding.lean",
+    "merged_sha256": "2e935291f7d7ba714e7298853cbe29b91485bd08decfce5da9f368e9b36102f1",
+    "imports": [
+      "GuardedHall"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "CertificateEdges": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/CertificateEdges.lean",
+    "original_sha256": "3704e00a2e995fbac64029dda8ebfd16056e0e98bd4bd5ac6c8c1ce84d749d42",
+    "merged_source": "lean/src/CertificateEdges.lean",
+    "merged_sha256": "3704e00a2e995fbac64029dda8ebfd16056e0e98bd4bd5ac6c8c1ce84d749d42",
+    "imports": [
+      "MatchingCertificates"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "CertifiedCNFConclusions": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/CertifiedCNFConclusions.lean",
+    "original_sha256": "9b5598680c2ed4a3a78c809ea422e5a7583d607a5264ee7256336f2ef538b427",
+    "merged_source": "lean/src/CertifiedCNFConclusions.lean",
+    "merged_sha256": "9b5598680c2ed4a3a78c809ea422e5a7583d607a5264ee7256336f2ef538b427",
+    "imports": [
+      "MatchingCertificates",
+      "CheckedOutputProjection"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "CheckedOutputProjection": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/CheckedOutputProjection.lean",
+    "original_sha256": "572ef83e2edf61be5975e4d64731ac39e9569667a8e314d972fa3cfa76d31546",
+    "merged_source": "lean/src/CheckedOutputProjection.lean",
+    "merged_sha256": "572ef83e2edf61be5975e4d64731ac39e9569667a8e314d972fa3cfa76d31546",
+    "imports": [
+      "FreshGuardedCNF",
+      "CheckedDualHorn",
+      "GreatestGuard"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "GreatestGuard": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/greatest_guard_round1/GreatestGuard.lean",
+    "original_sha256": "c222ab95ec0f4f722c8a9ae3948a5514f528c3bb8b42d1c81bd2f0ce8702481e",
+    "merged_source": "lean/src/GreatestGuard.lean",
+    "merged_sha256": "c222ab95ec0f4f722c8a9ae3948a5514f528c3bb8b42d1c81bd2f0ce8702481e",
+    "imports": [
+      "GuardedHall"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "CheckedDualHorn": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/CheckedDualHorn.lean",
+    "original_sha256": "896e92006dc17258f210a256732a685dcfa7128bce4b6daa3e7c3586c2ae9623",
+    "merged_source": "lean/src/CheckedDualHorn.lean",
+    "merged_sha256": "896e92006dc17258f210a256732a685dcfa7128bce4b6daa3e7c3586c2ae9623",
+    "imports": [
+      "SparseDualHornAlgorithm"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "SparseDualHornAlgorithm": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/SparseDualHornAlgorithm.lean",
+    "original_sha256": "daa56ed221032d946455a1aec0804784a0e2903a503fe52b92bd06784cb8af25",
+    "merged_source": "lean/src/SparseDualHornAlgorithm.lean",
+    "merged_sha256": "daa56ed221032d946455a1aec0804784a0e2903a503fe52b92bd06784cb8af25",
+    "imports": [
+      "DualHorn"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "DualHorn": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/DualHorn.lean",
+    "original_sha256": "bac65e92d1e39cd9a76bbb353477704e7fd948d774b1e7aebc13990f7687c360",
+    "merged_source": "lean/src/DualHorn.lean",
+    "merged_sha256": "bac65e92d1e39cd9a76bbb353477704e7fd948d774b1e7aebc13990f7687c360",
+    "imports": [],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "ZeroHoleCoverage": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/constructor_boundary_round1/ZeroHoleCoverage.lean",
+    "original_sha256": "78ec445a60cc77f0242b8e19e08e3fd5c7131c9c1954083cdc191ff6fdc9bea1",
+    "merged_source": "lean/src/ZeroHoleCoverage.lean",
+    "merged_sha256": "113de04b0ab10495fecca87f39000df5c13dceaf238356c0feda680635906c80",
+    "imports": [
+      "ExplicitConstructorInput"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval formula (asZeroHoleInput mixed)",
+      "#eval [supportedCheck (asZeroHoleInput mixed),",
+      "  supportedCheck (asZeroHoleInput [[(9,true),(2,true)],[]])]",
+      ""
+    ]
+  },
+  "AutomaticConstructorExamples": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_complete_round1/AutomaticConstructorExamples.lean",
+    "original_sha256": "e7d427c6e3e1ea4ca7355858bbf2f685a37d9cda1f717374dc088427a28e46f2",
+    "merged_source": "lean/src/AutomaticConstructorExamples.lean",
+    "merged_sha256": "6780260f5ef59f61c081d8924293b7749bedbb5510edaf69c7f49bcaf568fb5e",
+    "imports": [
+      "AutomaticConstructor"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval [matchingSAT, matchingUNSAT, retainedUNSAT, unsupportedSyntax,",
+      "  unsupportedGuard, inactive, propagated].map tag",
+      "#eval modelCheck matchingSAT (encoded 0 [] twoRows (fun _ => []))",
+      "#eval values propagated [0,1]",
+      "#eval modelCheck propagated (encoded 1 [[(0,false)]]",
+      "  (fun _ : Fin 1 => ([0] : List (Fin 1))) (fun _ => [(0,true)]))"
+    ]
+  },
+  "PathSearchExamples": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_paths_round1/PathSearchExamples.lean",
+    "original_sha256": "0d3a6a6a4aed492f265555b732dbb89a2c7bed90046b24cb89d5ac63a3026481",
+    "merged_source": "lean/src/PathSearchExamples.lean",
+    "merged_sha256": "0d2ed40d925de6b2bd05148105bc9d2288c1ed34fa8c324eaad5060908fea36e",
+    "imports": [
+      "PathCarryingSearch"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval (searchPath twoAdj oneMatched 1 2).map (fun p => (p.1.val, p.2.map Fin.val))",
+      "#eval ((augmentRows (fun i => (twoAdj i).toFinset) [0, 1] oneMatched 1).map",
+      "      (fun s => ((s.rowMatch 0).map Fin.val, (s.rowMatch 1).map Fin.val)))",
+      "#eval (searchPath twoAdj inconsistent 1 2).isNone"
+    ]
+  },
+  "AugmentationExamples": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_invariants_round1/AugmentationExamples.lean",
+    "original_sha256": "281d1c9324b60faa84079e10dd5caec9ee5d3a80acfa54b02536e0a6cb38db23",
+    "merged_source": "lean/src/AugmentationExamples.lean",
+    "merged_sha256": "1d0e75846772bf61eba34fe56d2f4af44df9ad8e579a7aabcacf320d380369c6",
+    "imports": [
+      "AugmentingReassignment"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval replayRows",
+      "#eval match augmentRows exampleN [1,0,2] exampleState 2 with",
+      "  | none => false",
+      "  | some out =>",
+      "      (List.finRange 3).all (fun i => (List.finRange 3).all (fun k =>",
+      "        decide ((out.rowMatch i = some k \u2194 out.owner k = some i) \u2227",
+      "          (out.rowMatch i = some k \u2192 k \u2208 exampleN i)))) &&",
+      "      decide ((matchedRows out).card = 3)",
+      "#eval [(augmentRows exampleN [] exampleState 2).isNone,",
+      "  (augmentRows exampleN [1,0] exampleState 2).isNone,",
+      "  (augmentRows exampleN [1,0,2,1] exampleState 2).isNone,",
+      "  (augmentRows exampleN [0,2] exampleState 1).isNone,",
+      "  (augmentRows exampleN [0] exampleState 2).isNone]"
+    ]
+  },
+  "CertificateExamples": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/matching_certificates_round1/CertificateExamples.lean",
+    "original_sha256": "aae9a64f99b431469a9a2093cdecef9eb423cbcc7b0b30b11dae871aec256632",
+    "merged_source": "lean/src/CertificateExamples.lean",
+    "merged_sha256": "fb9ba3b5eb958e470d9c580e4d146d0e64dc0ffd04b088ffaabc7181ff0507a7",
+    "imports": [
+      "MatchingCertificates"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval successCheck fullTwo activeTwo validTwo",
+      "#eval successCheck fullTwo activeTwo collision",
+      "#eval failureCheck oneHole activeTwo Finset.univ"
+    ]
+  },
+  "EncodingExamples": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/guarded_cnf_encoding_round1/EncodingExamples.lean",
+    "original_sha256": "2ac6326f09fd514ab13c1d0b8d6241a7b47a213a4c5ccd42f9c4eca99f92047f",
+    "merged_source": "lean/src/EncodingExamples.lean",
+    "merged_sha256": "bda3c20144119dc5a69e373d969593ff73673b74dc3b0f9eed070cb5a78f9f14",
+    "imports": [
+      "GuardedCNFEncoding"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": [
+      "#eval twoRowCNF"
+    ]
+  },
+  "DualHornAlgorithm": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_algorithm_round1/DualHornAlgorithm.lean",
+    "original_sha256": "2f7b2d9fb997589337d0270bc2d1493191fa022edbc3f47b437527a4227a54a2",
+    "merged_source": "lean/src/DualHornAlgorithm.lean",
+    "merged_sha256": "2f7b2d9fb997589337d0270bc2d1493191fa022edbc3f47b437527a4227a54a2",
+    "imports": [
+      "DualHorn"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  },
+  "DualHornGreatestGuard": {
+    "original_source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/dual_horn_round1/DualHornGreatestGuard.lean",
+    "original_sha256": "309b5fcbfa519b9c190cb0df95914a72b1de81ac4f8037890c07882be7612f0e",
+    "merged_source": "lean/src/DualHornGreatestGuard.lean",
+    "merged_sha256": "309b5fcbfa519b9c190cb0df95914a72b1de81ac4f8037890c07882be7612f0e",
+    "imports": [
+      "DualHorn",
+      "GreatestGuard"
+    ],
+    "namespace_isolated": false,
+    "omitted_top_level_evaluation_examples": []
+  }
+}

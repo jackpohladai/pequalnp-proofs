@@ -1,0 +1,110 @@
+{
+  "reviewed_at": "2026-11-26T17:10:29.044989+00:00",
+  "proposal_sha256": "feaf5fdd1cb834df3d519ca680c1d31741ae8ab6bf6d288d14d9e3ffdab426f8",
+  "verdict": "Safe dominance-pruning principle checked; supplied finite predictions passed; universal polynomial width/order bound remains absent.",
+  "finite_tests": {
+    "claimed_checks_passed": 14,
+    "small_exhaustive_solver_runs": 17742,
+    "stress_solver_runs": 1500,
+    "stress_sat_formulas": 285,
+    "stress_unsat_formulas": 215,
+    "k4_orders": 720,
+    "wrong_answers": 0
+  },
+  "formal": {
+    "lean": "4.36.0",
+    "theorems": 5,
+    "axioms": [],
+    "scope": "Generic clause-subset dominance and cover-preserving pruning, plus three-variable UNSAT core. Not a formalization of the MRA implementation or a polynomial state-count bound."
+  },
+  "adversarial": {
+    "mechanism": "Connected F_n plus all eight signed 3-clauses on y1,z1,z2; exact MRA canonicalization and 2SAT dispatch enabled.",
+    "results": [
+      {
+        "n": 3,
+        "variables": 8,
+        "clauses": 14,
+        "x_first_max_states": 8,
+        "x_first_terminal_calls": 16,
+        "core_first_max_states": 2,
+        "core_first_terminal_calls": 0,
+        "both_return_unsat": true
+      },
+      {
+        "n": 4,
+        "variables": 10,
+        "clauses": 16,
+        "x_first_max_states": 16,
+        "x_first_terminal_calls": 32,
+        "core_first_max_states": 2,
+        "core_first_terminal_calls": 0,
+        "both_return_unsat": true
+      },
+      {
+        "n": 5,
+        "variables": 12,
+        "clauses": 18,
+        "x_first_max_states": 32,
+        "x_first_terminal_calls": 64,
+        "core_first_max_states": 2,
+        "core_first_terminal_calls": 0,
+        "both_return_unsat": true
+      },
+      {
+        "n": 6,
+        "variables": 14,
+        "clauses": 20,
+        "x_first_max_states": 64,
+        "x_first_terminal_calls": 128,
+        "core_first_max_states": 2,
+        "core_first_terminal_calls": 0,
+        "both_return_unsat": true
+      },
+      {
+        "n": 7,
+        "variables": 16,
+        "clauses": 22,
+        "x_first_max_states": 128,
+        "x_first_terminal_calls": 256,
+        "core_first_max_states": 2,
+        "core_first_terminal_calls": 0,
+        "both_return_unsat": true
+      },
+      {
+        "n": 8,
+        "variables": 18,
+        "clauses": 24,
+        "x_first_max_states": 256,
+        "x_first_terminal_calls": 512,
+        "core_first_max_states": 2,
+        "core_first_terminal_calls": 0,
+        "both_return_unsat": true
+      }
+    ],
+    "elapsed_seconds": 1.4666900634765625,
+    "scope": "Adversarial fixed-order scaling for the actual proposed MRA solver, not a lower bound for all variable orders or arbitrary SAT algorithms. Core-first ordering solves this family quickly.",
+    "general_polynomial_claim_refuted": false
+  },
+  "remaining_obligations": [
+    "Formalize actual canonicalization, maximal-set computation, full solver and terminal handling.",
+    "Prove efficient order discovery and a universal polynomial count of nonterminal states, or replace the mechanism.",
+    "State runtime using max(1,W) for terminal-only cases; zero materialized nonterminal states do not mean zero runtime."
+  ],
+  "not_claimed": [
+    "P=NP",
+    "General polynomial SAT algorithm",
+    "Formal proof of the Python implementation",
+    "All-order lower bound"
+  ],
+  "followup": "Feed the connected UNSAT family to Fable and require a concrete repair plus a testable missing theorem.",
+  "artifact_sha256": {
+    "test_mra.py": "6eebead22f7d33abc66a17550bf29a18df266836440695ae080d407dc51fc72b",
+    "test-receipt.json": "47dcf1350f6f7efbc08ed789622edceff6f7a738431226282b4f97763200ba26",
+    "stress_mra.py": "1fb11a992ba21b0fb27c5af8d157386fa41a5eb734712dfdd77871192fd1192b",
+    "stress-receipt.json": "268acc6a137798532273515c8ac930ebdc62fe78c3cfd81040a0179314be2d44",
+    "adversarial_mra.py": "d342b921c37fa908e58fe7bcc90a3f036a1e259952da204ba0643ead3e73d655",
+    "adversarial-receipt.json": "150730f7e7a09134f1e78350b08b31fbebf79c5fee053adb0d2c29657a17563f",
+    "DominanceSoundness.lean": "fd9a609dedd9edbefcaa9a7cbdec34bf0552533640dfe2966b0bca2bef742b81",
+    "lean-receipt.json": "039bcc2814c0b4f16b772212d7ee7b2f68b57de09ef14627b37e17ab2c65ed6a"
+  }
+}

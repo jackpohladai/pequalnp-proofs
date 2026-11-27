@@ -1,0 +1,11 @@
+Idea: affine-hull dilemma. One GF(2) affine space A over-approximates the solution set. Clause propagation modulo A and split-close-join on parity forms only add equations implied for all solutions.
+
+UNSAT soundness (argued by hand, not tested): equations come from (1) complete parity clause families, (2) a clause whose falsifier is a hyperplane of A, (3) equations valid on both closed sides of f=0 / f=1. UNSAT is returned only when every node's A is empty. A failed witness never yields UNSAT.
+
+Cost: each successful join raises rank, so there are at most n+1 gains per node. The join phase is therefore polynomial in n and input length L, but a crude bound is well above cubic. Row XORs on n-bit integers are charged as one unit. Some container operations, such as hashing large forms and tuples, are not separately charged.
+
+Incompleteness: when saturation neither empties A nor yields a verified point, a DFS fallback splits on a free variable. This is exponential. fallback=False returns UNKNOWN instead.
+
+Limits: the join keeps only the affine hull, so disjunctive information is lost. Test forms are single variables and neighbouring literal pairs, so results can depend on literal order. Dilemma depth is one. No claim of beating Res(+) or resolution-style lower bounds. The relation to Stålmarck's method and Res(+) has not been analysed.
+
+Tests: none run. No quadratic or cubic claim is verified.

@@ -1,0 +1,93 @@
+{
+  "proposal": "STATUS. Hand-derived, unexecuted, unimplemented extension (FR-\u03ba). It is not polynomial SAT and gives no universal growth bound: it parameterises one tractable family and proves where that family stops. The fixture probes v2 only. The watcher handoff has no bearing.\n\nDIAGNOSIS. The 36/96 quotients are easy for one reason: an adapted basis turns every block of annihilator dimension d_K\u22642 into a 2-clause. 'Incompatible greedy basis' is where that reason can fail structurally.\n\nLemma H (hand proof). Strictly compressible formulas with all d_K\u22642 are NP-complete once the adapted basis is dropped. Reduce positive 1-in-3-SAT with v_i=x_i+x_i': each triple gives a 6-variable parity block (d=1), and each pair inside a triple gives a 4-variable block forbidding v_a=v_b=1 (d=2). Then r=n<2n. With an adapted basis the same class is 2-SAT. So compatibility is the tractability boundary here, not a cosmetic greedy detail.\n\nMECHANISM FR-\u03ba.\n(1) Frame. Take the union of bases of all A_K: N forms of rank r with N\u2212r parity relations. It always exists and needs no greedy choice.\n(2) Collapse rank. \u03ba' is the least dim U such that the distinct nonzero images of the frame forms modulo U are linearly independent. \u03ba'=0 iff the distinct frame forms are independent, i.e. an adapted basis exists.\n(3) Lemma B (hand proof). If all d_K\u22642, fixing the 2^\u03ba' values of a basis of U makes every frame form a literal or constant over r\u2212\u03ba' variables, so each branch is 2-SAT. Cost after discovery is 2^\u03ba'\u00b7O(N+m').\n(4) Lemma U (hand proof). An optimal U is spanned by vectors g_i and g_i+g_j, which gives N^O(k) discovery. Frame elements alone are not enough: {a,b,c,a+b+c} has \u03ba'=1 via \u27e8a+b\u27e9 but needs two of its own elements.\n(5) Admission. Run only if a found U has k\u2264log2(L), L the literal count; otherwise skip unchanged. Any found U is sound; optimality affects coverage only.\n(6) Certificate. A linear map E into frame coordinates, G\u2227Rel, and a lift R. Check F(x)=G(Ex) and Rel(Ex) on all 2^n points, and E(Rz)=z on the 2^r points satisfying Rel. This slightly generalises the Lean rule and is not yet proved in Lean.\n\nWORK ACCOUNTING. Stabilisers lie inside S_K+s_0, so each block costs O(|S_K|^2\u00b7c) with no 2^c term. Rank costs O(N\u00b7n^2) bit operations. Admitted branching costs at most L\u00b7O(N+m'). Discovery at k=log L is the only term not shown polynomial (T91).\n\nSCOPE AND FAILURE. Blocks with d_K\u22653 skip. Added points become wide residue clauses, so FR does not repair the 36+9 control, which v2 already solves at peak 0 and 9. What survives extra clauses is discovery only: flats inside S_K are monotone under added clauses, stabilisers are not. In frame coordinates 00054's Lemma I is the pure-literal rule on fibre literals. A removed-point XOR block ('parity=c implies x=p') is lin-2 but costs up to c\u22121 in \u03ba', so auto00009-type gadgets are probably not admitted.\n\nFIXTURE (v2). Columns (1,2,3) and (4,5,6), with f=x_a+x_b, g=x_b+x_c, h=x_a+x_c. Blocks are f1\u2228f2, g1\u2228g2, \u00ach1\u2228\u00ach2. Three pairwise-disjoint 2-dimensional spaces in rank 4 would need 6 basis vectors, so no adapted basis exists and the skip is structural. Hand DP trace: eliminating x1 leaves 4 non-tautological resolvents (12\u21928); after that every resolvent is a tautology (8\u21924\u21920, or 8\u21920). Predicted SAT, peak 0: a compression failure without a harder trace.\n\nREPRODUCIBLE ADVERSARY (no peak prediction). Four columns (3j\u22122,3j\u22121,3j) with the same three blocks on each cyclic pair (j,j+1): 12 variables, 48 clauses, SAT by x=101 per column, r=8, \u03ba'=4, and no adapted basis (12 basis vectors needed in rank 8). Hand claim: every root DP step replaces 16 clauses by 24 (48\u219256), so DP is STUCK at root. I cannot derive the search peak and do not predict it.\n\nINDEPENDENT-TEST PREDICTIONS for FR. Fixture: N=6, r=4, k=2, four 2-variable branches. Cycle: k=4. auto00006/7: k=0 and the same quotient as v2; any difference is an FR bug. Open test, not a prediction: I have not seen auto00008. Brute-force all bases; an adapted basis means a greedy artefact (k=0), none means structural, and FR then reports k or the first block with d_K\u22653.",
+  "missing_theorem": "T91 (collapse-rank discovery). Input: N vectors spanning F_2^r and an integer k. Decide whether some subspace U of dimension at most k makes the distinct nonzero images modulo U linearly independent, and return U. Prove either an algorithm running in 2^O(k)\u00b7poly(N,r), or NP-hardness together with a polynomial constant-factor approximation. Without it, admission at k\u2264log L has quasi-polynomial discovery N^O(log N), and the family is not shown polynomial in total work. Known by hand only: N^O(k) via Lemma U; k=0 is a rank test; independent M3 triples each force one dimension. Prerequisites still unproved in Lean for general n: Lemma B, Lemma U, Lemma H and the relation-certificate rule. T89 and T90 remain open.",
+  "self_attack": "1. This is still family detection. \u03ba' can be \u0398(r), and Lemma H shows the class is NP-complete, so FR cannot become universal.\n2. The fixture predicts peak 0 on v2, so FR shows no measured advantage there. Its advantage rests on the cycle, which is unmeasured; if v2's search solves it at peak 1 or 2, FR is redundant engineering.\n3. Extra-clause robustness is not delivered. Monotone flats protect discovery, not tractability. The 36+9 control stays outside, exactly as in 00054.\n4. I have not seen auto00008. Its skip may be a greedy artefact, or it may contain d_K\u22653 blocks, in which case FR says nothing about peak 16.\n5. Branching on 2^k values is brute force when k is near r. Under 12 variables the log L admission is indistinguishable from a fixed cap of about 6, which the brief warns against.\n6. Rel-restricted lifting is not covered by CompressionSoundness.lean.\n7. The DP traces are hand simulations. I assumed the ordering, the IALH windows (three 4-variable windows, no hull rows) and the meaning of peak. The 48\u219256 claim ignores any Canon effect I did not foresee.\n8. Lemmas B, H and U are hand proofs. An error in U would break the discovery bound but not soundness.",
+  "mechanism_signature": "FR-\u03ba | unimplemented | frame = union of block annihilator bases + parity relations | collapse rank \u03ba' = min dim U with independent distinct nonzero images | d_K\u22642: 2^\u03ba' \u00d7 2-SAT | \u03ba'=0 iff adapted basis exists | unbounded \u03ba' NP-complete via positive 1-in-3-SAT | admit iff k\u2264log2 L | exact pointwise certificate with Rel-restricted lift | added-point residues NOT repaired",
+  "delta_from_prior": "00054 (FFQ) treated extra points through residue mass \u03a6 and left incompatibility as a lattice remark.\n\nNew here:\n(1) Lemma H: without an adapted basis the binary-block compressible class is NP-complete, so incompatibility is a real boundary.\n(2) The invariant \u03ba', with Lemma B (2^\u03ba' 2-SAT branches) and Lemma U (N^O(k) discovery, with frame-only branching shown suboptimal).\n(3) A size-relative admission rule and explicit total-work terms, with stabilisers computed without a 2^c factor.\n(4) An exact pointwise certificate with relations, replacing 00054's equisatisfiability-only retraction for this family.\n(5) Lemma I re-read as a pure-literal rule in frame coordinates.\n(6) A minimal structurally incompatible fixture and a 48-clause cycle adversary with a hand-derived root-STUCK claim.\n\nNot new: no progress on \u03a6\u22651, T89 or T90.",
+  "fixture": {
+    "formula": [
+      [
+        1,
+        2,
+        4,
+        5
+      ],
+      [
+        -1,
+        -2,
+        4,
+        5
+      ],
+      [
+        1,
+        2,
+        -4,
+        -5
+      ],
+      [
+        -1,
+        -2,
+        -4,
+        -5
+      ],
+      [
+        2,
+        3,
+        5,
+        6
+      ],
+      [
+        -2,
+        -3,
+        5,
+        6
+      ],
+      [
+        2,
+        3,
+        -5,
+        -6
+      ],
+      [
+        -2,
+        -3,
+        -5,
+        -6
+      ],
+      [
+        1,
+        -3,
+        4,
+        -6
+      ],
+      [
+        1,
+        -3,
+        -4,
+        6
+      ],
+      [
+        -1,
+        3,
+        4,
+        -6
+      ],
+      [
+        -1,
+        3,
+        -4,
+        6
+      ]
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "predicted_sat": true,
+    "predicted_peak": 0
+  }
+}

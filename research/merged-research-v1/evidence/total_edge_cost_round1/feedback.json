@@ -1,0 +1,22 @@
+{
+  "status": "checked_local_restricted_cost_progress",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/TotalEdgeCost.lean",
+  "source_sha256": "cef89dead0820533c52b164c19829c3ee9fd93710f7410e39e74b538960265c4",
+  "receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/total_edge_cost_round1/total-edge-validation.json",
+  "receipt_sha256": "8cc19942f24587476015d65199e409f214888841a3ffd134b9723933fe60f945",
+  "proved": "Existing metered raw BFS result erases exactly to rawSearchPath; under table WellFormed, counted selected events <= r + E*(3*r+4), for every fuel.",
+  "E": "All explicit adjacency-list occurrences; duplicates included.",
+  "new_fact": "Processed rows cannot reenter queue: they remain seen; queue head uniqueness is maintained by actual discovery and pop operations.",
+  "generators_should_use": "This removes the maximum-degree multiplication from one BFS phase and provides a sharper partial cost bound for uneven adjacency.",
+  "do_not_claim": [
+    "whole matching algorithm cost",
+    "encoded-bit polynomial bound",
+    "P=NP",
+    "removal of exponential mixed-guard branches"
+  ],
+  "next_obligations": [
+    "Meter and bound plain cut BFS.",
+    "Account for path replay, table updates, outer loops and certificate validation.",
+    "Convert comparison/list-cell event counts into encoded-bit operations with explicit key lengths."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "lean_version": "4.36.0",
+  "general_polynomial_sat_proof": false,
+  "scope": "UNSAT of the normalized, densely renamed instance via clause subset, exact core compression and binary-quotient refutation. No Python or runtime verification.",
+  "source_sha256": "b51c74b35e4c1b3703a978ad2cd2658694244079524cae5e769406c8a3298a0d",
+  "status": "checked",
+  "exit_code": 0,
+  "stdout": "'CompressionSoundness.equisat_of_projection' does not depend on any axioms\n'CompressionSoundness.certificateCheck_sound' depends on axioms: [propext, Quot.sound]\n'CompressionSoundness.equisat_of_two_maps' does not depend on any axioms\n'CompressionInstances.core_forward' depends on axioms: [propext]\n'CompressionInstances.core_backward' depends on axioms: [propext]\n'CompressionInstances.core_equisatisfiable' depends on axioms: [propext]\n'CoreRefutations.core_full_unsat' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "stderr": "",
+  "seconds": 107.879998542
+}

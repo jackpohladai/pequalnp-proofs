@@ -1,0 +1,266 @@
+{
+  "k4_orders": 720,
+  "k4_distinct_nonterminal_states": 13,
+  "k4_distinct_terminal_states": 60,
+  "k4_dominance_hits": 0,
+  "k4_dominance_subset_failures": 0,
+  "k4_canonical_terminal_with_retained_unit": [
+    [
+      -6
+    ],
+    [
+      -5,
+      -1
+    ],
+    [
+      -5,
+      3
+    ],
+    [
+      -3,
+      1
+    ],
+    [
+      -3,
+      5
+    ],
+    [
+      -1,
+      3
+    ],
+    [
+      1,
+      5
+    ]
+  ],
+  "k5_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "k5_all_root_variables_rejected": true,
+  "k5_root_checks": [
+    {
+      "variable": 1,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    },
+    {
+      "variable": 2,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    },
+    {
+      "variable": 3,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    },
+    {
+      "variable": 4,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    },
+    {
+      "variable": 5,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    },
+    {
+      "variable": 6,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    },
+    {
+      "variable": 7,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    },
+    {
+      "variable": 8,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    },
+    {
+      "variable": 9,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    },
+    {
+      "variable": 10,
+      "pairs": 64,
+      "resolvents_before_dedup": 32,
+      "unique_resolvents": 32,
+      "clauses_before": 40,
+      "clauses_after": 56,
+      "allowed": false
+    }
+  ],
+  "k5_stored_nonterminal_with_retained_unit": [
+    [
+      -4
+    ],
+    [
+      -10,
+      -9,
+      -7
+    ],
+    [
+      -10,
+      -8,
+      -6
+    ],
+    [
+      -10,
+      6,
+      8
+    ],
+    [
+      -10,
+      7,
+      9
+    ],
+    [
+      -9,
+      -8,
+      -5
+    ],
+    [
+      -9,
+      5,
+      8
+    ],
+    [
+      -9,
+      7,
+      10
+    ],
+    [
+      -8,
+      5,
+      9
+    ],
+    [
+      -8,
+      6,
+      10
+    ],
+    [
+      -7,
+      -6,
+      5
+    ],
+    [
+      -7,
+      -5,
+      6
+    ],
+    [
+      -7,
+      9,
+      10
+    ],
+    [
+      -6,
+      -5,
+      7
+    ],
+    [
+      -6,
+      8,
+      10
+    ],
+    [
+      -5,
+      8,
+      9
+    ],
+    [
+      5,
+      6,
+      7
+    ]
+  ],
+  "k4_elim_status": "UNSAT",
+  "k5_elim_status": "STUCK",
+  "elapsed_seconds": 0.30175018310546875,
+  "verdict": "K5 root obstruction confirmed. State-shape lemma as literally written omits retained unit clauses (counterexample recorded); projection separating units needs explicit proof. All-order lower bound remains unverified; no polynomial algorithm result.",
+  "not_checked": [
+    "Read-once branching-program simulation",
+    "Every dynamic branching rule",
+    "Asymptotic lower bound",
+    "Lemma M transfer from clause-search to vertex-search"
+  ]
+}

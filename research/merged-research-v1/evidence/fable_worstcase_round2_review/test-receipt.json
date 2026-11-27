@@ -1,0 +1,72 @@
+{
+  "F6": {
+    "clauses": 5,
+    "coordinate_elimination_accepted": true,
+    "exact_resolvents_match": true,
+    "projection_mismatches": 0,
+    "affine_merge_mismatches": 0,
+    "before_after_clause_counts": [
+      5,
+      5
+    ],
+    "affine_before_after_clause_counts": [
+      4,
+      5
+    ]
+  },
+  "Fano": {
+    "triples": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        4,
+        5
+      ],
+      [
+        1,
+        6,
+        7
+      ],
+      [
+        2,
+        4,
+        6
+      ],
+      [
+        2,
+        5,
+        7
+      ],
+      [
+        3,
+        4,
+        7
+      ],
+      [
+        3,
+        5,
+        6
+      ]
+    ],
+    "clauses": 28,
+    "parity_rank": 4,
+    "parity_solutions": 8,
+    "cnf_models": 0,
+    "parity_models_satisfying_cnf": 0
+  },
+  "K5": {
+    "charge_vectors": 32,
+    "truth_assignments_checked": 32768,
+    "cnf_xor_disagreements": 0,
+    "odd_charge_all_unsat": true,
+    "even_charge_models": [
+      64
+    ]
+  },
+  "elapsed_seconds": 0.22869396209716797,
+  "scope": "Finite example checks only; no implementation/proof of general affine compression, weighted elimination or polynomial state growth."
+}

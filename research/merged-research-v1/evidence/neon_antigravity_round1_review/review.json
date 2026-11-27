@@ -1,0 +1,679 @@
+{
+  "reviewed_at": "2026-11-26T17:31:14.470692+00:00",
+  "proposal_sha256": "44c589e902cc5d0f26b4626819b81fe7ae8a382efdafb4001298d6cd0ca1ab93",
+  "verdict": "Neon counterexample refutes preprocessing-once MRA only. Full per-branch E-MRA keeps peak1 on all five tested sizes; claimed falsification of full E-MRA rejected.",
+  "tests": {
+    "results": [
+      {
+        "extra_gadgets": 1,
+        "variables": 17,
+        "clauses": 52,
+        "elimination_status": "STUCK",
+        "elimination_order": [
+          1
+        ],
+        "post_elimination_clauses": 51,
+        "plain_mra": {
+          "sat": false,
+          "peak": 1,
+          "layers": [
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 1
+        },
+        "preprocess_once_then_mra": {
+          "sat": false,
+          "peak": 2,
+          "layers": [
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 1,
+              "post_prune": 1
+            },
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 0
+        },
+        "full_emra_every_branch": {
+          "sat": false,
+          "max_states": 1,
+          "branches": 20
+        }
+      },
+      {
+        "extra_gadgets": 2,
+        "variables": 25,
+        "clauses": 77,
+        "elimination_status": "STUCK",
+        "elimination_order": [
+          1
+        ],
+        "post_elimination_clauses": 76,
+        "plain_mra": {
+          "sat": false,
+          "peak": 1,
+          "layers": [
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 1
+        },
+        "preprocess_once_then_mra": {
+          "sat": false,
+          "peak": 4,
+          "layers": [
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 1,
+              "post_prune": 1
+            },
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 0
+        },
+        "full_emra_every_branch": {
+          "sat": false,
+          "max_states": 1,
+          "branches": 36
+        }
+      },
+      {
+        "extra_gadgets": 3,
+        "variables": 33,
+        "clauses": 102,
+        "elimination_status": "STUCK",
+        "elimination_order": [
+          1
+        ],
+        "post_elimination_clauses": 101,
+        "plain_mra": {
+          "sat": false,
+          "peak": 1,
+          "layers": [
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 1
+        },
+        "preprocess_once_then_mra": {
+          "sat": false,
+          "peak": 8,
+          "layers": [
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 1,
+              "post_prune": 1
+            },
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 0
+        },
+        "full_emra_every_branch": {
+          "sat": false,
+          "max_states": 1,
+          "branches": 52
+        }
+      },
+      {
+        "extra_gadgets": 4,
+        "variables": 41,
+        "clauses": 127,
+        "elimination_status": "STUCK",
+        "elimination_order": [
+          1
+        ],
+        "post_elimination_clauses": 126,
+        "plain_mra": {
+          "sat": false,
+          "peak": 1,
+          "layers": [
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 1
+        },
+        "preprocess_once_then_mra": {
+          "sat": false,
+          "peak": 16,
+          "layers": [
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 1,
+              "post_prune": 1
+            },
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 0
+        },
+        "full_emra_every_branch": {
+          "sat": false,
+          "max_states": 1,
+          "branches": 68
+        }
+      },
+      {
+        "extra_gadgets": 5,
+        "variables": 49,
+        "clauses": 152,
+        "elimination_status": "STUCK",
+        "elimination_order": [
+          1
+        ],
+        "post_elimination_clauses": 151,
+        "plain_mra": {
+          "sat": false,
+          "peak": 1,
+          "layers": [
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 1
+        },
+        "preprocess_once_then_mra": {
+          "sat": false,
+          "peak": 32,
+          "layers": [
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 32,
+              "post_prune": 32
+            },
+            {
+              "pre_prune": 32,
+              "post_prune": 32
+            },
+            {
+              "pre_prune": 32,
+              "post_prune": 32
+            },
+            {
+              "pre_prune": 32,
+              "post_prune": 32
+            },
+            {
+              "pre_prune": 32,
+              "post_prune": 32
+            },
+            {
+              "pre_prune": 32,
+              "post_prune": 32
+            },
+            {
+              "pre_prune": 32,
+              "post_prune": 32
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 16,
+              "post_prune": 16
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 8,
+              "post_prune": 8
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 4,
+              "post_prune": 4
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 2,
+              "post_prune": 2
+            },
+            {
+              "pre_prune": 1,
+              "post_prune": 1
+            },
+            {
+              "pre_prune": 0,
+              "post_prune": 0
+            }
+          ],
+          "terminal_calls": 0
+        },
+        "full_emra_every_branch": {
+          "sat": false,
+          "max_states": 1,
+          "branches": 84
+        }
+      }
+    ],
+    "elapsed_seconds": 1.6008610725402832,
+    "verdict": "The claimed widening must be checked against ELIM after EVERY branch. Preprocessing-only and full E-MRA are distinct algorithms.",
+    "scope": "Independent finite constructed-family comparison; no universal dominance theorem or asymptotic lower bound."
+  },
+  "other_claims": "Projection consistent with checked Boolean lemma; resource warnings overlap Fable corrections. Stack construction and tight proof-size accounting not independently established.",
+  "general_polynomial_sat_proof": false
+}

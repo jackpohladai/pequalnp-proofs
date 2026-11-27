@@ -1,0 +1,175 @@
+# Research memo: mixed cut-state conditioning (APCS)
+
+**Verdict.** No candidate closes, and nothing here supports P = NP. The strongest candidate has a proved exact core, a proved exponential lower bound for its resolution-bridged restriction, and one precisely located unproved lemma that I expect to be false. Nothing below is machine-checked.
+
+## 1. Candidate A: algorithm
+
+A state is S = (L, N).
+- **L** is an affine system over GF(2), kept in reduced row-echelon form under the fixed variable-ID order.
+- **N** is a clause family keyed by original clause ID, with exact multiplicity and unchanged private IDs.
+
+Canonicalizer K₁, iterated to fixpoint:
+
+1. **Unit propagation** (verified).
+2. **Binary SCCs.** If ℓ and ¬ℓ share an SCC of the implication graph, return UNSAT. Otherwise each SCC adds rows x⊕y=c to L, and intra-SCC binary clauses are deleted.
+3. **XOR blocks.** Group clauses by variable set W. If all 2^{|W|−1} clauses excluding one parity class are present, add the row ⊕W=c to L and delete the block. Only |W| ≤ 1+log₂ m can qualify.
+4. **Gaussian elimination.** If L is inconsistent, return UNSAT. Variables with identical free-variable support in the RREF are equal or complementary; substitute these and fixed variables into N, so clauses stay clauses. Heavier rows stay in L only.
+5. **Projection.** Variables occurring in L but not in N become pivots and their rows are dropped onto a reconstruction stack. This is exact ∃-elimination.
+6. **Split.** Split on the incidence hypergraph of N ∪ rows(L) (verified). Pure 2-CNF components go to verified 2SAT; guard-qualified components go to the verified matching procedure.
+
+Key(S) = (sorted ID-indexed residual clauses, RREF(L)), per component.
+
+Decide(S):
+1. S ← K₁(S); return if decided.
+2. For each component, look up Key in the memo table.
+3. Otherwise choose x ∈ vars(N) by a deterministic function of Key, compute Decide(S|x=0) ∨ Decide(S|x=1), and store the result.
+
+K₀ denotes the restriction to steps 1 and 6 without matching.
+
+## 2. What is proved
+
+**T0 (soundness; routine given the verified foundations).** Every K₁ step preserves the model set projected to surviving variables, and equal keys denote equal model sets, so reuse is sound. Dependencies:
+- the verified unit-propagation, component, 2SAT and matching lemmas;
+- XOR block ⇔ parity row;
+- uniqueness of RREF;
+- exactness of affine projection.
+
+**T1 (affine cut-state count; proved).** Let A ∈ F₂^{m×n} with columns split B ⊔ R, b ∈ col A, and S_α = {y : A_R y = b + A_B α}. Then:
+
+- #{α : S_α ≠ ∅} = 2^{|B| − rk A + rk A_R}, which is the brief's projected dimension;
+- #{distinct nonempty S_α} = 2^{λ(B)}, where λ(B) = rk A_B + rk A_R − rk A.
+
+*Proof.* S_α ≠ ∅ iff c_α = b + A_Bα ∈ col A_R, and distinct such c give disjoint solution sets. Write b = u+v with u ∈ col A_B and v ∈ col A_R. Then (b + col A_B) ∩ col A_R = v + (col A_B ∩ col A_R), which has dimension λ(B). The first count is the fibre size of α ↦ A_Bα mod col A_R. ∎
+
+Consequence: memoization collapses surviving projected cases by exactly the factor 2^{|B| − rk A_B}. On x=y with B={x} this is two cases and two states, so nothing is gained, as the brief records.
+
+**L2 (mixed bound; proved but parameterized, so not a general result).** For a static prefix B, the pre-canonical residual is a function of (the set of crossing clauses left unsatisfied, c_α). Hence the number of keys at that level is at most 1 + ps_N(B)·2^{λ_L(B)} ≤ 1 + 2^{cut_N(B)+λ_L(B)}. Here ps_N(B) counts satisfied-clause patterns (the PS-width quantity of Sæther–Telle–Vatshelle). This is polynomial only when some order keeps cut_N + λ_L = O(log n). It unifies width-based dynamic programming and Gaussian elimination, but it is an assumed-width statement.
+
+**T2 (exact bridge for K₀; standard conversion).** If K₀-Decide refutes F creating T keys, then F has a resolution refutation of size poly(n)·T.
+
+*Sketch.*
+- Equal ID-indexed keys mean identical literals were removed from every unsatisfied clause. So all paths into a state falsify one common clause D_R.
+- Branch variables lie in the residual, hence are unassigned on every incoming path.
+- Unit-propagation cascades unfold into forced queries whose conflict leaves name one original clause.
+- This gives a branching program for the falsified-clause search problem, which converts node-by-node to resolution.
+- 2SAT leaves add polynomial-size subproofs of subclauses of D_R. A refuted component uses only its own clauses. ∎
+
+**Corollary.** K₀ needs T ≥ 2^{Ω(n)}/poly(n) on PHP (Haken), expander Tseitin (Urquhart) and random 3-CNF at constant density above threshold (Chvátal–Szemerédi).
+
+## 3. The required lemma and the first unresolved step
+
+**Conjecture C (research conjecture; predicted false).** There are a polynomial p and a polynomial-time branching rule such that K₁-Decide creates at most p(|F|) keys on every CNF F.
+
+T0 + C would give the objective. Everything before C is proved; C is the first unproved step.
+
+**Why citation does not settle C.** The T2 bridge breaks exactly at steps 2 and 5.
+- Take the clause (x₁∨x₂). Path α derives x₁≡x₃, x₂≡x₄; path β derives x₁≡x₄, x₂≡x₃.
+- Both leave the residual (x₃∨x₄) with x₁, x₂ projected out, so the keys merge, and soundly.
+- The affine hull of the two path subspaces is x₁⊕x₂⊕x₃⊕x₄=0. Under it, (x₁∨x₂) does not imply (x₃∨x₄): take 1,1,0,0.
+- So the merged node carries no single linear-system label, and the run is not a Res(⊕) DAG.
+- In any case, from memory, general dag-like Res(⊕) lower bounds are open; only tree-like (Itsykson–Sokolov) and regular (Efremenko–Garlík–Itsykson) are known. Re-check this before relying on it.
+
+**Why I expect C to be false.**
+- On random 3-CNF the root has no binary clauses and, with high probability, no XOR block. K₁ therefore coincides with K₀ on the top of the search, where T2 applies.
+- The decoy family in §5 forces 2^k keys under ID-order branching.
+- The coarsest sound merge relation is equisatisfiability, which is the problem itself. K₁'s relation is strictly finer, and no argument forces a polynomial index.
+
+**Refutation protocol.** Count keys on random 3-CNF (5n clauses, n = 20..60) and on Boolean-encoded Tseitin mod 3 over random cubic graphs. If log₂T / n does not tend to 0, C is empirically dead.
+
+## 4. Costs
+
+| Item | Cost |
+|---|---|
+| One K₁ call | at most n rounds, each O(|F| log |F|) for propagation, SCC and block grouping plus O(n³) bit operations for elimination |
+| Key length | O(|F| log n + n²) bits; trie lookup linear in key length |
+| Total time | O(T·n·(|F| log |F| + n³)) |
+| Total space | O(T·(|F| log n + n²)) |
+| SAT certificate | model by back-substitution through the projection stack and SCC representatives, O(n²) per level; checked in O(|F|) |
+| UNSAT certificate | the key DAG, replayable in poly(T, |F|); a resolution proof only for K₀ |
+
+Everything is polynomial except T.
+
+## 5. Adversarial families and which inference handles them
+
+- **Cubic expander Tseitin** (3-CNF, mixed-sign, connected). Steps 3–4 solve it with zero branching, provided blocks are syntactically complete.
+- **Guard-qualified PHP-type instances.** The verified matching procedure handles these. Unqualified or re-encoded PHP is uncovered, and K₀ is exponential on it by T2.
+- **Small mixed-width systems.** L2 applies.
+- **Decoys.** H ∧ ⋀ᵢ (xᵢ∨Dᵢ) ∧ (¬xᵢ∨D′ᵢ), with H a hard core and Dᵢ, D′ᵢ binary over vars(H). ID-order branching creates 2^k distinct keys, all containing H. Reason-minimal nogoods (CDCL) repair this, but then the procedure is exactly resolution and T2-type bounds apply.
+- **Random 3-CNF at density 5.** No rule fires at the root. This is the predicted first witness against C.
+- **Tseitin mod 3 on expanders.** GF(2)-affine reasoning is provably weak here in the polynomial-calculus sense (Buss–Grigoriev–Impagliazzo–Pitassi). Predicted witness.
+- **Incomplete XOR blocks.** Wide parities, or blocks with one clause weakened, make step 3 blind. Only Alternative B recovers them.
+
+## 6. Minimal counterexample attempt
+
+**Lemma tested (affine sufficiency).** The number of keys at cut B is at most 2^{λ_{L*}(B)}, where L* is the affine hull of all models.
+
+**Instance F₂** on x₁, x₂, y₁, y₂:
+
+(x₁∨y₁∨¬y₂) ∧ (¬x₁∨¬y₁∨y₂) ∧ (x₂∨y₂∨¬y₁) ∧ (¬x₂∨¬y₂∨y₁)
+
+Take B = {x₁, x₂}.
+
+- α = 00 and α = 11 both yield y₁≡y₂, which is projected away, so they merge into the empty state.
+- α = 01 leaves clauses 1 and 4, both equal to (y₁∨¬y₂).
+- α = 10 leaves clauses 2 and 3, both equal to (¬y₁∨y₂).
+
+That is three keys. The models 0000, 1000, 0100, 0011, 0110 force every affine functional vanishing on the model set to be zero. So L* is trivial and the lemma predicts one key. **The lemma fails at four variables.**
+
+The cyclic generalization F_k = ⋀ᵢ (xᵢ∨yᵢ∨¬yᵢ₊₁) ∧ (¬xᵢ∨¬yᵢ∨yᵢ₊₁) gives 2^k − 1 keys with trivial hull. The nonlinear residual carries implication-order information that rank cannot see.
+
+**Caveat.** F_k is satisfiable, its leaves are 2SAT, and an interleaved order has constant cut. It refutes the lemma's form; it is not a hardness witness. Order-robust versions need expander incidence, which is where proof stops and Conjecture C begins.
+
+## 7. Next Lean statements
+
+Primary target, T1 in subspace form:
+
+```lean
+import Mathlib
+open Module Submodule
+
+theorem cut_state_count {V : Type*} [AddCommGroup V] [Module (ZMod 2) V]
+    [Finite V] [Module.Finite (ZMod 2) V]
+    (U W : Submodule (ZMod 2) V) (b : V) (hb : b ∈ U ⊔ W) :
+    Nat.card {c : V // c ∈ W ∧ c - b ∈ U}
+      = 2 ^ finrank (ZMod 2) ↥(U ⊓ W) := by
+  sorry
+```
+
+Instantiate U = col A_B and W = col A_R. `Submodule.finrank_sup_add_finrank_inf_eq` rewrites the exponent as rk A_B + rk A_R − rk A. The proof route is a translation bijection with U ⊓ W plus the cardinality of a finite vector space. Instance and lemma names are from memory.
+
+Secondary target, a finite check that F₂ has trivial affine hull:
+
+```lean
+def F2 (x1 x2 y1 y2 : Bool) : Bool :=
+  (x1 || y1 || !y2) && (!x1 || !y1 || y2) &&
+  (x2 || y2 || !y1) && (!x2 || !y2 || y1)
+
+theorem F2_no_affine : ∀ c0 c1 c2 c3 c4 : Bool,
+    (∀ x1 x2 y1 y2 : Bool, F2 x1 x2 y1 y2 = true →
+      xor c0 (xor (c1 && x1) (xor (c2 && x2)
+        (xor (c3 && y1) (c4 && y2)))) = false) →
+    c0 = false ∧ c1 = false ∧ c2 = false ∧ c3 = false ∧ c4 = false := by
+  decide
+```
+
+After these, the next target is T2 as a statement about branching programs for the falsified-clause search problem.
+
+## 8. Alternatives
+
+**B. Degree-d GF(2) closure as the affine-relation generator.**
+- *Mechanism.* Maintain a basis of derived multilinear polynomials of degree ≤ d, closed under multiplication by variables. Read off entailed affine relations as the degree-1 slice. Cost is n^{O(d)}.
+- *Exact bridge.* Clegg–Edmonds–Impagliazzo: the closure refutes F iff F has a degree-d polynomial-calculus refutation.
+- *First false step.* "Fixed d suffices." PHP needs degree above n/2 (Razborov), and random 3-CNF needs linear degree over every field (Alekhnovich–Razborov).
+- *With branching.* A tree with T closure-refuted leaves yields a PCR refutation of size T·n^{O(d)}. The size–degree tradeoff then forces T ≥ 2^{Ω(D²/n)}/n^{O(d)} at required degree D. This is a standard argument; re-derive it before relying on it.
+- *Value.* It strictly strengthens steps 3–4 and recovers incomplete XOR blocks of low degree.
+
+**C. Compact mixed-sign Hall reasoning.**
+- *Mechanism.* Never materialize Hall clauses; keep the guarded bipartite graph and query matching or flow directly. This is polynomial in both representation and checking when guards are independent per edge.
+- *One parity side-constraint.* This stays polynomial via bimodular integer programming (Artmann–Weismantel–Zenklusen).
+- *Boundary.* With binary side-clauses over guards, the problem contains perfect matching under pairwise conflict constraints, which is NP-complete (Darmann–Pferschy–Schauer–Woeginger).
+- *Consequence.* Joint attainability, the brief's "x∨y with guards ¬x, ¬y" failure, is exactly the hard boundary. No general lemma is available. The deliverable is the fragment map.
+
+`★ Insight ─────────────────────────────────────`
+- Memoization gains exactly the kernel of A_B: assignments that the unexplored side cannot distinguish. That is matroid connectivity, not global rank.
+- A lower bound transfers to an algorithm only when every merged node has one proof line as its label. Quotient-then-project merges break that, which is why Conjecture C is open rather than refuted.
+`─────────────────────────────────────────────────`

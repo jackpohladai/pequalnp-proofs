@@ -1,0 +1,53 @@
+{
+  "assembled_at": "2026-11-27T20:39:28.864493+00:00",
+  "location": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research",
+  "desktop_link": "/Users/jackpohlad/Desktop/AI Math/P vs NP Research Hub/Merged Research",
+  "checked_component_families": 23,
+  "lean_modules": 52,
+  "evidence_folders": 385,
+  "runtime_basis": "blq-composed-core-scc-emra-ialh5-v5",
+  "research_workers_paused": true,
+  "general_polynomial_sat_proof": false,
+  "status": "complete",
+  "scope": "Consolidated existing code, proof components and research evidence. Experimental proposals are preserved separately from the active solver.",
+  "completed_at": "2026-11-27T20:45:04.950154+00:00",
+  "runtime_version": "merged-research-v1",
+  "runtime_source_sha256": "fbde1ec629edf02e14168c8c76ed76c5b8268c1bf9cf49aaab897fb3555f2c90",
+  "runtime_files": {
+    "solver_v1.py": "77d0dfbc19754a5731554c10b28c4d21baefc650e02e803fd42938624dab1a0f",
+    "check_scc_and_growth.py": "c4a35347e35586121b21b5ff4c78163c2cfa64788e1e88523dd50f2adcd59e36",
+    "core_refutation.py": "7fc37c02aa6ce73930dc3e0a2a6e76bbe517b4a8db3940a3c2c158ed489baf6b",
+    "solver.py": "fbde1ec629edf02e14168c8c76ed76c5b8268c1bf9cf49aaab897fb3555f2c90",
+    "compression.py": "aa504c7cbb0fcfee7765099c222c9707797178a825f90730fafb5c441c57c8cf",
+    "test_mra.py": "6eebead22f7d33abc66a17550bf29a18df266836440695ae080d407dc51fc72b",
+    "CompressionSoundness.lean": "32eff5851b7af275d87eec2af9552f9d94e016a90705a10686d7df803b5491af",
+    "check_proposal.py": "540bfd66b094a568f3aeb1bc3e3b5f87f3be61caaada50c4b8ce15656ded8427",
+    "export_core_lean.py": "6e73448fa9d104ec546373ed5b89ca01f406a48d0249053ff8e4e65df1aa03b1",
+    "export_compression_lean.py": "36ff961ae50eefa510a15f500488c0821560baeecb603d4071955c38cbff6ec4",
+    "test_elim.py": "3e2ec629665246ef298eb61be73bfb4a581a308f0527422514f8644eeb58bf03",
+    "finite_oracle.py": "ff927ecf763405202090afdd6f215f9586ca41b38ef2e4e6209fb81d79673389"
+  },
+  "archive": 8044,
+  "archive_sha256": "7da1f5a94590d9d1e2fd0c80f8a56e55aef46d930ba08f9bab253d3f90b88b39",
+  "validation": {
+    "lean_modules": 52,
+    "joint_import": "checked",
+    "solver_regressions": 410,
+    "compression_controls": 326,
+    "larger_controls": 14,
+    "larger_original_oracle_inconclusive": 2,
+    "integration": "passed",
+    "candidate_limit_tests": 5,
+    "controller_tests": 8
+  },
+  "commands": {
+    "status": "/usr/bin/python3 research.py status",
+    "solve": "/usr/bin/python3 research.py solve INPUT.json",
+    "rebuild_components": "/usr/bin/python3 build_lean.py"
+  },
+  "experimental_status": "Existing experimental proposals and implementations preserved without promotion to verified or active algorithms.",
+  "background_work": "Paused by user; not restarted",
+  "local_original_archive_files": 8059,
+  "local_original_archive_sha256": "2baa6723031a08f78b8d968a02df180922f0177b9c14fdfaa40268d8482f17fe",
+  "publication_scope": "Research archive on the owner fork; not a project proof-unit submission."
+}

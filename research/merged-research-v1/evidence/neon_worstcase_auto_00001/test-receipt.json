@@ -1,0 +1,7 @@
+{
+  "status": "no_fixture",
+  "summary": "No finite fixture returned; any symbolic argument still needs independent review.",
+  "seconds": 0.0003452301025390625,
+  "solver": "scc_emra",
+  "general_polynomial_sat_proof": false
+}

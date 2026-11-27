@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "source_sha256": "4c43c052487d8936449dfec0b382ae7c15ecdfeeaf7d056619cb9d08d0b22ed8",
+  "event_configurations": 4096,
+  "domain_cases": 32768,
+  "disjoint_partition_cases": 110592,
+  "strict_certificates": 1546,
+  "four_clause_example": {
+    "assignment_count": 32,
+    "individual_bad_mass": 32,
+    "paired_bad_mass": 24,
+    "W": "1",
+    "paired_W": "3/4",
+    "x_false_count": 16,
+    "x_false_mass": 24,
+    "x_true_count": 16,
+    "x_true_mass": 0
+  },
+  "unbalanced_selection_example": {
+    "left_count": 1,
+    "left_mass": 1,
+    "right_count": 3,
+    "right_mass": 2,
+    "raw_minimum_branch_fails": true,
+    "right_branch_certified": true
+  },
+  "candidate_executed": false,
+  "general_sat_claim": false
+}

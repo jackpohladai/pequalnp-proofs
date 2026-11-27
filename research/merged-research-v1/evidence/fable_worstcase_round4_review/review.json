@@ -1,0 +1,12 @@
+{
+  "verdict": "finite_fixture_verified_no_general_bound",
+  "scope": "Octahedron parity fixture: twelve variables, 48 clauses, UNSAT, E-MRA peak 4, 14 branch attempts.",
+  "unverified": [
+    "Potential based on maximal satisfiable subsets; claimed expander frontier growth; proposed UP-entailment pruning."
+  ],
+  "at": "2026-11-26T18:01:26.387920+00:00",
+  "reviewer": "root",
+  "general_polynomial_sat_proof": false,
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fable_worstcase_round4/structured-output.json",
+  "test_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fable_worstcase_round4/test-receipt.json"
+}

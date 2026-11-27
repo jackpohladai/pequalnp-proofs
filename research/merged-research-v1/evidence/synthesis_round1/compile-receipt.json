@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-26T07:01:17.544502+00:00",
+  "source": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/synthesis_round1/StalledParity.lean",
+  "source_sha256": "a2e4b09af3f4c6897868044b64820c841badfd8a333b890206fcc15a43cd34f3",
+  "lean_version": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "exit_code": 0,
+  "elapsed_seconds": 79.58,
+  "output": "'PEqualNP.Outside.StalledParity.parityGadget_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.StalledParity.auxiliaryResolvents_tautological' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.StalledParity.padded_satisfiable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.StalledParity.padding_clause_count' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.StalledParity.width_three_pivot_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+  "verification": "Pinned Lean compiler/kernel check with printed theorem axiom lists",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "project_search_definitions_sha256": "2df0484c0554e95c92bcedd7af3c3db95aa944d894dfe7c59bf6589d7c1368e5",
+  "private_raw_receipt": "/var/folders/1h/cg1gvvqd65j2tfx386q412z00000gn/T/pnp-stalled-parity-fw5c31rm/compile-receipt.json",
+  "upstream_checker": false,
+  "full_sat_proof": false,
+  "formalized_scope": [
+    "odd-parity CNF semantics",
+    "all four auxiliary resolvents are tautologies",
+    "uniform CNF padding equisatisfiability",
+    "four added clauses per selected variable-list entry",
+    "positive pivot-gap arithmetic when p,q>=2"
+  ],
+  "not_formalized": [
+    "occurrence-count bridge after proper3CNF deduplication",
+    "Python elimination refinement",
+    "operational encoded-bit runtime",
+    "general SAT decision or polynomial-time guarantee"
+  ]
+}

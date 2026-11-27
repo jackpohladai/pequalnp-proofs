@@ -1,0 +1,1951 @@
+{
+  "status": "confirmed_finite_growth_fixture",
+  "summary": "The deployed solver still reaches at least four simultaneous states on this finite UNSAT fixture. This is a finite test, not a general complexity result. Observed peak: 9; compression: compressed. Exact compression certificate also checked in Lean.",
+  "oracle_sat": false,
+  "oracle": {
+    "status": "completed",
+    "sat": false,
+    "witness": null,
+    "method": "independent_bounded_dpll",
+    "nodes": 3387,
+    "seconds": 0.058568250000000044,
+    "formally_checked": false,
+    "general_polynomial_sat_proof": false
+  },
+  "observed": {
+    "sat": false,
+    "peak": 9,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 4
+      },
+      {
+        "variable": 3,
+        "retained": 6
+      },
+      {
+        "variable": 4,
+        "retained": 9
+      },
+      {
+        "variable": 5,
+        "retained": 2
+      },
+      {
+        "variable": 6,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 12,
+    "counting": {
+      "calls": 47,
+      "refutations": 21,
+      "windows": 4061,
+      "tuples": 89376,
+      "seconds": 5.784931461000002,
+      "truncated_calls": 6
+    },
+    "root_counting": {
+      "status": "UNKNOWN",
+      "certificate": null,
+      "windows": 113,
+      "tuples": 2832,
+      "constraints": 0,
+      "truncated": false,
+      "seconds": 0.31080474999999996,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": false,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-composed-core-scc-emra-ialh5-v5",
+    "source_sha256": "ff1f4262060692f34f89f974a9ffe276231e639df5fac78dcd498b2704a14196",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "compressed",
+      "original_variables": 20,
+      "original_clauses": 221,
+      "quotient_variables": 16,
+      "quotient_clauses": 85,
+      "certificate": {
+        "variables": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "basis_forms": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64,
+          128,
+          768,
+          3072,
+          12288,
+          49152,
+          65536,
+          131072,
+          262144,
+          524288
+        ],
+        "quotient": [
+          [
+            1,
+            2,
+            5,
+            6
+          ],
+          [
+            1,
+            2,
+            5,
+            10
+          ],
+          [
+            1,
+            2,
+            6,
+            9
+          ],
+          [
+            1,
+            2,
+            9,
+            10
+          ],
+          [
+            -1,
+            -3,
+            -5,
+            -7,
+            -13
+          ],
+          [
+            -1,
+            -3,
+            -5,
+            -7,
+            -14
+          ],
+          [
+            -1,
+            -3,
+            -5,
+            -11,
+            -13
+          ],
+          [
+            -1,
+            -3,
+            -5,
+            -11,
+            -14
+          ],
+          [
+            -1,
+            -3,
+            -7,
+            -9,
+            -13
+          ],
+          [
+            -1,
+            -3,
+            -7,
+            -9,
+            -14
+          ],
+          [
+            -1,
+            -3,
+            -9,
+            -11,
+            -13
+          ],
+          [
+            -1,
+            -3,
+            -9,
+            -11,
+            -14
+          ],
+          [
+            1,
+            4,
+            5,
+            8
+          ],
+          [
+            1,
+            4,
+            5,
+            12
+          ],
+          [
+            1,
+            4,
+            8,
+            9
+          ],
+          [
+            1,
+            4,
+            9,
+            12
+          ],
+          [
+            1,
+            5,
+            6,
+            10
+          ],
+          [
+            -1,
+            -5,
+            -7,
+            -11,
+            -13
+          ],
+          [
+            -1,
+            -5,
+            -7,
+            -11,
+            -14
+          ],
+          [
+            1,
+            5,
+            8,
+            12
+          ],
+          [
+            1,
+            5,
+            15,
+            16
+          ],
+          [
+            1,
+            6,
+            9,
+            10
+          ],
+          [
+            -1,
+            -7,
+            -9,
+            -11,
+            -13
+          ],
+          [
+            -1,
+            -7,
+            -9,
+            -11,
+            -14
+          ],
+          [
+            1,
+            8,
+            9,
+            12
+          ],
+          [
+            1,
+            9,
+            15,
+            16
+          ],
+          [
+            2,
+            3,
+            6,
+            7
+          ],
+          [
+            2,
+            3,
+            6,
+            11
+          ],
+          [
+            2,
+            3,
+            7,
+            10
+          ],
+          [
+            2,
+            3,
+            10,
+            11
+          ],
+          [
+            -2,
+            -4,
+            -6,
+            -8,
+            -15
+          ],
+          [
+            -2,
+            -4,
+            -6,
+            -8,
+            -16
+          ],
+          [
+            -2,
+            -4,
+            -6,
+            -12,
+            -15
+          ],
+          [
+            -2,
+            -4,
+            -6,
+            -12,
+            -16
+          ],
+          [
+            -2,
+            -4,
+            -8,
+            -10,
+            -15
+          ],
+          [
+            -2,
+            -4,
+            -8,
+            -10,
+            -16
+          ],
+          [
+            -2,
+            -4,
+            -10,
+            -12,
+            -15
+          ],
+          [
+            -2,
+            -4,
+            -10,
+            -12,
+            -16
+          ],
+          [
+            2,
+            5,
+            6,
+            9
+          ],
+          [
+            2,
+            5,
+            9,
+            10
+          ],
+          [
+            2,
+            6,
+            7,
+            11
+          ],
+          [
+            -2,
+            -6,
+            -8,
+            -12,
+            -15
+          ],
+          [
+            -2,
+            -6,
+            -8,
+            -12,
+            -16
+          ],
+          [
+            2,
+            6,
+            13,
+            14
+          ],
+          [
+            2,
+            7,
+            10,
+            11
+          ],
+          [
+            -2,
+            -8,
+            -10,
+            -12,
+            -15
+          ],
+          [
+            -2,
+            -8,
+            -10,
+            -12,
+            -16
+          ],
+          [
+            2,
+            10,
+            13,
+            14
+          ],
+          [
+            3,
+            4,
+            7,
+            8
+          ],
+          [
+            3,
+            4,
+            7,
+            12
+          ],
+          [
+            3,
+            4,
+            8,
+            11
+          ],
+          [
+            3,
+            4,
+            11,
+            12
+          ],
+          [
+            -3,
+            -5,
+            -7,
+            -9,
+            -13
+          ],
+          [
+            -3,
+            -5,
+            -7,
+            -9,
+            -14
+          ],
+          [
+            -3,
+            -5,
+            -9,
+            -11,
+            -13
+          ],
+          [
+            -3,
+            -5,
+            -9,
+            -11,
+            -14
+          ],
+          [
+            3,
+            6,
+            7,
+            10
+          ],
+          [
+            3,
+            6,
+            10,
+            11
+          ],
+          [
+            3,
+            7,
+            8,
+            12
+          ],
+          [
+            3,
+            7,
+            15,
+            16
+          ],
+          [
+            3,
+            8,
+            11,
+            12
+          ],
+          [
+            3,
+            11,
+            15,
+            16
+          ],
+          [
+            4,
+            5,
+            8,
+            9
+          ],
+          [
+            4,
+            5,
+            9,
+            12
+          ],
+          [
+            -4,
+            -6,
+            -8,
+            -10,
+            -15
+          ],
+          [
+            -4,
+            -6,
+            -8,
+            -10,
+            -16
+          ],
+          [
+            -4,
+            -6,
+            -10,
+            -12,
+            -15
+          ],
+          [
+            -4,
+            -6,
+            -10,
+            -12,
+            -16
+          ],
+          [
+            4,
+            7,
+            8,
+            11
+          ],
+          [
+            4,
+            7,
+            11,
+            12
+          ],
+          [
+            4,
+            8,
+            13,
+            14
+          ],
+          [
+            4,
+            12,
+            13,
+            14
+          ],
+          [
+            5,
+            6,
+            9,
+            10
+          ],
+          [
+            -5,
+            -7,
+            -9,
+            -11,
+            -13
+          ],
+          [
+            -5,
+            -7,
+            -9,
+            -11,
+            -14
+          ],
+          [
+            5,
+            8,
+            9,
+            12
+          ],
+          [
+            5,
+            9,
+            15,
+            16
+          ],
+          [
+            6,
+            7,
+            10,
+            11
+          ],
+          [
+            -6,
+            -8,
+            -10,
+            -12,
+            -15
+          ],
+          [
+            -6,
+            -8,
+            -10,
+            -12,
+            -16
+          ],
+          [
+            6,
+            10,
+            13,
+            14
+          ],
+          [
+            7,
+            8,
+            11,
+            12
+          ],
+          [
+            7,
+            11,
+            15,
+            16
+          ],
+          [
+            8,
+            12,
+            13,
+            14
+          ],
+          [
+            13,
+            14,
+            15,
+            16
+          ]
+        ],
+        "right_inverse": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64,
+          128,
+          256,
+          1024,
+          4096,
+          16384,
+          65536,
+          131072,
+          262144,
+          524288
+        ],
+        "block_clause_counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "blocks": [
+        {
+          "support": [
+            1,
+            2,
+            5,
+            6
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            2,
+            5,
+            11,
+            12
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            2,
+            6,
+            9,
+            10
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            2,
+            9,
+            10,
+            11,
+            12
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            3,
+            5,
+            7,
+            17
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            3,
+            5,
+            7,
+            18
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            3,
+            5,
+            13,
+            14,
+            17
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            3,
+            5,
+            13,
+            14,
+            18
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            3,
+            7,
+            9,
+            10,
+            17
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            3,
+            7,
+            9,
+            10,
+            18
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            3,
+            9,
+            10,
+            13,
+            14,
+            17
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            3,
+            9,
+            10,
+            13,
+            14,
+            18
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            4,
+            5,
+            8
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            4,
+            5,
+            15,
+            16
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            4,
+            8,
+            9,
+            10
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            4,
+            9,
+            10,
+            15,
+            16
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            5,
+            6,
+            11,
+            12
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            5,
+            7,
+            13,
+            14,
+            17
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            5,
+            7,
+            13,
+            14,
+            18
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            5,
+            8,
+            15,
+            16
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            5,
+            19,
+            20
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            6,
+            9,
+            10,
+            11,
+            12
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            7,
+            9,
+            10,
+            13,
+            14,
+            17
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            7,
+            9,
+            10,
+            13,
+            14,
+            18
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            8,
+            9,
+            10,
+            15,
+            16
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            1,
+            9,
+            10,
+            19,
+            20
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            3,
+            6,
+            13,
+            14
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            3,
+            7,
+            11,
+            12
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            3,
+            11,
+            12,
+            13,
+            14
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            4,
+            6,
+            8,
+            19
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            4,
+            6,
+            8,
+            20
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            4,
+            6,
+            15,
+            16,
+            19
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            4,
+            6,
+            15,
+            16,
+            20
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            4,
+            8,
+            11,
+            12,
+            19
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            4,
+            8,
+            11,
+            12,
+            20
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            4,
+            11,
+            12,
+            15,
+            16,
+            19
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            4,
+            11,
+            12,
+            15,
+            16,
+            20
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            5,
+            6,
+            9,
+            10
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            5,
+            9,
+            10,
+            11,
+            12
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            6,
+            7,
+            13,
+            14
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            6,
+            8,
+            15,
+            16,
+            19
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            6,
+            8,
+            15,
+            16,
+            20
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            6,
+            17,
+            18
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            7,
+            11,
+            12,
+            13,
+            14
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            8,
+            11,
+            12,
+            15,
+            16,
+            19
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            8,
+            11,
+            12,
+            15,
+            16,
+            20
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            2,
+            11,
+            12,
+            17,
+            18
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            4,
+            7,
+            8
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            4,
+            7,
+            15,
+            16
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            4,
+            8,
+            13,
+            14
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            4,
+            13,
+            14,
+            15,
+            16
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            5,
+            7,
+            9,
+            10,
+            17
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            5,
+            7,
+            9,
+            10,
+            18
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            5,
+            9,
+            10,
+            13,
+            14,
+            17
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            5,
+            9,
+            10,
+            13,
+            14,
+            18
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            6,
+            7,
+            11,
+            12
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            6,
+            11,
+            12,
+            13,
+            14
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            7,
+            8,
+            15,
+            16
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            7,
+            19,
+            20
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            8,
+            13,
+            14,
+            15,
+            16
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            3,
+            13,
+            14,
+            19,
+            20
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            5,
+            8,
+            9,
+            10
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            5,
+            9,
+            10,
+            15,
+            16
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            6,
+            8,
+            11,
+            12,
+            19
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            6,
+            8,
+            11,
+            12,
+            20
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            6,
+            11,
+            12,
+            15,
+            16,
+            19
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            6,
+            11,
+            12,
+            15,
+            16,
+            20
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            7,
+            8,
+            13,
+            14
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            7,
+            13,
+            14,
+            15,
+            16
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            8,
+            17,
+            18
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            4,
+            15,
+            16,
+            17,
+            18
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            5,
+            6,
+            9,
+            10,
+            11,
+            12
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            5,
+            7,
+            9,
+            10,
+            13,
+            14,
+            17
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            5,
+            7,
+            9,
+            10,
+            13,
+            14,
+            18
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            5,
+            8,
+            9,
+            10,
+            15,
+            16
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            5,
+            9,
+            10,
+            19,
+            20
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            6,
+            7,
+            11,
+            12,
+            13,
+            14
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            6,
+            8,
+            11,
+            12,
+            15,
+            16,
+            19
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            6,
+            8,
+            11,
+            12,
+            15,
+            16,
+            20
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            6,
+            11,
+            12,
+            17,
+            18
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            7,
+            8,
+            13,
+            14,
+            15,
+            16
+          ],
+          "forbidden_points": 4,
+          "stabilizer_size": 4,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            7,
+            13,
+            14,
+            19,
+            20
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            8,
+            15,
+            16,
+            17,
+            18
+          ],
+          "forbidden_points": 2,
+          "stabilizer_size": 2,
+          "quotient_clauses": 1
+        },
+        {
+          "support": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "forbidden_points": 1,
+          "stabilizer_size": 1,
+          "quotient_clauses": 1
+        }
+      ],
+      "verification_local_assignments": 5136,
+      "verification_matrix_entries": 256,
+      "verification_work_estimate": 360928,
+      "verification_method": "local_block_tables_and_GF2_right_inverse",
+      "seconds": 0.044177833,
+      "certificate_verified": true,
+      "general_polynomial_sat_proof": false
+    },
+    "core_refutation": {
+      "status": "UNKNOWN",
+      "reason": "no_clauses_removed",
+      "seconds": 0.0008520409999999146,
+      "input_stage": "quotient",
+      "original_attempt": {
+        "status": "UNKNOWN",
+        "reason": "no_clauses_removed",
+        "seconds": 0.003062749999999781
+      }
+    }
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 16,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 4
+      },
+      {
+        "variable": 3,
+        "retained": 8
+      },
+      {
+        "variable": 4,
+        "retained": 16
+      },
+      {
+        "variable": 5,
+        "retained": 16
+      },
+      {
+        "variable": 6,
+        "retained": 16
+      },
+      {
+        "variable": 7,
+        "retained": 12
+      },
+      {
+        "variable": 8,
+        "retained": 9
+      },
+      {
+        "variable": 9,
+        "retained": 9
+      },
+      {
+        "variable": 10,
+        "retained": 3
+      },
+      {
+        "variable": 11,
+        "retained": 3
+      },
+      {
+        "variable": 12,
+        "retained": 1
+      },
+      {
+        "variable": 13,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 38,
+    "accepted_dp": 200
+  },
+  "baseline_seconds": 2.3192148329999998,
+  "updated_seconds": 5.974127833,
+  "compression_lean": {
+    "source_sha256": "94e0c3ede26d17a9be523e3d2659a78ea00fb130aa610de7c8b8a86cab7de699",
+    "lean_version": "4.36.0",
+    "scope": "Exact candidate compression equivalence and constructive lifting; not a verification of Python or runtime.",
+    "general_polynomial_sat_proof": false,
+    "status": "checked",
+    "exit_code": 0,
+    "seconds": 6.555278249999999
+  },
+  "seconds": 14.922014042,
+  "solver": "blq-composed-core-scc-emra-ialh5-v5",
+  "source_sha256": "ff1f4262060692f34f89f974a9ffe276231e639df5fac78dcd498b2704a14196",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

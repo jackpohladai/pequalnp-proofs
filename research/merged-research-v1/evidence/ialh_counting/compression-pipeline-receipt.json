@@ -1,0 +1,24 @@
+[
+  {
+    "case": "neon36",
+    "status": "not_confirmed",
+    "lean": "checked",
+    "solver": "blq-root-scc-emra-ialh5-v2"
+  },
+  {
+    "case": "neon88",
+    "status": "confirmed_finite_growth_fixture",
+    "lean": null,
+    "solver": "blq-root-scc-emra-ialh5-v2"
+  },
+  {
+    "case": "sat_control",
+    "status": "fixture_predictions_match",
+    "lean": "checked",
+    "solver": "blq-root-scc-emra-ialh5-v2"
+  },
+  {
+    "case": "helper_mutation",
+    "status": "held"
+  }
+]

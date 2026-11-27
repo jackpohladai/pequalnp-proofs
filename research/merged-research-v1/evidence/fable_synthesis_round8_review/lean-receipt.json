@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-11-26T17:24:02.059579+00:00",
+  "exit_code": 0,
+  "elapsed_seconds": 2.941463125,
+  "lean_version": "4.36.0",
+  "source_sha256": "efb49f783fc4afffefc5a1f3a8c41f27556d0a6379ba1150c00af2381d951261",
+  "stdout": "'EliminationIndependent.rowB_eq' does not depend on any axioms\n'EliminationIndependent.pairB_eq' does not depend on any axioms\n'EliminationIndependent.exact_elimination' depends on axioms: [Quot.sound]\n'EliminationIndependent.reconstruction' does not depend on any axioms\n",
+  "stderr": "",
+  "scope": "Exact Boolean elimination identity for arbitrary finite parent-clause truth lists and reconstruction of the eliminated Boolean. No full syntactic solver or global polynomial frontier proof."
+}

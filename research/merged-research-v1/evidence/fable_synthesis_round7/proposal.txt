@@ -1,0 +1,107 @@
+# Round 7 proposal: Maximal-Residual Antichain DP (MRA)
+
+**Status:** no polynomial bound is claimed, and the lemma a universal bound needs is unproved. All counts below are hand-derived and not machine-checked. No tools were available, so this was written solo rather than through a workflow.
+
+`★ Insight ─────────────────────────────────────`
+- F2 showed that affine rank cannot count nonlinear residuals. A decision procedure only needs the *maximal* residuals, though: if models(G) ⊆ models(H), G can be dropped.
+- This is a nonlinear, order-theoretic compression. On F2 it cuts 3 residuals to 2 or 1, depending on order.
+`─────────────────────────────────────────────────`
+
+## 1. Mechanism
+
+**State.** A set S of canonical residual CNFs over the unassigned variables.
+- `canon(G)`: unit-propagate to fixpoint, keeping each derived unit as a unit clause; delete subsumed clauses; sort. Return ⊥ on an empty clause.
+- Dominance `G ⪯ H`: every clause of H is a superset of some clause of G.
+
+```
+MRA(F, π):
+  S ← {canon(F)}
+  for v in π:
+    T ← ∅
+    for G in S, b in {0,1}:
+      H ← canon(G|v=b);  if H = ⊥: continue
+      if all clauses of H have width ≤ 2:        # terminal dispatch
+        if 2SAT(H) = SAT: return SAT  else: continue
+      T ← T ∪ {H}
+    S ← ⪯-maximal elements of T (one per equivalence class)
+    if S = ∅: return UNSAT
+```
+
+Counting mode disables the dispatch and records |T| and |S| per depth.
+
+## 2. What is proved
+
+- **Soundness.** G ⪯ H implies models(G) ⊆ models(H), since any model of a clause satisfies its supersets. Every state is a genuine residual F|a, and a dropped state is contained in a kept one. So the invariant "F is SAT iff some state is SAT" holds at every depth, for every order.
+- **Cost.** Each state has at most N literals plus n units, where N is the encoded length. Canonicalisation is O(N²), and pairwise dominance is O(W²N²) per depth. The total is O(n·W²·N²), with W the largest pre-pruning |T|.
+- **Consequence.** The runtime is polynomial exactly when W is, and W is not bounded by anything proved here.
+
+## 3. Weakest missing lemma
+
+**L (conjecture, unproved).** There is a polynomial-time order rule π(F) and a polynomial p such that the non-terminal W under π(F) is at most p(N) for every CNF F.
+
+L would give P=NP outright, so I expect it to be false. I can neither prove nor refute it.
+
+**The fixed-order analogue is false (proved by hand).** Let F_n be the cyclic generalisation of F2, with indices mod n:
+
+F_n = ⋀ᵢ (xᵢ ∨ yᵢ ∨ ¬yᵢ₊₁) ∧ (¬xᵢ ∨ ¬yᵢ ∨ yᵢ₊₁)
+
+- **x-first order.** Assigning x = a leaves one implication per cycle edge, so a residual is an orientation of the n-cycle. Two orientations give the same preorder only if both are directed cycles. For n ≥ 3 that leaves exactly 2ⁿ − 1 distinct functions, of which the 2ⁿ − 2 acyclic ones are pairwise incomparable.
+- **So no sound pruning helps.** Any rule that only drops a state semantically contained in a kept one retains at least 2ⁿ − 2 states. Syntactic ⪯ retains all 2ⁿ.
+- **Interleaved order y₁,x₁,y₂,x₂,…** The antichain is at most 4 at every depth. This is computed for n = 3 below; for general n it is an inductive sketch, not a proof.
+
+This is a fixed-order failure only. All 2ⁿ states are 2-CNF, so the terminal dispatch returns SAT at the first one. It is not a lower bound for the full solver, and it says nothing about all efficient orders.
+
+**Reusable lemma (cover bound, proved).** Fix a prefix set A. Suppose satisfying pairs (aᵢ, bᵢ), i ≤ m, exist such that every assignment a to A has at most t of the bᵢ as models of F|a. Then any sound dominance-pruned state set at cut A has at least m/t states.
+
+*Proof.* Each F|aᵢ is contained in some kept state, which then contains bᵢ. Each kept state contains at most t of the bᵢ. ∎
+
+Refuting L for a family needs this bound to be superpolynomial at some cut of every efficiently chosen order, with non-terminal states. I have no such family.
+
+## 4. Tests (all on ≤ 6 variables, counting mode unless stated)
+
+**T1: F2 (4 variables).** Tests that dominance compresses the checked 3-residual obstruction.
+
+| Order | Distinct residuals \|T\| per depth | Antichain \|S\| per depth |
+|---|---|---|
+| x₁, x₂ | 2, 3 | 2, 2 |
+| y₁, y₂ | 2, 3 | 2, 1 |
+
+- x-first: the depth-2 antichain is {(y₁∨¬y₂)}, {(¬y₁∨y₂)}; the EQ state is dominated.
+- y-first: the depth-2 antichain is the empty clause set (TRUE).
+- With dispatch on, y-first halts SAT at depth 1 and x-first at depth 2.
+- Model-count check: #SAT(F2) = 10.
+
+**T2: F3 (6 variables: x₁..x₃, y₁..y₃).** Tests that the blow-up is an order artefact.
+
+| Order | \|T\| per depth | \|S\| per depth |
+|---|---|---|
+| x₁, x₂, x₃ | 2, 4, 8 | 2, 4, 8 |
+| y₁, x₁, y₂, x₂, y₃, x₃ | 2, 4, 4, 6, 3, 1 | 2, 2, 4, 2, 1, 1 |
+
+- x-first at depth 3: 7 distinct functions, 6 semantically maximal. Assignments 000 and 111 have 2 models each; the other six have 4 each.
+- Model-count check: #SAT(F3) = 28.
+- The syntactic count of 8 against the semantic 6 measures the incompleteness of ⪯.
+
+**T3: K4-Tseitin (6 variables, 16 clauses, UNSAT), affine elimination disabled.** Tests soundness on UNSAT input and shows dominance gives no compression on affine structure.
+
+- Variables are the edges e12, e13, e14, e23, e24, e34. Vertex 1 has e12⊕e13⊕e14 = 1; vertices 2 to 4 have parity 0, each written as 4 width-3 clauses.
+- Expected for every one of the 720 orders: |S| = 2 at depth 1 and |T| = 4 at depth 2.
+- All four depth-2 states are pairwise incomparable 2-CNFs, and all four are refuted by 2SAT. The result is UNSAT with exactly 4 terminal calls.
+- Reason: any two edges of K4 touch every vertex or leave a unit that propagates, so all constraints fall to width ≤ 2.
+
+Any deviation from these numbers falsifies either the implementation or my derivation.
+
+## 5. Terminal-state and discovery accounting
+
+- **Terminal states.** T1 has at most 2. T2 has at most 8 (x-first) or at most 4 (interleaved). T3 has exactly 4.
+- **Representation.** At most N + n literals per state.
+- **Order discovery.** This is not solved. The proposal assumes a supplied or heuristic order. Brute-force minimum over orders is feasible only at toy size (720 orders at 6 variables) and proves nothing asymptotic.
+- **Parameter dependence.** The bound O(n·W²·N²) depends on W. It is not a general polynomial result.
+
+## 6. Recommended immediate work
+
+1. Implement the counting mode and check T1 to T3 exactly.
+2. Compute W* = min over orders of max |S| on all 6-variable 3-CNFs reachable by enumeration. Look for instances where W* stays large with both 2SAT dispatch and affine elimination on. Those are the seeds for an all-orders counterexample to L through the cover lemma.
+3. Machine-check the three hand proofs in Lean: ⪯-soundness, the orientation count 2ⁿ − 1 / 2ⁿ − 2, and the cover lemma.
+
+**Best partial result:** MRA is exact and is polynomial exactly when W is. Its fixed-order polynomial claim is refuted by F_n. Its efficient-order claim (L) remains an open conjecture, with the cover lemma as the tool for attacking it.

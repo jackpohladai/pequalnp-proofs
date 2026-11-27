@@ -1,0 +1,90 @@
+Executable matching-certificate validation with actual CNF conclusions
+
+All four Lean sources compiled successfully using pinned Lean 4.36.0.
+Printed theorem axioms are limited to propext, Classical.choice, and
+Quot.sound. Final source bytes, generated artifacts and imported component
+sources/artifacts were checked against their successful compile receipts.
+No generated candidate was executed. Live services, original component
+source files and remote state were not changed.
+
+Success certificate
+
+A success certificate maps each Fin r row to Option (Fin h). Every active
+row (guard false) must have some neighboring hole, and active rows cannot
+share a hole. Inactive entries are ignored. This permits zero holes when
+all rows are inactive, without requiring an impossible total row-to-hole
+function. successCheck executes finite row and pair checks; successCheck_iff
+proves the exact conditions, and accepted_success_has_matching proves soundness.
+
+Failure certificate
+
+A failure certificate is a finite set S of rows. failureCheck verifies that
+every selected row is active and that the union of their neighbor sets is
+strictly smaller than S. failureCheck_iff proves the exact conditions.
+accepted_failure_no_matching derives impossibility of matching from the
+checked Hall theorem. The empty set and sets containing inactive rows do
+not incorrectly certify failure.
+
+Semantic completeness, not a search algorithm
+
+matching_iff_success_certificate and no_matching_iff_failure_certificate
+prove that appropriate certificates exist for matching and nonmatching
+instances. accepted_certificates_cannot_conflict proves that accepted yes
+and no certificates cannot coexist. These theorems do not implement a
+matching search or promise its runtime. Certificate production remains a
+separate algorithmic obligation.
+
+Actual CNF consequences
+
+CertifiedCNFConclusions composes the validators with the preceding actual
+CNF constructor and retained solver. Given checkedSolve F = some (some T),
+positive guard clauses, an injective edge map and retained/guard separation,
+an accepted success certificate at the guards of state (support F) T proves
+the constructed CNF satisfiable. An accepted failure certificate at those
+same guards proves it unsatisfiable.
+
+The greatest-model and positive-guard premises must not be omitted. For
+empty retained F, one guard NOT x and no holes, greatest x=true has an active
+deficient row, but the complete CNF NOT x is satisfiable at x=false. This
+counterexample is checked independently and included in generator feedback.
+
+Concrete executable edge adapter
+
+CertificateEdges defines certificateEdges g cert i k by testing whether
+row i is active and cert i is some k. accepted_certificate_edges proves its
+three exact private-edge conditions: only neighbors are true, every active
+row has a true edge, and no hole has true edges from distinct rows.
+accepted_certificate_private_edges packages this concrete witness.
+
+Masking inactive rows is essential: an accepted certificate may store the
+same hole in an active and an inactive row. Converting every stored Some
+to a true edge would then violate column exclusivity. The proved adapter
+sets all inactive edges false. Its source and accepted artifact were sent
+to the separate executable witness-lift worker for integration.
+
+Validation
+
+MatchingCertificates compiled in 18.945 seconds; CertifiedCNFConclusions
+in 8.001; CertificateExamples in 4.337; CertificateEdges in 16.245.
+All exited zero. Actual Lean reductions cover valid matching, collisions,
+missing active entries, non-neighbors, all-inactive/zero-hole inputs,
+deficient cuts, empty or inactive cuts, and masking ignored entries.
+
+Independent enumeration checked 15,025 success certificates and 5,039
+failure certificates across 685 graph/guard instances. There were 4,155
+accepted successes and 590 accepted failures. Each was checked against
+independent exhaustive matching, and every accepted success's masked edge
+witness was checked. Certificate existence and mutual exclusion held on
+the entire finite corpus. These checks supplement the general Lean proofs.
+
+Remaining boundaries
+
+The interfaces are typed: Fin bounds row/hole IDs and Finset removes duplicate
+rows. An external serialized-certificate parser is not verified here. It
+must validate bounds, preserve the intended Option entries, and deduplicate
+set certificates rather than count repeated rows as distinct.
+
+Complete matching search, arbitrary-input CNF decomposition/recognition,
+generated-code refinement and total encoded-bit runtime remain unproved.
+This is not a general SAT solver or P=NP proof. Results are local Lean
+checks, with no official checker replay, upstream acceptance or credit claim.

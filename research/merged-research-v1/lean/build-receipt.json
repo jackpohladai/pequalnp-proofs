@@ -1,0 +1,992 @@
+{
+  "at": "2026-11-27T20:43:53.610295+00:00",
+  "lean_version": "Lean (version 4.36.0, arm64-apple-darwin24.6.0, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)",
+  "lean_path": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/pequalnp-sparse/lean/.lake/packages/batteries/.lake/build/lib/lean",
+  "modules": {
+    "AugmentingReassignment": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingAugmentation.move' does not depend on any axioms\n'PEqualNP.Outside.MatchingAugmentation.augmentRows' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.empty_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.move_consistent' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.move_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.move_frees_previous' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.matchedRows_move' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.augmentRows_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 9.963600625,
+      "source_sha256": "8d4c2afe36187af456beebccfe5cb6c5a135fd3b9c272b277a709f60ff16736a",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/AugmentingReassignment.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/AugmentingReassignment.lean"
+      ],
+      "reused_artifact_sha256": "8bed920842988fc786b9686fb3ab50f0d53cda4b45d7842888bda4da9145ea8d"
+    },
+    "CompressionInstances": {
+      "exit_code": 0,
+      "stdout": "'MergedCertificates.CompressionInstances.CompressionSoundness.equisat_of_projection' does not depend on any axioms\n'MergedCertificates.CompressionInstances.CompressionSoundness.certificateCheck_sound' depends on axioms: [propext,\n Quot.sound]\n'MergedCertificates.CompressionInstances.CompressionSoundness.equisat_of_two_maps' does not depend on any axioms\n'MergedCertificates.CompressionInstances.CompressionInstances.case36_forward' depends on axioms: [propext]\n'MergedCertificates.CompressionInstances.CompressionInstances.case36_backward' depends on axioms: [propext]\n'MergedCertificates.CompressionInstances.CompressionInstances.case36_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.CompressionInstances.CompressionInstances.case96_forward' depends on axioms: [propext]\n'MergedCertificates.CompressionInstances.CompressionInstances.case96_backward' depends on axioms: [propext]\n'MergedCertificates.CompressionInstances.CompressionInstances.case96_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.CompressionInstances.CompressionInstances.positive_forward' depends on axioms: [propext]\n'MergedCertificates.CompressionInstances.CompressionInstances.positive_backward' depends on axioms: [propext]\n'MergedCertificates.CompressionInstances.CompressionInstances.positive_equisatisfiable' depends on axioms: [propext]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 4.906150334,
+      "source_sha256": "80c06b3522b7221ce7f55e597d0a22fec0f710ce1f02e9048d56ca557e4abae1",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CompressionInstances.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CompressionInstances.lean"
+      ],
+      "reused_artifact_sha256": "ca4ab6156d76bbad0e9473cb93a4155d4fa6f668d683258fd817c1f81a24f26d"
+    },
+    "CompressionSoundness": {
+      "exit_code": 0,
+      "stdout": "'CompressionSoundness.equisat_of_projection' does not depend on any axioms\n'CompressionSoundness.certificateCheck_sound' depends on axioms: [propext, Quot.sound]\n'CompressionSoundness.equisat_of_two_maps' does not depend on any axioms\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 0.9174892090000002,
+      "source_sha256": "32eff5851b7af275d87eec2af9552f9d94e016a90705a10686d7df803b5491af",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CompressionSoundness.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CompressionSoundness.lean"
+      ],
+      "reused_artifact_sha256": "6b10f4fcf3c88b074d49507f1ec7a2291974a908d5386a56c516444b75ae98cd"
+    },
+    "CoreCandidate": {
+      "exit_code": 0,
+      "stdout": "'MergedCertificates.CoreCandidate.CompressionSoundness.equisat_of_projection' does not depend on any axioms\n'MergedCertificates.CoreCandidate.CompressionSoundness.certificateCheck_sound' depends on axioms: [propext, Quot.sound]\n'MergedCertificates.CoreCandidate.CompressionSoundness.equisat_of_two_maps' does not depend on any axioms\n'MergedCertificates.CoreCandidate.CompressionInstances.outer_forward' depends on axioms: [propext]\n'MergedCertificates.CoreCandidate.CompressionInstances.outer_backward' depends on axioms: [propext]\n'MergedCertificates.CoreCandidate.CompressionInstances.outer_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.CoreCandidate.CompressionInstances.core_forward' depends on axioms: [propext]\n'MergedCertificates.CoreCandidate.CompressionInstances.core_backward' depends on axioms: [propext]\n'MergedCertificates.CoreCandidate.CompressionInstances.core_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.CoreCandidate.CoreRefutations.core_full_unsat' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MergedCertificates.CoreCandidate.CoreComposition.original_unsat' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 27.124512875,
+      "source_sha256": "3f67a0a81f003e50d5878bf1b60b594c2c969990a4e2eccdc5885fd56692581a",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CoreCandidate.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CoreCandidate.lean"
+      ],
+      "reused_artifact_sha256": "4ca638b2a0861b94e8197bf4a9d98cb7ac267fa314b500b6f63b02825049907e"
+    },
+    "CoreRefutations": {
+      "exit_code": 0,
+      "stdout": "'MergedCertificates.CoreRefutations.CompressionSoundness.equisat_of_projection' does not depend on any axioms\n'MergedCertificates.CoreRefutations.CompressionSoundness.certificateCheck_sound' depends on axioms: [propext,\n Quot.sound]\n'MergedCertificates.CoreRefutations.CompressionSoundness.equisat_of_two_maps' does not depend on any axioms\n'MergedCertificates.CoreRefutations.CompressionInstances.core0_forward' depends on axioms: [propext]\n'MergedCertificates.CoreRefutations.CompressionInstances.core0_backward' depends on axioms: [propext]\n'MergedCertificates.CoreRefutations.CompressionInstances.core0_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.CoreRefutations.CompressionInstances.core1_forward' depends on axioms: [propext]\n'MergedCertificates.CoreRefutations.CompressionInstances.core1_backward' depends on axioms: [propext]\n'MergedCertificates.CoreRefutations.CompressionInstances.core1_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.CoreRefutations.CompressionInstances.core2_forward' depends on axioms: [propext]\n'MergedCertificates.CoreRefutations.CompressionInstances.core2_backward' depends on axioms: [propext]\n'MergedCertificates.CoreRefutations.CompressionInstances.core2_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.CoreRefutations.CoreRefutations.core0_full_unsat' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MergedCertificates.CoreRefutations.CoreRefutations.core1_full_unsat' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'MergedCertificates.CoreRefutations.CoreRefutations.core2_full_unsat' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 75.39664037499999,
+      "source_sha256": "69ddd07a7569bf1f62d1fcd92e9042a32bf2fc3e76b105f67ed93b930116cca8",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CoreRefutations.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CoreRefutations.lean"
+      ],
+      "reused_artifact_sha256": "af916f08b068650ccf00e1b1ffb6c9e78adb41578aa042850b0b1f56b507d4ce"
+    },
+    "DualHorn": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.DualHorn.clause_join_closed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHorn.cnf_join_closed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHorn.positive_clause_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHorn.exists_greatest_model' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHorn.positive_guard_family_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 12.959516292000004,
+      "source_sha256": "bac65e92d1e39cd9a76bbb353477704e7fd948d774b1e7aebc13990f7687c360",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/DualHorn.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/DualHorn.lean"
+      ],
+      "reused_artifact_sha256": "d823158319b1e95d00c9da01ab8c23a5861d9c65c473381557147b1c1913c2b7"
+    },
+    "DualHornAlgorithm": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.DualHornAlgorithm.negative_forced' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHornAlgorithm.erase_preserves_domination' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.DualHornAlgorithm.erase_strict_progress' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHornAlgorithm.run_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.DualHornAlgorithm.solve_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 13.565340042000003,
+      "source_sha256": "2f7b2d9fb997589337d0270bc2d1493191fa022edbc3f47b437527a4227a54a2",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/DualHornAlgorithm.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/DualHornAlgorithm.lean"
+      ],
+      "reused_artifact_sha256": "c3caeec26f389cebc16b63f69654f1dfd27fab543b97a669aaecbad2e19f6db3"
+    },
+    "FibreCardinality": {
+      "exit_code": 0,
+      "stdout": "'FibreCardinality.preimageEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FibreCardinality.preimage_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FibreCardinality.exact_preimage_of_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FibreCardinality.exact_preimage_of_cross_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FibreCardinality.binary_block_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FibreCardinality.blocks_equisatisfiable' does not depend on any axioms\n'FibreCardinality.counted_blocks_equisatisfiable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FibreCardinality.matrix_block_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'FibreCardinality.matrix_compatibility' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 16.731757625,
+      "source_sha256": "320db129f84a4586a0467d7a20a89c97e3ef9cbc4a9876817266c4e616b5eb48",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/FibreCardinality.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/FibreCardinality.lean"
+      ],
+      "reused_artifact_sha256": "94590d564517cbb524030823d17522ee9253a3a543cdbbe86341e8d5ae7bfe52"
+    },
+    "GuardedHall": {
+      "exit_code": 0,
+      "stdout": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/GuardedHall.lean:74:0: warning: automatically included section variable(s) unused in theorem `PEqualNP.Outside.GuardedHall.private_edges_iff_matching`:\n  [Finite R]\n  [DecidableEq R]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite R] [DecidableEq R] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n'PEqualNP.Outside.GuardedHall.guarded_cuts_iff_matching' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedHall.private_edges_iff_matching' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedHall.guarded_hall_projection' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedHall.two_row_projection' does not depend on any axioms\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 6.42855316699999,
+      "source_sha256": "97827e26e1f4b7554920bc04e69dc4073769ba476c66fc76ccfd1bcfb360fa0b",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/GuardedHall.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/GuardedHall.lean"
+      ],
+      "reused_artifact_sha256": "fef8e74c48faf37b1b42b2947e87628101fc8adf85ba9c2da2d5df7c1f52234a"
+    },
+    "LargerCompressionInstances": {
+      "exit_code": 0,
+      "stdout": "'MergedCertificates.LargerCompressionInstances.CompressionSoundness.equisat_of_projection' does not depend on any axioms\n'MergedCertificates.LargerCompressionInstances.CompressionSoundness.certificateCheck_sound' depends on axioms: [propext,\n Quot.sound]\n'MergedCertificates.LargerCompressionInstances.CompressionSoundness.equisat_of_two_maps' does not depend on any axioms\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs16sat_forward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs16sat_backward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs16sat_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs16unsat_forward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs16unsat_backward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs16unsat_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs24sat_forward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs24sat_backward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs24sat_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs24unsat_forward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs24unsat_backward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs24unsat_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs32sat_forward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs32sat_backward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs32sat_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs32unsat_forward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs32unsat_backward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.pairs32unsat_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.overlap16_forward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.overlap16_backward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.overlap16_equisatisfiable' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.overlap32_forward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.overlap32_backward' depends on axioms: [propext]\n'MergedCertificates.LargerCompressionInstances.CompressionInstances.overlap32_equisatisfiable' depends on axioms: [propext]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 17.364513791999997,
+      "source_sha256": "b8b08b928278f575e5d13d8de648d6740cc08976114143cce8628d17ac07b2e0",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/LargerCompressionInstances.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/LargerCompressionInstances.lean"
+      ],
+      "reused_artifact_sha256": "281684c9d9efa87932b891353d4e4bf14ee3ef516fbf043fe77291c6c52243aa"
+    },
+    "MatchingCertificates": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingCertificates.successCheck_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.failureCheck_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_success_has_matching' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_failure_no_matching' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.matching_iff_success_certificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.no_matching_iff_failure_certificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_certificates_cannot_conflict' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.503565249999994,
+      "source_sha256": "986dfd8c4772da727126a0cbfcbca82ddc368c5aefcd1a8e5b6989d68762b13e",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/MatchingCertificates.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/MatchingCertificates.lean"
+      ],
+      "reused_artifact_sha256": "990176e28900d54e43d2c34bb799f437f09cca8d1c8782625b4ebed232a33d1d"
+    },
+    "ModularCertificate": {
+      "exit_code": 0,
+      "stdout": "'ModularCertificate.block_mod3' does not depend on any axioms\n'ModularCertificate.modular_impossible' depends on axioms: [propext, Quot.sound]\n'ModularCertificate.neon_cnf_unsatisfiable' depends on axioms: [propext, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 0.9956483750000018,
+      "source_sha256": "53136bb25aa7c3b5d424d4e755347f7386a13e4120703357b01b799a23dab0c1",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/ModularCertificate.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/ModularCertificate.lean"
+      ],
+      "reused_artifact_sha256": "f27fef35275c4e8710130d4df0250397cf36c9573d8af3afd23161ea7720b305"
+    },
+    "PairedUnion": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.PairedUnion.certificate_exists' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.badMass_disjoint_union' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.certificate_branch' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.singleton_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.PairedUnion.paired_le_individual' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.418778875000001,
+      "source_sha256": "0db91e5c4f64f5cab9c554ee08ad0fa5597b826263bcae1b369f87dbfbbc9253",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/PairedUnion.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/PairedUnion.lean"
+      ],
+      "reused_artifact_sha256": "6babb30d4882b9b1db96ca985941aa080fe727a5a7c055e03c50565dd860d791"
+    },
+    "ParityExtraction": {
+      "exit_code": 0,
+      "stdout": "'ParityExtraction.parity_cons_iff' does not depend on any axioms\n'ParityExtraction.exclude_false_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ParityExtraction.block_false_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'ParityExtraction.replace_parity_subcollection' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 0.5643609579999946,
+      "source_sha256": "db62a41c9e2ff136f5cabdd3e69f94ba6a00a35069d8dbe0e3f7887470406137",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/ParityExtraction.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/ParityExtraction.lean"
+      ],
+      "reused_artifact_sha256": "30f78d01a63405200830089ec696462f9b850418ccea7c1c5e37d494156abf75"
+    },
+    "ActiveAugmentation": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingAugmentation.move_active_only' depends on axioms: [propext]\n'PEqualNP.Outside.MatchingAugmentation.augmentRows_active_only' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.full_coverage_accepted' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.30548675,
+      "source_sha256": "38f40a6fbb42baa744bf72889f9b0a4957870cad9768718766ee7bd1599ad8dc",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/ActiveAugmentation.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/ActiveAugmentation.lean"
+      ],
+      "reused_artifact_sha256": "24ced4cf418d1b629efd41ceb2c38743eb9255db711d40dc51b72b281d617118"
+    },
+    "CertificateEdges": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingCertificates.accepted_certificate_edges' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_certificate_private_edges' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.3367242079999926,
+      "source_sha256": "3704e00a2e995fbac64029dda8ebfd16056e0e98bd4bd5ac6c8c1ce84d749d42",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CertificateEdges.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CertificateEdges.lean"
+      ],
+      "reused_artifact_sha256": "4780de85a41b710ec9c04e04e03a4522ebe8459417325f284c284bde86726c6b"
+    },
+    "CertificateExamples": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.3782429170000086,
+      "source_sha256": "fb9ba3b5eb958e470d9c580e4d146d0e64dc0ffd04b088ffaabc7181ff0507a7",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CertificateExamples.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CertificateExamples.lean"
+      ],
+      "reused_artifact_sha256": "155c335a13129026f6ec67ddfca962ac141232f6737de9435f8a627364e37b58"
+    },
+    "ExhaustedSearchCut": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingSearch.exhausted_cut_deficient' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingSearch.exhausted_cut_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingSearch.exhausted_cut_no_matching' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.5177277920000023,
+      "source_sha256": "38177bfc1846b89e75fe3a1b930b9fc6cc14a0f7b8c080cea1f394ef49233871",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/ExhaustedSearchCut.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/ExhaustedSearchCut.lean"
+      ],
+      "reused_artifact_sha256": "ffef17ec9cb79a9d598e5dad1d7302a5808120c02484fff140471c411516f34c"
+    },
+    "GreatestGuard": {
+      "exit_code": 0,
+      "stdout": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/GreatestGuard.lean:21:0: warning: automatically included section variable(s) unused in theorem `PEqualNP.Outside.GreatestGuard.edgeWitness_monotone`:\n  [Finite R]\n  [DecidableEq R]\n  [DecidableEq H]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite R] [DecidableEq R] [DecidableEq H] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/GreatestGuard.lean:38:0: warning: automatically included section variable(s) unused in theorem `PEqualNP.Outside.GreatestGuard.greatest_active_subset`:\n  [Finite R]\n  [DecidableEq R]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite R] [DecidableEq R] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n'PEqualNP.Outside.GreatestGuard.extension_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GreatestGuard.greatest_active_subset' does not depend on any axioms\n'PEqualNP.Outside.GreatestGuard.exists_feasible_iff_at_greatest' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.GreatestGuard.greatest_matching_iff_feasible_extension' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.GreatestGuard.greatest_failure_excludes_all' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.GreatestGuard.concrete_witness_lift' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 4.257839666999999,
+      "source_sha256": "c222ab95ec0f4f722c8a9ae3948a5514f528c3bb8b42d1c81bd2f0ce8702481e",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/GreatestGuard.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/GreatestGuard.lean"
+      ],
+      "reused_artifact_sha256": "10ae0efd00bcd49f144dd4e467c6a54ca16e678792591bb892c4fce323ac6c31"
+    },
+    "GuardedCNFEncoding": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.GuardedCNFEncoding.rowClause_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.columns_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.glue_clause' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.encode_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.encoded_sat_iff_private_edges' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.encoded_sat_iff_matching' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 3.1889474999999976,
+      "source_sha256": "2e935291f7d7ba714e7298853cbe29b91485bd08decfce5da9f368e9b36102f1",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/GuardedCNFEncoding.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/GuardedCNFEncoding.lean"
+      ],
+      "reused_artifact_sha256": "a5d4c2ad3cf48b71aa934872520541448100ade129b7513c7723e37bdc892790"
+    },
+    "ReversePaths": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingPaths.follows_replay' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingPaths.follows_rows' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingPaths.GoodPath.extend' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.1970500840000113,
+      "source_sha256": "38424fcf8e69b9fece41db8afc027c7ba650e881248a18658feb774b059ade43",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/ReversePaths.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/ReversePaths.lean"
+      ],
+      "reused_artifact_sha256": "ff4b4766f15145957e1a1ac9a2a0b7db6706c2129988711c95ead8e4dca1f04f"
+    },
+    "DualHornGreatestGuard": {
+      "exit_code": 0,
+      "stdout": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/DualHornGreatestGuard.lean:31:0: warning: automatically included section variable(s) unused in theorem `PEqualNP.Outside.DualHornGreatestGuard.retained_unsatisfiable_excludes_extension`:\n  [Finite R]\n  [DecidableEq R]\n  [DecidableEq H]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite R] [DecidableEq R] [DecidableEq H] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n'PEqualNP.Outside.DualHornGreatestGuard.restricted_extension_iff_matching' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.DualHornGreatestGuard.retained_unsatisfiable_excludes_extension' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 3.428321666000002,
+      "source_sha256": "309b5fcbfa519b9c190cb0df95914a72b1de81ac4f8037890c07882be7612f0e",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/DualHornGreatestGuard.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/DualHornGreatestGuard.lean"
+      ],
+      "reused_artifact_sha256": "aa7a2b2fb57bc175e88d23d37881fdebc6cd9741e6c8e43be51a72c0f378c389"
+    },
+    "EncodingExamples": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.GuardedCNFEncoding.twoRowCNF_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.twoRowCNF_projection' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.3983135830000037,
+      "source_sha256": "bda3c20144119dc5a69e373d969593ff73673b74dc3b0f9eed070cb5a78f9f14",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/EncodingExamples.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/EncodingExamples.lean"
+      ],
+      "reused_artifact_sha256": "2e50a6527a3b9839303985840076164d49630c9c4147eec9c793f2f1e08fb899"
+    },
+    "FreshGuardedCNF": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.GuardedCNFEncoding.freshEdge_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.freshEdge_private' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.fresh_encoded_sat_iff_matching' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.4877178750000013,
+      "source_sha256": "7115ba63b757a9f37561ae1f480bbd1a37fde66f50741e05d8ec62dddd84231b",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/FreshGuardedCNF.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/FreshGuardedCNF.lean"
+      ],
+      "reused_artifact_sha256": "5d3c6284c55bb2b1c4242435b16045deaff1f85d34c30d9f5545271b62cca1ff"
+    },
+    "PathCarryingSearch": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingPaths.searchPath_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingPaths.searchPath_active' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingPaths.searchPath_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.082583999999997,
+      "source_sha256": "7495c76050d8b4ee7268c89639440ea7bdad51d0dc4bd54e183b1c423b9afcd5",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/PathCarryingSearch.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/PathCarryingSearch.lean"
+      ],
+      "reused_artifact_sha256": "20ce2fb69e6196c56e668221cc7c69aea79881cc484429d25c4c973906e65ca0"
+    },
+    "ExecutableEdgeLift": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.GuardedCNFEncoding.decodeFreshEdge' does not depend on any axioms\n'PEqualNP.Outside.GuardedCNFEncoding.liftAssignment' does not depend on any axioms\n'PEqualNP.Outside.GuardedCNFEncoding.decodeFreshEdge_at_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.decodeFreshEdge_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.liftAssignment_at_edge' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.liftAssignment_below' depends on axioms: [propext]\n'PEqualNP.Outside.GuardedCNFEncoding.liftAssignment_outside' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.liftClause_eval' depends on axioms: [propext]\n'PEqualNP.Outside.GuardedCNFEncoding.liftCNF_eval' depends on axioms: [propext]\n'PEqualNP.Outside.GuardedCNFEncoding.liftEncoding_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.lift_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.6547429999999963,
+      "source_sha256": "6b60c34da711e9f0f394b45fc98db8db13f9d754275a5e5e79a515b79f23d38c",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/ExecutableEdgeLift.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/ExecutableEdgeLift.lean"
+      ],
+      "reused_artifact_sha256": "d58d244614087d088502f0407d55ff5b42029d52aa4e3fdb7969bf059dfe8f0b"
+    },
+    "AugmentationExamples": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 5.428391917,
+      "source_sha256": "1d0e75846772bf61eba34fe56d2f4af44df9ad8e579a7aabcacf320d380369c6",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/AugmentationExamples.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/AugmentationExamples.lean"
+      ]
+    },
+    "BfsClosure": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingSearch.scanHole_ok' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingSearch.scanHoles_ok' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingSearch.expand_good' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingSearch.expand_done_lt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingSearch.explore_exhaustion' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingSearch.start_full_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingSearch.explore_free_hole' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingSearch.ownerFacts' does not depend on any axioms\n'PEqualNP.Outside.MatchingSearch.drained_bfs_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 6.93840725,
+      "source_sha256": "40e0bdd632194f15f3b309f0c185787c265b7b6f86bead4a335cc3737fbf977b",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/BfsClosure.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/BfsClosure.lean"
+      ]
+    },
+    "PathSearchExamples": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingPaths.Examples.forced_alternating_path' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingPaths.Examples.replay_covers_selected_root' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingPaths.Examples.malformed_raw_path_is_rejected' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.711044083000001,
+      "source_sha256": "0d2ed40d925de6b2bd05148105bc9d2288c1ed34fa8c324eaad5060908fea36e",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/PathSearchExamples.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/PathSearchExamples.lean"
+      ]
+    },
+    "AugmentationBfsBridge": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingAugmentation.initial_invariants' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.typed_bfs_full_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.typed_bfs_failure' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingAugmentation.typed_bfs_free_hole' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.359573417,
+      "source_sha256": "43cabae8a7548a394f8ef58d91d33fe9e837f4a3a00466a5bbea109d03d498f5",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/AugmentationBfsBridge.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/AugmentationBfsBridge.lean"
+      ]
+    },
+    "MatchingLoop": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingLoop.tryPath_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.visit_checked' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.solveWith_checked' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.solveFromBfs_checked' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.solveFromBfs_no_inconclusive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingLoop.Result.accepted_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 3.0059020000000007,
+      "source_sha256": "af96aa8387f59a963456d712e361168865758519949e8b3dfe34a28bca3e79e7",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/MatchingLoop.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/MatchingLoop.lean"
+      ]
+    },
+    "MatchingPathComposition": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingPathComposition.returned_path_replays' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingPathComposition.solve_definite_if_path_found' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingPathComposition.solve_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingPathComposition.solve_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.787716167000001,
+      "source_sha256": "1cbb1f91dff9fd65ab21a17afe7a1995fe848a7fa14cb5c0c079b5e0360afdd5",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/MatchingPathComposition.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/MatchingPathComposition.lean"
+      ]
+    },
+    "RankObstruction": {
+      "exit_code": 0,
+      "stdout": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/RankObstruction.lean:61:79: warning: This simp argument is unused:\n  h\n\nHint: Omit it from the simp argument list.\n  [apply] simp [base]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'PEqualNP.Outside.RankObstruction.base_mul_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.kernel_mul_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.inverse_mul_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.kernel_entry' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.RankObstruction.kernel_rank' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RankObstruction.factorization_width_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 7.527008792,
+      "source_sha256": "d06d9c2bad7ff35b5edf07f61cb1297217b8ef5875476f89d7866ac5571e94d1",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/RankObstruction.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/RankObstruction.lean"
+      ]
+    },
+    "RawPathInvariant": {
+      "exit_code": 0,
+      "stdout": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/RawPathInvariant.lean:30:23: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead\n\nHint: Replace the deprecated name:\n  i\u0335f\u0335_\u0335p\u0335o\u0335s\u0335i\u0332t\u0332e\u0332_\u0332e\u0332q\u0332_\u0332l\u0332e\u0332f\u0332t\u0332\n/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/RawPathInvariant.lean:32:23: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\n\nHint: Replace the deprecated name:\n  i\u0335f\u0335_\u0335n\u0335e\u0335g\u0335i\u0332t\u0332e\u0332_\u0332e\u0332q\u0332_\u0332r\u0332i\u0332g\u0332h\u0332t\u0332\n/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/RawPathInvariant.lean:25:21: warning: This simp argument is unused:\n  owner\n\nHint: Omit it from the simp argument list.\n  [apply] simp only\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/RawPathInvariant.lean:28:21: warning: This simp argument is unused:\n  owner\n\nHint: Omit it from the simp argument list.\n  [apply] simp only\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n'PEqualNP.Outside.MatchingPaths.rawSearchPath_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingPaths.searchPath_eq_raw' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.648405874999998,
+      "source_sha256": "228fba490068a98ae534d36f14c0ea36ef4da87988970f0b0a962d6a876e285a",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/RawPathInvariant.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/RawPathInvariant.lean"
+      ]
+    },
+    "SparseDualHornAlgorithm": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.SparseDualHornAlgorithm.support_card_le_literal_occurrences' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.SparseDualHornAlgorithm.solveSparse_correct' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.SparseDualHornAlgorithm.negative_forced' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.SparseDualHornAlgorithm.erase_preserves_domination' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.SparseDualHornAlgorithm.erase_strict_progress' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.SparseDualHornAlgorithm.run_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.SparseDualHornAlgorithm.solve_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 4.005270667,
+      "source_sha256": "daa56ed221032d946455a1aec0804784a0e2903a503fe52b92bd06784cb8af25",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/SparseDualHornAlgorithm.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/SparseDualHornAlgorithm.lean"
+      ]
+    },
+    "RawMatchingPathComposition": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.RawMatchingPathComposition.raw_returned_path_replays' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.RawMatchingPathComposition.solve_definite_if_path_found' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.RawMatchingPathComposition.visit_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RawMatchingPathComposition.solve_eq_checked' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.RawMatchingPathComposition.solve_accepted' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RawMatchingPathComposition.solve_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 3.9176382499999995,
+      "source_sha256": "e587ce3a0862d102380c08452e73d38fc0b33daf560d3a14cc90e1b8668e0386",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/RawMatchingPathComposition.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/RawMatchingPathComposition.lean"
+      ]
+    },
+    "CheckedDualHorn": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.SparseDualHornAlgorithm.dualHornCheck_iff' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.SparseDualHornAlgorithm.checkedSolve_result_correct' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.326676040999999,
+      "source_sha256": "896e92006dc17258f210a256732a685dcfa7128bce4b6daa3e7c3586c2ae9623",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CheckedDualHorn.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CheckedDualHorn.lean"
+      ]
+    },
+    "CheckedOutputProjection": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.GuardedCNFEncoding.encoded_sat_at_checked_output' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.GuardedCNFEncoding.checked_unsat_excludes_encoding' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.163375834,
+      "source_sha256": "572ef83e2edf61be5975e4d64731ac39e9569667a8e314d972fa3cfa76d31546",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CheckedOutputProjection.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CheckedOutputProjection.lean"
+      ]
+    },
+    "SearchCorrespondence": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingCorrespondence.scan_correspondence' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.MatchingCorrespondence.explore_correspondence' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCorrespondence.free_implies_rawPath' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCorrespondence.solve_definite' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.591519041999998,
+      "source_sha256": "4dcbfaa1ca21f95e010695f045b6c5b8ffe8b70fb118f91c8df668be9c983ca4",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/SearchCorrespondence.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/SearchCorrespondence.lean"
+      ]
+    },
+    "CertifiedCNFConclusions": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.MatchingCertificates.accepted_success_encoded_sat' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.MatchingCertificates.accepted_failure_encoded_unsat' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.354350125,
+      "source_sha256": "9b5598680c2ed4a3a78c809ea422e5a7583d607a5264ee7256336f2ef538b427",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CertifiedCNFConclusions.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CertifiedCNFConclusions.lean"
+      ]
+    },
+    "RawMatchingCompleteness": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.RawMatchingPathComposition.solve_definite' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.RawMatchingPathComposition.solve_total_correct' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.3083609160000016,
+      "source_sha256": "2733393f5bd54aec2ae9b1a125dd5aaa0079a224df52251528304536c294be41",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/RawMatchingCompleteness.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/RawMatchingCompleteness.lean"
+      ]
+    },
+    "CertifiedConstructorSolver": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.CertifiedConstructorSolver.inputCheck' does not depend on any axioms\n'PEqualNP.Outside.CertifiedConstructorSolver.processCertificate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.CertifiedConstructorSolver.certify' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.CertifiedConstructorSolver.inputCheck_iff' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.CertifiedConstructorSolver.processCertificate_correct' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.CertifiedConstructorSolver.certify_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.CertifiedConstructorSolver.returned_sat_is_model' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.CertifiedConstructorSolver.returned_unsat_excludes_models' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 3.0976683750000014,
+      "source_sha256": "431464c78e88d0cd40acd05ba3257815df610f2d119803da53e619b82a06d79b",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CertifiedConstructorSolver.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CertifiedConstructorSolver.lean"
+      ]
+    },
+    "StalledParity": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.StalledParity.parityGadget_eval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.StalledParity.auxiliaryResolvents_tautological' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.StalledParity.padded_satisfiable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.StalledParity.padding_clause_count' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.StalledParity.width_three_pivot_gap' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 4.569541707999999,
+      "source_sha256": "a2e4b09af3f4c6897868044b64820c841badfd8a333b890206fcc15a43cd34f3",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/StalledParity.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/StalledParity.lean"
+      ]
+    },
+    "AutomaticConstructor": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.AutomaticConstructor.solve_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.AutomaticConstructor.returned_sat_is_model' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.AutomaticConstructor.returned_unsat_excludes_models' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 3.163598874999998,
+      "source_sha256": "d5fcbc13b514529584216e9e303710908f293bbb6ac28de670ee777d61db904c",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/AutomaticConstructor.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/AutomaticConstructor.lean"
+      ]
+    },
+    "AutomaticConstructorExamples": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.AutomaticConstructor.Examples.matchingSAT_model' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 3.1105875420000046,
+      "source_sha256": "6780260f5ef59f61c081d8924293b7749bedbb5510edaf69c7f49bcaf568fb5e",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/AutomaticConstructorExamples.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/AutomaticConstructorExamples.lean"
+      ]
+    },
+    "CheckedComposition": {
+      "exit_code": 0,
+      "stdout": "ParityExtraction.replace_parity_subcollection.{u_1} {Var : Type u_1} (assignment : Var \u2192 Bool) (scope : List Var)\n  (masks : List (List Bool)) (blocked : Bool)\n  (covers : \u2200 (mask : List Bool), mask \u2208 masks \u2194 mask.length = scope.length \u2227 ParityExtraction.parity mask = blocked)\n  (original other : List (ParityExtraction.Clause Var))\n  (selection : original.Perm (List.map (ParityExtraction.exclude scope) masks ++ other)) :\n  ParityExtraction.cnfValue assignment original =\n    (ParityExtraction.parity (List.map assignment scope) == !blocked && ParityExtraction.cnfValue assignment other)\nPEqualNP.Outside.StalledParity.padded_satisfiable_iff (F : PEqualNP.Search.CNF) (xs : List \u2115) :\n  PEqualNP.Search.Satisfiable (PEqualNP.Outside.StalledParity.padded F xs) \u2194 PEqualNP.Search.Satisfiable F\nPEqualNP.Outside.RankObstruction.factorization_width_bound (k d : \u2115)\n  (L : Matrix (PEqualNP.Outside.RankObstruction.Bits k) (Fin d) (ZMod 2))\n  (R : Matrix (Fin d) (PEqualNP.Outside.RankObstruction.Bits k) (ZMod 2))\n  (h : L * R = PEqualNP.Outside.RankObstruction.kernel k) : 2 ^ k \u2264 d\nPEqualNP.Outside.GuardedHall.guarded_hall_projection.{u_1, u_2} {R : Type u_1} {H : Type u_2} [Finite R] [DecidableEq R]\n  [DecidableEq H] (N : R \u2192 Finset H) (g : R \u2192 Bool) :\n  PEqualNP.Outside.GuardedHall.HasPrivateEdges N g \u2194 PEqualNP.Outside.GuardedHall.GuardedCuts N g\nPEqualNP.Outside.PairedUnion.certificate_branch.{u_1, u_2} {\u03a9 : Type u_1} {I : Type u_2} [DecidableEq \u03a9]\n  (D\u2080 D\u2081 : Finset \u03a9) (P : Finset I) (A B : I \u2192 Finset \u03a9) (disjoint : Disjoint D\u2080 D\u2081)\n  (certificate : PEqualNP.Outside.PairedUnion.badMass (D\u2080 \u222a D\u2081) P A B < (D\u2080 \u222a D\u2081).card) :\n  PEqualNP.Outside.PairedUnion.badMass D\u2080 P A B < D\u2080.card \u2228 PEqualNP.Outside.PairedUnion.badMass D\u2081 P A B < D\u2081.card\n'PEqualNP.Outside.CheckedComposition.literalValue_eq_project' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.CheckedComposition.clauseValue_eq_project' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.CheckedComposition.cnfValue_eq_project' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.CheckedComposition.project_parity_replacement' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 7.032982166999997,
+      "source_sha256": "c70cd7f82dd0967e1a9e901949d4225463fe1761ce02ded68b3cab8d0ed42a98",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/CheckedComposition.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/CheckedComposition.lean"
+      ]
+    },
+    "AutomaticConstructorTotal": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.AutomaticConstructor.useMatching_decisive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.AutomaticConstructor.solve_ne_inconclusive' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.AutomaticConstructor.supported_solve_decisive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.AutomaticConstructor.supported_solve_ne_unsupported' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.4232617500000018,
+      "source_sha256": "43b48cbd9a47884c740d0c5197918e1a6e8818a148c4fcac194c36483ea4ae5b",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/AutomaticConstructorTotal.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/AutomaticConstructorTotal.lean"
+      ]
+    },
+    "ExplicitConstructorInput": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.ExplicitConstructorInput.checked_adjacency_preserves_values' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.ExplicitConstructorInput.solve_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ExplicitConstructorInput.solve_ne_inconclusive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.ExplicitConstructorInput.supported_solve_decisive' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.ExplicitConstructorInput.rows_le_structuralSize' depends on axioms: [propext, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.1995876249999995,
+      "source_sha256": "f588eebe4ad202e8d4d4f32695a34782e93df958b2a169447653034e4d1350f9",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/ExplicitConstructorInput.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/ExplicitConstructorInput.lean"
+      ]
+    },
+    "ZeroHoleCoverage": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.ConstructorBoundary.zero_hole_encode' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.realized_formula' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.realized_supported_iff' depends on axioms: [propext, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.922269166999996,
+      "source_sha256": "113de04b0ab10495fecca87f39000df5c13dceaf238356c0feda680635906c80",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/ZeroHoleCoverage.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/ZeroHoleCoverage.lean"
+      ]
+    },
+    "MixedGuardBranches": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.ConstructorBoundary.enumerateBits_length' depends on axioms: [propext]\n'PEqualNP.Outside.ConstructorBoundary.branch_checks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.mixed_sat_iff_branches' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 3.351706583000002,
+      "source_sha256": "699fae50e78c3ba947fec8000ae77d6264304df92fdadb19243d386a82b0e8ad",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/MixedGuardBranches.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/MixedGuardBranches.lean"
+      ]
+    },
+    "MixedGuardSolver": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.ConstructorBoundary.mixedInputCheck_iff' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.branchSolve_sat_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.solveMixed_sat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.solveMixed_unsat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.negativeVars_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.solveMixedCounted_erases' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.solveMixedCounted_calls' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 3.3974067079999983,
+      "source_sha256": "bd68b145a779fb686e528ec6295b2cf6209fc158359aebce5fbd7e87f2d56c1b",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/MixedGuardSolver.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/MixedGuardSolver.lean"
+      ]
+    },
+    "GeneralCNFDecision": {
+      "exit_code": 0,
+      "stdout": "'PEqualNP.Outside.ConstructorBoundary.zero_hole_checks' depends on axioms: [propext, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.zero_hole_formula_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.solveCNF_sat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.solveCNF_unsat' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.solveCNF_ne_none' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.solveCNFCounted_erases' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PEqualNP.Outside.ConstructorBoundary.solveCNFCounted_calls' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": "",
+      "status": "checked",
+      "seconds": 2.446036792000001,
+      "source_sha256": "177bbf997d9c5fcfd4e8636dbbecf122d6acf98dcb86006a4246cce1ae8754f3",
+      "command": [
+        "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+        "-j",
+        "1",
+        "-DElab.async=false",
+        "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+        "-o",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/GeneralCNFDecision.olean",
+        "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/GeneralCNFDecision.lean"
+      ]
+    }
+  },
+  "pending": [],
+  "all_components": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "status": "checked",
+    "seconds": 23.699385000000007,
+    "source_sha256": "750f5774438c312174fed57276b85f7e8a2fbef7e2b089081ec0c1975dc96749",
+    "command": [
+      "/Users/jackpohlad/.elan/toolchains/leanprover--lean4---v4.36.0/bin/lean",
+      "-j",
+      "1",
+      "-DElab.async=false",
+      "--root=/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src",
+      "-o",
+      "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/lib/AllComponents.olean",
+      "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/merged_research/lean/src/AllComponents.lean"
+    ]
+  },
+  "seconds": 73.53323562499999,
+  "status": "checked",
+  "general_polynomial_sat_proof": false,
+  "scope": "Existing components compile and import together. Their individual hypotheses remain; this does not compose a polynomial general SAT proof."
+}

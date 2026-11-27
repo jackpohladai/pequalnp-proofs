@@ -1,0 +1,76 @@
+One executable certifying procedure for the explicit fresh-CNF constructor
+
+CertifiedConstructorSolver.lean integrates the existing retained dual-Horn
+solver, exact syntax/offset/positivity checks, matching certificate validators,
+active-masked edge construction, and executable fresh-variable assignment lift.
+The public entry point is certify. It accepts typed constructor data plus a
+supplied matching success or failure certificate. It does not search for one.
+
+Four outcomes
+
+unsupported means an offset/positive-guard/dual-Horn class check failed.
+invalidCertificate means the supported retained solver returned a model but
+the supplied matching certificate failed validation. Neither is a SAT or
+UNSAT claim. unsat means the complete constructed CNF has no model. sat carries
+an actual executable Nat-to-Bool assignment to the complete constructed CNF.
+
+Public correctness theorem
+
+certify_correct is unconditional for the typed input parameters: it has no
+caller-provided syntax, positivity, separation, satisfiability or matching
+correctness hypothesis. The procedure checks those obligations internally.
+returned_sat_is_model proves that any returned SAT assignment evaluates the
+actual project CNF constructor to true. returned_unsat_excludes_models proves
+that any returned UNSAT result excludes every assignment to that constructor.
+The raw processCertificate helper remains conditional; use the public certify
+entry point rather than invoking the helper without its required conditions.
+
+How the checks are composed
+
+inputCheck validates every retained and guard variable ID below the offset
+and every guard literal positive, with an exact iff theorem. checkedSolve
+enforces the retained dual-Horn syntax and computes a greatest model or UNSAT.
+On a retained model, the supplied matching certificate is checked at that
+actual model's guards. An accepted success certificate is masked on inactive
+rows and lifted with the executable Nat.unpair-based fresh-ID decoder.
+An accepted deficient-row certificate gives UNSAT through the checked
+greatest-model projection. Retained UNSAT also excludes the full encoding.
+
+Execution verification
+
+Main source passed pinned Lean 4.36.0 in 32.981 seconds. Final example source
+passed in 19.917 seconds. All theorem axioms are limited to propext,
+Classical.choice and Quot.sound. inputCheck itself is axiom-free; the integrated
+definitions inherit standard proof axioms and must not be described as entirely
+axiom-free. They are ordinary executable definitions, demonstrated by #eval.
+
+Actual execution produced the nine expected labels:
+SAT; matching UNSAT; retained UNSAT; invalid success certificate;
+invalid failure certificate; unsupported retained class; unsupported negative
+guard; unsupported offset; all-inactive zero-hole SAT.
+Two actual returned assignments evaluated their complete CNFs to true.
+A propagation case returned retained x=false and its required private edge=true,
+printed as [false,true]. Successful examples include kernel-reduced status
+equalities and actual execution of the decoder; the general model correctness
+is supplied by the unconditional theorem, not finite testing alone.
+
+Sources, artifacts and dependencies
+
+Both final source hashes and artifact hashes match accepted compiler receipts.
+Twelve imported component artifacts were verified against their immutable
+source/receipt pins and copied into build/lib/lean with the two new modules.
+The two source snapshots are in build/source. compile-receipt.json records
+the original compiler commands, dependency receipt hashes, project pins,
+expected execution outputs, and a reusable Lean path without temporary
+component dependencies. No original source, live Hub state or remote was changed.
+
+Remaining boundaries
+
+The input is an explicit constructed family, not an arbitrary existing CNF.
+A raw-input recognizer/decomposition must prove equality to this construction.
+Matching certificates are supplied, so a complete certificate-producing matching
+search remains unimplemented here. Typed Fin/Finset interfaces enforce bounds
+and distinctness; parsing external serialized inputs is a separate obligation.
+No operational encoded-bit runtime is proved, and no general SAT or P=NP claim
+follows. These are local Lean checks, with no official checker replay, upstream
+acceptance, publication or website-credit claim.

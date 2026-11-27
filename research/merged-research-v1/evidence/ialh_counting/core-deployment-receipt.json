@@ -1,0 +1,121 @@
+{
+  "at": "2026-11-27T02:51:05.581651+00:00",
+  "manifest": {
+    "enabled": true,
+    "version": "blq-core-refutation-scc-emra-ialh5-v4",
+    "source_sha256": "a17b453d67015e5540a74d19980378b5d55d74c10d4d3f84b745127dae11faea",
+    "at": "2026-11-27T02:51:05.581651+00:00",
+    "options": {
+      "k": 5,
+      "max_windows": 256,
+      "max_pairs": 200000,
+      "max_tuples": 8192,
+      "max_rows": 128
+    },
+    "checked_cases": {
+      "total": 326,
+      "sat": 170,
+      "unsat": 156,
+      "compressed": 69,
+      "skipped": 257,
+      "failures": 0
+    },
+    "dependencies_sha256": {
+      "neon_antigravity_round4_review/check_scc_and_growth.py": "01fea8cb068be05e7273f4fc6dfd128637e097bc4e96642c7a77acf0347a110e",
+      "fable_synthesis_round8_review/test_elim.py": "b3a3e18a100f2a3408a95dbadbccd0a01da09e9996af5846b5501527a8f5dc43",
+      "fable_synthesis_round7_review/test_mra.py": "6eebead22f7d33abc66a17550bf29a18df266836440695ae080d407dc51fc72b"
+    },
+    "dependency": "sympy 1.14.0",
+    "reference": "https://docs.sympy.org/latest/modules/matrices/normalforms.html",
+    "general_polynomial_sat_proof": false,
+    "implementation_lean_verified": false,
+    "existing_regressions": {
+      "exhaustive_hull_tables": 273,
+      "hull_membership_points": 2106,
+      "equality_mod3_mod4_mod5_tables": 4,
+      "contradiction_kernel_cases": 6,
+      "planted_integer_solutions": 200,
+      "exhaustive_cnf_cases": 410,
+      "satisfiable_cases": 344,
+      "direct_counting_rejections": 66,
+      "correctness_failures": 0,
+      "budget_and_order_cases": 5
+    },
+    "compression_limits": {
+      "max_variables": 64,
+      "max_block_width": 8,
+      "max_clauses": 1024,
+      "max_space_points": 16384,
+      "max_verification_work": 8000000
+    },
+    "compression_certificate_rule_lean_checked": true,
+    "concrete_compressions_lean_checked": 11,
+    "snapshot_files": {
+      "compression.py": {
+        "source": "ialh_counting/compression.py",
+        "sha256": "aa504c7cbb0fcfee7765099c222c9707797178a825f90730fafb5c441c57c8cf",
+        "review_text": true
+      },
+      "finite_oracle.py": {
+        "source": "ialh_counting/finite_oracle.py",
+        "sha256": "ff927ecf763405202090afdd6f215f9586ca41b38ef2e4e6209fb81d79673389",
+        "review_text": false
+      },
+      "export_compression_lean.py": {
+        "source": "ialh_counting/export_compression_lean.py",
+        "sha256": "36ff961ae50eefa510a15f500488c0821560baeecb603d4071955c38cbff6ec4",
+        "review_text": false
+      },
+      "CompressionSoundness.lean": {
+        "source": "ialh_counting/CompressionSoundness.lean",
+        "sha256": "32eff5851b7af275d87eec2af9552f9d94e016a90705a10686d7df803b5491af",
+        "review_text": false
+      },
+      "core_refutation.py": {
+        "source": "ialh_counting/core_refutation.py",
+        "sha256": "2f62d3f70f4601474d2e1c94ac13da6e848a66c44c3c3247b43b4d7e1fe9f8d3",
+        "review_text": true
+      },
+      "export_core_lean.py": {
+        "source": "ialh_counting/export_core_lean.py",
+        "sha256": "0e628daa06fccf3e0d1a6d6d45e3ba0151e5c4225e522348b3b4dbb6af5fa133",
+        "review_text": false
+      }
+    },
+    "lean_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/compression-lean-receipt.json",
+    "scope": "Root compression plus bounded UNSAT-only core refutation. SAT or unknown core always falls back. Lean checks 11 concrete transformations and 3 normalized original-input core refutations; Python and universal runtime are not formally verified.",
+    "scalable_certificates": true,
+    "larger_controls": 14,
+    "largest_tested_variables": 64,
+    "largest_lean_checked_variables": 32,
+    "candidate_limits": {
+      "max_variable_id": 32,
+      "max_clauses": 512,
+      "max_clause_width": 12
+    },
+    "checker_sha256": "02d7c0ec6f884e94768f0a5658cd2ef3a62a40f96a531dcbbff70745ccf9dc96",
+    "larger_test_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/scaling-test-receipt.json",
+    "larger_lean_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/ialh_counting/scaling-lean-receipt.json",
+    "finite_check_timeout_seconds": 180,
+    "unsat_core": true,
+    "concrete_core_refutations_lean_checked": 3,
+    "core_limits": {
+      "max_removed_per_block": 4,
+      "max_pairs": 300000,
+      "max_width": 8,
+      "max_variables": 64,
+      "max_clauses": 1024
+    },
+    "core_lean_limits": {
+      "max_quotient_variables": 8,
+      "timeout_seconds": 120
+    },
+    "core_test_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fibre_cardinality_round1/core-test-receipt.json",
+    "core_lean_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/fibre_cardinality_round1/core-lean-receipt.json",
+    "pipeline_receipt": "/Users/jackpohlad/Documents/Codex/2026-11-25/fetch-and-follow-the-instructions-at/work/alg001/core_v4_pipeline_review/test-receipt.json"
+  },
+  "scope": "The UNSAT-only core shortcut is deployed: the408-clause challenge falls from16 simultaneous search states to0, with its normalized input refuted in Lean.326small controls,410existing regressions and14larger controls passed. The456-clause variant still peaks16. Nonlinear tests also expose expensive lattice work even at peak1. No universal polynomial bound.",
+  "native_requests_interrupted": false,
+  "codex_subagents_used": false,
+  "source_sent_each_fresh_request": true
+}

@@ -1,0 +1,102 @@
+{
+  "status": "inconclusive",
+  "summary": "Candidate search did not complete within the finite test budget; no correctness or complexity conclusion.",
+  "oracle_sat": false,
+  "oracle": {
+    "status": "completed",
+    "sat": false,
+    "witness": null,
+    "method": "independent_bounded_dpll",
+    "nodes": 8831,
+    "seconds": 0.26279420900000017,
+    "formally_checked": false,
+    "general_polynomial_sat_proof": false
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 16,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 4
+      },
+      {
+        "variable": 3,
+        "retained": 8
+      },
+      {
+        "variable": 4,
+        "retained": 16
+      },
+      {
+        "variable": 5,
+        "retained": 8
+      },
+      {
+        "variable": 6,
+        "retained": 5
+      },
+      {
+        "variable": 7,
+        "retained": 3
+      },
+      {
+        "variable": 8,
+        "retained": 2
+      },
+      {
+        "variable": 9,
+        "retained": 2
+      },
+      {
+        "variable": 10,
+        "retained": 1
+      },
+      {
+        "variable": 11,
+        "retained": 1
+      },
+      {
+        "variable": 12,
+        "retained": 1
+      },
+      {
+        "variable": 13,
+        "retained": 1
+      },
+      {
+        "variable": 14,
+        "retained": 1
+      },
+      {
+        "variable": 15,
+        "retained": 1
+      },
+      {
+        "variable": 16,
+        "retained": 1
+      },
+      {
+        "variable": 17,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 0,
+    "accepted_dp": 29
+  },
+  "updated_check": {
+    "status": "inconclusive",
+    "reason": "Finite test exceeded 20 seconds; no result inferred."
+  },
+  "baseline_seconds": 4.967136708,
+  "updated_seconds": 20.140711042,
+  "seconds": 25.371698958,
+  "solver": "blq-composed-core-scc-emra-ialh5-v5",
+  "source_sha256": "ff1f4262060692f34f89f974a9ffe276231e639df5fac78dcd498b2704a14196",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

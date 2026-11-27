@@ -1,0 +1,400 @@
+{
+  "status": "inconclusive",
+  "summary": "Independent SAT oracle exhausted its finite budget; candidate correctness remains unverified.",
+  "oracle_sat": null,
+  "oracle": {
+    "status": "inconclusive",
+    "sat": null,
+    "method": "independent_bounded_dpll",
+    "nodes": 200001,
+    "seconds": 4.545881958,
+    "formally_checked": false,
+    "reason": "Test oracle deadline or node cap reached; no SAT verdict."
+  },
+  "observed": {
+    "sat": false,
+    "peak": 0,
+    "layers": [],
+    "scc_rounds": 0,
+    "accepted_dp": 0,
+    "counting": {
+      "calls": 1,
+      "refutations": 1,
+      "windows": 16,
+      "tuples": 256,
+      "seconds": 0.17757875000000034,
+      "truncated_calls": 0
+    },
+    "root_counting": {
+      "status": "UNSAT",
+      "certificate": {
+        "kind": "integer_contradiction",
+        "rows": [
+          {
+            "window": [
+              1,
+              2,
+              18,
+              32
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              1,
+              16,
+              17,
+              31
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": -1,
+            "modulus": 2
+          },
+          {
+            "window": [
+              2,
+              3,
+              17,
+              19
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              3,
+              4,
+              18,
+              20
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              4,
+              5,
+              19,
+              21
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              5,
+              6,
+              20,
+              22
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              6,
+              7,
+              21,
+              23
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              7,
+              8,
+              22,
+              24
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              8,
+              9,
+              23,
+              25
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              9,
+              10,
+              24,
+              26
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              10,
+              11,
+              25,
+              27
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              11,
+              12,
+              26,
+              28
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              12,
+              13,
+              27,
+              29
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              13,
+              14,
+              28,
+              30
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              14,
+              15,
+              29,
+              31
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          },
+          {
+            "window": [
+              15,
+              16,
+              30,
+              32
+            ],
+            "coefficients": [
+              1,
+              -1,
+              -1,
+              -1
+            ],
+            "rhs": 0,
+            "modulus": 2
+          }
+        ],
+        "dual": [
+          "1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2",
+          "-1/2"
+        ]
+      },
+      "windows": 16,
+      "tuples": 256,
+      "constraints": 16,
+      "truncated": false,
+      "seconds": 0.17757875000000034,
+      "options": {
+        "k": 5,
+        "max_windows": 256,
+        "max_pairs": 200000,
+        "max_tuples": 8192,
+        "max_rows": 128
+      },
+      "certificate_verified": true,
+      "general_polynomial_sat_proof": false
+    },
+    "partial_order": false,
+    "remaining_states": 0,
+    "solver": "blq-localcert-scc-emra-ialh5-v3",
+    "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+    "general_polynomial_sat_proof": false,
+    "compression": {
+      "status": "skipped",
+      "reason": "incompatible_greedy_basis",
+      "original_variables": 32,
+      "original_clauses": 128,
+      "seconds": 0.0019342499999996932
+    }
+  },
+  "baseline": {
+    "sat": false,
+    "peak": 4,
+    "layers": [
+      {
+        "variable": 1,
+        "retained": 2
+      },
+      {
+        "variable": 2,
+        "retained": 2
+      },
+      {
+        "variable": 3,
+        "retained": 4
+      },
+      {
+        "variable": 4,
+        "retained": 4
+      },
+      {
+        "variable": 5,
+        "retained": 4
+      },
+      {
+        "variable": 6,
+        "retained": 4
+      },
+      {
+        "variable": 7,
+        "retained": 4
+      },
+      {
+        "variable": 8,
+        "retained": 4
+      },
+      {
+        "variable": 9,
+        "retained": 4
+      },
+      {
+        "variable": 10,
+        "retained": 4
+      },
+      {
+        "variable": 11,
+        "retained": 4
+      },
+      {
+        "variable": 12,
+        "retained": 0
+      }
+    ],
+    "scc_rounds": 44,
+    "accepted_dp": 100
+  },
+  "baseline_seconds": 2.539688417,
+  "updated_seconds": 0.19993870799999947,
+  "seconds": 7.286026625,
+  "solver": "blq-localcert-scc-emra-ialh5-v3",
+  "source_sha256": "d2358b3ce5b966d5263674f27bf030bace45a86d3a3f1c9c030a7d5f154867f6",
+  "general_polynomial_sat_proof": false,
+  "implementation_lean_verified": false
+}

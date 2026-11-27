@@ -1,0 +1,140 @@
+Formal results and remaining obligations for L-alg-001
+
+Accepted locally by the project's official checker; no desk submission was made:
+
+1. L_alg001_residual.lean
+   - Exact evaluation semantics of the existing executable CNF restriction.
+   - Residual satisfiability iff an original model fixes the selected variable.
+   - Residual branching and unit propagation correctness.
+   - An explicit bounded search with its full recurrence and universal soundness:
+     some true means satisfiable, some false means unsatisfiable, none means unknown.
+   - Official checker exit 0; 1,769 constants replayed.
+   - Receipt: checker-receipt.json.
+   - SHA256 c386b766831bf6df63300ae40ddefb106c0742b704b0d75105bdd8b295173321.
+
+2. L_alg001_projection.lean
+   - Iterated cofactor/OR projection is true at a retained assignment exactly when
+     one total satisfying assignment extends it outside the eliminated variables.
+   - Elimination lists may contain repeats. Order independence and the SAT meaning
+     of projecting all occurring variables are derived in the file.
+   - Exact common-factor extraction for finite sets of alternatives and factors.
+     All factors are evaluated at the same assignment; no independence assumption.
+   - Official checker exit 0; 1,684 constants replayed.
+   - Receipt: projection-checker-receipt.json.
+   - SHA256 eb54a98cf9ead3085801afe0e2b48d629e55a822b000f90351b7ada0f357183b.
+
+3. L_alg001_php_projection.lean
+   - Completion of r removed pigeon rows iff retained rows satisfy the actual
+     project PHP CNF and at least r holes are wholly unused.
+   - The row predicate is proved equivalent to Defs.ProofComplexity.PHP semantics.
+   - More generally, r nonempty column-disjoint Boolean rows restricted to an
+     arbitrary allowed-hole set exist iff r <= allowed.card. Allowed sets can be
+     obtained from correlated retained predicates, instantiated pointwise.
+   - Official checker exit 0; 1,669 constants replayed.
+   - Receipt: php-checker-receipt.json.
+   - This does not prove the Python recognizer, threshold-DAG implementation,
+     a general variable-elimination strategy, or its runtime bounds.
+
+4. L_alg001_threshold.lean
+   - Concrete threshold evaluator using stored Array-backed Vector Bool rows and
+     a tail-recursive loop. Each row is materialized once; no tree recomputation.
+   - Correctness: answer true iff at least r input bits are true.
+   - In the active case 0 < r <= h, exactly h*r nonzero recurrence cells and
+     (h+1)*(r+1) produced Boolean slots, including the initial row.
+   - Boundary cases r=0 and r>h return before DP row allocation. For positive h,r,
+     Boolean slots <= 4*h*r. This establishes a component O(h*r) construction metric.
+   - Official checker exit 0; 1,722 constants replayed.
+   - Receipt: threshold-checker-receipt.json. Metric scope: threshold-cost-model.json.
+   - Executable validation: 5,119 exhaustive cases at h=0..8; a 128-input, threshold-64
+     case gives 8,192 recurrence cells and 8,385 Boolean slots.
+   - The counters are defined from the sizes of materialized vectors. They are not
+     an operational bit-time proof for Array access, allocation, integer arithmetic,
+     or the input-length precheck, and not a symbolic gate-DAG construction theorem.
+
+All accepted theorems use only propext, Quot.sound, and Classical.choice.
+No axioms, sorry, native_decide, SAT oracle, or assumed SAT-in-P premise were added.
+RunFoundation.lean executed seven edge cases successfully, including unknown on a
+zero budget, contradictory units, tautology, and a variable numbered one million.
+
+Scope of the projection proof
+
+This is a proof of the abstract transformations used by residual_dag.py. It is not
+a formal refinement proof of that Python implementation, its hash-cons table, or
+its cofactor cache. The functional reference projection may evaluate exponentially
+many branches. Its correctness theorem contains no representation-size or runtime
+bound. The shared-factor rule is safe because it uses exact common node identity;
+replacing relation equality by a lossy signature is not justified by these lemmas.
+
+Exact positive target
+
+The existing project interface defines P using one fixed finite machine, correct
+and terminating on every input, with a polynomial bound on encoded input length.
+SAT includes exactly the canonical binary encodings of satisfiable CNFs; malformed
+binary strings must be rejected. Variable identifiers are encoded in binary.
+
+For degree d=2 or d=3, instantiate CorrectBitDecider and DegreeBound in
+L_alg001_residual.lean. This requires a named decider on List Bool, correctness for
+all strings, one Turing.TM2ComputableInTime machine implementing it, and constants
+C with machine.time n <= C*n^d+C for every n. Neither structure is inhabited here.
+Equivalently, the membership target is SAT in DTIMEO (fun n => n^d).
+
+The existing bridge is Library.L031 (SAT is NP-complete) followed by Library.L018
+(an NP-complete language is in P iff P=NP). The missing step remains an unconditional
+uniform polynomial-time SAT decider. A fixed-degree SAT solver gives polynomial
+algorithms for all NP decision languages, but reductions can increase the exponent:
+reduction time O(n^a), output size O(n^b), SAT time O(N^d) yield O(n^a+n^(b*d)).
+
+Concrete operation accounting required for residual_dag.py
+
+Track the whole run, not just the final or peak reachable root:
+
+- Original input bits, occurrences, clauses, distinct variables, and identifier bits.
+- All allocated nodes, all child references stored in nodes, and total identifier
+  bit lengths. Never discount an unreachable node while intern/cache retains it.
+- Every junction call and every input child visited; every child expanded during
+  flattening, every literal scanned for complements, and every child membership
+  inspected during absorption.
+- Every factor set copied, each intersection/difference, and all elements read or
+  inserted by these operations; repeated work on the same factors counts again.
+- The arity of every sort, not just the number of sorts. Sorting and comparisons
+  must eventually be charged in a specified deterministic bit-cost implementation.
+- Every put/intern lookup, key construction, key element hashed/compared, new node,
+  and hit/miss. Python dictionary expectations do not establish a deterministic
+  worst-case bound; collision handling and integer-key costs need justification.
+- Every cofactor request, cache hit/miss, visited node, child traversal, and cache
+  entry retained; the key includes node, variable, and Boolean value.
+- Root reachability traversal work and witness extraction work separately. Timing
+  an instrumented reachability traversal can dominate a benchmark and is not free.
+- Peak live memory and cumulative allocation, with an explicit reclamation policy.
+
+Recommended raw counters are specified in operation-accounting.json. They measure
+work proxies; none alone is a bound on bit operations or machine transitions.
+Useful summary parameters are cumulative node count A, cumulative stored child
+references E, total children scanned W, total sort input arities, and cache misses.
+A proof must bound these by polynomials in original input bit length, then prove
+the implementation cost per primitive. A small final DAG, a small peak reachable
+DAG, or fast runs on selector examples does not supply either missing bound.
+
+Concrete audit: selector-accounting.json records the unchanged native candidate on
+k=2,4,...,128. At k=128 its final DAG has 385 reachable nodes, but intern retains
+1,283 allocated nodes and 74,560 child references, while cofactor_cache retains
+148,096 entries. Thus node count alone hides much larger costs even on the easy
+selector family. These are finite observations, not asymptotic lower/upper bounds.
+
+No claim is made that P=NP, that L-alg-001 is proved, or that the reference search
+or optimized DAG candidate has quadratic, cubic, or other polynomial worst-case time.
+
+Scope of generalized guarded-row compression
+
+Arbitrary guard CNFs may retain all of the original SAT problem. For any CNF F,
+introduce one selector x with unit clause x, and for each clause C of F add
+(not x OR C). This is a one-row/one-hole guarded block whose existential projection
+is exactly F. The capacity rule is therefore a sound useful simplification, not
+a general SAT decision method by itself.
+
+Read-only audit of threshold_repair.py found its hidden-variable occurrence checks
+match the abstract premises: distinct signed selector variables, each row covered,
+all within-column collisions, identical guards per column, and remaining-only
+context/guards. Its entry point should require or validate nonzero signed literals:
+the grid checks zero, but normalize_clauses would treat a literal 0 as tautological.
+With standard nonzero DIMACS literals this is outside the valid input domain.

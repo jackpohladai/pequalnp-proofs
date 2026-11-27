@@ -1,0 +1,110 @@
+# Round 3 synthesis: integer-lattice lift, its adversary, and the missing lemma
+
+**Verdict.** I have one concrete strengthening that provably removes the Fano 1-in-3 bottleneck, but no defensible route to the all-input theorem. The strengthening is defeated by a scalable family below, and the first unproved step is the same one as before: bounding total branch states. Everything here is hand-derived; nothing was run or formalized.
+
+## 1. Route: lift the affine shortcut from GF(2) to ℤ (E-MRA-Z)
+
+**State.** Each state holds the canonical clause set, the witness history, and an integer system `Ax = b` in Hermite normal form.
+
+**Discovery (syntactic, polynomial).**
+- An XOR block on a set S becomes `Σ_S x = c + 2s`, with s a fresh integer slack.
+- A positive clause on S plus all pairwise binaries `(¬x_i ∨ ¬x_j)` becomes `Σ_S x = 1`, with no slack.
+
+**Refutation rule (integer Farkas, sound direction only).** If a rational y has `yᵀA` integral and `yᵀb` non-integral, the state is UNSAT.
+
+**Checkable lemma L1 (Lean-sized).** If `yᵀA ∈ ℤⁿ` and `yᵀb ∉ ℤ`, then `Ax = b` has no integer solution, hence no 0/1 solution.
+
+**What it buys, checked by hand:**
+- **K5 odd-charge Tseitin:** y = ½·**1** gives `Σ_e x_e − Σ_v s_v = (Σc)/2`, which is non-integral. This reproduces your affine result.
+- **Fano 1-in-3:** y = ⅓·**1** gives `Σx = 7/3`, since each point lies on 3 lines. This is a root refutation of the instance GF(2) leaves at rank 4 with 8 parity solutions.
+
+**Safety constraints.**
+- Lattice feasibility proves nothing, because it ignores the 0/1 bounds. It never produces SAT.
+- Only two-variable unimodular equations (`x = y`, `x = 1 − y`) may be substituted into clauses.
+- Missing-variable defaults, replay, never rebranching eliminated variables, and unit retention are unchanged.
+- Hermite normal form is polynomial in bit length (Kannan–Bachem), so no coefficient blow-up is hidden.
+
+## 2. The exact theorem that would be needed (conjecture T, unproved)
+
+There is a polynomial p such that for every CNF F of encoded length L, the run of E-MRA-Z satisfies:
+
+- **(a) Total states:** the number of states created, root plus all branch states, is at most p(L).
+- **(b) Representation:** each state's clauses, Hermite basis, and history occupy at most p(L) bits.
+- **(c) Discovery and bit work:** the work per state is at most p(L) bit operations.
+- **(d) Correctness:** the output is correct, with SAT answers replay-verified.
+
+Status of each part:
+- **(b)** looks provable. The count guard keeps the clause count at most m, widths are at most n, and Hermite entries are polynomial.
+- **(c)** is routine.
+- **(d)** reduces to your compiled DP identities plus L1.
+- **(a)** is the whole problem, and it implies P = NP. Nothing in your evidence bears on it: 19,242 passing runs and 1,500 random formulas test correctness and typical behaviour, not worst-case growth.
+
+## 3. Self-attack: NAE on Steiner triple systems
+
+**Family A_v** (v ≡ 1, 3 mod 6, v ≥ 7). Variables are the points of a Steiner triple system. Each triple {a,b,c} gives the clauses `(a∨b∨c)` and `(¬a∨¬b∨¬c)`. There are v(v−1)/3 clauses.
+
+**UNSAT for all v ≥ 7.** Write y = ±1. Not-all-equal on a triple is equivalent to `y_a y_b + y_b y_c + y_a y_c = −1`. Each pair lies in exactly one triple, so summing gives `Σ_{i<j} y_i y_j = −v(v−1)/6`. Hence `(Σy)² = v − v(v−1)/3`, which is negative for v > 4.
+
+**Why every current shortcut is silent:**
+- **XOR extraction:** each triple supplies one clause of the odd XOR and one of the even XOR, so there are 0 parity equations.
+- **Cardinality detection:** there are no binary clauses, so there are 0 slack-free equations.
+- **Lattice with slack:** `x_a + x_b + x_c − s = 1` is always integer-feasible.
+- **Linear relaxation:** x = ½ is feasible.
+
+The certificate that works is degree 2. The lattice lift is one rung of a ladder, not growth control.
+
+**Test (7 variables, 14 clauses).** Lines: 123, 145, 167, 246, 257, 347, 356. Order: index. Predictions:
+
+1. Root shortcuts find 0 XOR equations and 0 cardinality equations, and no refutation.
+2. Every variable has pos·neg = 3·3 = 9, so the tie goes to x1.
+3. Eliminating x1 gives 9 resolvent pairs. Three are tautologies (same line) and 6 are width-4 clauses, none subsumed. The count goes 14→14, so the guard accepts. The new clauses are:
+   - `(2∨3∨¬4∨¬5)`, `(2∨3∨¬6∨¬7)`
+   - `(4∨5∨¬2∨¬3)`, `(4∨5∨¬6∨¬7)`
+   - `(6∨7∨¬2∨¬3)`, `(6∨7∨¬4∨¬5)`
+4. Now every remaining variable has pos·neg = 4·4 = 16. For x2 there are 16 pairs, 6 tautologies, and 10 distinct unsubsumed resolvents, so the count would go 14→16. By the point-stabilizer symmetry the same holds for x3 to x7. The guard rejects all six and the solver must branch.
+5. The final answer is UNSAT. I do not predict the branch count.
+
+If step 3 or 4 disagrees with the implementation, then either my resolvent count or your canonicalization is wrong. Either outcome is informative.
+
+**Scaling measurement that matters.** Run A_v for v = 7, 9, 13, 15, 19, 21 and record total states. I have no proved resolution lower bound for A_v, so this is an open measurement, not a claimed counterexample.
+
+## 4. Why the repair does not close the gap
+
+Adding a degree-2 rule (pair moments plus the square identity) kills A_v. The same counting argument rules out a 2-colouring of any 2-(v,k,1) design once v > k² − k + 1, so NAE on those designs is not a harder family. The escalation has to come from elsewhere.
+
+Each repair raises the certificate degree by one. For the separate systems the ladder is known to be unbounded:
+- Polynomial calculus over every field needs linear degree on random 3-CNF (Ben-Sasson–Impagliazzo; Alekhnovich–Razborov).
+- Sum-of-squares needs linear degree on random 3-XOR and 3-SAT (Grigoriev; Schoenebeck).
+
+I do not assert that these bounds transfer to a combined lattice-plus-moment closure. I believe they do, but that is a statement about one model, not about P versus NP.
+
+A fixed-degree closure is also the bounded-width assumption you asked me not to recycle. I will not propose it as the route.
+
+## 5. First unproved step, and the decisive missing idea
+
+Part (a) of T needs a **progress lemma**:
+
+> There is a polynomially bounded potential Φ on states and a polynomial-time branch rule such that Φ does not increase under UP, guarded DP, and lattice steps, and Φ(F) ≥ Φ(F|x=0) + Φ(F|x=1) at every branch.
+
+Total states would then be at most Φ(root). No candidate survives:
+
+- **Clause count, variable count, lattice rank:** none is superadditive. Both children can keep nearly everything.
+- **Minimal refutation-tree size:** this is superadditive, but exponential on pigeonhole (Haken), so it is not polynomially bounded.
+- **State merging to escape trees:** your per-state immutable histories make every state distinct. Merging would need histories shared as a DAG and a canonical quotient with polynomially many reachable classes. Clausal equivalence gives resolution DAGs, which Haken and Urquhart defeat for that quotient only.
+
+**The decisive missing idea** is a polynomial-time canonical state quotient under which reachable classes are polynomially many on all inputs. Every quotient I can define is a bounded level of a known proof-system hierarchy, and each has unconditional lower bounds. Those bounds are barriers for those quotients, not evidence about quotients that use extension variables, where nothing is known either way.
+
+One tempting fix I checked and discard: refactoring a rejected elimination's p×q resolvent grid with a fresh variable (bounded variable addition) reproduces the eliminated variable under a new name. It is a no-op that can cycle.
+
+## 6. Recommended next actions
+
+1. Formalize L1 and the two certificates (K5 with ½, Fano with ⅓). This is cheap and extends the Lean base.
+2. Run the 7-variable test against predictions 1 to 4.
+3. Measure the A_v state counts. Polynomial growth would be a surprise worth explaining, and exponential growth gives a clean benchmark that defeats both the affine and the lattice shortcut.
+4. Treat any further tractable-family repair as benchmark engineering unless it comes with a candidate Φ.
+
+`★ Insight ─────────────────────────────────────`
+- The GF(2) shortcut is the "mod 2 shadow" of an integer lattice test. Fano 1-in-3 survives mod 2 but fails mod 3, which is why one Hermite computation subsumes parity reasoning for every modulus.
+- NAE-on-Steiner needs a product of two variables to refute. This is the general pattern: each certificate degree has a natural family that is invisible one degree lower.
+- Because the count guard already bounds representation size, the open problem is entirely about how many states exist, not how large each one is.
+`─────────────────────────────────────────────────`
